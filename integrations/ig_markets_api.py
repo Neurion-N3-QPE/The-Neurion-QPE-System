@@ -172,36 +172,41 @@ class IGMarketsAPI:
             deal_reference: The deal reference returned when opening a position.
 
         Returns:
-            Trade status details.
+            Trade status details including dealStatus and reason.
         """
         url = f"{self.base_url}/confirms/{deal_reference}"
         headers = self._get_headers()
+        headers['Version'] = '1'  # Use Version 1 for confirms
 
         try:
             async with self.session.get(url, headers=headers) as response:
                 response_text = await response.text()
                 logger.info(f"Trade status response: {response_text}")
 
-                # Parse the response regardless of status code
-                try:
+                if response.status == 200:
                     data = await response.json()
-
-                    # Check if errorCode is null (indicates success) even with status 500
-                    if data.get('errorCode') is None:
-                        logger.info(f"✅ Trade status verified: {data}")
+                    deal_status = data.get('dealStatus', 'UNKNOWN')
+                    reason = data.get('reason', '')
+                    
+                    logger.info(f"Deal Status: {deal_status}")
+                    if reason:
+                        logger.info(f"Reason: {reason}")
+                    
+                    # Check if deal was accepted
+                    if deal_status == 'ACCEPTED':
+                        logger.info(f"✅ Trade ACCEPTED: {data}")
                         return data
                     else:
-                        logger.error(f"❌ Trade has error: {data.get('errorCode')}")
+                        logger.error(f"❌ Trade {deal_status}: {reason}")
                         return {}
-
-                except:
-                    # If we can't parse JSON, fall back to status code check
-                    if response.status == 200:
-                        logger.info(f"✅ Trade status verified (status 200)")
-                        return {"status": "confirmed"}
-                    else:
-                        logger.error(f"❌ Trade status verification failed (Status {response.status}): {response_text}")
-                        return {}
+                        
+                elif response.status == 404:
+                    # Deal not found yet - might be processing
+                    logger.warning(f"⚠️ Deal not found (might be processing): {deal_reference}")
+                    return {}
+                else:
+                    logger.error(f"❌ Trade status check failed (Status {response.status}): {response_text}")
+                    return {}
 
         except Exception as e:
             logger.error(f"❌ Trade status verification exception: {e}")
@@ -234,8 +239,8 @@ class IGMarketsAPI:
         # DFB = Spread Betting without fixed expiry (rolls daily)
         # Ensure size is rounded to 1 decimal place (IG Markets requirement for spread betting)
         rounded_size = round(float(size), 1)  # Round to 1 decimal place
-        if rounded_size < 0.5:
-            rounded_size = 0.5  # Minimum position size
+        # Don't enforce a minimum - let the API reject if too small
+        # IG Markets minimum varies by instrument, typically 0.1-0.5
         
         payload = {
             'epic': epic,
@@ -304,23 +309,27 @@ class IGMarketsAPI:
             logger.error(f"❌ Position {deal_id} not found")
             return {}
         
+        # Use DELETE method with deal ID in payload
         url = f"{self.base_url}/positions/otc"
         
-        # Close payload (opposite direction)
         payload = {
             'dealId': deal_id,
             'direction': 'SELL' if position['position']['direction'] == 'BUY' else 'BUY',
             'orderType': 'MARKET',
-            'size': position['position']['dealSize'],
-            'timeInForce': 'EXECUTE_AND_ELIMINATE'
+            'size': position['position']['size'],
+            'timeInForce': 'FILL_OR_KILL'
         }
         
         try:
             headers = self._get_headers()
             headers['_method'] = 'DELETE'
+            headers['Version'] = '1'
+            
+            logger.info(f"Closing position {deal_id} with payload: {payload}")
             
             async with self.session.post(url, json=payload, headers=headers) as response:
                 response_text = await response.text()
+                logger.info(f"Close response ({response.status}): {response_text}")
                 
                 if response.status == 200:
                     data = await response.json()
@@ -331,7 +340,7 @@ class IGMarketsAPI:
                     return {}
                     
         except Exception as e:
-            logger.error(f"❌ Close position exception: {e}")
+            logger.error(f"❌ Close position exception: {e}", exc_info=True)
             return {}
 
     async def get_positions(self) -> List[Dict]:

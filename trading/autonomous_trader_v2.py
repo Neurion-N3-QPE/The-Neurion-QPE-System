@@ -220,17 +220,17 @@ class AutonomousTraderV2:
         risk_amount = self.risk_per_trade * current_balance
         risk_based_size = (risk_amount * multiplier) / 100  # Divide by 100 for proper sizing
         
-        # Calculate margin-safe size (use 20% of available funds as max exposure)
-        # For spread betting, margin requirement is typically 5-20% of notional value
-        # Conservative approach: use only 20% of available funds for margin
-        margin_safe_size = (available_funds * 0.20) / 100  # Conservative sizing
+        # Calculate margin-safe size (use only 10% of available funds for ultra-conservative margin safety)
+        # With only £93 available and £171 tied up, we need to be very conservative
+        # Estimated margin requirement: ~£40-60 per £0.5 position on S&P 500
+        margin_safe_size = (available_funds * 0.10) / 100  # Ultra-conservative: 10% of available
         
         # Use the smaller of the two to ensure we don't exceed either limit
         final_size = min(risk_based_size, margin_safe_size)
         
-        # Ensure minimum viable size
-        if final_size < 0.5:
-            final_size = 0.5
+        # Set minimum to 0.1 (smallest practical size)
+        if final_size < 0.1:
+            final_size = 0.1
         
         # Round to 1 decimal place
         final_size = round(final_size, 1)
@@ -267,24 +267,72 @@ class AutonomousTraderV2:
             )
             
             if trade_response and trade_response.get('dealReference'):
-                position_id = trade_response['dealReference']
-                self.positions[position_id] = {
-                    'direction': direction,
-                    'size': size,
-                    'entry_price': market_state['price'], # This will need to be updated with actual entry price from API
-                    'entry_time': datetime.now(),
-                    'prediction': prediction,
-                    'status': 'OPEN',
-                    'deal_id': position_id # Store dealReference as deal_id
-                }
-                self.performance['trades'] += 1
+                deal_ref = trade_response['dealReference']
+                logger.info(f"📝 Got deal reference: {deal_ref}")
+                
+                # Wait a moment for the deal to be processed
+                await asyncio.sleep(0.5)
+                
+                # Verify the trade was actually accepted
+                verification = await self.ig_api.verify_trade_status(deal_ref)
+                
+                if verification and verification.get('dealStatus') == 'ACCEPTED':
+                    # Get the actual deal ID from the affected deals
+                    affected_deals = verification.get('affectedDeals', [])
+                    if affected_deals and len(affected_deals) > 0:
+                        actual_deal_id = affected_deals[0].get('dealId')
+                        
+                        self.positions[actual_deal_id] = {
+                            'direction': direction,
+                            'size': size,
+                            'entry_price': affected_deals[0].get('level', market_state['price']),
+                            'entry_time': datetime.now(),
+                            'prediction': prediction,
+                            'status': 'OPEN',
+                            'deal_id': actual_deal_id,
+                            'deal_reference': deal_ref,
+                            'epic': epic
+                        }
+                        self.performance['trades'] += 1
+                        logger.info(f"✅ Position tracked: {actual_deal_id}")
+                    else:
+                        logger.error(f"❌ No affected deals in response")
+                else:
+                    logger.error(f"❌ Trade was not accepted. Verification: {verification}")
             else:
                 logger.error(f"❌ Failed to open position. Response: {trade_response}")
         except Exception as e:
-            logger.error(f"❌ Error executing trade: {e}")
+            logger.error(f"❌ Error executing trade: {e}", exc_info=True)
     
     async def _update_positions(self):
-        """Update and manage open positions"""
+        """Update and manage open positions by syncing with IG Markets API"""
+        # First, sync with actual positions from IG Markets
+        if self.ig_api:
+            try:
+                actual_positions = await self.ig_api.get_positions()
+                
+                # Build a set of actual deal IDs
+                actual_deal_ids = set()
+                
+                # Handle both list and dict responses
+                positions_list = actual_positions if isinstance(actual_positions, list) else actual_positions.get('positions', [])
+                
+                for pos_data in positions_list:
+                    deal_id = pos_data['position']['dealId']
+                    actual_deal_ids.add(deal_id)
+                
+                # Remove positions from tracking that are no longer open
+                for pos_id in list(self.positions.keys()):
+                    if pos_id not in actual_deal_ids:
+                        logger.info(f"🔄 Position {pos_id} no longer open, removing from tracking")
+                        del self.positions[pos_id]
+                
+                logger.info(f"📊 Active positions: {len(actual_deal_ids)} on IG | {len(self.positions)} tracked | {self.max_positions} max")
+                
+            except Exception as e:
+                logger.error(f"❌ Error syncing positions: {e}")
+        
+        # Then manage existing tracked positions
         for pos_id, position in list(self.positions.items()):
             if position['status'] != 'OPEN':
                 continue
