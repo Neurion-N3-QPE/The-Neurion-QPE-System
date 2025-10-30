@@ -84,3 +84,214 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 2025-10-30 09:46:08,090 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
 Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
 2025-10-30 09:46:08,090 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 09:46:40,785 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 09:46:40,785 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:46:40,785 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:46:40,785 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 09:47:08,091 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 09:47:08,092 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:47:08,092 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:47:08,092 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 09:48:31,484 | __main__ | INFO | ================================================================================
+2025-10-30 09:48:31,484 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:48:31,484 | __main__ | INFO | ================================================================================
+2025-10-30 09:48:31,493 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 09:48:31,493 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:48:31,493 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:48:31,493 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:48:31,494 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:48:31,494 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:48:31,494 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:48:31,494 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:48:31,494 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:48:31,494 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 09:48:31,754 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 09:48:31,754 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 09:48:31,754 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 2.0%
+2025-10-30 09:48:31,754 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 09:48:31,755 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.70
+2025-10-30 09:48:31,755 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 09:48:31,755 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:48:31,755 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 09:48:31,755 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:48:31,755 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 09:48:31,844 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":null}
+2025-10-30 09:48:31,845 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.IP. Using dummy data.
+2025-10-30 09:48:31,845 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 09:48:31,845 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:48:31,845 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:48:31,846 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $123.83
+2025-10-30 09:48:31,921 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":null}
+2025-10-30 09:48:31,921 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 09:49:44,782 | __main__ | INFO | ================================================================================
+2025-10-30 09:49:44,782 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:49:44,782 | __main__ | INFO | ================================================================================
+2025-10-30 09:49:44,793 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 09:49:44,794 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:49:44,794 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:49:44,794 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:49:44,794 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:49:44,794 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:49:44,794 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:49:44,794 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:49:44,794 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:49:44,795 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 09:49:45,002 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 09:49:45,002 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 09:49:45,002 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 2.0%
+2025-10-30 09:49:45,002 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 09:49:45,002 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.70
+2025-10-30 09:49:45,002 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 09:49:45,003 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:49:45,003 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 09:49:45,003 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:49:45,003 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 09:49:45,058 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":null}
+2025-10-30 09:49:45,058 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.MINI.IP. Using dummy data.
+2025-10-30 09:49:45,059 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 09:49:45,059 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:49:45,059 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:49:45,059 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $123.83
+2025-10-30 09:49:45,118 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":null}
+2025-10-30 09:49:45,118 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 09:51:00,491 | __main__ | INFO | ================================================================================
+2025-10-30 09:51:00,492 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:51:00,492 | __main__ | INFO | ================================================================================
+2025-10-30 09:51:00,493 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 09:51:00,493 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:51:00,493 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:51:00,493 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:51:00,494 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:51:00,494 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:51:00,494 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:51:00,494 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:51:00,494 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:51:00,494 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 09:51:00,801 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 09:51:00,807 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 09:51:00,809 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 2.0%
+2025-10-30 09:51:00,810 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 09:51:00,810 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.70
+2025-10-30 09:51:00,810 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 09:51:00,810 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:51:00,810 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 09:51:00,810 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:51:00,810 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 09:51:00,898 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":null}
+2025-10-30 09:51:00,898 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.MINI.IP. Using dummy data.
+2025-10-30 09:51:00,900 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 09:51:00,903 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:51:00,903 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:51:01,033 | integrations.ig_markets_api | ERROR | ❌ Account info error: {"errorCode":null}
+2025-10-30 09:51:01,033 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 09:51:01,034 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $3.28
+2025-10-30 09:51:01,136 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":null}
+2025-10-30 09:51:01,136 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 09:51:05,353 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:51:05,353 | __main__ | INFO | 🏁 NEURION QPE SYSTEM STOPPED
+2025-10-30 09:51:05,353 | __main__ | INFO | ================================================================================
+2025-10-30 09:51:05,371 | asyncio | ERROR | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002AF7F82DBE0>
+2025-10-30 09:58:53,646 | __main__ | INFO | ================================================================================
+2025-10-30 09:58:53,646 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:58:53,646 | __main__ | INFO | ================================================================================
+2025-10-30 09:58:53,654 | config.settings | ERROR | ❌ Error loading config: 'ig_api'
+2025-10-30 09:58:53,655 | config.settings | INFO | 📝 Using default configuration
+2025-10-30 09:58:53,655 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:58:53,655 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:58:53,655 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:58:53,655 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:58:53,656 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:58:53,656 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:58:53,656 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:58:53,656 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:58:53,656 | __main__ | ERROR | ❌ Fatal error: 'ig_api'
+Traceback (most recent call last):
+  File "F:\Neurion QPE\The-Neurion-QPE-System\main.py", line 43, in main
+    await trader.initialize()
+  File "F:\Neurion QPE\The-Neurion-QPE-System\trading\autonomous_trader_v2.py", line 57, in initialize
+    api_key=self.config['ig_api']['api_key'],
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ig_api'
+2025-10-30 09:58:53,657 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:58:53,657 | __main__ | INFO | 🏁 NEURION QPE SYSTEM STOPPED
+2025-10-30 09:58:53,657 | __main__ | INFO | ================================================================================
+2025-10-30 10:00:11,502 | __main__ | INFO | ================================================================================
+2025-10-30 10:00:11,502 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 10:00:11,502 | __main__ | INFO | ================================================================================
+2025-10-30 10:00:11,503 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 10:00:11,503 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 10:00:11,503 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 10:00:11,503 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 10:00:11,503 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 10:00:11,503 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 10:00:11,503 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 10:00:11,503 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 10:00:11,503 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 10:00:11,504 | __main__ | ERROR | ❌ Fatal error: 'ig_api'
+Traceback (most recent call last):
+  File "F:\Neurion QPE\The-Neurion-QPE-System\main.py", line 43, in main
+    await trader.initialize()
+  File "F:\Neurion QPE\The-Neurion-QPE-System\trading\autonomous_trader_v2.py", line 57, in initialize
+    api_key=self.config['ig_api']['api_key'],
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ig_api'
+2025-10-30 10:00:11,504 | __main__ | INFO | 
+================================================================================
+2025-10-30 10:00:11,504 | __main__ | INFO | 🏁 NEURION QPE SYSTEM STOPPED
+2025-10-30 10:00:11,504 | __main__ | INFO | ================================================================================
+2025-10-30 10:01:14,955 | __main__ | INFO | ================================================================================
+2025-10-30 10:01:14,955 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 10:01:14,956 | __main__ | INFO | ================================================================================
+2025-10-30 10:01:14,956 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 10:01:14,957 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 10:01:14,957 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 10:01:14,957 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 10:01:14,957 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 10:01:14,957 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 10:01:14,957 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 10:01:14,957 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 10:01:14,958 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 10:01:14,958 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 10:01:15,185 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 10:01:15,185 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 10:01:15,185 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 10:01:15,185 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 10:01:15,185 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 10:01:15,186 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 10:01:15,186 | __main__ | INFO | 
+================================================================================
+2025-10-30 10:01:15,186 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 10:01:15,186 | __main__ | INFO | ================================================================================
+
+2025-10-30 10:01:15,186 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 10:01:15,247 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":null}
+2025-10-30 10:01:15,247 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.IP. Using dummy data.
+2025-10-30 10:01:15,248 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:01:15,248 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:01:15,248 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:01:15,335 | integrations.ig_markets_api | ERROR | ❌ Account info error: {"errorCode":null}
+2025-10-30 10:01:15,335 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:01:15,335 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $4.92
+2025-10-30 10:01:15,391 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":null}
+2025-10-30 10:01:15,391 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}

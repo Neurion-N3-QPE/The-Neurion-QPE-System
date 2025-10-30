@@ -10,6 +10,7 @@ import logging
 
 from core.integrity import IntegrityBus, IntegrityPrediction
 from core.quantum_engine import QuantumEngine
+from integrations.ig_markets_api import IGMarketsAPI
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +30,7 @@ class AutonomousTraderV2:
         self.config = config
         self.pie = IntegrityBus()
         self.quantum = QuantumEngine()
+        self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
         
         # State
         self.running = False
@@ -49,6 +51,17 @@ class AutonomousTraderV2:
         
         # Initialize Quantum Engine
         await self.quantum.initialize()
+        
+        # Initialize IG Markets API
+        ig_api_config = self.config['brokers']['ig_markets']
+        self.ig_api = IGMarketsAPI(
+            api_key=ig_api_config['api_key'],
+            username=ig_api_config['username'],
+            password=ig_api_config['password'],
+            account_id=ig_api_config['account_id'],
+            demo=ig_api_config.get('demo', False)
+        )
+        await self.ig_api.initialize()
         
         # Load configuration
         self.risk_per_trade = self.config.get('risk_per_trade', 0.02)  # 2%
@@ -115,13 +128,31 @@ class AutonomousTraderV2:
     
     async def _get_market_state(self) -> Dict:
         """Fetch current market state"""
-        # TODO: Implement actual market data fetching
-        return {
-            'timestamp': datetime.now(),
-            'price': 100.0,
-            'volume': 1000,
-            'indicators': {}
-        }
+        if not self.ig_api:
+            logger.error("❌ IG Markets API not initialized.")
+            return {}
+            
+        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.IP')
+        market_data = await self.ig_api.get_market_data(epic)
+        
+        if market_data and market_data.get('snapshot'):
+            snapshot = market_data['snapshot']
+            return {
+                'timestamp': datetime.now(),
+                'price': snapshot.get('bid', snapshot.get('offer', 0.0)), # Use bid or offer as price
+                'volume': snapshot.get('totalVolume', 0),
+                'indicators': {}, # TODO: Populate with actual indicators
+                'epic': epic
+            }
+        else:
+            logger.warning(f"⚠️  Could not fetch market data for {epic}. Using dummy data.")
+            return {
+                'timestamp': datetime.now(),
+                'price': 100.0,
+                'volume': 1000,
+                'indicators': {},
+                'epic': epic
+            }
     
     async def _process_prediction(
         self,
@@ -142,9 +173,12 @@ class AutonomousTraderV2:
             return
         
         # Calculate position size
-        position_size = self._calculate_position_size(
+        position_size = await self._calculate_position_size(
             prediction.position_size_multiplier
         )
+        if position_size <= 0:
+            logger.warning("⚠️  Calculated position size is zero or negative. Holding.")
+            return
         
         # Determine direction
         direction = 'LONG' if prediction.prediction_value > 0.5 else 'SHORT'
@@ -157,9 +191,25 @@ class AutonomousTraderV2:
             market_state=market_state
         )
     
-    def _calculate_position_size(self, multiplier: float) -> float:
-        """Calculate position size based on risk"""
-        base_size = self.risk_per_trade * 10000  # Assuming $10k account
+    async def _calculate_position_size(self, multiplier: float) -> float:
+        """Calculate position size based on risk and current account balance"""
+        if not self.ig_api:
+            logger.error("❌ IG Markets API not initialized for balance check.")
+            return 0.0
+            
+        account_info = await self.ig_api.get_account_info()
+        current_balance = 0.0
+        if account_info and account_info.get('accounts'):
+            for acc in account_info['accounts']:
+                if acc.get('accountId') == self.config['ig_api']['account_id']:
+                    current_balance = acc.get('balance', {}).get('balance', 0.0)
+                    break
+        
+        if current_balance == 0.0:
+            logger.warning("⚠️  Could not fetch current account balance. Using dummy balance for position sizing.")
+            current_balance = 264.63 # Fallback to initial known balance
+            
+        base_size = self.risk_per_trade * current_balance
         return base_size * multiplier
     
     async def _execute_trade(
@@ -172,21 +222,39 @@ class AutonomousTraderV2:
         """Execute a trade"""
         logger.info(f"🎯 EXECUTING: {direction} | Size: ${size:.2f}")
         
-        # TODO: Implement actual trade execution via broker API
+        if not self.ig_api:
+            logger.error("❌ IG Markets API not initialized.")
+            return
+            
+        # Placeholder for epic - needs to be dynamic
+        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.IP') 
         
-        # Create position record
-        position_id = f"POS_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        self.positions[position_id] = {
-            'direction': direction,
-            'size': size,
-            'entry_price': market_state['price'],
-            'entry_time': datetime.now(),
-            'prediction': prediction,
-            'status': 'OPEN'
-        }
-        
-        self.performance['trades'] += 1
-        logger.info(f"✅ Position opened: {position_id}")
+        try:
+            trade_response = await self.ig_api.open_position(
+                epic=epic,
+                direction=direction,
+                size=size,
+                # stop_loss=... # TODO: Implement stop loss calculation
+                # take_profit=... # TODO: Implement take profit calculation
+            )
+            
+            if trade_response and trade_response.get('dealReference'):
+                position_id = trade_response['dealReference']
+                self.positions[position_id] = {
+                    'direction': direction,
+                    'size': size,
+                    'entry_price': market_state['price'], # This will need to be updated with actual entry price from API
+                    'entry_time': datetime.now(),
+                    'prediction': prediction,
+                    'status': 'OPEN',
+                    'deal_id': position_id # Store dealReference as deal_id
+                }
+                self.performance['trades'] += 1
+                logger.info(f"✅ Position opened: {position_id}")
+            else:
+                logger.error(f"❌ Failed to open position. Response: {trade_response}")
+        except Exception as e:
+            logger.error(f"❌ Error executing trade: {e}")
     
     async def _update_positions(self):
         """Update and manage open positions"""
@@ -207,7 +275,18 @@ class AutonomousTraderV2:
         
         position = self.positions[position_id]
         
-        # TODO: Implement actual position closing via broker API
+        if not self.ig_api:
+            logger.error("❌ IG Markets API not initialized.")
+            return
+            
+        try:
+            close_response = await self.ig_api.close_position(deal_id=position['deal_id'])
+            if not close_response or not close_response.get('dealReference'):
+                logger.error(f"❌ Failed to close position {position_id}. Response: {close_response}")
+                return
+        except Exception as e:
+            logger.error(f"❌ Error closing position {position_id}: {e}")
+            return
         
         # Calculate P&L
         # TODO: Implement actual P&L calculation
