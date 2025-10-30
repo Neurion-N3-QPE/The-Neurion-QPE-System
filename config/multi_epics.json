@@ -36,10 +36,12 @@
         "rebalance_interval": 300
     },
     "fallback_epics": [
-        "IX.D.DAX.DAILY.IP",
-        "IX.D.DOW.DAILY.IP",
+        "CS.D.GBPUSD.TODAY.IP",
         "CS.D.EURUSD.TODAY.IP",
-        "CS.D.GBPUSD.TODAY.IP"
+        "CS.D.USDJPY.TODAY.IP",
+        "CS.D.USCGC.TODAY.IP",
+        "IX.D.FTSE.DAILY.IP",
+        "IX.D.DAX.DAILY.IP"
     ],
     "epic_priorities": {
         "IX.D.SPTRD.DAILY.IP": 1,

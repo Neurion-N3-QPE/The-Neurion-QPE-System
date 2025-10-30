@@ -22,38 +22,38 @@ class SessionManager:
             "start": "00:00",
             "end": "08:00",
             "timezone": "Asia/Tokyo",
-            "epics": ["IX.D.NIKKEI.DAILY.IP", "IX.D.HANGSENG.DAILY.IP"],
-            "primary_epic": "IX.D.NIKKEI.DAILY.IP",
+            "epics": ["CS.D.USDJPY.TODAY.IP", "CS.D.GBPUSD.TODAY.IP", "CS.D.EURUSD.TODAY.IP"],  # Use forex during Asian hours
+            "primary_epic": "CS.D.USDJPY.TODAY.IP",  # USD/JPY most active during Asian session
             "volatility_multiplier": 0.8,  # Lower volatility session
             "max_positions": 2
         },
         "europe": {
-            "name": "European Session", 
+            "name": "European Session",
             "start": "08:00",
             "end": "16:00",
             "timezone": "Europe/London",
-            "epics": ["IX.D.FTSE.DAILY.IP", "IX.D.DAX.DAILY.IP", "IX.D.EUROSTOXX.DAILY.IP"],
-            "primary_epic": "IX.D.FTSE.DAILY.IP",
+            "epics": ["IX.D.FTSE.DAILY.IP", "CS.D.GBPUSD.TODAY.IP", "CS.D.EURGBP.TODAY.IP"],  # Mix of FTSE and forex
+            "primary_epic": "CS.D.GBPUSD.TODAY.IP",  # GBP/USD most active during London session
             "volatility_multiplier": 1.0,  # Standard volatility
             "max_positions": 3
         },
         "us": {
             "name": "US Session",
-            "start": "16:00", 
+            "start": "16:00",
             "end": "23:00",
             "timezone": "America/New_York",
-            "epics": ["IX.D.SPTRD.DAILY.IP", "IX.D.NASDAQ.DAILY.IP", "IX.D.DOW.DAILY.IP"],
-            "primary_epic": "IX.D.SPTRD.DAILY.IP",
+            "epics": ["CS.D.EURUSD.TODAY.IP", "CS.D.GBPUSD.TODAY.IP", "CS.D.USDJPY.TODAY.IP"],  # Use forex during US hours
+            "primary_epic": "CS.D.EURUSD.TODAY.IP",  # EUR/USD most active during US session
             "volatility_multiplier": 1.2,  # Higher volatility session
             "max_positions": 3
         },
         "overlap_eu_us": {
             "name": "EU-US Overlap",
             "start": "16:00",
-            "end": "17:00", 
+            "end": "17:00",
             "timezone": "Europe/London",
-            "epics": ["IX.D.SPTRD.DAILY.IP", "IX.D.FTSE.DAILY.IP"],
-            "primary_epic": "IX.D.SPTRD.DAILY.IP",
+            "epics": ["CS.D.EURUSD.TODAY.IP", "CS.D.GBPUSD.TODAY.IP", "IX.D.FTSE.DAILY.IP"],  # Mix of major forex and FTSE
+            "primary_epic": "CS.D.EURUSD.TODAY.IP",  # EUR/USD most active during overlap
             "volatility_multiplier": 1.5,  # Highest volatility overlap
             "max_positions": 4
         }

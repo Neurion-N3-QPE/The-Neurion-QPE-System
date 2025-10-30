@@ -19,6 +19,7 @@ from trading.scalp_engine import ScalpEngine
 from trading.account_manager import AccountManager
 from trading.session_manager import SessionManager
 from trading.ml_confidence_tuner import MLConfidenceTuner
+from trading.instrument_manager import InstrumentManager
 
 logger = logging.getLogger(__name__)
 
@@ -86,6 +87,9 @@ class AutonomousTraderV2:
 
         # Initialize ML Confidence Tuner
         self.ml_confidence_tuner = MLConfidenceTuner(self.config)
+
+        # Initialize Instrument Manager
+        self.instrument_manager = InstrumentManager(self.ig_api)
 
         # Load configuration
         self.risk_per_trade = self.config.get('risk_per_trade', 0.02)  # 2%
@@ -186,12 +190,19 @@ class AutonomousTraderV2:
                 await asyncio.sleep(5)
     
     async def _get_market_state(self) -> Dict:
-        """Fetch current market state"""
+        """Fetch current market state with intelligent epic selection"""
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized.")
             return {}
-            
-        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
+
+        # Get available balance for epic selection
+        available_balance = 260.14  # Default fallback
+        if self.account_manager:
+            available_balance = await self.account_manager.get_available_balance()
+
+        # Use intelligent epic selection based on balance
+        epic = await self._select_optimal_epic(available_balance)
+
         market_data = await self.ig_api.get_market_data(epic)
         if market_data and market_data.get('snapshot'):
             snapshot = market_data['snapshot']
@@ -241,10 +252,10 @@ class AutonomousTraderV2:
             logger.info("⏸️  HOLD - Maximum positions reached")
             return
         
-        # Calculate position size using enhanced prediction
-        position_size = await self._calculate_position_size(
-            enhanced_prediction.position_size_multiplier if hasattr(enhanced_prediction, 'position_size_multiplier') else prediction.position_size_multiplier
-        )
+        # Calculate position size using enhanced prediction and epic
+        epic = market_state.get('epic', 'CS.D.GBPUSD.TODAY.IP')
+        multiplier = enhanced_prediction.position_size_multiplier if hasattr(enhanced_prediction, 'position_size_multiplier') else prediction.position_size_multiplier
+        position_size = await self._calculate_position_size(multiplier, epic)
         if position_size <= 0:
             logger.warning("⚠️  Calculated position size is zero or negative. Holding.")
             return
@@ -263,14 +274,18 @@ class AutonomousTraderV2:
         # After executing main trade, check for multi-epic opportunities
         await self.multi_epic_strategy()
     
-    async def _calculate_position_size(self, multiplier: float) -> float:
+    async def _calculate_position_size(self, multiplier: float, epic: str = None) -> float:
         """
-        Calculate position size based on risk and current account balance.
-        Accounts for margin requirements to prevent insufficient funds rejections.
+        Calculate instrument-aware position size based on risk, balance, and instrument requirements.
+        Uses InstrumentManager to handle different margin requirements per epic.
         """
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized for balance check.")
             return 0.0
+
+        # Get current epic if not provided
+        if not epic:
+            epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.IP')
 
         # Use Account Manager for balance information if available
         if self.account_manager:
@@ -297,34 +312,74 @@ class AutonomousTraderV2:
 
         if current_balance == 0.0:
             logger.warning("⚠️  Could not fetch current account balance. Using fallback balance for position sizing.")
-            current_balance = 270.14
-            available_funds = 132.54
-        
-        # Calculate risk-based size
-        risk_amount = self.risk_per_trade * current_balance
-        risk_based_size = (risk_amount * multiplier) / 100  # Divide by 100 for proper sizing
-        
-        # Calculate margin-safe size (use only 10% of available funds for ultra-conservative margin safety)
-        # With only £93 available and £171 tied up, we need to be very conservative
-        # Estimated margin requirement: ~£40-60 per £0.5 position on S&P 500
-        margin_safe_size = (available_funds * 0.10) / 100  # Ultra-conservative: 10% of available
-        
-        # Use the smaller of the two to ensure we don't exceed either limit
-        final_size = min(risk_based_size, margin_safe_size)
-        
-        # Set minimum to 0.1 (smallest practical size)
-        if final_size < 0.1:
-            final_size = 0.1
-        
-        # Round to 1 decimal place
-        final_size = round(final_size, 1)
-        
-        logger.info(f"💰 Position Sizing:")
+            current_balance = 260.14
+            available_funds = 260.14
+
+        # Calculate risk amount
+        risk_amount = self.risk_per_trade * current_balance * multiplier
+
+        # Use Instrument Manager for intelligent sizing
+        position_size, reason = await self.instrument_manager.calculate_safe_position_size(
+            epic, available_funds, risk_amount
+        )
+
+        logger.info(f"💰 INSTRUMENT-AWARE POSITION SIZING:")
+        logger.info(f"   Epic: {epic}")
         logger.info(f"   Balance: £{current_balance:.2f} | Available: £{available_funds:.2f}")
-        logger.info(f"   Risk-based: £{risk_based_size:.2f}/point | Margin-safe: £{margin_safe_size:.2f}/point")
-        logger.info(f"   Final Size: £{final_size:.1f}/point")
-        
-        return final_size
+        logger.info(f"   Risk Amount: £{risk_amount:.2f} | Multiplier: {multiplier:.2f}")
+        logger.info(f"   Calculated Size: £{position_size:.1f}/point")
+        logger.info(f"   Reason: {reason}")
+
+        return position_size
+
+    async def _select_optimal_epic(self, available_balance: float) -> str:
+        """Select the best epic based on available balance and current session"""
+        try:
+            # Log instrument analysis
+            self.instrument_manager.log_instrument_analysis(available_balance)
+
+            # Get suitable instruments
+            suitable_instruments = self.instrument_manager.get_suitable_instruments(available_balance)
+
+            if not suitable_instruments:
+                logger.warning("⚠️  No suitable instruments for current balance, using fallback")
+                return "CS.D.GBPUSD.TODAY.IP"  # Forex fallback
+
+            # Consider session-based preferences if session manager available
+            if hasattr(self, 'session_manager') and self.session_manager:
+                current_session_info = self.session_manager.get_current_session()
+                session_name = current_session_info.get('name', 'UNKNOWN') if isinstance(current_session_info, dict) else 'UNKNOWN'
+                logger.info(f"🌍 Current Session: {session_name}")
+
+                # Prefer instruments that match current session, but only from suitable instruments
+                session_preferences = {
+                    'Asian Session': ['CS.D.USDJPY.TODAY.IP', 'CS.D.GBPUSD.TODAY.IP'],  # Forex during Asian hours
+                    'European Session': ['IX.D.FTSE.DAILY.IP', 'CS.D.GBPUSD.TODAY.IP', 'CS.D.EURGBP.TODAY.IP'],
+                    'US Session': ['CS.D.EURUSD.TODAY.IP', 'CS.D.GBPUSD.TODAY.IP'],  # Forex during US hours
+                    'EU-US Overlap': ['CS.D.EURUSD.TODAY.IP', 'CS.D.GBPUSD.TODAY.IP']
+                }
+
+                preferred_epics = session_preferences.get(session_name, [])
+
+                # Find first suitable instrument that matches session preference
+                for epic in preferred_epics:
+                    for instrument in suitable_instruments:
+                        if instrument['epic'] == epic:
+                            logger.info(f"✅ Selected session-optimized epic: {instrument['name']} ({epic})")
+                            return epic
+
+            # If no session preference match, use highest priority suitable instrument
+            if suitable_instruments:
+                best_instrument = suitable_instruments[0]  # Already sorted by priority
+                logger.info(f"✅ Selected optimal epic: {best_instrument['name']} ({best_instrument['epic']})")
+                return best_instrument['epic']
+            else:
+                logger.warning("⚠️  No suitable instruments found, using safe fallback")
+                return "CS.D.GBPUSD.TODAY.IP"  # Safe forex fallback
+
+        except Exception as e:
+            logger.error(f"❌ Error selecting optimal epic: {e}")
+            return "CS.D.GBPUSD.TODAY.IP"  # Safe fallback
     
     async def _execute_trade(
         self,
