@@ -16,7 +16,7 @@
       "username": "YOUR_USERNAME",
       "password": "YOUR_PASSWORD",
       "demo": false,
-      "default_epic": "CS.D.GBPUSD.TODAY.IP",
+      "default_epic": "IX.D.SPTRD.DAILY.IP",
       "instruments": {
         "GBP/USD": "CS.D.GBPUSD.TODAY.IP",
         "EUR/USD": "CS.D.EURUSD.TODAY.IP",

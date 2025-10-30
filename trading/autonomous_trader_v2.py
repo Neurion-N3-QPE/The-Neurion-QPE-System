@@ -7,6 +7,8 @@ import asyncio
 from typing import Dict, List, Optional
 from datetime import datetime
 import logging
+import json
+from pathlib import Path
 
 from core.integrity import IntegrityBus, IntegrityPrediction
 from core.quantum_engine import QuantumEngine
@@ -32,7 +34,10 @@ class AutonomousTraderV2:
         self.pie = IntegrityBus()
         self.quantum = QuantumEngine()
         self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
-        
+
+        # Load multi-epic configuration
+        self.multi_epic_config = self._load_multi_epic_config()
+
         # State
         self.running = False
         self.positions = {}
@@ -169,11 +174,14 @@ class AutonomousTraderV2:
         """Process prediction and take action"""
         logger.info(f"\n{'='*60}")
         logger.info(prediction.reasoning)
-        
+
         if not prediction.is_tradeable:
             logger.info("⏸️  HOLD - Confidence below threshold")
+
+            # Even if main signal is not tradeable, check multi-epic opportunities
+            await self.multi_epic_strategy()
             return
-        
+
         # Check if we can open new position
         if len(self.positions) >= self.max_positions:
             logger.info("⏸️  HOLD - Maximum positions reached")
@@ -197,6 +205,9 @@ class AutonomousTraderV2:
             prediction=prediction,
             market_state=market_state
         )
+
+        # After executing main trade, check for multi-epic opportunities
+        await self.multi_epic_strategy()
     
     async def _calculate_position_size(self, multiplier: float) -> float:
         """
@@ -460,6 +471,29 @@ class AutonomousTraderV2:
             logger.error(f"❌ Error updating account balance: {e}")
             return None
 
+    def _load_multi_epic_config(self):
+        """Load multi-epic trading configuration"""
+        try:
+            config_path = Path("config/multi_epics.json")
+            if config_path.exists():
+                with open(config_path, 'r') as f:
+                    multi_config = json.load(f)
+                logger.info(f"✅ Multi-epic config loaded: {len(multi_config['primary_epics'])} primary epics")
+                return multi_config
+            else:
+                logger.warning("⚠️  Multi-epic config not found, using single epic mode")
+                return {
+                    "primary_epics": [self.config['brokers']['ig_markets'].get('default_epic', 'IX.D.SPTRD.DAILY.IP')],
+                    "strategy_config": {
+                        "max_concurrent_epics": 1,
+                        "margin_allocation_per_epic": 1.0,
+                        "min_signal_strength": 0.75
+                    }
+                }
+        except Exception as e:
+            logger.error(f"❌ Error loading multi-epic config: {e}")
+            return {"primary_epics": ["IX.D.SPTRD.DAILY.IP"], "strategy_config": {"max_concurrent_epics": 1}}
+
     async def get_margin_percent(self):
         """
         Calculate current margin utilization percentage
@@ -571,6 +605,146 @@ class AutonomousTraderV2:
         except Exception as e:
             logger.error(f"❌ Error in fragmented_entry: {e}")
             return []
+
+    async def multi_epic_strategy(self):
+        """
+        Trade multiple uncorrelated instruments simultaneously
+        Core Principle: Diversify across markets while maintaining margin discipline
+        """
+        try:
+            strategy_config = self.multi_epic_config.get('strategy_config', {})
+
+            # Get signals for multiple epics
+            epic_signals = await self.get_signals_for_multiple_epics()
+
+            # Count active epics currently being traded
+            active_epics = self._count_active_epics()
+            max_concurrent = strategy_config.get('max_concurrent_epics', 3)
+            available_slots = max_concurrent - len(active_epics)
+
+            logger.info(f"🔀 MULTI-EPIC STRATEGY: {len(active_epics)} active, {available_slots} slots available")
+
+            if available_slots <= 0:
+                logger.info("📊 All epic slots occupied, monitoring existing positions")
+                return []
+
+            # Filter and sort signals by strength
+            min_signal_strength = strategy_config.get('min_signal_strength', 0.8)
+            min_margin_threshold = strategy_config.get('min_margin_threshold', 40.0)
+
+            current_margin = await self.get_margin_percent()
+
+            if current_margin > min_margin_threshold:
+                logger.warning(f"⚠️  Margin too high ({current_margin:.1f}%) for multi-epic strategy")
+                return []
+
+            # Execute trades for available slots
+            executed_trades = []
+            margin_per_epic = strategy_config.get('margin_allocation_per_epic', 0.33)
+
+            for epic, signal_data in epic_signals[:available_slots]:
+                signal_strength = signal_data['strength']
+
+                if signal_strength > min_signal_strength:
+                    # Calculate position size for this epic
+                    base_size = await self._calculate_position_size()
+                    epic_size = base_size * margin_per_epic
+                    epic_size = round(epic_size, 1)
+
+                    logger.info(f"🎯 Multi-epic trade: {epic} | Signal: {signal_strength:.3f} | Size: {epic_size} £/pt")
+
+                    # Execute fragmented entry for this epic
+                    fragments = await self.fragmented_entry(epic, epic_size)
+
+                    if fragments:
+                        executed_trades.append({
+                            'epic': epic,
+                            'signal_strength': signal_strength,
+                            'size': epic_size,
+                            'fragments': len(fragments)
+                        })
+                        logger.info(f"✅ Multi-epic trade executed: {epic} ({len(fragments)} fragments)")
+                    else:
+                        logger.warning(f"❌ Multi-epic trade failed: {epic}")
+
+            if executed_trades:
+                logger.info(f"🚀 Multi-epic strategy executed {len(executed_trades)} trades across different markets")
+
+            return executed_trades
+
+        except Exception as e:
+            logger.error(f"❌ Error in multi_epic_strategy: {e}")
+            return []
+
+    async def get_signals_for_multiple_epics(self):
+        """
+        Get trading signals for multiple epics
+        Returns list of (epic, signal_data) tuples sorted by signal strength
+        """
+        try:
+            primary_epics = self.multi_epic_config.get('primary_epics', [])
+            epic_priorities = self.multi_epic_config.get('epic_priorities', {})
+
+            signals = []
+
+            for epic in primary_epics:
+                try:
+                    # Get market state for this epic
+                    market_state = await self._get_market_state_for_epic(epic)
+
+                    # Get PIE prediction for this epic
+                    prediction = await self.pie.predict(
+                        market_state=market_state,
+                        historical_accuracy=self._calculate_historical_accuracy()
+                    )
+
+                    if prediction and prediction.confidence >= 0.75:  # Only consider high-confidence signals
+                        signal_data = {
+                            'strength': prediction.confidence,
+                            'direction': 'BUY' if prediction.signal > 0.5 else 'SELL',
+                            'prediction': prediction,
+                            'priority': epic_priorities.get(epic, 999)
+                        }
+                        signals.append((epic, signal_data))
+
+                except Exception as epic_error:
+                    logger.warning(f"⚠️  Error getting signal for {epic}: {epic_error}")
+                    continue
+
+            # Sort by signal strength (descending) then by priority (ascending)
+            signals.sort(key=lambda x: (-x[1]['strength'], x[1]['priority']))
+
+            logger.info(f"📊 Multi-epic signals: {len(signals)} epics with tradeable signals")
+            for epic, data in signals:
+                logger.info(f"   {epic}: {data['strength']:.3f} confidence ({data['direction']})")
+
+            return signals
+
+        except Exception as e:
+            logger.error(f"❌ Error getting multi-epic signals: {e}")
+            return []
+
+    async def _get_market_state_for_epic(self, epic: str):
+        """Get market state for a specific epic"""
+        # For now, use the same market state logic but could be enhanced
+        # to get epic-specific market data
+        return await self._get_market_state()
+
+    def _count_active_epics(self):
+        """Count how many different epics are currently being traded"""
+        try:
+            active_epics = set()
+            primary_epics = self.multi_epic_config.get('primary_epics', [])
+
+            for position in self.positions.values():
+                if position.get('status') == 'OPEN' and position.get('epic') in primary_epics:
+                    active_epics.add(position['epic'])
+
+            return active_epics
+
+        except Exception as e:
+            logger.error(f"❌ Error counting active epics: {e}")
+            return set()
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
         """

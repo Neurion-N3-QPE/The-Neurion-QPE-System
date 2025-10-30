@@ -1,0 +1,49 @@
+{
+    "primary_epics": [
+        "IX.D.SPTRD.DAILY.IP",    
+        "IX.D.NASDAQ.DAILY.IP",   
+        "IX.D.FTSE.DAILY.IP"      
+    ],
+    "epic_details": {
+        "IX.D.SPTRD.DAILY.IP": {
+            "name": "S&P 500",
+            "market": "US_INDICES",
+            "correlation_group": "US_LARGE_CAP",
+            "volatility_factor": 1.0,
+            "trading_hours": "14:30-21:00"
+        },
+        "IX.D.NASDAQ.DAILY.IP": {
+            "name": "NASDAQ 100",
+            "market": "US_INDICES", 
+            "correlation_group": "US_TECH",
+            "volatility_factor": 1.2,
+            "trading_hours": "14:30-21:00"
+        },
+        "IX.D.FTSE.DAILY.IP": {
+            "name": "FTSE 100",
+            "market": "UK_INDICES",
+            "correlation_group": "UK_LARGE_CAP", 
+            "volatility_factor": 0.8,
+            "trading_hours": "08:00-16:30"
+        }
+    },
+    "strategy_config": {
+        "max_concurrent_epics": 3,
+        "margin_allocation_per_epic": 0.33,
+        "min_signal_strength": 0.8,
+        "min_margin_threshold": 40.0,
+        "correlation_limit": 0.7,
+        "rebalance_interval": 300
+    },
+    "fallback_epics": [
+        "IX.D.DAX.DAILY.IP",
+        "IX.D.DOW.DAILY.IP",
+        "CS.D.EURUSD.TODAY.IP",
+        "CS.D.GBPUSD.TODAY.IP"
+    ],
+    "epic_priorities": {
+        "IX.D.SPTRD.DAILY.IP": 1,
+        "IX.D.NASDAQ.DAILY.IP": 2, 
+        "IX.D.FTSE.DAILY.IP": 3
+    }
+}
