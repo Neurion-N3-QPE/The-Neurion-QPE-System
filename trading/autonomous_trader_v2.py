@@ -17,6 +17,7 @@ from config.settings import update_env_var
 from trading.risk_engine import RiskEngine
 from trading.scalp_engine import ScalpEngine
 from trading.account_manager import AccountManager
+from trading.session_manager import SessionManager
 
 logger = logging.getLogger(__name__)
 
@@ -78,6 +79,9 @@ class AutonomousTraderV2:
         # Initialize Account Manager after IG API connection
         self.account_manager = AccountManager(self.config, self.ig_api)
         await self.account_manager.initialize()
+
+        # Initialize Session Manager
+        self.session_manager = SessionManager(self.config)
 
         # Load configuration
         self.risk_per_trade = self.config.get('risk_per_trade', 0.02)  # 2%
@@ -161,6 +165,10 @@ class AutonomousTraderV2:
                 # PHASE 9 - Volatility-Adaptive Profit Targets
                 # Update profit targets based on market volatility
                 await self.volatility_adaptive_profit_management()
+
+                # PHASE 10 - Session-Bound Exposure Management
+                # Optimize trading based on active market sessions
+                await self.session_bound_exposure_management()
 
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
@@ -309,13 +317,21 @@ class AutonomousTraderV2:
         prediction: IntegrityPrediction,
         market_state: Dict
     ):
-        """Execute a trade"""
+        """Execute a trade with session awareness"""
         logger.info(f"🎯 EXECUTING: {direction} | Size: ${size:.2f}")
 
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized.")
             return
-        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
+
+        # Get epic with session awareness
+        epic = self._get_session_aware_epic()
+
+        # Check session-specific trading rules
+        if hasattr(self, 'session_manager') and self.session_manager:
+            if not self.session_manager.should_trade_epic(epic):
+                logger.info(f"⏰ Skipping {epic} - not active in current session")
+                return None
 
         try:
             # STRATEGY: Confidence-Weighted Trade Density
@@ -545,8 +561,23 @@ class AutonomousTraderV2:
             return None
 
     def _load_multi_epic_config(self):
-        """Load multi-epic trading configuration"""
+        """Load multi-epic trading configuration with session awareness"""
         try:
+            # Get session-aware epics if session manager is available
+            if hasattr(self, 'session_manager') and self.session_manager:
+                session_epics = self.session_manager.get_active_session_epics()
+                if session_epics:
+                    logger.info(f"✅ Session-aware multi-epic config: {len(session_epics)} active epics")
+                    return {
+                        "primary_epics": session_epics,
+                        "strategy_config": {
+                            "max_concurrent_epics": len(session_epics),
+                            "margin_allocation_per_epic": 1.0 / len(session_epics),
+                            "session_aware": True
+                        }
+                    }
+
+            # Fallback to file-based config
             config_path = Path("config/multi_epics.json")
             if config_path.exists():
                 with open(config_path, 'r') as f:
@@ -1908,3 +1939,145 @@ class AutonomousTraderV2:
         except Exception as e:
             logger.error(f"❌ Error estimating ATR for {epic}: {e}")
             return 15.0  # Safe fallback
+
+    async def session_bound_exposure_management(self):
+        """
+        Session-Bound Exposure Management: Optimize trading based on active market sessions
+        Goal: Focus trading on most liquid markets during their peak hours
+        """
+        try:
+            logger.info("📅 PHASE 10 - Session-Bound Exposure Management")
+
+            if not self.session_manager:
+                logger.warning("⚠️ Session Manager not initialized")
+                return
+
+            # Log current session status
+            self.session_manager.log_session_status()
+
+            # Get session information
+            session_info = self.session_manager.get_session_info()
+
+            # Update multi-epic configuration based on active session
+            await self._update_session_based_epics(session_info)
+
+            # Apply session-based position limits
+            await self._apply_session_position_limits(session_info)
+
+            # Adjust volatility multipliers based on session
+            await self._apply_session_volatility_adjustments(session_info)
+
+            # Check for session transitions and handle accordingly
+            await self._handle_session_transitions(session_info)
+
+            logger.info(f"📅 SESSION MANAGEMENT COMPLETE: {session_info['session_name']}")
+
+        except Exception as e:
+            logger.error(f"❌ Error in session-bound exposure management: {e}")
+
+    async def _update_session_based_epics(self, session_info: Dict):
+        """Update active epics based on current session"""
+        try:
+            active_epics = session_info.get('active_epics', [])
+            primary_epic = session_info.get('primary_epic', 'IX.D.SPTRD.DAILY.IP')
+
+            # Update multi-epic configuration
+            if self.multi_epic_config:
+                self.multi_epic_config['primary_epics'] = active_epics
+                self.multi_epic_config['strategy_config']['max_concurrent_epics'] = len(active_epics)
+                self.multi_epic_config['strategy_config']['margin_allocation_per_epic'] = 1.0 / max(len(active_epics), 1)
+
+                logger.info(f"📊 UPDATED ACTIVE EPICS: {len(active_epics)} epics")
+                for epic in active_epics:
+                    logger.info(f"   ✓ {epic}")
+
+        except Exception as e:
+            logger.error(f"❌ Error updating session-based epics: {e}")
+
+    async def _apply_session_position_limits(self, session_info: Dict):
+        """Apply position limits based on current session"""
+        try:
+            session_max_positions = session_info.get('max_positions', 3)
+            current_positions = len(self.positions)
+
+            # Check if we need to reduce positions for the session
+            if current_positions > session_max_positions:
+                logger.warning(f"⚠️ Current positions ({current_positions}) exceed session limit ({session_max_positions})")
+                # Note: We don't automatically close positions, just log the warning
+                # Position closure should be handled by other risk management systems
+
+            logger.info(f"📊 SESSION POSITION LIMITS: {current_positions}/{session_max_positions} positions")
+
+        except Exception as e:
+            logger.error(f"❌ Error applying session position limits: {e}")
+
+    async def _apply_session_volatility_adjustments(self, session_info: Dict):
+        """Apply volatility adjustments based on current session"""
+        try:
+            volatility_multiplier = session_info.get('volatility_multiplier', 1.0)
+
+            # Update risk engine with session volatility multiplier
+            if hasattr(self.risk_engine, 'session_volatility_multiplier'):
+                self.risk_engine.session_volatility_multiplier = volatility_multiplier
+
+            logger.info(f"📊 SESSION VOLATILITY MULTIPLIER: {volatility_multiplier:.1f}x")
+
+        except Exception as e:
+            logger.error(f"❌ Error applying session volatility adjustments: {e}")
+
+    async def _handle_session_transitions(self, session_info: Dict):
+        """Handle transitions between trading sessions"""
+        try:
+            session_name = session_info.get('session_name', 'Unknown')
+
+            # Check if this is a new session
+            if not hasattr(self, '_last_session') or self._last_session != session_name:
+                logger.info(f"🔄 SESSION TRANSITION: {getattr(self, '_last_session', 'Unknown')} → {session_name}")
+
+                # Update last session
+                self._last_session = session_name
+
+                # Perform session transition actions
+                await self._on_session_change(session_info)
+
+        except Exception as e:
+            logger.error(f"❌ Error handling session transitions: {e}")
+
+    async def _on_session_change(self, session_info: Dict):
+        """Handle actions when session changes"""
+        try:
+            session_name = session_info.get('session_name', 'Unknown')
+
+            logger.info(f"🎯 NEW SESSION ACTIVE: {session_name}")
+
+            # Refresh multi-epic configuration for new session
+            self.multi_epic_config = self._load_multi_epic_config()
+
+            # Log new session capabilities
+            active_epics = session_info.get('active_epics', [])
+            max_positions = session_info.get('max_positions', 3)
+            volatility_multiplier = session_info.get('volatility_multiplier', 1.0)
+
+            logger.info(f"📊 NEW SESSION CONFIGURATION:")
+            logger.info(f"   Active Epics: {len(active_epics)}")
+            logger.info(f"   Max Positions: {max_positions}")
+            logger.info(f"   Volatility Multiplier: {volatility_multiplier:.1f}x")
+
+        except Exception as e:
+            logger.error(f"❌ Error in session change handler: {e}")
+
+    def _get_session_aware_epic(self) -> str:
+        """Get the appropriate epic for the current session"""
+        try:
+            # Use session manager to get primary epic if available
+            if hasattr(self, 'session_manager') and self.session_manager:
+                primary_epic = self.session_manager.get_primary_epic_for_session()
+                if primary_epic:
+                    return primary_epic
+
+            # Fallback to configuration default
+            return self.config['brokers']['ig_markets'].get('default_epic', 'IX.D.SPTRD.DAILY.IP')
+
+        except Exception as e:
+            logger.error(f"❌ Error getting session-aware epic: {e}")
+            return 'IX.D.SPTRD.DAILY.IP'  # Safe fallback

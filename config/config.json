@@ -133,6 +133,25 @@
       "volatility_smoothing_factor": 0.2,
       "default_atr_estimate": 15.0,
       "default_avg_volatility": 12.0
+    },
+    "session_bound_exposure": {
+      "enabled": true,
+      "respect_session_boundaries": true,
+      "session_overlap_priority": true,
+      "off_hours_trading": {
+        "enabled": true,
+        "reduced_position_size": 0.5,
+        "max_positions": 1
+      },
+      "session_transitions": {
+        "grace_period_minutes": 15,
+        "auto_close_off_session_positions": false
+      },
+      "volatility_adjustments": {
+        "apply_session_multipliers": true,
+        "overlap_boost": 1.5,
+        "off_hours_reduction": 0.8
+      }
     }
   },
   
