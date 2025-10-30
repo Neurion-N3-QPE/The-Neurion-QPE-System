@@ -1529,3 +1529,643 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 2025-10-30 10:51:33,068 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
 2025-10-30 10:51:33,148 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
 2025-10-30 10:51:33,148 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:05:30,665 | asyncio | DEBUG | Using proactor: IocpProactor
+2025-10-30 13:05:30,668 | __main__ | INFO | ================================================================================
+2025-10-30 13:05:30,668 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 13:05:30,681 | __main__ | INFO | ================================================================================
+2025-10-30 13:05:30,682 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 13:05:30,683 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 13:05:30,684 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 13:05:30,684 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 13:05:30,685 | __main__ | ERROR | ❌ Fatal error: 'charmap' codec can't encode character '\U0001f916' in position 32: character maps to <undefined>
+Traceback (most recent call last):
+  File "F:\Neurion QPE\The-Neurion-QPE-System\main.py", line 43, in main
+    await trader.initialize()
+  File "F:\Neurion QPE\The-Neurion-QPE-System\trading\autonomous_trader_v2.py", line 50, in initialize
+    await self.pie.initialize()
+  File "F:\Neurion QPE\The-Neurion-QPE-System\core\integrity\integrity_bus.py", line 60, in initialize
+    await self.ensemble.initialize()
+  File "F:\Neurion QPE\The-Neurion-QPE-System\core\integrity\multi_agent_ensemble.py", line 187, in initialize
+    logger.info("🤖 Initializing Multi-Agent Ensemble...")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Callu\AppData\Roaming\Python\Python314\site-packages\structlog\_native.py", line 144, in meth
+    return self._proxy_to_logger(name, event, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Callu\AppData\Roaming\Python\Python314\site-packages\structlog\_base.py", line 223, in _proxy_to_logger
+    return getattr(self._logger, method_name)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Callu\AppData\Roaming\Python\Python314\site-packages\structlog\_output.py", line 110, in msg
+    print(message, file=f, flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f916' in position 32: character maps to <undefined>
+2025-10-30 13:05:30,708 | __main__ | INFO | 
+================================================================================
+2025-10-30 13:05:30,709 | __main__ | INFO | 🏁 NEURION QPE SYSTEM STOPPED
+2025-10-30 13:05:30,710 | __main__ | INFO | ================================================================================
+2025-10-30 13:06:03,209 | __main__ | INFO | ================================================================================
+2025-10-30 13:06:03,209 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 13:06:03,209 | __main__ | INFO | ================================================================================
+2025-10-30 13:06:03,209 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 13:06:03,210 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 13:06:03,210 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 13:06:03,210 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 13:06:03,210 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 13:06:03,210 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 13:06:03,210 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 13:06:03,210 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 13:06:03,211 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 13:06:03,211 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 13:06:03,475 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 13:06:03,475 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 13:06:03,475 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 13:06:03,475 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 13:06:03,475 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 13:06:03,475 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 13:06:03,475 | __main__ | INFO | 
+================================================================================
+2025-10-30 13:06:03,475 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 13:06:03,475 | __main__ | INFO | ================================================================================
+
+2025-10-30 13:06:03,475 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 13:06:03,595 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:06:03,595 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:06:03,595 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:06:03,670 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:06:03,670 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:06:03,670 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:06:03,670 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:06:03,779 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:06:03,779 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:07:03,969 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:07:03,969 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:07:03,969 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:07:04,037 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:07:04,037 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:07:04,037 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:07:04,037 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:07:04,144 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:07:04,144 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:08:04,343 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:08:04,343 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:08:04,343 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:08:04,402 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:08:04,402 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:08:04,402 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:08:04,402 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:08:04,482 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:08:04,482 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:08:11,589 | __main__ | INFO | ================================================================================
+2025-10-30 13:08:11,589 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 13:08:11,589 | __main__ | INFO | ================================================================================
+2025-10-30 13:08:11,590 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 13:08:11,590 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 13:08:11,590 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 13:08:11,590 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 13:08:11,590 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 13:08:11,590 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 13:08:11,590 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 13:08:11,590 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 13:08:11,590 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 13:08:11,590 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 13:08:11,842 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 13:08:11,842 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 13:08:11,843 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 13:08:11,843 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 13:08:11,843 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 13:08:11,843 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 13:08:11,843 | __main__ | INFO | 
+================================================================================
+2025-10-30 13:08:11,843 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 13:08:11,843 | __main__ | INFO | ================================================================================
+
+2025-10-30 13:08:11,843 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 13:08:12,047 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:08:12,047 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:08:12,047 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:08:12,048 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:08:12,048 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:08:12,130 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:08:12,131 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:08:12,131 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:08:12,131 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:08:12,224 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:08:12,224 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:09:04,675 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:09:04,675 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:09:04,675 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:09:04,736 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:09:04,736 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:09:04,736 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:09:04,736 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:09:04,803 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:09:04,803 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:09:12,384 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:09:12,384 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:09:12,384 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:09:12,384 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:09:12,384 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:09:12,445 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:09:12,445 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:09:12,445 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:09:12,445 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:09:12,517 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:09:12,517 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:10:04,990 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:10:04,990 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:10:04,990 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:10:05,069 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:10:05,069 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:10:05,069 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:10:05,069 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:10:05,134 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:10:05,134 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:10:12,705 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:10:12,706 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:10:12,706 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:10:12,706 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:10:12,706 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:10:12,775 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:10:12,775 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:10:12,775 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:10:12,775 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:10:12,879 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:10:12,879 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:11:05,361 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:11:05,361 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:11:05,361 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:11:05,420 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:11:05,420 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:11:05,420 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:11:05,420 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:11:05,513 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:11:05,513 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:11:13,039 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:11:13,039 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:11:13,040 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:11:13,040 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:11:13,040 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:11:13,170 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:11:13,170 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:11:13,170 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:11:13,170 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:11:13,236 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:11:13,236 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:12:05,729 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:12:05,729 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:12:05,729 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:12:05,801 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:12:05,801 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:12:05,801 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:12:05,801 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:12:05,913 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:12:05,913 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:12:13,445 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:12:13,445 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:12:13,446 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:12:13,446 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:12:13,446 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:12:13,529 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:12:13,529 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:12:13,529 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:12:13,529 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:12:13,594 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:12:13,594 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:13:06,083 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:13:06,083 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:13:06,083 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:13:06,143 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:13:06,143 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:13:06,143 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:13:06,143 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:13:06,219 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:13:06,219 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:13:13,751 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:13:13,751 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:13:13,751 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:13:13,752 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:13:13,752 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:13:13,922 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:13:13,922 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:13:13,922 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:13:13,922 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:13:14,020 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:13:14,020 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:14:06,421 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:14:06,421 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:14:06,421 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:14:06,520 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:14:06,520 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:14:06,521 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:14:06,521 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:14:06,589 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:14:06,589 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:14:14,257 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:14:14,258 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:14:14,258 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:14:14,258 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:14:14,258 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:14:14,396 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:14:14,396 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:14:14,396 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:14:14,396 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:14:14,487 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:14:14,487 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:15:06,776 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:15:06,776 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:15:06,776 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:15:06,836 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:15:06,836 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:15:06,836 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:15:06,836 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:15:06,908 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:15:06,908 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:15:14,637 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:15:14,637 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:15:14,638 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:15:14,638 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:15:14,638 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:15:14,722 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:15:14,722 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:15:14,722 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:15:14,723 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:15:14,797 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:15:14,798 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:16:07,139 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:16:07,139 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:16:07,139 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:16:07,209 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:16:07,209 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:16:07,209 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:16:07,209 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:16:07,346 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:16:07,346 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:16:15,029 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:16:15,029 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:16:15,029 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:16:15,030 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:16:15,030 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:16:15,097 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:16:15,097 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:16:15,097 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:16:15,097 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:16:15,169 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:16:15,169 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:16:22,096 | __main__ | INFO | ================================================================================
+2025-10-30 13:16:22,096 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 13:16:22,096 | __main__ | INFO | ================================================================================
+2025-10-30 13:16:22,096 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 13:16:22,096 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 13:16:22,096 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 13:16:22,096 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 13:16:22,096 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 13:16:22,096 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 13:16:22,096 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 13:16:22,096 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 13:16:22,096 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 13:16:22,096 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 13:16:22,356 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 13:16:22,356 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 13:16:22,356 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 13:16:22,356 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 13:16:22,356 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 13:16:22,356 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 13:16:22,356 | __main__ | INFO | 
+================================================================================
+2025-10-30 13:16:22,356 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 13:16:22,356 | __main__ | INFO | ================================================================================
+
+2025-10-30 13:16:22,356 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 13:16:22,437 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:16:22,437 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:16:22,437 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:16:22,505 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:16:22,505 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:16:22,505 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:16:22,505 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:16:22,576 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:16:22,576 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:17:07,519 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:17:07,519 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:17:07,519 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:17:07,594 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:17:07,594 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:17:07,594 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:17:07,594 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:17:07,654 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:17:07,655 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:17:15,353 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:17:15,353 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:17:15,353 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:17:15,353 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:17:15,353 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:17:15,421 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:17:15,421 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:17:15,421 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:17:15,421 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:17:15,489 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:17:15,489 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:17:22,725 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:17:22,725 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:17:22,726 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:17:22,792 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:17:22,792 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:17:22,792 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:17:22,792 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:17:22,845 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:17:22,845 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:18:07,873 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:18:07,873 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:18:07,873 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:18:07,965 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:18:07,965 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:18:07,965 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:18:07,965 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:18:08,042 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:18:08,042 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:18:15,802 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:18:15,802 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:18:15,802 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:18:15,802 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:18:15,802 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:18:15,940 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:18:15,940 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:18:15,940 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:18:15,940 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:18:16,073 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:18:16,073 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:18:23,013 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:18:23,013 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:18:23,013 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:18:23,082 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:18:23,082 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:18:23,082 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:18:23,082 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:18:23,150 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:18:23,150 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:19:08,358 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:19:08,358 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:19:08,358 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:19:08,465 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:19:08,465 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:19:08,466 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:19:08,466 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:19:08,550 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:19:08,550 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:19:16,288 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:19:16,288 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:19:16,288 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:19:16,288 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:19:16,288 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:19:16,377 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:19:16,377 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:19:16,378 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:19:16,378 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:19:16,532 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:19:16,532 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:19:23,295 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:19:23,295 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:19:23,295 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:19:23,359 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:19:23,359 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:19:23,359 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:19:23,359 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:19:23,423 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:19:23,424 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:20:08,782 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:20:08,782 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:20:08,782 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:20:08,891 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:20:08,892 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:20:08,892 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:20:08,892 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:20:09,053 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:20:09,053 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:20:16,737 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:20:16,737 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:20:16,737 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:20:16,737 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:20:16,737 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:20:16,934 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:20:16,934 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:20:16,934 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:20:16,934 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:20:17,037 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:20:17,037 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:20:23,618 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:20:23,619 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:20:23,619 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:20:23,810 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:20:23,810 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:20:23,810 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:20:23,810 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:20:23,917 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:20:23,917 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:21:09,354 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:21:09,354 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:21:09,354 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:21:09,417 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:21:09,417 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:21:09,417 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:21:09,417 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:21:09,489 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:21:09,489 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:21:17,282 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:21:17,282 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:21:17,282 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:21:17,282 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:21:17,282 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:21:17,369 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:21:17,369 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:21:17,370 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:21:17,370 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:21:17,482 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:21:17,482 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:21:24,095 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:21:24,095 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:21:24,095 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:21:24,157 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:21:24,158 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:21:24,158 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:21:24,158 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:21:24,230 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:21:24,230 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:22:09,675 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:22:09,675 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:22:09,675 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:22:09,734 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:22:09,734 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:22:09,735 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:22:09,735 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:22:09,803 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:22:09,803 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:22:17,636 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:22:17,636 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:22:17,637 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:22:17,637 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:22:17,637 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:22:17,696 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:22:17,696 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:22:17,696 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:22:17,696 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:22:17,764 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:22:17,764 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:22:24,435 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:22:24,436 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:22:24,436 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:22:24,503 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:22:24,503 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:22:24,503 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:22:24,503 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:22:24,567 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:22:24,568 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:23:10,005 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:23:10,005 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:23:10,005 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:23:10,063 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:23:10,063 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:23:10,063 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:23:10,063 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:23:10,143 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:23:10,143 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:23:17,943 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:23:17,943 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:23:17,944 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:23:17,944 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:23:17,944 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:23:18,023 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:23:18,023 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:23:18,023 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:23:18,023 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:23:18,093 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:23:18,093 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:23:24,734 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:23:24,734 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:23:24,734 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:23:24,797 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:23:24,797 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:23:24,797 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:23:24,797 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:23:24,871 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:23:24,871 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:24:10,362 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:24:10,362 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:24:10,362 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:24:10,442 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:24:10,442 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:24:10,442 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:24:10,442 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.CFD.IP: £4.915492647106558 per point
+2025-10-30 13:24:10,542 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:24:10,542 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:24:18,263 | integrations.ig_markets_api | ERROR | ❌ Market data error: {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 13:24:18,264 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch market data for CS.D.GBPUSD.TODAY.SPR. Using dummy data.
+2025-10-30 13:24:18,264 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:24:18,264 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:24:18,264 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:24:18,338 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:24:18,338 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:24:18,338 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:24:18,338 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.SPR: £4.915492647106558 per point
+2025-10-30 13:24:18,413 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:24:18,413 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 13:24:25,080 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 13:24:25,080 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 13:24:25,080 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 13:24:25,148 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 13:24:25,149 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 13:24:25,149 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 13:24:25,149 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.GBPUSD.TODAY.IP: £4.915492647106558 per point
+2025-10-30 13:24:25,218 | integrations.ig_markets_api | ERROR | ❌ Open position failed (Status 400): {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 13:24:25,218 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}

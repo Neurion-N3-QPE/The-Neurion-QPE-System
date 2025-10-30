@@ -9,29 +9,30 @@
   "brokers": {
     "ig_markets": {
       "name": "ig_markets",
-      "environment": "demo",
+      "environment": "live",
       "account_id": "HTRFU",
       "base_currency": "GBP",
       "api_key": "YOUR_API_KEY",
       "username": "YOUR_USERNAME",
       "password": "YOUR_PASSWORD",
-      "demo": true,
-      "default_epic": "CS.D.GBPUSD.CFD.IP",
+      "demo": false,
+      "default_epic": "CS.D.GBPUSD.TODAY.IP",
       "instruments": {
-        "GBP/USD": "CS.D.GBPUSD.CFD.IP",
-        "EUR/USD": "CS.D.EURUSD.CFD.IP",
-        "USD/JPY": "CS.D.USDJPY.CFD.IP",
-        "GBP/JPY": "CS.D.GBPJPY.CFD.IP",
-        "EUR/GBP": "CS.D.EURGBP.CFD.IP",
+        "GBP/USD": "CS.D.GBPUSD.TODAY.IP",
+        "EUR/USD": "CS.D.EURUSD.TODAY.IP",
+        "USD/JPY": "CS.D.USDJPY.TODAY.IP",
+        "GBP/JPY": "CS.D.GBPJPY.TODAY.IP",
+        "EUR/GBP": "CS.D.EURGBP.TODAY.IP",
         "FTSE 100": "IX.D.FTSE.DAILY.IP",
         "DAX 40": "IX.D.DAX.DAILY.IP",
-        "NASDAQ 100": "IX.D.NASDAQ.CASH.IP",
+        "NASDAQ 100": "IX.D.NASDAQ.DAILY.IP",
         "S&P 500": "IX.D.SPTRD.DAILY.IP",
         "Dow Jones": "IX.D.DOW.DAILY.IP",
-        "Gold": "CS.D.GC.CASH.IP",
-        "Silver": "CS.D.SI.CASH.IP",
+        "Gold": "CS.D.USCGC.TODAY.IP",
+        "Silver": "CS.D.USCSI.TODAY.IP",
         "Crude Oil": "CC.D.CL.DAILY.IP",
-        "Brent Oil": "CC.D.LCO.DAILY.IP"
+        "Brent Oil": "CC.D.LCO.DAILY.IP",
+        "Bitcoin": "CS.D.BITCOIN.TODAY.IP"
       }
     }
   },

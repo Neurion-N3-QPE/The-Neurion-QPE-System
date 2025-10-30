@@ -15,8 +15,13 @@ from config.settings import load_config
 
 
 # Setup logging
+# Fix Windows encoding for emojis
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
 logging.basicConfig(
-    level=logging.DEBUG, # Changed to DEBUG to capture detailed API request logs
+    level=logging.INFO,  # Changed to INFO for cleaner output
     format='%(asctime)s | %(name)s | %(levelname)s | %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
