@@ -1,58 +1,39 @@
 {
-  "profile": "aggressive_10pct_daily",
-  "account": {
-    "name": "N3-QPE",
-    "balance": 264.63,
-    "currency": "GBP",
-    "target_daily_roi": 0.10,
-    "target_daily_profit": 26.46
+  "system": {
+    "name": "Neurion QPE Trading System",
+    "version": "3.0.0",
+    "mode": "LIVE",
+    "profile": "uncapped_pure_edge"
   },
-  "risk_management": {
-    "risk_per_trade": 0.03,
-    "max_positions": 5,
+  
+  "broker": {
+    "name": "ig_markets",
+    "environment": "live",
+    "account_id": "HTRFU",
+    "base_currency": "GBP"
+  },
+  
+  "risk": {
+    "base_risk_per_trade": 0.03,
     "confidence_threshold": 0.75,
-    "update_interval": 60,
-    "max_daily_loss": 50.00,
-    "max_daily_trades": 10
+    "max_positions": 999,
+    "max_daily_loss": null,
+    "max_daily_trades": null,
+    "comment": "UNCAPPED - pure edge exploitation"
   },
-  "brokers": {
-    "ig_markets": {
-      "enabled": true,
-      "mode": "live",
-      "account_id": "HTRFU",
-      "api_key": "58ab902e80ec5a4c8a367376d14115df8a284744",
-      "username": "contact@NeuralNetWorth.co.uk",
-      "password": "HfS56DD4p59dYtB5",
-      "demo": false
-    },
-    "ic_markets": {
-      "enabled": false,
-      "account_number": "",
-      "password": "",
-      "server": ""
-    }
+  
+  "trading": {
+    "start_time": "00:00",
+    "end_time": "23:59",
+    "timezone": "GMT",
+    "compound_profits": true,
+    "recalculate_every_trade": true
   },
-  "trading_preferences": {
-    "default_instruments": [
-      "CS.D.GBPUSD.TODAY.IP",
-      "CS.D.EURUSD.TODAY.IP",
-      "CS.D.USDJPY.TODAY.IP",
-      "CS.D.AUDUSD.TODAY.IP",
-      "CS.D.USDCAD.TODAY.IP",
-      "CS.D.NZDUSD.TODAY.IP"
-    ],
-    "max_spread": 3.0,
-    "trading_hours": {
-      "start": "07:00",
-      "end": "21:00",
-      "timezone": "Europe/London"
-    }
-  },
-  "notifications": {
-    "email": "contact@NeuralNetWorth.co.uk",
-    "trade_alerts": true,
-    "performance_reports": true,
-    "error_alerts": true,
-    "daily_summary": true
+  
+  "logging": {
+    "level": "INFO",
+    "log_trades": true,
+    "log_performance": true,
+    "log_file": "logs/neurion_qpe.log"
   }
 }

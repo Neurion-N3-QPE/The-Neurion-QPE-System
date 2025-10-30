@@ -1,0 +1,144 @@
+{
+  "profile_name": "Uncapped Pure Edge Exploitation",
+  "description": "No artificial limits - pure mathematical edge exploitation. System takes every qualifying signal based on confidence threshold alone.",
+  "version": "1.0.0",
+  "created": "2025-10-30",
+  
+  "risk_management": {
+    "risk_per_trade_pct": 3.0,
+    "confidence_threshold": 0.75,
+    "max_positions": 999,
+    "max_daily_loss": null,
+    "max_weekly_loss": null,
+    "max_daily_trades": null,
+    "max_weekly_trades": null,
+    "stop_loss_multiplier": 1.0,
+    "take_profit_multiplier": 2.0,
+    "trailing_stop": false,
+    "break_even_move": false,
+    "partial_profit_taking": {
+      "enabled": false,
+      "comment": "No partial exits - let winners run to full 2:1 RR"
+    }
+  },
+  
+  "position_sizing": {
+    "method": "fixed_risk_percentage",
+    "risk_per_trade": 0.03,
+    "leverage": {
+      "enabled": true,
+      "max_leverage": 30,
+      "comment": "IG Markets CFD leverage"
+    },
+    "compound_profits": true,
+    "recalculate_every_trade": true,
+    "comment": "Compound after every trade for exponential growth"
+  },
+  
+  "trading_hours": {
+    "start_time": "00:00",
+    "end_time": "23:59",
+    "timezone": "GMT",
+    "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    "comment": "24/5 operation - take every opportunity"
+  },
+  
+  "instruments": {
+    "pairs": [
+      "CS.D.GBPUSD.TODAY.IP",
+      "CS.D.EURUSD.TODAY.IP",
+      "CS.D.USDJPY.TODAY.IP",
+      "CS.D.GBPJPY.TODAY.IP",
+      "CS.D.EURGBP.TODAY.IP",
+      "CS.D.AUDUSD.TODAY.IP",
+      "CS.D.NZDUSD.TODAY.IP",
+      "CS.D.USDCAD.TODAY.IP",
+      "CS.D.USDCHF.TODAY.IP",
+      "CS.D.EURJPY.TODAY.IP",
+      "CS.D.GBPAUD.TODAY.IP",
+      "CS.D.GBPNZD.TODAY.IP"
+    ],
+    "comment": "12 major pairs - maximize signal opportunities"
+  },
+  
+  "pie_configuration": {
+    "agents": {
+      "echo_quant": {
+        "enabled": true,
+        "weight": 0.35,
+        "confidence_contribution": 0.33
+      },
+      "contramind": {
+        "enabled": true,
+        "weight": 0.35,
+        "confidence_contribution": 0.33
+      },
+      "myth_fleck": {
+        "enabled": true,
+        "weight": 0.30,
+        "confidence_contribution": 0.34
+      }
+    },
+    "bayesian_calibration": {
+      "enabled": true,
+      "learning_rate": 0.01,
+      "adaptation_window": 50,
+      "min_samples": 20
+    },
+    "confidence_scorer": {
+      "min_threshold": 0.75,
+      "agent_agreement_weight": 0.30,
+      "market_clarity_weight": 0.25,
+      "volatility_weight": 0.20,
+      "trend_strength_weight": 0.25
+    }
+  },
+  
+  "execution": {
+    "order_type": "market",
+    "slippage_tolerance": 2,
+    "max_spread": 3,
+    "retry_attempts": 3,
+    "retry_delay": 1,
+    "fill_timeout": 10
+  },
+  
+  "monitoring": {
+    "track_every_trade": true,
+    "calculate_sharpe": true,
+    "calculate_sortino": true,
+    "track_drawdown": true,
+    "performance_window": 100,
+    "alert_on_drawdown": 0.15,
+    "comment": "Monitor but don't constrain - alerts only"
+  },
+  
+  "mathematical_framework": {
+    "win_rate_target": 0.998,
+    "risk_reward_ratio": 2.0,
+    "expected_value_per_trade": 0.05982,
+    "kelly_fraction": 0.50,
+    "growth_model": "compound_per_trade",
+    "target_trades_per_day": "unlimited",
+    "comment": "Pure edge exploitation: E[trade] = r((b+1)p-1) ≈ r×1.994"
+  },
+  
+  "circuit_breakers": {
+    "enabled": true,
+    "win_rate_floor": 0.85,
+    "consecutive_losses_max": 5,
+    "drawdown_halt": 0.25,
+    "comment": "Only halt if system degrades significantly from 99.8%"
+  },
+  
+  "notes": [
+    "UNCAPPED MODE: No daily/weekly limits",
+    "Take EVERY signal ≥75% confidence",
+    "Compound after every trade",
+    "Let mathematics dictate growth rate",
+    "3% risk × 5.98% expected = exponential growth",
+    "12 trades/day = 100.81% daily potential",
+    "40 trades/day = 921.61% daily potential",
+    "Only constraint: maintain 99.8% win rate"
+  ]
+}
