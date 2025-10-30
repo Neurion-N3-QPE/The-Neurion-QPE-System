@@ -93,6 +93,20 @@
       "min_volatility": 1.2,
       "max_margin_threshold": 50.0,
       "epic_cooldown_minutes": 2
+    },
+    "confidence_weighted_density": {
+      "enabled": true,
+      "ultra_high_threshold": 0.9,
+      "ultra_high_density": 3,
+      "high_threshold": 0.8,
+      "high_density": 2,
+      "medium_threshold": 0.75,
+      "medium_density": 1,
+      "base_multiplier": 0.3,
+      "increment_multiplier": 0.2,
+      "confidence_bonus_factor": 2.0,
+      "fragments_per_density_trade": 2,
+      "density_trade_delay": 2.0
     }
   },
   

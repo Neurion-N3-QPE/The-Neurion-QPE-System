@@ -286,28 +286,43 @@ class AutonomousTraderV2:
     ):
         """Execute a trade"""
         logger.info(f"🎯 EXECUTING: {direction} | Size: ${size:.2f}")
-        
+
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized.")
             return
         epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
-        
+
         try:
-            # STRATEGY: Max ROI Without Margin Expansion
-            # Use fragmented entry instead of single large position
-            logger.info(f"🔀 Implementing fragmented entry strategy for {size} £/pt")
+            # STRATEGY: Confidence-Weighted Trade Density
+            # Use confidence-weighted execution with scaled position sizing
+            signal_data = {
+                'epic': epic,
+                'direction': direction,
+                'confidence': prediction.confidence,
+                'prediction': prediction.prediction_value
+            }
 
-            # Execute fragmented entry (uses config settings)
-            successful_fragments = await self.fragmented_entry(
-                epic=epic,
-                base_size=size
-            )
+            logger.info(f"🎯 Implementing confidence-weighted execution strategy")
+            density_trades = await self.confidence_weighted_execution(signal_data, size)
 
-            if successful_fragments:
-                logger.info(f"✅ Fragmented entry successful: {len(successful_fragments)} fragments executed")
-                return  # Exit early as fragmented_entry handles all tracking
+            if density_trades:
+                total_fragments = sum(len(trade['fragments']) for trade in density_trades)
+                logger.info(f"✅ Confidence-weighted execution successful: {len(density_trades)} density trades, {total_fragments} total fragments")
+                return  # Exit early as confidence_weighted_execution handles all tracking
             else:
-                logger.warning("❌ Fragmented entry failed, falling back to single position")
+                logger.warning("❌ Confidence-weighted execution failed, falling back to standard fragmented entry")
+
+                # Fallback to fragmented entry
+                successful_fragments = await self.fragmented_entry(
+                    epic=epic,
+                    base_size=size
+                )
+
+                if successful_fragments:
+                    logger.info(f"✅ Fallback fragmented entry successful: {len(successful_fragments)} fragments executed")
+                    return  # Exit early as fragmented_entry handles all tracking
+                else:
+                    logger.warning("❌ Fragmented entry failed, falling back to single position")
                 # Fallback to original single position logic
                 trade_response = await self.ig_api.open_position(
                     epic=epic,
@@ -717,7 +732,7 @@ class AutonomousTraderV2:
                     if prediction and prediction.confidence >= 0.75:  # Only consider high-confidence signals
                         signal_data = {
                             'strength': prediction.confidence,
-                            'direction': 'BUY' if prediction.signal > 0.5 else 'SELL',
+                            'direction': 'BUY' if prediction.prediction_value > 0.5 else 'SELL',
                             'prediction': prediction,
                             'priority': epic_priorities.get(epic, 999)
                         }
@@ -1188,7 +1203,8 @@ class AutonomousTraderV2:
             scalp_signals = []
 
             # Get current PIE prediction for primary epic
-            prediction = await self.pie.predict(self.config['brokers']['ig_markets']['default_epic'])
+            market_state = await self._get_market_state()
+            prediction = await self.pie.predict(market_state=market_state)
 
             if not prediction:
                 return []
@@ -1198,18 +1214,18 @@ class AutonomousTraderV2:
 
             # Estimate volatility (simplified - in real implementation would use market data)
             # For now, use confidence variance as volatility proxy
-            volatility = abs(prediction.prediction - 0.5) * 4  # Scale to approximate volatility
+            volatility = abs(prediction.prediction_value - 0.5) * 4  # Scale to approximate volatility
 
             # Create scalp signal if criteria met
             if confidence >= 0.85 and volatility >= 1.0:  # Slightly lower volatility threshold for more opportunities
-                direction = 'BUY' if prediction.prediction > 0.5 else 'SELL'
+                direction = 'BUY' if prediction.prediction_value > 0.5 else 'SELL'
 
                 scalp_signal = {
                     'epic': self.config['brokers']['ig_markets']['default_epic'],
                     'direction': direction,
                     'confidence': confidence,
                     'volatility': volatility,
-                    'prediction': prediction.prediction,
+                    'prediction': prediction.prediction_value,
                     'timestamp': datetime.now(),
                     'signal_type': 'SCALP'
                 }
@@ -1242,24 +1258,25 @@ class AutonomousTraderV2:
             for epic in primary_epics[:2]:  # Limit to first 2 epics for scalping
                 try:
                     # Get prediction for this epic
-                    prediction = await self.pie.predict(epic)
+                    market_state = await self._get_market_state()
+                    prediction = await self.pie.predict(market_state=market_state)
 
                     if not prediction:
                         continue
 
                     confidence = prediction.confidence
-                    volatility = abs(prediction.prediction - 0.5) * 4
+                    volatility = abs(prediction.prediction_value - 0.5) * 4
 
                     # Lower thresholds for multi-epic scalping
                     if confidence >= 0.82 and volatility >= 0.8:
-                        direction = 'BUY' if prediction.prediction > 0.5 else 'SELL'
+                        direction = 'BUY' if prediction.prediction_value > 0.5 else 'SELL'
 
                         scalp_signal = {
                             'epic': epic,
                             'direction': direction,
                             'confidence': confidence,
                             'volatility': volatility,
-                            'prediction': prediction.prediction,
+                            'prediction': prediction.prediction_value,
                             'timestamp': datetime.now(),
                             'signal_type': 'MULTI_EPIC_SCALP'
                         }
@@ -1276,6 +1293,134 @@ class AutonomousTraderV2:
 
         except Exception as e:
             logger.error(f"❌ Error getting multi-epic scalp signals: {e}")
+            return []
+
+    def get_trade_density(self, confidence_score: float) -> int:
+        """
+        Allocate more trades to higher-confidence periods
+        Core Principle: Higher confidence = more trading opportunities
+        """
+        try:
+            # Get density configuration
+            density_config = self.config.get('trading', {}).get('confidence_weighted_density', {})
+
+            if not density_config.get('enabled', True):
+                return 1  # Default single trade
+
+            # Confidence-based trade density allocation
+            if confidence_score >= density_config.get('ultra_high_threshold', 0.9):
+                density = density_config.get('ultra_high_density', 3)  # Ultra-high density
+                logger.info(f"🎯 ULTRA-HIGH CONFIDENCE: {confidence_score:.3f} → {density} trades")
+                return density
+            elif confidence_score >= density_config.get('high_threshold', 0.8):
+                density = density_config.get('high_density', 2)  # High density
+                logger.info(f"🎯 HIGH CONFIDENCE: {confidence_score:.3f} → {density} trades")
+                return density
+            elif confidence_score >= density_config.get('medium_threshold', 0.75):
+                density = density_config.get('medium_density', 1)  # Medium density
+                logger.info(f"📊 MEDIUM CONFIDENCE: {confidence_score:.3f} → {density} trade")
+                return density
+            else:
+                logger.info(f"⚠️ LOW CONFIDENCE: {confidence_score:.3f} → 0 trades (below threshold)")
+                return 0  # No trading below threshold
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating trade density: {e}")
+            return 1  # Safe fallback
+
+    async def confidence_weighted_execution(self, signal: Dict, base_size: float) -> List[Dict]:
+        """
+        Execute confidence-weighted trade density with scaled position sizing
+        Goal: More trades and larger sizes for higher confidence signals
+        """
+        try:
+            confidence = signal.get('confidence', 0.0)
+            epic = signal.get('epic')
+            direction = signal.get('direction', 'BUY')
+
+            # Get trade density based on confidence
+            density = self.get_trade_density(confidence)
+
+            if density == 0:
+                logger.info("❌ Confidence too low for trading")
+                return []
+
+            logger.info(f"🎯 CONFIDENCE-WEIGHTED EXECUTION:")
+            logger.info(f"   Epic: {epic}")
+            logger.info(f"   Direction: {direction}")
+            logger.info(f"   Confidence: {confidence:.3f}")
+            logger.info(f"   Trade Density: {density}")
+            logger.info(f"   Base Size: £{base_size:.2f}/pt")
+
+            executed_trades = []
+            density_config = self.config.get('trading', {}).get('confidence_weighted_density', {})
+
+            for i in range(density):
+                try:
+                    # Scale position size based on trade number and confidence
+                    # Higher confidence gets progressively larger sizes
+                    size_multiplier = density_config.get('base_multiplier', 0.3) + (i * density_config.get('increment_multiplier', 0.2))
+
+                    # Apply confidence bonus to size
+                    confidence_bonus = (confidence - 0.75) * density_config.get('confidence_bonus_factor', 2.0)
+                    size_multiplier += max(0, confidence_bonus)
+
+                    # Calculate final trade size
+                    trade_size = base_size * size_multiplier
+                    trade_size = round(max(0.1, trade_size), 1)  # Minimum 0.1, round to 1 decimal
+
+                    logger.info(f"🔢 Trade {i+1}/{density}: Size = £{trade_size:.1f}/pt (multiplier: {size_multiplier:.2f})")
+
+                    # Execute fragmented entry for this density trade
+                    fragments_per_trade = density_config.get('fragments_per_density_trade', 2)
+                    fragments = await self.fragmented_entry(
+                        epic=epic,
+                        base_size=trade_size,
+                        num_fragments=fragments_per_trade
+                    )
+
+                    if fragments:
+                        trade_record = {
+                            'density_trade_number': i + 1,
+                            'total_density': density,
+                            'confidence': confidence,
+                            'trade_size': trade_size,
+                            'size_multiplier': size_multiplier,
+                            'fragments': fragments,
+                            'epic': epic,
+                            'direction': direction,
+                            'timestamp': datetime.now()
+                        }
+                        executed_trades.append(trade_record)
+
+                        logger.info(f"✅ Density trade {i+1} executed: {len(fragments)} fragments")
+                    else:
+                        logger.warning(f"❌ Density trade {i+1} failed")
+
+                    # Brief delay between density trades
+                    if i < density - 1:
+                        delay = density_config.get('density_trade_delay', 2.0)
+                        await asyncio.sleep(delay)
+
+                except Exception as trade_error:
+                    logger.error(f"❌ Error executing density trade {i+1}: {trade_error}")
+                    continue
+
+            # Log density execution results
+            if executed_trades:
+                total_fragments = sum(len(trade['fragments']) for trade in executed_trades)
+                total_size = sum(trade['trade_size'] for trade in executed_trades)
+
+                logger.info(f"🎯 CONFIDENCE-WEIGHTED EXECUTION COMPLETE:")
+                logger.info(f"   ✅ Density Trades: {len(executed_trades)}/{density}")
+                logger.info(f"   📊 Total Fragments: {total_fragments}")
+                logger.info(f"   💰 Total Size: £{total_size:.1f}/pt")
+                logger.info(f"   🎯 Confidence: {confidence:.3f}")
+
+            return executed_trades
+
+        except Exception as e:
+            logger.error(f"❌ Error in confidence_weighted_execution: {e}")
             return []
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
