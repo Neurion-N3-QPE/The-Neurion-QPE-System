@@ -27,3 +27,16 @@ def test_basic_simulation():
 def test_minimal():
     """A minimal test to verify pytest functionality"""
     assert 1 + 1 == 2
+
+
+@pytest.mark.parametrize("n_simulations, base_prediction, volatility", [
+    (1000, 0.75, 0.02),
+    (10000, 0.75, 0.02),
+])
+def test_simulation(n_simulations, base_prediction, volatility):
+    """Test Monte Carlo simulation with different configurations"""
+    sse = SimpleMonteCarloSimulator(n_simulations=n_simulations)
+    scenarios = sse.simulate_scenarios(base_prediction=base_prediction, volatility=volatility)
+
+    assert len(scenarios) == n_simulations, f"Expected {n_simulations} scenarios, got {len(scenarios)}"
+    assert base_prediction - 0.05 < scenarios.mean() < base_prediction + 0.05, "Mean should be close to base prediction"

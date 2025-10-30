@@ -204,3 +204,14 @@ class Position:
             self.unrealized_pnl = (self.entry_price - current_price) * self.position_size
         
         self.unrealized_pnl_pct = self.unrealized_pnl / (self.entry_price * self.position_size)
+
+
+@dataclass
+class BrokerPosition:
+    """Represents a position from the broker"""
+    deal_id: str
+    epic: str
+    direction: str  # BUY or SELL
+    size: float
+    level: float  # Entry price
+    current_price: Optional[float] = None

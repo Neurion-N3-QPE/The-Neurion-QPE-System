@@ -1,0 +1,27 @@
+Reconciliation Report
+=====================
+
+Date: October 30, 2025
+
+Summary:
+---------
+- Total Internal Positions: 2
+- Total Broker Positions: 2
+- Matched Positions: 1
+- Missing from Internal: ['DEAL3']
+- Missing from Broker: ['DEAL2']
+- State Mismatches: None
+- Actions Taken:
+  - Added missing position DEAL3 from broker
+  - Marked DEAL2 as closed (not found on broker)
+- Is Synchronized: False
+
+Details:
+---------
+The reconciliation process identified discrepancies between internal and broker positions. Corrective actions were taken to align the states. However, the positions are not fully synchronized due to the discrepancies listed above.
+
+Recommendations:
+-----------------
+- Investigate the missing position DEAL3 in the internal system.
+- Verify the closure of DEAL2 on the broker side.
+- Ensure consistent state updates between internal and broker systems to prevent future mismatches.

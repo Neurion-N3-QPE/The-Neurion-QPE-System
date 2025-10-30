@@ -28332,3 +28332,1599 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
 2025-10-30 23:06:36,862 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
 2025-10-30 23:06:36,946 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 23:07:37,132 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:07:37,133 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:07:37,133 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:07:37,133 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:07:37,199 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 23:08:37,375 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:08:37,376 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:08:37,376 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:08:37,376 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:08:37,451 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 23:09:37,674 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:09:37,674 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:09:37,674 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:09:37,675 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:09:37,733 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 23:09:44,024 | __main__ | INFO | ================================================================================
+2025-10-30 23:09:44,024 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 23:09:44,024 | __main__ | INFO | ================================================================================
+2025-10-30 23:09:44,025 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 23:09:44,025 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 23:09:44,025 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 23:09:44,026 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 23:09:44,026 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 23:09:44,026 | core.integrity.integrity_bus | INFO | 🎯 IntegrityBus initialized with SSE: 10,000 simulations per prediction
+2025-10-30 23:09:44,027 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 23:09:44,027 | core.sse.sse_risk_engine | INFO | 🎯 SSE Risk Engine initialized: 10,000 simulations per validation
+2025-10-30 23:09:44,027 | trading.risk_engine | INFO | 🛡️ Risk Engine initialized
+2025-10-30 23:09:44,027 | trading.scalp_engine | INFO | 🏃 Scalp Engine initialized
+2025-10-30 23:09:44,027 | trading.autonomous_trader_v2 | INFO | ✅ Multi-epic config loaded: 3 primary epics
+2025-10-30 23:09:44,027 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 23:09:44,028 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 23:09:44,028 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 23:09:44,028 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 23:09:44,028 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 23:09:44,028 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 23:09:44,029 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 23:09:44,029 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 23:09:44,246 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 23:09:44,246 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 23:09:44,411 | trading.session_manager | INFO | 📅 Session Manager initialized
+2025-10-30 23:09:44,412 | trading.ml_confidence_tuner | INFO | 📊 No trade history found, starting fresh
+2025-10-30 23:09:44,412 | trading.ml_confidence_tuner | INFO | 🤖 Created new ML confidence model
+2025-10-30 23:09:44,412 | trading.ml_confidence_tuner | INFO | 🤖 ML Confidence Tuner initialized
+2025-10-30 23:09:44,412 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 23:09:44,412 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 23:09:44,412 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 23:09:44,412 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 23:09:44,413 | __main__ | INFO | 
+================================================================================
+2025-10-30 23:09:44,413 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 23:09:44,413 | __main__ | INFO | ================================================================================
+
+2025-10-30 23:09:44,413 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.10):
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:44,413 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:44,414 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:44,414 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 23:09:44,414 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 23:09:44,414 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:44,414 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:44,455 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:44,455 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:44,546 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:44,566 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:44,566 | core.models.hybrid_model | INFO |    Mean: 0.4991 | Std: 0.0354
+2025-10-30 23:09:44,566 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:44,567 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:44,569 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:44,569 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.035 = 0.018
+2025-10-30 23:09:44,569 | core.models.hybrid_model | INFO |    VaR (95%): 0.4612 | VaR (99%): 0.3584
+2025-10-30 23:09:44,569 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:44,570 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:44,570 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3185 | Upside: 0.0404
+2025-10-30 23:09:44,571 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:44,592 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:44,593 | core.models.hybrid_model | INFO |    Mean: 0.4981 | Std: 0.0412
+2025-10-30 23:09:44,593 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:44,593 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:44,596 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:44,596 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.021
+2025-10-30 23:09:44,596 | core.models.hybrid_model | INFO |    VaR (95%): 0.4520 | VaR (99%): 0.3111
+2025-10-30 23:09:44,596 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:44,596 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:44,596 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3141 | Upside: 0.0506
+2025-10-30 23:09:44,598 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:44,617 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:44,617 | core.models.hybrid_model | INFO |    Mean: 0.4924 | Std: 0.0512
+2025-10-30 23:09:44,617 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:44,618 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:44,619 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:44,620 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.051 = 0.026
+2025-10-30 23:09:44,620 | core.models.hybrid_model | INFO |    VaR (95%): 0.4084 | VaR (99%): 0.2830
+2025-10-30 23:09:44,620 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:44,620 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:44,620 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4905 | Upside: 0.0616
+2025-10-30 23:09:44,623 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:44,623 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:09:44,624 | trading.autonomous_trader_v2 | ERROR | ❌ Error enhancing prediction with ML: IntegrityPrediction.__init__() missing 9 required positional arguments: 'timestamp', 'confidence_level', 'confidence_factors', 'agent_predictions', 'ensemble_weights', 'is_tradeable', 'position_size_multiplier', 'reasoning', and 'metadata'
+2025-10-30 23:09:44,624 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.50 (w=0.33) | Contramind: 0.50 (w=0.33) | MythFleck: 0.50 (w=0.34)
+2025-10-30 23:09:44,865 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:44,865 | core.risk_management.margin_safety | INFO |    Safe Units: 64.3
+2025-10-30 23:09:44,865 | core.risk_management.margin_safety | INFO |    Required Margin: £256.94
+2025-10-30 23:09:44,865 | core.risk_management.margin_safety | INFO |    Margin Utilization: 99.9%
+2025-10-30 23:09:44,865 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:44,866 | core.risk_management.margin_safety | INFO |    Safe Units: 0.1
+2025-10-30 23:09:44,866 | core.risk_management.margin_safety | INFO |    Required Margin: £0.40
+2025-10-30 23:09:44,866 | core.risk_management.margin_safety | INFO |    Margin Utilization: 0.2%
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO | 💰 ENHANCED MARGIN-SAFE POSITION SIZING:
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO |    Balance: £257.10 | Available: £257.10
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £4.77 | Multiplier: 0.62
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO |    Margin per unit: £3.33
+2025-10-30 23:09:44,866 | trading.autonomous_trader_v2 | INFO |    Safe Size: £0.1/point
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO |    Margin utilization: 0.2%
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: SELL | Size: $0.10
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO |    Direction: SELL
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 23:09:44,867 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 23:09:44,868 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 23:09:44,868 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 23:09:44,868 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 23:09:44,868 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 23:09:44,967 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:44,967 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:44,968 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 23:09:44,968 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:44,985 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:44,985 | core.models.hybrid_model | INFO |    Mean: 0.7974 | Std: 0.0345
+2025-10-30 23:09:44,986 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 23:09:44,986 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:44,986 | core.sse.sse_risk_engine | INFO |    Probability of Loss: 0.0%
+2025-10-30 23:09:44,987 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:44,987 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 23:09:44,987 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.7%
+2025-10-30 23:09:44,987 | core.sse.sse_risk_engine | INFO | ✅ SSE APPROVED: Trade passed Monte Carlo validation
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO | ✅ SSE APPROVED TRADE:
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO |    Expected Value: 0.797
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO |    Confidence Level: 95.7%
+2025-10-30 23:09:44,987 | trading.autonomous_trader_v2 | INFO |    Scenarios Analyzed: 10,000
+2025-10-30 23:09:44,988 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.EURUSD.TODAY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 23:09:44,988 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.EURUSD.TODAY.IP: £0.1 per point
+2025-10-30 23:09:45,094 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"URUF89J7R84TYNK"}
+2025-10-30 23:09:45,094 | integrations.ig_markets_api | INFO | ✅ Position opened: URUF89J7R84TYNK
+2025-10-30 23:09:45,163 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:44.752","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"URUF89J7R84TYNK","dealId":"DIAAAAQC3BXE2A5","affectedDeals":[{"dealId":"DIAAAAQC3BXE2A5","status":"OPENED"}],"level":11569.6,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.8,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:45,163 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:45,164 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:45,164 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:44.752', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'URUF89J7R84TYNK', 'dealId': 'DIAAAAQC3BXE2A5', 'affectedDeals': [{'dealId': 'DIAAAAQC3BXE2A5', 'status': 'OPENED'}], 'level': 11569.6, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:45,164 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T23:09:44.752', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'URUF89J7R84TYNK', 'dealId': 'DIAAAAQC3BXE2A5', 'affectedDeals': [{'dealId': 'DIAAAAQC3BXE2A5', 'status': 'OPENED'}], 'level': 11569.6, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:45,255 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:44.752","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"URUF89J7R84TYNK","dealId":"DIAAAAQC3BXE2A5","affectedDeals":[{"dealId":"DIAAAAQC3BXE2A5","status":"OPENED"}],"level":11569.6,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.8,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:45,255 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:45,255 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:45,256 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:44.752', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'URUF89J7R84TYNK', 'dealId': 'DIAAAAQC3BXE2A5', 'affectedDeals': [{'dealId': 'DIAAAAQC3BXE2A5', 'status': 'OPENED'}], 'level': 11569.6, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:45,256 | trading.autonomous_trader_v2 | INFO | ✅ Fragment tracked: DIAAAAQC3BXE2A5
+2025-10-30 23:09:45,256 | trading.autonomous_trader_v2 | INFO | ✅ Fragment 1 executed: URUF89J7R84TYNK
+2025-10-30 23:09:46,770 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 23:09:46,849 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:46,849 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:46,849 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 23:09:46,849 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:46,870 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:46,871 | core.models.hybrid_model | INFO |    Mean: 0.7974 | Std: 0.0354
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO |    Probability of Loss: 0.0%
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:46,872 | core.sse.sse_risk_engine | INFO | ✅ SSE APPROVED: Trade passed Monte Carlo validation
+2025-10-30 23:09:46,872 | trading.autonomous_trader_v2 | INFO | ✅ SSE APPROVED TRADE:
+2025-10-30 23:09:46,873 | trading.autonomous_trader_v2 | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:46,873 | trading.autonomous_trader_v2 | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:46,873 | trading.autonomous_trader_v2 | INFO |    Expected Value: 0.797
+2025-10-30 23:09:46,873 | trading.autonomous_trader_v2 | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:46,873 | trading.autonomous_trader_v2 | INFO |    Scenarios Analyzed: 10,000
+2025-10-30 23:09:46,873 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.EURUSD.TODAY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 23:09:46,873 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.EURUSD.TODAY.IP: £0.1 per point
+2025-10-30 23:09:46,940 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"4FPXXYZAQZ4TYNK"}
+2025-10-30 23:09:46,941 | integrations.ig_markets_api | INFO | ✅ Position opened: 4FPXXYZAQZ4TYNK
+2025-10-30 23:09:47,009 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:46.598","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"4FPXXYZAQZ4TYNK","dealId":"DIAAAAQC3BZRGAB","affectedDeals":[{"dealId":"DIAAAAQC3BZRGAB","status":"OPENED"}],"level":11569.7,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.9,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:47,010 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:47,010 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:47,010 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:46.598', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '4FPXXYZAQZ4TYNK', 'dealId': 'DIAAAAQC3BZRGAB', 'affectedDeals': [{'dealId': 'DIAAAAQC3BZRGAB', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:47,010 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T23:09:46.598', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '4FPXXYZAQZ4TYNK', 'dealId': 'DIAAAAQC3BZRGAB', 'affectedDeals': [{'dealId': 'DIAAAAQC3BZRGAB', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:47,079 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:46.598","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"4FPXXYZAQZ4TYNK","dealId":"DIAAAAQC3BZRGAB","affectedDeals":[{"dealId":"DIAAAAQC3BZRGAB","status":"OPENED"}],"level":11569.7,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.9,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:47,079 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:47,079 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:47,079 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:46.598', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '4FPXXYZAQZ4TYNK', 'dealId': 'DIAAAAQC3BZRGAB', 'affectedDeals': [{'dealId': 'DIAAAAQC3BZRGAB', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:47,079 | trading.autonomous_trader_v2 | INFO | ✅ Fragment tracked: DIAAAAQC3BZRGAB
+2025-10-30 23:09:47,079 | trading.autonomous_trader_v2 | INFO | ✅ Fragment 2 executed: 4FPXXYZAQZ4TYNK
+2025-10-30 23:09:47,080 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:09:47,080 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 2/2 fragments
+2025-10-30 23:09:47,080 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.2 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:09:47,080 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:09:47,080 | trading.autonomous_trader_v2 | INFO | ✅ Density trade 1 executed: 2 fragments
+2025-10-30 23:09:49,089 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 23:09:49,089 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 23:09:49,089 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 23:09:49,165 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:49,165 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:49,165 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 23:09:49,166 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:49,189 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:49,190 | core.models.hybrid_model | INFO |    Mean: 0.7977 | Std: 0.0348
+2025-10-30 23:09:49,191 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 23:09:49,191 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:49,191 | core.sse.sse_risk_engine | INFO |    Probability of Loss: 0.0%
+2025-10-30 23:09:49,191 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:49,192 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.798
+2025-10-30 23:09:49,192 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:49,192 | core.sse.sse_risk_engine | INFO | ✅ SSE APPROVED: Trade passed Monte Carlo validation
+2025-10-30 23:09:49,192 | trading.autonomous_trader_v2 | INFO | ✅ SSE APPROVED TRADE:
+2025-10-30 23:09:49,192 | trading.autonomous_trader_v2 | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:49,192 | trading.autonomous_trader_v2 | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:49,192 | trading.autonomous_trader_v2 | INFO |    Expected Value: 0.798
+2025-10-30 23:09:49,192 | trading.autonomous_trader_v2 | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:49,193 | trading.autonomous_trader_v2 | INFO |    Scenarios Analyzed: 10,000
+2025-10-30 23:09:49,193 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.EURUSD.TODAY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 23:09:49,193 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.EURUSD.TODAY.IP: £0.1 per point
+2025-10-30 23:09:49,265 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"6SFJWAVPPULTYNK"}
+2025-10-30 23:09:49,265 | integrations.ig_markets_api | INFO | ✅ Position opened: 6SFJWAVPPULTYNK
+2025-10-30 23:09:49,335 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:48.927","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"6SFJWAVPPULTYNK","dealId":"DIAAAAQC3BKNTBA","affectedDeals":[{"dealId":"DIAAAAQC3BKNTBA","status":"OPENED"}],"level":11569.8,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11944.0,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:49,335 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:49,335 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:49,335 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:48.927', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '6SFJWAVPPULTYNK', 'dealId': 'DIAAAAQC3BKNTBA', 'affectedDeals': [{'dealId': 'DIAAAAQC3BKNTBA', 'status': 'OPENED'}], 'level': 11569.8, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11944.0, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:49,335 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T23:09:48.927', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '6SFJWAVPPULTYNK', 'dealId': 'DIAAAAQC3BKNTBA', 'affectedDeals': [{'dealId': 'DIAAAAQC3BKNTBA', 'status': 'OPENED'}], 'level': 11569.8, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11944.0, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:49,403 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:48.927","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"6SFJWAVPPULTYNK","dealId":"DIAAAAQC3BKNTBA","affectedDeals":[{"dealId":"DIAAAAQC3BKNTBA","status":"OPENED"}],"level":11569.8,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11944.0,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:49,403 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:49,403 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:49,403 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:48.927', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '6SFJWAVPPULTYNK', 'dealId': 'DIAAAAQC3BKNTBA', 'affectedDeals': [{'dealId': 'DIAAAAQC3BKNTBA', 'status': 'OPENED'}], 'level': 11569.8, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11944.0, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:49,404 | trading.autonomous_trader_v2 | INFO | ✅ Fragment tracked: DIAAAAQC3BKNTBA
+2025-10-30 23:09:49,404 | trading.autonomous_trader_v2 | INFO | ✅ Fragment 1 executed: 6SFJWAVPPULTYNK
+2025-10-30 23:09:50,917 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 23:09:51,890 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:51,890 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.EURUSD.TODAY.IP BUY £0.1/pt
+2025-10-30 23:09:51,890 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 23:09:51,890 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:51,908 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:51,908 | core.models.hybrid_model | INFO |    Mean: 0.7970 | Std: 0.0353
+2025-10-30 23:09:51,909 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 23:09:51,909 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:51,909 | core.sse.sse_risk_engine | INFO |    Probability of Loss: 0.0%
+2025-10-30 23:09:51,909 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:51,910 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 23:09:51,910 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:51,910 | core.sse.sse_risk_engine | INFO | ✅ SSE APPROVED: Trade passed Monte Carlo validation
+2025-10-30 23:09:51,910 | trading.autonomous_trader_v2 | INFO | ✅ SSE APPROVED TRADE:
+2025-10-30 23:09:51,910 | trading.autonomous_trader_v2 | INFO |    Win Probability: 100.0%
+2025-10-30 23:09:51,910 | trading.autonomous_trader_v2 | INFO |    Risk of Ruin: 0.0%
+2025-10-30 23:09:51,910 | trading.autonomous_trader_v2 | INFO |    Expected Value: 0.797
+2025-10-30 23:09:51,910 | trading.autonomous_trader_v2 | INFO |    Confidence Level: 95.6%
+2025-10-30 23:09:51,911 | trading.autonomous_trader_v2 | INFO |    Scenarios Analyzed: 10,000
+2025-10-30 23:09:51,911 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.EURUSD.TODAY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 23:09:51,911 | integrations.ig_markets_api | INFO | Opening BUY position for CS.D.EURUSD.TODAY.IP: £0.1 per point
+2025-10-30 23:09:52,002 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"9JHHGGPUYE4TYNK"}
+2025-10-30 23:09:52,002 | integrations.ig_markets_api | INFO | ✅ Position opened: 9JHHGGPUYE4TYNK
+2025-10-30 23:09:52,065 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:51.654","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"9JHHGGPUYE4TYNK","dealId":"DIAAAAQC3CEJ7AR","affectedDeals":[{"dealId":"DIAAAAQC3CEJ7AR","status":"OPENED"}],"level":11569.7,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.9,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:52,066 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:52,066 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:52,066 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:51.654', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '9JHHGGPUYE4TYNK', 'dealId': 'DIAAAAQC3CEJ7AR', 'affectedDeals': [{'dealId': 'DIAAAAQC3CEJ7AR', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:52,066 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T23:09:51.654', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '9JHHGGPUYE4TYNK', 'dealId': 'DIAAAAQC3CEJ7AR', 'affectedDeals': [{'dealId': 'DIAAAAQC3CEJ7AR', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:52,140 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:09:51.654","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"9JHHGGPUYE4TYNK","dealId":"DIAAAAQC3CEJ7AR","affectedDeals":[{"dealId":"DIAAAAQC3CEJ7AR","status":"OPENED"}],"level":11569.7,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":11943.9,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:09:52,140 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:09:52,140 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:09:52,141 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:09:51.654', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': '9JHHGGPUYE4TYNK', 'dealId': 'DIAAAAQC3CEJ7AR', 'affectedDeals': [{'dealId': 'DIAAAAQC3CEJ7AR', 'status': 'OPENED'}], 'level': 11569.7, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': 11943.9, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO | ✅ Fragment tracked: DIAAAAQC3CEJ7AR
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO | ✅ Fragment 2 executed: 9JHHGGPUYE4TYNK
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 2/2 fragments
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.2 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:09:52,141 | trading.autonomous_trader_v2 | INFO | ✅ Density trade 2 executed: 2 fragments
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION COMPLETE:
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO |    ✅ Density Trades: 2/2
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO |    📊 Total Fragments: 4
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO |    💰 Total Size: £0.2/pt
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO |    🎯 Confidence: 0.855
+2025-10-30 23:09:52,142 | trading.autonomous_trader_v2 | INFO | ✅ Confidence-weighted execution successful: 2 density trades, 4 total fragments
+2025-10-30 23:09:52,142 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.10):
+2025-10-30 23:09:52,142 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 23:09:52,142 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:52,142 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:52,143 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:52,144 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:52,144 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,211 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,228 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,228 | core.models.hybrid_model | INFO |    Mean: 0.4988 | Std: 0.0384
+2025-10-30 23:09:52,228 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,229 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,230 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,230 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.038 = 0.019
+2025-10-30 23:09:52,230 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3324
+2025-10-30 23:09:52,230 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,230 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,231 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3549 | Upside: 0.0413
+2025-10-30 23:09:52,232 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,248 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,248 | core.models.hybrid_model | INFO |    Mean: 0.4986 | Std: 0.0408
+2025-10-30 23:09:52,248 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,249 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,250 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,250 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.041 = 0.020
+2025-10-30 23:09:52,250 | core.models.hybrid_model | INFO |    VaR (95%): 0.4541 | VaR (99%): 0.3155
+2025-10-30 23:09:52,250 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,251 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,251 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3916 | Upside: 0.0484
+2025-10-30 23:09:52,252 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,271 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,271 | core.models.hybrid_model | INFO |    Mean: 0.4930 | Std: 0.0502
+2025-10-30 23:09:52,271 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,271 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,273 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,273 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.050 = 0.025
+2025-10-30 23:09:52,273 | core.models.hybrid_model | INFO |    VaR (95%): 0.4117 | VaR (99%): 0.2961
+2025-10-30 23:09:52,273 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,273 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,273 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4375 | Upside: 0.0611
+2025-10-30 23:09:52,276 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.10):
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:52,276 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,277 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 23:09:52,277 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 23:09:52,277 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:52,277 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:52,277 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:52,277 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,349 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,366 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,366 | core.models.hybrid_model | INFO |    Mean: 0.4986 | Std: 0.0368
+2025-10-30 23:09:52,366 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,366 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,368 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,368 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.018
+2025-10-30 23:09:52,368 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3499
+2025-10-30 23:09:52,368 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,368 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,369 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3530 | Upside: 0.0403
+2025-10-30 23:09:52,369 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,386 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,386 | core.models.hybrid_model | INFO |    Mean: 0.4979 | Std: 0.0413
+2025-10-30 23:09:52,386 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,386 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,388 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,388 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.021
+2025-10-30 23:09:52,388 | core.models.hybrid_model | INFO |    VaR (95%): 0.4528 | VaR (99%): 0.3080
+2025-10-30 23:09:52,388 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,388 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,388 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3456 | Upside: 0.0488
+2025-10-30 23:09:52,389 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,407 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,407 | core.models.hybrid_model | INFO |    Mean: 0.4933 | Std: 0.0508
+2025-10-30 23:09:52,407 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,407 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,409 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,410 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.051 = 0.025
+2025-10-30 23:09:52,410 | core.models.hybrid_model | INFO |    VaR (95%): 0.4097 | VaR (99%): 0.2898
+2025-10-30 23:09:52,410 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,410 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,410 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4326 | Upside: 0.0605
+2025-10-30 23:09:52,412 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:52,412 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.10):
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:52,413 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:52,414 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:52,414 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:52,505 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,520 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,520 | core.models.hybrid_model | INFO |    Mean: 0.4997 | Std: 0.0354
+2025-10-30 23:09:52,520 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,521 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,522 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,522 | core.models.hybrid_model | WARNING |    |0.500 - 0.5| = 0.000 < 0.5×0.035 = 0.018
+2025-10-30 23:09:52,522 | core.models.hybrid_model | INFO |    VaR (95%): 0.4622 | VaR (99%): 0.3615
+2025-10-30 23:09:52,522 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,523 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,523 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3208 | Upside: 0.0406
+2025-10-30 23:09:52,524 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,538 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,538 | core.models.hybrid_model | INFO |    Mean: 0.4985 | Std: 0.0406
+2025-10-30 23:09:52,538 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,538 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,540 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,540 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.041 = 0.020
+2025-10-30 23:09:52,540 | core.models.hybrid_model | INFO |    VaR (95%): 0.4538 | VaR (99%): 0.3143
+2025-10-30 23:09:52,540 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,540 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,540 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3434 | Upside: 0.0492
+2025-10-30 23:09:52,541 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:52,557 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:52,558 | core.models.hybrid_model | INFO |    Mean: 0.4926 | Std: 0.0501
+2025-10-30 23:09:52,558 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:52,558 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:52,560 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:52,560 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.050 = 0.025
+2025-10-30 23:09:52,560 | core.models.hybrid_model | INFO |    VaR (95%): 0.4136 | VaR (99%): 0.2903
+2025-10-30 23:09:52,560 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:52,560 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:52,560 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3647 | Upside: 0.0601
+2025-10-30 23:09:52,563 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:52,563 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 3 epics with tradeable signals
+2025-10-30 23:09:52,563 | trading.autonomous_trader_v2 | INFO |    IX.D.NASDAQ.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 23:09:52,563 | trading.autonomous_trader_v2 | INFO |    IX.D.SPTRD.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 23:09:52,564 | trading.autonomous_trader_v2 | INFO |    IX.D.FTSE.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 23:09:52,564 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 23:09:52,769 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 23:09:52,770 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:52,770 | core.risk_management.margin_safety | INFO |    Safe Units: 0.9
+2025-10-30 23:09:52,770 | core.risk_management.margin_safety | INFO |    Required Margin: £108.00
+2025-10-30 23:09:52,770 | core.risk_management.margin_safety | INFO |    Margin Utilization: 105.2%
+2025-10-30 23:09:52,770 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:52,771 | core.risk_management.margin_safety | INFO |    Safe Units: 0.1
+2025-10-30 23:09:52,771 | core.risk_management.margin_safety | INFO |    Required Margin: £12.00
+2025-10-30 23:09:52,771 | core.risk_management.margin_safety | INFO |    Margin Utilization: 11.7%
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO | 💰 ENHANCED MARGIN-SAFE POSITION SIZING:
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NASDAQ.DAILY.IP
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Balance: £257.10 | Available: £102.64
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £2.55 | Multiplier: 0.33
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Margin per unit: £100.00
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Safe Size: £0.1/point
+2025-10-30 23:09:52,771 | trading.autonomous_trader_v2 | INFO |    Margin utilization: 11.7%
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO | 🎯 Multi-epic trade: IX.D.NASDAQ.DAILY.IP | Signal: 0.855 | Size: 0.1 £/pt
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/5
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:09:52,772 | trading.autonomous_trader_v2 | WARNING | ❌ Multi-epic trade failed: IX.D.NASDAQ.DAILY.IP
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO |    Safe Units: 1.1
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO |    Required Margin: £105.60
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO |    Margin Utilization: 102.9%
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:52,978 | core.risk_management.margin_safety | INFO |    Safe Units: 0.1
+2025-10-30 23:09:52,979 | core.risk_management.margin_safety | INFO |    Required Margin: £9.60
+2025-10-30 23:09:52,979 | core.risk_management.margin_safety | INFO |    Margin Utilization: 9.4%
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO | 💰 ENHANCED MARGIN-SAFE POSITION SIZING:
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.SPTRD.DAILY.IP
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Balance: £257.10 | Available: £102.64
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £2.55 | Multiplier: 0.33
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Margin per unit: £80.00
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Safe Size: £0.1/point
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO |    Margin utilization: 9.4%
+2025-10-30 23:09:52,979 | trading.autonomous_trader_v2 | INFO | 🎯 Multi-epic trade: IX.D.SPTRD.DAILY.IP | Signal: 0.855 | Size: 0.1 £/pt
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/5
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:09:52,980 | trading.autonomous_trader_v2 | WARNING | ❌ Multi-epic trade failed: IX.D.SPTRD.DAILY.IP
+2025-10-30 23:09:53,180 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:53,444 | core.risk_management.margin_safety | INFO |    Safe Units: 4.3
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO |    Required Margin: £103.20
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO |    Margin Utilization: 100.5%
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO |    Safe Units: 0.1
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO |    Required Margin: £2.40
+2025-10-30 23:09:53,445 | core.risk_management.margin_safety | INFO |    Margin Utilization: 2.3%
+2025-10-30 23:09:53,445 | trading.autonomous_trader_v2 | INFO | 💰 ENHANCED MARGIN-SAFE POSITION SIZING:
+2025-10-30 23:09:53,445 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.FTSE.DAILY.IP
+2025-10-30 23:09:53,445 | trading.autonomous_trader_v2 | INFO |    Balance: £257.10 | Available: £102.64
+2025-10-30 23:09:53,445 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £2.55 | Multiplier: 0.33
+2025-10-30 23:09:53,445 | trading.autonomous_trader_v2 | INFO |    Margin per unit: £20.00
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO |    Safe Size: £0.1/point
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO |    Margin utilization: 2.3%
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO | 🎯 Multi-epic trade: IX.D.FTSE.DAILY.IP | Signal: 0.855 | Size: 0.1 £/pt
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/5
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:09:53,446 | trading.autonomous_trader_v2 | WARNING | ❌ Multi-epic trade failed: IX.D.FTSE.DAILY.IP
+2025-10-30 23:09:53,532 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 4 tracked | 5 max
+2025-10-30 23:09:53,606 | core.risk_management.position_reconciler.PositionReconciler | INFO | 🔄 Starting position reconciliation...
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Internal positions: 0
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Broker positions: 4
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING | ⚠️  Added missing position: DIAAAAQC3BXE2A5 (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING | ⚠️  Added missing position: DIAAAAQC3BZRGAB (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING | ⚠️  Added missing position: DIAAAAQC3BKNTBA (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING | ⚠️  Added missing position: DIAAAAQC3CEJ7AR (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING | ⚠️  Reconciliation issues found:
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING |    Missing from internal: 4
+2025-10-30 23:09:53,607 | core.risk_management.position_reconciler.PositionReconciler | WARNING |    Missing from broker: 0
+2025-10-30 23:09:53,608 | core.risk_management.position_reconciler.PositionReconciler | WARNING |    State mismatches: 0
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING | ⚠️  Position reconciliation issues:
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING |    Actions taken: 4
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING |    - Added missing position DIAAAAQC3BXE2A5 from broker
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING |    - Added missing position DIAAAAQC3BZRGAB from broker
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING |    - Added missing position DIAAAAQC3BKNTBA from broker
+2025-10-30 23:09:53,608 | trading.autonomous_trader_v2 | WARNING |    - Added missing position DIAAAAQC3CEJ7AR from broker
+2025-10-30 23:09:54,423 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.64):
+2025-10-30 23:09:54,602 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:54,603 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:54,603 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:54,604 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,669 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,684 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,685 | core.models.hybrid_model | INFO |    Mean: 0.4991 | Std: 0.0353
+2025-10-30 23:09:54,685 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,685 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,687 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,687 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.035 = 0.018
+2025-10-30 23:09:54,687 | core.models.hybrid_model | INFO |    VaR (95%): 0.4604 | VaR (99%): 0.3611
+2025-10-30 23:09:54,687 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,688 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,688 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3653 | Upside: 0.0406
+2025-10-30 23:09:54,689 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,706 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,707 | core.models.hybrid_model | INFO |    Mean: 0.4979 | Std: 0.0406
+2025-10-30 23:09:54,707 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,707 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,709 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,709 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.020
+2025-10-30 23:09:54,709 | core.models.hybrid_model | INFO |    VaR (95%): 0.4513 | VaR (99%): 0.3168
+2025-10-30 23:09:54,709 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,709 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,709 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3918 | Upside: 0.0487
+2025-10-30 23:09:54,711 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,728 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,729 | core.models.hybrid_model | INFO |    Mean: 0.4920 | Std: 0.0530
+2025-10-30 23:09:54,729 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,729 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,731 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,731 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.053 = 0.027
+2025-10-30 23:09:54,731 | core.models.hybrid_model | INFO |    VaR (95%): 0.4041 | VaR (99%): 0.2770
+2025-10-30 23:09:54,731 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,731 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,731 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4484 | Upside: 0.0625
+2025-10-30 23:09:54,734 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.64):
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,734 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:54,735 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,735 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:54,735 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:54,735 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:54,735 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,814 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,829 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,829 | core.models.hybrid_model | INFO |    Mean: 0.4991 | Std: 0.0361
+2025-10-30 23:09:54,829 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,829 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,831 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,831 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.036 = 0.018
+2025-10-30 23:09:54,831 | core.models.hybrid_model | INFO |    VaR (95%): 0.4600 | VaR (99%): 0.3620
+2025-10-30 23:09:54,831 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,832 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,832 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3111 | Upside: 0.0407
+2025-10-30 23:09:54,833 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,848 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,849 | core.models.hybrid_model | INFO |    Mean: 0.4979 | Std: 0.0416
+2025-10-30 23:09:54,849 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,849 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,851 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,851 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.042 = 0.021
+2025-10-30 23:09:54,851 | core.models.hybrid_model | INFO |    VaR (95%): 0.4513 | VaR (99%): 0.3104
+2025-10-30 23:09:54,851 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,851 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,851 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3389 | Upside: 0.0497
+2025-10-30 23:09:54,852 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,869 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,869 | core.models.hybrid_model | INFO |    Mean: 0.4925 | Std: 0.0513
+2025-10-30 23:09:54,869 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,870 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,871 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,871 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.051 = 0.026
+2025-10-30 23:09:54,871 | core.models.hybrid_model | INFO |    VaR (95%): 0.4111 | VaR (99%): 0.2852
+2025-10-30 23:09:54,871 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:54,871 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:54,871 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4152 | Upside: 0.0621
+2025-10-30 23:09:54,874 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.64):
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,874 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:54,875 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:09:54,875 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:09:54,875 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:09:54,875 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:09:54,875 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:09:54,946 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:54,961 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:54,962 | core.models.hybrid_model | INFO |    Mean: 0.4987 | Std: 0.0378
+2025-10-30 23:09:54,962 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:54,962 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:54,964 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:54,964 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.038 = 0.019
+2025-10-30 23:09:54,964 | core.models.hybrid_model | INFO |    VaR (95%): 0.4604 | VaR (99%): 0.3521
+2025-10-30 23:09:54,964 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:55,142 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:55,142 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4190 | Upside: 0.0412
+2025-10-30 23:09:55,143 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:55,159 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:55,160 | core.models.hybrid_model | INFO |    Mean: 0.4981 | Std: 0.0422
+2025-10-30 23:09:55,160 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:55,160 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:55,161 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:55,162 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.042 = 0.021
+2025-10-30 23:09:55,162 | core.models.hybrid_model | INFO |    VaR (95%): 0.4528 | VaR (99%): 0.3069
+2025-10-30 23:09:55,162 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:55,162 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:55,162 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4074 | Upside: 0.0499
+2025-10-30 23:09:55,163 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:09:55,182 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:09:55,183 | core.models.hybrid_model | INFO |    Mean: 0.4935 | Std: 0.0507
+2025-10-30 23:09:55,183 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:09:55,183 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:09:55,184 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:09:55,185 | core.models.hybrid_model | WARNING |    |0.494 - 0.5| = 0.006 < 0.5×0.051 = 0.025
+2025-10-30 23:09:55,185 | core.models.hybrid_model | INFO |    VaR (95%): 0.4138 | VaR (99%): 0.2933
+2025-10-30 23:09:55,185 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:09:55,185 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:09:55,185 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4306 | Upside: 0.0611
+2025-10-30 23:09:55,188 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:09:55,188 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 23:09:55,324 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 23:09:55,324 | trading.autonomous_trader_v2 | INFO |    Current Balance: £257.10
+2025-10-30 23:09:55,324 | trading.autonomous_trader_v2 | INFO |    Available: £102.64 (39.9%)
+2025-10-30 23:09:55,324 | trading.autonomous_trader_v2 | INFO |    Margin Used: 60.1%
+2025-10-30 23:09:55,324 | trading.autonomous_trader_v2 | INFO |    P&L: £-0.36
+2025-10-30 23:09:55,425 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BXE2A5
+2025-10-30 23:09:55,702 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BZRGAB
+2025-10-30 23:09:57,385 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BKNTBA
+2025-10-30 23:09:57,582 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3CEJ7AR
+2025-10-30 23:09:58,003 | trading.autonomous_trader_v2 | INFO | ✅ Updated balance for 4 closed positions
+2025-10-30 23:09:58,003 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 23:09:58,004 | trading.autonomous_trader_v2 | INFO |    Total Trades: 4
+2025-10-30 23:09:58,004 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 23:09:58,004 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 23:09:58,004 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 23:09:58,091 | integrations.ig_markets_api | ERROR | ❌ Account info error (Status 403): {"errorCode":"error.public-api.exceeded-api-key-allowance"}
+2025-10-30 23:09:58,092 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 23:09:58,175 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 23:09:58,175 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 23:09:58,175 | trading.session_manager | INFO |    Current Session: US Session
+2025-10-30 23:09:58,175 | trading.session_manager | INFO |    Active Epics: 3 (CS.D.EURUSD.TODAY.IP, CS.D.GBPUSD.TODAY.IP, CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:09:58,176 | trading.session_manager | INFO |    Primary Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:09:58,176 | trading.session_manager | INFO |    Volatility Multiplier: 1.2x
+2025-10-30 23:09:58,176 | trading.session_manager | INFO |    Max Positions: 3
+2025-10-30 23:09:58,176 | trading.session_manager | INFO |    Session Time: 16:00 - 23:00 (America/New_York)
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 3 epics
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.EURUSD.TODAY.IP
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.GBPUSD.TODAY.IP
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.USDJPY.TODAY.IP
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/3 positions
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 1.2x
+2025-10-30 23:09:58,176 | trading.autonomous_trader_v2 | INFO | 🔄 SESSION TRANSITION: Unknown → US Session
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | 🎯 NEW SESSION ACTIVE: US Session
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | ✅ Session-aware multi-epic config: 3 active epics
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | 📊 NEW SESSION CONFIGURATION:
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Active Epics: 3
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Max Positions: 3
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Volatility Multiplier: 1.2x
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: US Session
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | 🤖 PHASE 11 - ML Confidence Enhancement
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO | 🤖 ML MODEL STATUS:
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Total Trades: 0
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Model Trained: False
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Recent Win Rate: 0.0%
+2025-10-30 23:09:58,177 | trading.autonomous_trader_v2 | INFO |    Days Since Retrain: None
+2025-10-30 23:09:58,178 | trading.autonomous_trader_v2 | INFO |    Should Retrain: False
+2025-10-30 23:09:58,178 | trading.autonomous_trader_v2 | INFO | 🤖 ML CONFIDENCE ENHANCEMENT COMPLETE
+2025-10-30 23:10:37,925 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:10:37,926 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:10:37,926 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:10:37,926 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:10:38,002 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 0 tracked | 5 max
+2025-10-30 23:10:58,187 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.68):
+2025-10-30 23:10:58,187 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:10:58,188 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:10:58,189 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:10:58,189 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:10:58,374 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:10:58,394 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:10:58,394 | core.models.hybrid_model | INFO |    Mean: 0.4995 | Std: 0.0358
+2025-10-30 23:10:58,394 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:10:58,395 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:10:58,396 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:10:58,396 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.036 = 0.018
+2025-10-30 23:10:58,397 | core.models.hybrid_model | INFO |    VaR (95%): 0.4602 | VaR (99%): 0.3603
+2025-10-30 23:10:58,397 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:10:58,397 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:10:58,397 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4172 | Upside: 0.0414
+2025-10-30 23:10:58,398 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:10:58,412 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:10:58,412 | core.models.hybrid_model | INFO |    Mean: 0.4977 | Std: 0.0426
+2025-10-30 23:10:58,412 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:10:58,413 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:10:58,414 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:10:58,414 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.043 = 0.021
+2025-10-30 23:10:58,414 | core.models.hybrid_model | INFO |    VaR (95%): 0.4505 | VaR (99%): 0.3060
+2025-10-30 23:10:58,414 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:10:58,414 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:10:58,414 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4417 | Upside: 0.0507
+2025-10-30 23:10:58,415 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:10:58,433 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:10:58,433 | core.models.hybrid_model | INFO |    Mean: 0.4922 | Std: 0.0515
+2025-10-30 23:10:58,434 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:10:58,434 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.010% → Capped=0.100%
+2025-10-30 23:10:58,435 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:10:58,435 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.051 = 0.026
+2025-10-30 23:10:58,435 | core.models.hybrid_model | INFO |    VaR (95%): 0.4098 | VaR (99%): 0.2810
+2025-10-30 23:10:58,435 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:10:58,436 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:10:58,436 | core.models.hybrid_model | INFO |    Max Drawdown: -0.5172 | Upside: 0.0614
+2025-10-30 23:10:58,439 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:10:58,439 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:10:58,439 | trading.autonomous_trader_v2 | ERROR | ❌ Error enhancing prediction with ML: IntegrityPrediction.__init__() missing 9 required positional arguments: 'timestamp', 'confidence_level', 'confidence_factors', 'agent_predictions', 'ensemble_weights', 'is_tradeable', 'position_size_multiplier', 'reasoning', and 'metadata'
+2025-10-30 23:10:58,439 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.50 (w=0.33) | Contramind: 0.50 (w=0.33) | MythFleck: 0.50 (w=0.34)
+2025-10-30 23:10:58,594 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:10:58,594 | core.risk_management.margin_safety | INFO |    Safe Units: 25.7
+2025-10-30 23:10:58,594 | core.risk_management.margin_safety | INFO |    Required Margin: £102.70
+2025-10-30 23:10:58,594 | core.risk_management.margin_safety | INFO |    Margin Utilization: 100.2%
+2025-10-30 23:10:58,594 | core.risk_management.margin_safety | INFO | ✅ Margin Safety Result:
+2025-10-30 23:10:58,595 | core.risk_management.margin_safety | INFO |    Safe Units: 0.1
+2025-10-30 23:10:58,595 | core.risk_management.margin_safety | INFO |    Required Margin: £0.40
+2025-10-30 23:10:58,595 | core.risk_management.margin_safety | INFO |    Margin Utilization: 0.4%
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO | 💰 ENHANCED MARGIN-SAFE POSITION SIZING:
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO |    Balance: £257.10 | Available: £102.52
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £4.77 | Multiplier: 0.62
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO |    Margin per unit: £3.33
+2025-10-30 23:10:58,595 | trading.autonomous_trader_v2 | INFO |    Safe Size: £0.1/point
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO |    Margin utilization: 0.4%
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: SELL | Size: $0.10
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO |    Direction: SELL
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 23:10:58,596 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/2
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:10:58,597 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/2
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 23:11:00,612 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (60.1%) - stopping fragmentation at 1/5
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 23:11:00,613 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 23:11:00,614 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 0 fragments
+2025-10-30 23:11:00,614 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 23:11:00,614 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 6632.80
+2025-10-30 23:11:00,614 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.EURUSD.TODAY.IP', 'direction': 'SELL', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 23:11:00,614 | integrations.ig_markets_api | INFO | Opening SELL position for CS.D.EURUSD.TODAY.IP: £0.1 per point
+2025-10-30 23:11:00,700 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"PB5LD5QGYF8TYNK"}
+2025-10-30 23:11:00,700 | integrations.ig_markets_api | INFO | ✅ Position opened: PB5LD5QGYF8TYNK
+2025-10-30 23:11:00,780 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:11:00.357","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"PB5LD5QGYF8TYNK","dealId":"DIAAAAQC3CP7FAH","affectedDeals":[{"dealId":"DIAAAAQC3CP7FAH","status":"OPENED"}],"level":11568.5,"size":0.1,"direction":"SELL","stopLevel":null,"limitLevel":6632.8,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:11:00,780 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:11:00,780 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:11:00,781 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:11:00.357', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'PB5LD5QGYF8TYNK', 'dealId': 'DIAAAAQC3CP7FAH', 'affectedDeals': [{'dealId': 'DIAAAAQC3CP7FAH', 'status': 'OPENED'}], 'level': 11568.5, 'size': 0.1, 'direction': 'SELL', 'stopLevel': None, 'limitLevel': 6632.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:11:00,781 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T23:11:00.357', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'PB5LD5QGYF8TYNK', 'dealId': 'DIAAAAQC3CP7FAH', 'affectedDeals': [{'dealId': 'DIAAAAQC3CP7FAH', 'status': 'OPENED'}], 'level': 11568.5, 'size': 0.1, 'direction': 'SELL', 'stopLevel': None, 'limitLevel': 6632.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:11:00,781 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: PB5LD5QGYF8TYNK
+2025-10-30 23:11:01,369 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T23:11:00.357","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"CS.D.EURUSD.TODAY.IP","expiry":"DFB","dealReference":"PB5LD5QGYF8TYNK","dealId":"DIAAAAQC3CP7FAH","affectedDeals":[{"dealId":"DIAAAAQC3CP7FAH","status":"OPENED"}],"level":11568.5,"size":0.1,"direction":"SELL","stopLevel":null,"limitLevel":6632.8,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 23:11:01,369 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 23:11:01,369 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 23:11:01,369 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T23:11:00.357', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'CS.D.EURUSD.TODAY.IP', 'expiry': 'DFB', 'dealReference': 'PB5LD5QGYF8TYNK', 'dealId': 'DIAAAAQC3CP7FAH', 'affectedDeals': [{'dealId': 'DIAAAAQC3CP7FAH', 'status': 'OPENED'}], 'level': 11568.5, 'size': 0.1, 'direction': 'SELL', 'stopLevel': None, 'limitLevel': 6632.8, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 23:11:01,369 | core.risk_management.position_reconciler.PositionReconciler | INFO | ➕ Added pending position: PENDING_PB5LD5QGYF8TYNK (CS.D.EURUSD.TODAY.IP SELL 0.1)
+2025-10-30 23:11:01,370 | core.risk_management.position_reconciler.PositionReconciler | INFO | ✅ Position confirmed: PENDING_PB5LD5QGYF8TYNK → DIAAAAQC3CP7FAH @ 11568.5
+2025-10-30 23:11:01,370 | trading.autonomous_trader_v2 | INFO | ✅ Position confirmed and tracked: DIAAAAQC3CP7FAH
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,370 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:01,371 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,371 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:01,371 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:01,371 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:01,371 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,446 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,462 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,462 | core.models.hybrid_model | INFO |    Mean: 0.4995 | Std: 0.0372
+2025-10-30 23:11:01,463 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,463 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,464 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,464 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.019
+2025-10-30 23:11:01,465 | core.models.hybrid_model | INFO |    VaR (95%): 0.4605 | VaR (99%): 0.3524
+2025-10-30 23:11:01,465 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,465 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,465 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3285 | Upside: 0.0424
+2025-10-30 23:11:01,466 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,483 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,483 | core.models.hybrid_model | INFO |    Mean: 0.4982 | Std: 0.0411
+2025-10-30 23:11:01,484 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,484 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,485 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,486 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.021
+2025-10-30 23:11:01,486 | core.models.hybrid_model | INFO |    VaR (95%): 0.4520 | VaR (99%): 0.3140
+2025-10-30 23:11:01,486 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,486 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,486 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3594 | Upside: 0.0499
+2025-10-30 23:11:01,487 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,506 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,507 | core.models.hybrid_model | INFO |    Mean: 0.4934 | Std: 0.0501
+2025-10-30 23:11:01,507 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,507 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,509 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,509 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.050 = 0.025
+2025-10-30 23:11:01,509 | core.models.hybrid_model | INFO |    VaR (95%): 0.4178 | VaR (99%): 0.2857
+2025-10-30 23:11:01,509 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,509 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,510 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3840 | Upside: 0.0598
+2025-10-30 23:11:01,513 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.499 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:01,513 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,514 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:01,514 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:01,514 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:01,514 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,589 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,607 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,608 | core.models.hybrid_model | INFO |    Mean: 0.4989 | Std: 0.0371
+2025-10-30 23:11:01,608 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,608 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,610 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,610 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.019
+2025-10-30 23:11:01,610 | core.models.hybrid_model | INFO |    VaR (95%): 0.4598 | VaR (99%): 0.3513
+2025-10-30 23:11:01,610 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,610 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,610 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3527 | Upside: 0.0406
+2025-10-30 23:11:01,612 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,630 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,630 | core.models.hybrid_model | INFO |    Mean: 0.4990 | Std: 0.0419
+2025-10-30 23:11:01,630 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,631 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,633 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,633 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.042 = 0.021
+2025-10-30 23:11:01,633 | core.models.hybrid_model | INFO |    VaR (95%): 0.4537 | VaR (99%): 0.3091
+2025-10-30 23:11:01,633 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,633 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,633 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3700 | Upside: 0.0497
+2025-10-30 23:11:01,634 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,655 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,655 | core.models.hybrid_model | INFO |    Mean: 0.4924 | Std: 0.0506
+2025-10-30 23:11:01,655 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,655 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,657 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,657 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.051 = 0.025
+2025-10-30 23:11:01,657 | core.models.hybrid_model | INFO |    VaR (95%): 0.4145 | VaR (99%): 0.2844
+2025-10-30 23:11:01,657 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,657 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,657 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4004 | Upside: 0.0604
+2025-10-30 23:11:01,660 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:01,661 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:01,662 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:01,662 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:01,662 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:01,742 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,759 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,759 | core.models.hybrid_model | INFO |    Mean: 0.4993 | Std: 0.0360
+2025-10-30 23:11:01,759 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,760 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,762 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,762 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.036 = 0.018
+2025-10-30 23:11:01,762 | core.models.hybrid_model | INFO |    VaR (95%): 0.4608 | VaR (99%): 0.3588
+2025-10-30 23:11:01,762 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,762 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,762 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3171 | Upside: 0.0412
+2025-10-30 23:11:01,763 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,781 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,781 | core.models.hybrid_model | INFO |    Mean: 0.4987 | Std: 0.0414
+2025-10-30 23:11:01,781 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,781 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,783 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,783 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.041 = 0.021
+2025-10-30 23:11:01,783 | core.models.hybrid_model | INFO |    VaR (95%): 0.4532 | VaR (99%): 0.3070
+2025-10-30 23:11:01,783 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,783 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,783 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3357 | Upside: 0.0499
+2025-10-30 23:11:01,785 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:01,805 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:01,805 | core.models.hybrid_model | INFO |    Mean: 0.4925 | Std: 0.0516
+2025-10-30 23:11:01,805 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:01,805 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:01,807 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:01,807 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.052 = 0.026
+2025-10-30 23:11:01,807 | core.models.hybrid_model | INFO |    VaR (95%): 0.4057 | VaR (99%): 0.2800
+2025-10-30 23:11:01,807 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:01,807 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:01,807 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3596 | Upside: 0.0607
+2025-10-30 23:11:01,810 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:11:01,810 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 23:11:01,811 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 1 active, 2 slots available
+2025-10-30 23:11:01,811 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin too high (60.1%) for multi-epic strategy
+2025-10-30 23:11:01,893 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 1 tracked | 5 max
+2025-10-30 23:11:01,976 | core.risk_management.position_reconciler.PositionReconciler | INFO | 🔄 Starting position reconciliation...
+2025-10-30 23:11:01,976 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Internal positions: 5
+2025-10-30 23:11:01,976 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Broker positions: 5
+2025-10-30 23:11:01,976 | core.risk_management.position_reconciler.PositionReconciler | INFO | ✅ Positions synchronized successfully
+2025-10-30 23:11:01,976 | trading.autonomous_trader_v2 | INFO | ✅ Positions synchronized: 5 matched
+2025-10-30 23:11:02,540 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:02,540 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:02,540 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:02,540 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,540 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,541 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,541 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:02,541 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,541 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:02,541 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:02,541 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:02,541 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,621 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,638 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,639 | core.models.hybrid_model | INFO |    Mean: 0.4991 | Std: 0.0373
+2025-10-30 23:11:02,639 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,639 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,641 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,641 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.019
+2025-10-30 23:11:02,641 | core.models.hybrid_model | INFO |    VaR (95%): 0.4594 | VaR (99%): 0.3459
+2025-10-30 23:11:02,641 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,641 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,641 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3507 | Upside: 0.0409
+2025-10-30 23:11:02,642 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,658 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,658 | core.models.hybrid_model | INFO |    Mean: 0.4982 | Std: 0.0420
+2025-10-30 23:11:02,659 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,659 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,660 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,660 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.042 = 0.021
+2025-10-30 23:11:02,661 | core.models.hybrid_model | INFO |    VaR (95%): 0.4516 | VaR (99%): 0.3078
+2025-10-30 23:11:02,661 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,661 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,661 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4253 | Upside: 0.0497
+2025-10-30 23:11:02,662 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,680 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,681 | core.models.hybrid_model | INFO |    Mean: 0.4927 | Std: 0.0514
+2025-10-30 23:11:02,681 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,681 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,683 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,683 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.051 = 0.026
+2025-10-30 23:11:02,683 | core.models.hybrid_model | INFO |    VaR (95%): 0.4132 | VaR (99%): 0.2817
+2025-10-30 23:11:02,683 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,683 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,683 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3999 | Upside: 0.0621
+2025-10-30 23:11:02,686 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:11:02,686 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:02,686 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:02,686 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:02,686 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,686 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,687 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,687 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:02,687 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,687 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:02,687 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:02,687 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:02,687 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,781 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,799 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,800 | core.models.hybrid_model | INFO |    Mean: 0.4985 | Std: 0.0379
+2025-10-30 23:11:02,800 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,800 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,802 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,802 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.038 = 0.019
+2025-10-30 23:11:02,802 | core.models.hybrid_model | INFO |    VaR (95%): 0.4593 | VaR (99%): 0.3474
+2025-10-30 23:11:02,802 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,802 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,802 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3470 | Upside: 0.0414
+2025-10-30 23:11:02,804 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,824 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,824 | core.models.hybrid_model | INFO |    Mean: 0.4977 | Std: 0.0428
+2025-10-30 23:11:02,824 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,824 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,826 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,826 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.043 = 0.021
+2025-10-30 23:11:02,826 | core.models.hybrid_model | INFO |    VaR (95%): 0.4524 | VaR (99%): 0.3066
+2025-10-30 23:11:02,826 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,826 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,826 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3539 | Upside: 0.0503
+2025-10-30 23:11:02,827 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,845 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,846 | core.models.hybrid_model | INFO |    Mean: 0.4928 | Std: 0.0517
+2025-10-30 23:11:02,846 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,846 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.010% → Capped=0.100%
+2025-10-30 23:11:02,848 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,848 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.052 = 0.026
+2025-10-30 23:11:02,848 | core.models.hybrid_model | INFO |    VaR (95%): 0.4070 | VaR (99%): 0.2831
+2025-10-30 23:11:02,848 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,848 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,849 | core.models.hybrid_model | INFO |    Max Drawdown: -0.5115 | Upside: 0.0604
+2025-10-30 23:11:02,852 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:11:02,852 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £102.52):
+2025-10-30 23:11:02,852 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (4):
+2025-10-30 23:11:02,852 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:11:02,852 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,852 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,853 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,853 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:02,853 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:11:02,853 | trading.instrument_manager | INFO |       4. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 23:11:02,853 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 23:11:02,853 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:11:02,853 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:11:02,937 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,955 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,955 | core.models.hybrid_model | INFO |    Mean: 0.4993 | Std: 0.0365
+2025-10-30 23:11:02,955 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,956 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,958 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,958 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.018
+2025-10-30 23:11:02,958 | core.models.hybrid_model | INFO |    VaR (95%): 0.4602 | VaR (99%): 0.3549
+2025-10-30 23:11:02,958 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,959 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,959 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3240 | Upside: 0.0410
+2025-10-30 23:11:02,960 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:02,976 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:02,976 | core.models.hybrid_model | INFO |    Mean: 0.4989 | Std: 0.0412
+2025-10-30 23:11:02,977 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:02,977 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:02,979 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:02,979 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.041 = 0.021
+2025-10-30 23:11:02,979 | core.models.hybrid_model | INFO |    VaR (95%): 0.4524 | VaR (99%): 0.3165
+2025-10-30 23:11:02,979 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:02,979 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:02,979 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3242 | Upside: 0.0500
+2025-10-30 23:11:02,980 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:11:03,000 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:11:03,000 | core.models.hybrid_model | INFO |    Mean: 0.4927 | Std: 0.0519
+2025-10-30 23:11:03,000 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:11:03,000 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:11:03,002 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:11:03,002 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.052 = 0.026
+2025-10-30 23:11:03,002 | core.models.hybrid_model | INFO |    VaR (95%): 0.4072 | VaR (99%): 0.2803
+2025-10-30 23:11:03,002 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:11:03,003 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:11:03,003 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4305 | Upside: 0.0614
+2025-10-30 23:11:03,005 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:11:03,006 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 23:11:03,152 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 23:11:03,152 | trading.autonomous_trader_v2 | INFO |    Current Balance: £257.10
+2025-10-30 23:11:03,153 | trading.autonomous_trader_v2 | INFO |    Available: £63.88 (24.8%)
+2025-10-30 23:11:03,153 | trading.autonomous_trader_v2 | INFO |    Margin Used: 75.2%
+2025-10-30 23:11:03,153 | trading.autonomous_trader_v2 | INFO |    P&L: £-0.60
+2025-10-30 23:11:03,235 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BXE2A5
+2025-10-30 23:11:03,396 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BZRGAB
+2025-10-30 23:11:03,550 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BKNTBA
+2025-10-30 23:11:03,706 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3CEJ7AR
+2025-10-30 23:11:03,860 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3CP7FAH
+2025-10-30 23:11:04,015 | trading.autonomous_trader_v2 | INFO | ✅ Updated balance for 5 closed positions
+2025-10-30 23:11:04,015 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 23:11:04,015 | trading.autonomous_trader_v2 | INFO |    Total Trades: 9
+2025-10-30 23:11:04,015 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 23:11:04,015 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 23:11:04,016 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 23:11:04,157 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 23:11:04,235 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 23:11:04,235 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 23:11:04,235 | trading.session_manager | INFO |    Current Session: US Session
+2025-10-30 23:11:04,236 | trading.session_manager | INFO |    Active Epics: 3 (CS.D.EURUSD.TODAY.IP, CS.D.GBPUSD.TODAY.IP, CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:11:04,236 | trading.session_manager | INFO |    Primary Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:11:04,236 | trading.session_manager | INFO |    Volatility Multiplier: 1.2x
+2025-10-30 23:11:04,236 | trading.session_manager | INFO |    Max Positions: 3
+2025-10-30 23:11:04,236 | trading.session_manager | INFO |    Session Time: 16:00 - 23:00 (America/New_York)
+2025-10-30 23:11:04,236 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 3 epics
+2025-10-30 23:11:04,236 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.EURUSD.TODAY.IP
+2025-10-30 23:11:04,236 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.GBPUSD.TODAY.IP
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.USDJPY.TODAY.IP
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/3 positions
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 1.2x
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: US Session
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO | 🤖 PHASE 11 - ML Confidence Enhancement
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO | 🤖 ML MODEL STATUS:
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO |    Total Trades: 0
+2025-10-30 23:11:04,237 | trading.autonomous_trader_v2 | INFO |    Model Trained: False
+2025-10-30 23:11:04,238 | trading.autonomous_trader_v2 | INFO |    Recent Win Rate: 0.0%
+2025-10-30 23:11:04,238 | trading.autonomous_trader_v2 | INFO |    Days Since Retrain: None
+2025-10-30 23:11:04,238 | trading.autonomous_trader_v2 | INFO |    Should Retrain: False
+2025-10-30 23:11:04,238 | trading.autonomous_trader_v2 | INFO | 🤖 ML CONFIDENCE ENHANCEMENT COMPLETE
+2025-10-30 23:11:38,190 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:11:38,190 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:11:38,190 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:11:38,190 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:11:38,274 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:12:04,239 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:04,239 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:04,240 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,240 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:04,240 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,458 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,474 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,475 | core.models.hybrid_model | INFO |    Mean: 0.4990 | Std: 0.0382
+2025-10-30 23:12:04,475 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,475 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,477 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,477 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.038 = 0.019
+2025-10-30 23:12:04,477 | core.models.hybrid_model | INFO |    VaR (95%): 0.4604 | VaR (99%): 0.3430
+2025-10-30 23:12:04,477 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,477 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,477 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3200 | Upside: 0.0417
+2025-10-30 23:12:04,479 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,496 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,496 | core.models.hybrid_model | INFO |    Mean: 0.4981 | Std: 0.0432
+2025-10-30 23:12:04,496 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,496 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,498 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,498 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.043 = 0.022
+2025-10-30 23:12:04,498 | core.models.hybrid_model | INFO |    VaR (95%): 0.4517 | VaR (99%): 0.3040
+2025-10-30 23:12:04,498 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,499 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,499 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3905 | Upside: 0.0501
+2025-10-30 23:12:04,500 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,519 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,519 | core.models.hybrid_model | INFO |    Mean: 0.4924 | Std: 0.0514
+2025-10-30 23:12:04,520 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,520 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,521 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,522 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.051 = 0.026
+2025-10-30 23:12:04,522 | core.models.hybrid_model | INFO |    VaR (95%): 0.4036 | VaR (99%): 0.2856
+2025-10-30 23:12:04,522 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,522 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,522 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3991 | Upside: 0.0617
+2025-10-30 23:12:04,525 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:12:04,525 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:12:04,526 | trading.autonomous_trader_v2 | ERROR | ❌ Error enhancing prediction with ML: IntegrityPrediction.__init__() missing 9 required positional arguments: 'timestamp', 'confidence_level', 'confidence_factors', 'agent_predictions', 'ensemble_weights', 'is_tradeable', 'position_size_multiplier', 'reasoning', and 'metadata'
+2025-10-30 23:12:04,526 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.498 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.50 (w=0.33) | Contramind: 0.50 (w=0.33) | MythFleck: 0.50 (w=0.34)
+2025-10-30 23:12:04,526 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:12:04,526 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:04,526 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:04,526 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:04,527 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,527 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,527 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,527 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:04,527 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,527 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:04,527 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,641 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,658 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,658 | core.models.hybrid_model | INFO |    Mean: 0.4989 | Std: 0.0367
+2025-10-30 23:12:04,659 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,659 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,661 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,661 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.018
+2025-10-30 23:12:04,661 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3568
+2025-10-30 23:12:04,661 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,661 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,661 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3585 | Upside: 0.0418
+2025-10-30 23:12:04,662 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,680 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,680 | core.models.hybrid_model | INFO |    Mean: 0.4980 | Std: 0.0413
+2025-10-30 23:12:04,680 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,680 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,682 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,682 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.021
+2025-10-30 23:12:04,683 | core.models.hybrid_model | INFO |    VaR (95%): 0.4517 | VaR (99%): 0.3105
+2025-10-30 23:12:04,683 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,683 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,683 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3345 | Upside: 0.0506
+2025-10-30 23:12:04,684 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,706 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,706 | core.models.hybrid_model | INFO |    Mean: 0.4924 | Std: 0.0522
+2025-10-30 23:12:04,706 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,706 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,707 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,708 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.052 = 0.026
+2025-10-30 23:12:04,708 | core.models.hybrid_model | INFO |    VaR (95%): 0.4039 | VaR (99%): 0.2913
+2025-10-30 23:12:04,708 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,708 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,708 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4540 | Upside: 0.0613
+2025-10-30 23:12:04,711 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:12:04,711 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:04,711 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:04,711 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:04,712 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,712 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,712 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,712 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:04,712 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,712 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:04,712 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,813 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,833 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,833 | core.models.hybrid_model | INFO |    Mean: 0.4985 | Std: 0.0358
+2025-10-30 23:12:04,833 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,834 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,836 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,836 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.036 = 0.018
+2025-10-30 23:12:04,836 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3601
+2025-10-30 23:12:04,836 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,836 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,836 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4027 | Upside: 0.0403
+2025-10-30 23:12:04,838 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,856 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,856 | core.models.hybrid_model | INFO |    Mean: 0.4974 | Std: 0.0418
+2025-10-30 23:12:04,856 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,856 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,858 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,858 | core.models.hybrid_model | WARNING |    |0.497 - 0.5| = 0.003 < 0.5×0.042 = 0.021
+2025-10-30 23:12:04,859 | core.models.hybrid_model | INFO |    VaR (95%): 0.4510 | VaR (99%): 0.3100
+2025-10-30 23:12:04,859 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,859 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,859 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4356 | Upside: 0.0492
+2025-10-30 23:12:04,860 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,878 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,878 | core.models.hybrid_model | INFO |    Mean: 0.4926 | Std: 0.0508
+2025-10-30 23:12:04,878 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,879 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.010% → Capped=0.100%
+2025-10-30 23:12:04,881 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,881 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.051 = 0.025
+2025-10-30 23:12:04,881 | core.models.hybrid_model | INFO |    VaR (95%): 0.4119 | VaR (99%): 0.2864
+2025-10-30 23:12:04,881 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,881 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,881 | core.models.hybrid_model | INFO |    Max Drawdown: -0.5359 | Upside: 0.0612
+2025-10-30 23:12:04,884 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:12:04,884 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:04,884 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:04,885 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:04,885 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:04,885 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:04,976 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:04,995 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:04,995 | core.models.hybrid_model | INFO |    Mean: 0.4984 | Std: 0.0379
+2025-10-30 23:12:04,996 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:04,996 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:04,998 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:04,998 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.038 = 0.019
+2025-10-30 23:12:04,998 | core.models.hybrid_model | INFO |    VaR (95%): 0.4572 | VaR (99%): 0.3383
+2025-10-30 23:12:04,998 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:04,998 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:04,998 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3504 | Upside: 0.0418
+2025-10-30 23:12:04,999 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:05,018 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:05,018 | core.models.hybrid_model | INFO |    Mean: 0.4978 | Std: 0.0438
+2025-10-30 23:12:05,018 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:05,018 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:05,020 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:05,020 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.044 = 0.022
+2025-10-30 23:12:05,020 | core.models.hybrid_model | INFO |    VaR (95%): 0.4510 | VaR (99%): 0.2959
+2025-10-30 23:12:05,020 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:05,020 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:05,021 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4362 | Upside: 0.0510
+2025-10-30 23:12:05,022 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:05,043 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:05,043 | core.models.hybrid_model | INFO |    Mean: 0.4932 | Std: 0.0507
+2025-10-30 23:12:05,043 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:05,043 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:05,045 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:05,045 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.051 = 0.025
+2025-10-30 23:12:05,045 | core.models.hybrid_model | INFO |    VaR (95%): 0.4129 | VaR (99%): 0.2864
+2025-10-30 23:12:05,045 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:05,046 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:05,046 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4712 | Upside: 0.0611
+2025-10-30 23:12:05,048 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:12:05,049 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 23:12:05,049 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 23:12:05,049 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin too high (75.2%) for multi-epic strategy
+2025-10-30 23:12:05,145 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:12:05,244 | core.risk_management.position_reconciler.PositionReconciler | INFO | 🔄 Starting position reconciliation...
+2025-10-30 23:12:05,244 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Internal positions: 5
+2025-10-30 23:12:05,244 | core.risk_management.position_reconciler.PositionReconciler | INFO |    Broker positions: 5
+2025-10-30 23:12:05,244 | core.risk_management.position_reconciler.PositionReconciler | INFO | ✅ Positions synchronized successfully
+2025-10-30 23:12:05,245 | trading.autonomous_trader_v2 | INFO | ✅ Positions synchronized: 5 matched
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,530 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:06,531 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,531 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:06,531 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:06,632 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,651 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,651 | core.models.hybrid_model | INFO |    Mean: 0.4993 | Std: 0.0356
+2025-10-30 23:12:06,652 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,652 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,654 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,654 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.036 = 0.018
+2025-10-30 23:12:06,654 | core.models.hybrid_model | INFO |    VaR (95%): 0.4603 | VaR (99%): 0.3589
+2025-10-30 23:12:06,654 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,654 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,654 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3258 | Upside: 0.0409
+2025-10-30 23:12:06,655 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,672 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,672 | core.models.hybrid_model | INFO |    Mean: 0.4976 | Std: 0.0413
+2025-10-30 23:12:06,673 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,673 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,674 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,674 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.041 = 0.021
+2025-10-30 23:12:06,674 | core.models.hybrid_model | INFO |    VaR (95%): 0.4514 | VaR (99%): 0.3098
+2025-10-30 23:12:06,674 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,675 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,675 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3141 | Upside: 0.0492
+2025-10-30 23:12:06,676 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,697 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,697 | core.models.hybrid_model | INFO |    Mean: 0.4934 | Std: 0.0504
+2025-10-30 23:12:06,697 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,697 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,699 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,699 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.050 = 0.025
+2025-10-30 23:12:06,699 | core.models.hybrid_model | INFO |    VaR (95%): 0.4156 | VaR (99%): 0.2884
+2025-10-30 23:12:06,700 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,700 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,700 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4563 | Upside: 0.0615
+2025-10-30 23:12:06,703 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:06,703 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,703 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:06,704 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:06,794 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,811 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,811 | core.models.hybrid_model | INFO |    Mean: 0.4992 | Std: 0.0366
+2025-10-30 23:12:06,812 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,812 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,814 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,814 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.018
+2025-10-30 23:12:06,814 | core.models.hybrid_model | INFO |    VaR (95%): 0.4593 | VaR (99%): 0.3590
+2025-10-30 23:12:06,814 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,814 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,814 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3200 | Upside: 0.0407
+2025-10-30 23:12:06,815 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,832 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,833 | core.models.hybrid_model | INFO |    Mean: 0.4984 | Std: 0.0423
+2025-10-30 23:12:06,833 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,833 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,835 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,835 | core.models.hybrid_model | WARNING |    |0.498 - 0.5| = 0.002 < 0.5×0.042 = 0.021
+2025-10-30 23:12:06,835 | core.models.hybrid_model | INFO |    VaR (95%): 0.4507 | VaR (99%): 0.3062
+2025-10-30 23:12:06,835 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,835 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,835 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3784 | Upside: 0.0492
+2025-10-30 23:12:06,836 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:06,857 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:06,857 | core.models.hybrid_model | INFO |    Mean: 0.4921 | Std: 0.0509
+2025-10-30 23:12:06,858 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:06,858 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:06,860 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:06,860 | core.models.hybrid_model | WARNING |    |0.492 - 0.5| = 0.008 < 0.5×0.051 = 0.025
+2025-10-30 23:12:06,860 | core.models.hybrid_model | INFO |    VaR (95%): 0.4067 | VaR (99%): 0.2795
+2025-10-30 23:12:06,860 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:06,860 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:06,860 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4409 | Upside: 0.0605
+2025-10-30 23:12:06,863 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £63.88):
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (3):
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,863 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:06,864 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 23:12:06,864 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: US Session
+2025-10-30 23:12:06,864 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 23:12:07,042 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:07,059 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:07,060 | core.models.hybrid_model | INFO |    Mean: 0.4987 | Std: 0.0370
+2025-10-30 23:12:07,060 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:07,060 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:07,062 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:07,062 | core.models.hybrid_model | WARNING |    |0.499 - 0.5| = 0.001 < 0.5×0.037 = 0.019
+2025-10-30 23:12:07,063 | core.models.hybrid_model | INFO |    VaR (95%): 0.4594 | VaR (99%): 0.3448
+2025-10-30 23:12:07,063 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:07,063 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:07,063 | core.models.hybrid_model | INFO |    Max Drawdown: -0.2988 | Upside: 0.0408
+2025-10-30 23:12:07,064 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:07,083 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:07,084 | core.models.hybrid_model | INFO |    Mean: 0.4973 | Std: 0.0427
+2025-10-30 23:12:07,084 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:07,084 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:07,087 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:07,087 | core.models.hybrid_model | WARNING |    |0.497 - 0.5| = 0.003 < 0.5×0.043 = 0.021
+2025-10-30 23:12:07,087 | core.models.hybrid_model | INFO |    VaR (95%): 0.4508 | VaR (99%): 0.2983
+2025-10-30 23:12:07,087 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:07,087 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:07,087 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3037 | Upside: 0.0500
+2025-10-30 23:12:07,088 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 23:12:07,110 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 23:12:07,111 | core.models.hybrid_model | INFO |    Mean: 0.4926 | Std: 0.0501
+2025-10-30 23:12:07,111 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 23:12:07,111 | core.models.hybrid_model | WARNING | ⚠️  Probability capped: Raw=0.000% → Capped=0.100%
+2025-10-30 23:12:07,113 | core.models.hybrid_model | WARNING | 🚨 NO EDGE DETECTED: Mean too close to neutral given volatility
+2025-10-30 23:12:07,113 | core.models.hybrid_model | WARNING |    |0.493 - 0.5| = 0.007 < 0.5×0.050 = 0.025
+2025-10-30 23:12:07,113 | core.models.hybrid_model | INFO |    VaR (95%): 0.4165 | VaR (99%): 0.2861
+2025-10-30 23:12:07,113 | core.models.hybrid_model | INFO |    Probability of Loss: 0.10%
+2025-10-30 23:12:07,113 | core.models.hybrid_model | INFO |    Probability of Profit: 99.90%
+2025-10-30 23:12:07,113 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3830 | Upside: 0.0613
+2025-10-30 23:12:07,116 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 23:12:07,117 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 23:12:07,342 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 23:12:07,342 | trading.autonomous_trader_v2 | INFO |    Current Balance: £257.10
+2025-10-30 23:12:07,342 | trading.autonomous_trader_v2 | INFO |    Available: £63.91 (24.9%)
+2025-10-30 23:12:07,342 | trading.autonomous_trader_v2 | INFO |    Margin Used: 75.1%
+2025-10-30 23:12:07,342 | trading.autonomous_trader_v2 | INFO |    P&L: £-0.57
+2025-10-30 23:12:07,597 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BXE2A5
+2025-10-30 23:12:07,754 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BZRGAB
+2025-10-30 23:12:07,895 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3BKNTBA
+2025-10-30 23:12:08,085 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3CEJ7AR
+2025-10-30 23:12:08,257 | trading.autonomous_trader_v2 | INFO | 🔄 Detected closed position: DIAAAAQC3CP7FAH
+2025-10-30 23:12:08,404 | trading.autonomous_trader_v2 | INFO | ✅ Updated balance for 5 closed positions
+2025-10-30 23:12:08,404 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 23:12:08,404 | trading.autonomous_trader_v2 | INFO |    Total Trades: 14
+2025-10-30 23:12:08,404 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 23:12:08,404 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 23:12:08,405 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 23:12:08,593 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 23:12:08,724 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 23:12:08,724 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 23:12:08,724 | trading.session_manager | INFO |    Current Session: US Session
+2025-10-30 23:12:08,724 | trading.session_manager | INFO |    Active Epics: 3 (CS.D.EURUSD.TODAY.IP, CS.D.GBPUSD.TODAY.IP, CS.D.USDJPY.TODAY.IP)
+2025-10-30 23:12:08,724 | trading.session_manager | INFO |    Primary Epic: CS.D.EURUSD.TODAY.IP
+2025-10-30 23:12:08,724 | trading.session_manager | INFO |    Volatility Multiplier: 1.2x
+2025-10-30 23:12:08,725 | trading.session_manager | INFO |    Max Positions: 3
+2025-10-30 23:12:08,725 | trading.session_manager | INFO |    Session Time: 16:00 - 23:00 (America/New_York)
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 3 epics
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.EURUSD.TODAY.IP
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.GBPUSD.TODAY.IP
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO |    ✓ CS.D.USDJPY.TODAY.IP
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/3 positions
+2025-10-30 23:12:08,725 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 1.2x
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: US Session
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO | 🤖 PHASE 11 - ML Confidence Enhancement
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO | 🤖 ML MODEL STATUS:
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO |    Total Trades: 0
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO |    Model Trained: False
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO |    Recent Win Rate: 0.0%
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO |    Days Since Retrain: None
+2025-10-30 23:12:08,726 | trading.autonomous_trader_v2 | INFO |    Should Retrain: False
+2025-10-30 23:12:08,727 | trading.autonomous_trader_v2 | INFO | 🤖 ML CONFIDENCE ENHANCEMENT COMPLETE
+2025-10-30 23:12:38,626 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:12:38,626 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:12:38,626 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:12:38,626 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:12:38,779 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:13:38,974 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:13:38,974 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:13:38,974 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:13:38,974 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:13:39,056 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:14:39,253 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:14:39,254 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:14:39,254 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:14:39,254 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:14:39,338 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:15:39,534 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:15:39,534 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:15:39,534 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:15:39,534 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:15:39,617 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:16:39,788 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:16:39,788 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:16:39,789 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:16:39,789 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:16:39,900 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:17:40,117 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:17:40,117 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:17:40,117 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:17:40,117 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:17:40,201 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:18:40,398 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:18:40,398 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:18:40,398 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:18:40,399 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:18:40,474 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
+2025-10-30 23:19:40,703 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 23:19:40,703 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 23:19:40,703 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 23:19:40,703 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 23:19:40,802 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 5 on IG | 0 tracked | 5 max
