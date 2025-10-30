@@ -181,7 +181,7 @@ class AutonomousTraderV2:
             return
         
         # Determine direction
-        direction = 'LONG' if prediction.prediction_value > 0.5 else 'SHORT'
+        direction = 'BUY' if prediction.prediction_value > 0.5 else 'SELL' # Changed to 'BUY'/'SELL' for IG API
         
         # Execute trade
         await self._execute_trade(
@@ -201,7 +201,7 @@ class AutonomousTraderV2:
         current_balance = 0.0
         if account_info and account_info.get('accounts'):
             for acc in account_info['accounts']:
-                if acc.get('accountId') == self.config['ig_api']['account_id']:
+                if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']: # Corrected access path
                     current_balance = acc.get('balance', {}).get('balance', 0.0)
                     break
         

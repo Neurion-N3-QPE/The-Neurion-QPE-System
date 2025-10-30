@@ -16,7 +16,7 @@ from config.settings import load_config
 
 # Setup logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG, # Changed to DEBUG to capture detailed API request logs
     format='%(asctime)s | %(name)s | %(levelname)s | %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),

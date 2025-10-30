@@ -77,6 +77,7 @@ class IGMarketsAPI:
                     data = await response.json()
                     self.client_token = data['clientId']
                     self.security_token = response.headers['CST']
+                    self.x_security_token = response.headers.get('X-SECURITY-TOKEN', self.security_token) # Store X-SECURITY-TOKEN separately
                     self.account_id = data.get('accountId', self.account_id)
                     logger.info("✅ Authentication successful")
                 else:
@@ -92,17 +93,20 @@ class IGMarketsAPI:
         return {
             'X-IG-API-KEY': self.api_key,
             'CST': self.security_token,
-            'X-SECURITY-TOKEN': self.security_token,
+            'X-SECURITY-TOKEN': self.x_security_token, # Use the separately stored X-SECURITY-TOKEN
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Version': '2'
         }
     
     async def get_account_info(self) -> Dict:
         """Get account information"""
         url = f"{self.base_url}/accounts"
+        headers = self._get_headers()
+        logger.debug(f"DEBUG: GET Account Info - URL: {url}, Headers: {headers}")
         
         try:
-            async with self.session.get(url, headers=self._get_headers()) as response:
+            async with self.session.get(url, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
                     return data
@@ -123,9 +127,11 @@ class IGMarketsAPI:
             epic: IG Markets epic code (e.g., 'CS.D.GBPUSD.TODAY.IP')
         """
         url = f"{self.base_url}/markets/{epic}"
+        headers = self._get_headers()
+        logger.debug(f"DEBUG: GET Market Data - URL: {url}, Headers: {headers}")
         
         try:
-            async with self.session.get(url, headers=self._get_headers()) as response:
+            async with self.session.get(url, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
                     return data
@@ -161,10 +167,11 @@ class IGMarketsAPI:
         payload = {
             'epic': epic,
             'direction': direction,
-            'size': size,
+            'size': float(size), # Explicitly cast to Python float
             'orderType': 'MARKET',
-            'timeInForce': 'EXECUTE_AND_ELIMINATE',
-            'guaranteedStop': False
+            'timeInForce': 'GOOD_TILL_CANCELLED', # Changed timeInForce
+            'guaranteedStop': False,
+            'forceOpen': 'true'
         }
         
         if stop_loss:
@@ -173,11 +180,14 @@ class IGMarketsAPI:
         if take_profit:
             payload['limitLevel'] = take_profit
         
+        headers = self._get_headers()
+        logger.debug(f"DEBUG: POST Open Position - URL: {url}, Headers: {headers}, Payload: {payload}")
+        
         try:
             async with self.session.post(
                 url,
                 json=payload,
-                headers=self._get_headers()
+                headers=headers
             ) as response:
                 if response.status == 200:
                     data = await response.json()
