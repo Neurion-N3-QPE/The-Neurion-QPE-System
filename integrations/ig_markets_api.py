@@ -19,72 +19,71 @@ class IGMarketsAPI:
     Supports:
     - Account management
     - Market data
-    - Position management
-    - Order execution
     """
-    
-    BASE_URL = "https://api.ig.com/gateway/deal"
-    DEMO_URL = "https://demo-api.ig.com/gateway/deal"
-    
-    def __init__(
+
+    async def open_position(
         self,
-        api_key: str,
-        username: str,
-        password: str,
-        account_id: str,
-        demo: bool = True
-    ):
-        self.api_key = api_key
-        self.username = username
-        self.password = password
-        self.account_id = account_id
-        self.base_url = self.DEMO_URL if demo else self.BASE_URL
+        epic: str,
+        size: float,
+        stop_loss: Optional[float] = None,
+        take_profit: Optional[float] = None
+    ) -> Dict:
+        """Open a new position for Daily/DFB Spread Betting account"""
+        url = f"{self.base_url}/positions/otc"
         
-        self.session = None
-        self.client_token = None
-        self.security_token = None
+        # Get current market price for reference
+        market_data = await self.get_market_data(epic)
+        if not market_data:
+            logger.error("❌ Could not get market data for position opening")
+            return {}
         
-    async def initialize(self):
-        """Initialize API connection"""
-        logger.info("🔗 Connecting to IG Markets...")
+        snapshot = market_data.get('snapshot', {})
+        current_price = snapshot.get('bid', snapshot.get('offer', 0.0))
         
-        self.session = aiohttp.ClientSession()
-        
-        # Authenticate
-        await self._authenticate()
-        
-        logger.info("✅ IG Markets connected")
-    
-    async def _authenticate(self):
-        """Authenticate with IG Markets"""
-        url = f"{self.base_url}/session"
-        
-        headers = {
-            'X-IG-API-KEY': self.api_key,
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Version': '2'
-        }
-        
+        # Daily/DFB spread betting payload
         payload = {
-            'identifier': self.username,
-            'password': self.password
+            'epic': epic,
+                    """Open a new position for Daily/DFB Spread Betting account"""
+            'direction': direction.upper(),  # BUY or SELL
+            'size': float(size),
+            'orderType': 'MARKET',
+            'guaranteedStop': False,
+            'forceOpen': True,
+            'currencyCode': 'GBP',
+            'timeInForce': 'FILL_OR_KILL'
         }
+        
+        # Add stop loss if provided
+        if stop_loss:
+            payload['stopLevel'] = stop_loss
+        
+        # Add take profit if provided  
+        if take_profit:
+            payload['limitLevel'] = take_profit
+        
+        headers = self._get_headers()
+        logger.debug(f"DEBUG: POST Open Position - URL: {url}, Headers: {headers}, Payload: {payload}")
         
         try:
-            async with self.session.post(url, json=payload, headers=headers) as response:
+            async with self.session.post(
+                url,
+                json=payload,
+                headers=headers
+            ) as response:
+                response_text = await response.text()
+                logger.debug(f"Response status: {response.status}, Response: {response_text}")
+                
                 if response.status == 200:
                     data = await response.json()
-                    self.client_token = data['clientId']
-                    self.security_token = response.headers['CST']
-                    self.x_security_token = response.headers.get('X-SECURITY-TOKEN', self.security_token) # Store X-SECURITY-TOKEN separately
-                    self.account_id = data.get('accountId', self.account_id)
-                    logger.info("✅ Authentication successful")
+                    deal_ref = data.get('dealReference')
+                    logger.info(f"✅ Position opened: {deal_ref}")
+                    return data
                 else:
-                    error = await response.text()
-                    raise Exception(f"Authentication failed: {error}")
-                    
-        except Exception as e:
+                    logger.error(f"❌ Open position error: Status {response.status}, Response: {response_text}")
+                    return {}
+            '''Get request headers with auth tokens'''
+            logger.error(f"❌ Open position exception: {e}")
+            return {}
             logger.error(f"❌ Authentication error: {e}")
             raise
     
@@ -93,7 +92,7 @@ class IGMarketsAPI:
         return {
             'X-IG-API-KEY': self.api_key,
             'CST': self.security_token,
-            'X-SECURITY-TOKEN': self.x_security_token, # Use the separately stored X-SECURITY-TOKEN
+            '''Get account information'''
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             'Version': '2'
@@ -103,7 +102,7 @@ class IGMarketsAPI:
         """Get account information"""
         url = f"{self.base_url}/accounts"
         headers = self._get_headers()
-        logger.debug(f"DEBUG: GET Account Info - URL: {url}, Headers: {headers}")
+                    """Get request headers with auth tokens"""
         
         try:
             async with self.session.get(url, headers=headers) as response:
@@ -113,19 +112,14 @@ class IGMarketsAPI:
                 else:
                     error = await response.text()
                     logger.error(f"❌ Account info error: {error}")
-                    return {}
+                    """Get account information"""
                     
         except Exception as e:
             logger.error(f"❌ Get account error: {e}")
             return {}
     
     async def get_market_data(self, epic: str) -> Dict:
-        """
-        Get market data for an instrument
-        
-        Args:
-            epic: IG Markets epic code (e.g., 'CS.D.GBPUSD.TODAY.IP')
-        """
+        """Get market data for an instrument"""
         url = f"{self.base_url}/markets/{epic}"
         headers = self._get_headers()
         logger.debug(f"DEBUG: GET Market Data - URL: {url}, Headers: {headers}")
@@ -133,10 +127,6 @@ class IGMarketsAPI:
         try:
             async with self.session.get(url, headers=headers) as response:
                 if response.status == 200:
-                    data = await response.json()
-                    return data
-                else:
-                    error = await response.text()
                     logger.error(f"❌ Market data error: {error}")
                     return {}
                     
@@ -152,31 +142,33 @@ class IGMarketsAPI:
         stop_loss: Optional[float] = None,
         take_profit: Optional[float] = None
     ) -> Dict:
-        """
-        Open a new position
-        
-        Args:
-            epic: IG Markets epic code
-            direction: 'BUY' or 'SELL'
-            size: Position size
-            stop_loss: Stop loss level (optional)
-            take_profit: Take profit level (optional)
-        """
+        """Open a new position for SPREAD BETTING account"""
         url = f"{self.base_url}/positions/otc"
         
+        # Get current market price for reference
+        
+        snapshot = market_data.get('snapshot', {})
+        current_price = snapshot.get('bid', snapshot.get('offer', 0.0))
+        
+        # Spread betting specific payload
         payload = {
             'epic': epic,
-            'direction': direction,
-            'size': float(size), # Explicitly cast to Python float
+            'direction': direction.upper(),  # BUY or SELL
+            'size': float(size),
             'orderType': 'MARKET',
-            'timeInForce': 'GOOD_TILL_CANCELLED', # Changed timeInForce
             'guaranteedStop': False,
-            'forceOpen': 'true'
+            'forceOpen': True,
+            'currencyCode': 'GBP',
+            'timeInForce': 'FILL_OR_KILL'  # Better for spread betting
         }
         
+        # Note: No 'expiry' parameter for spread betting
+        
+            '''Get all open positions'''
         if stop_loss:
             payload['stopLevel'] = stop_loss
-            
+        
+        # Add take profit if provided  
         if take_profit:
             payload['limitLevel'] = take_profit
         
@@ -188,34 +180,26 @@ class IGMarketsAPI:
                 url,
                 json=payload,
                 headers=headers
-            ) as response:
+                response_text = await response.text()
+                
                 if response.status == 200:
                     data = await response.json()
                     deal_ref = data.get('dealReference')
                     logger.info(f"✅ Position opened: {deal_ref}")
                     return data
                 else:
-                    error = await response.text()
-                    logger.error(f"❌ Open position error: {error}")
+                    logger.error(f"❌ Open position error: Status {response.status}, Response: {response_text}")
                     return {}
-                    
-        except Exception as e:
             logger.error(f"❌ Open position exception: {e}")
             return {}
     
     async def close_position(self, deal_id: str) -> Dict:
-        """
-        Close an existing position
-        
-        Args:
-            deal_id: Deal ID to close
-        """
+        """Close an existing position"""
         # Get position details first
         position = await self.get_position(deal_id)
         if not position:
             return {}
         
-        url = f"{self.base_url}/positions/otc"
         
         payload = {
             'dealId': deal_id,

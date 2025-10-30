@@ -28,7 +28,7 @@ DEFAULT_CONFIG = {
             'password': os.getenv('IG_MARKETS_PASSWORD', ''),
             'account_id': os.getenv('IG_MARKETS_ACCOUNT_ID', ''),
             'demo': os.getenv('IG_MARKETS_MODE', 'live') == 'demo',
-            'default_epic': os.getenv('DEFAULT_SYMBOLS', 'CS.D.GBPUSD.TODAY.IP').split(',')[0]
+            'default_epic': os.getenv('DEFAULT_SYMBOLS', 'CS.D.GBPUSD.TODAY.SPR').split(',')[0]
         },
         'ic_markets': {
             'enabled': False,
@@ -77,7 +77,7 @@ def load_config(config_path: str = 'config/config.json') -> Dict:
         ig_markets_config['password'] = os.getenv('IG_MARKETS_PASSWORD', ig_markets_config.get('password', ''))
         ig_markets_config['account_id'] = os.getenv('IG_MARKETS_ACCOUNT_ID', ig_markets_config.get('account_id', ''))
         ig_markets_config['demo'] = os.getenv('IG_MARKETS_MODE', 'live') == 'demo'
-        ig_markets_config['default_epic'] = os.getenv('DEFAULT_SYMBOLS', 'CS.D.GBPUSD.TODAY.IP').split(',')[0]
+        ig_markets_config['default_epic'] = os.getenv('DEFAULT_SYMBOLS', 'CS.D.GBPUSD.TODAY.SPR').split(',')[0]
         ig_markets_config['enabled'] = os.getenv('IG_MARKETS_MODE', 'live') == 'live' # Ensure enabled status is correct
 
         merged_config['risk_per_trade'] = float(os.getenv('RISK_PER_TRADE', merged_config.get('risk_per_trade', DEFAULT_CONFIG['risk_per_trade'])))

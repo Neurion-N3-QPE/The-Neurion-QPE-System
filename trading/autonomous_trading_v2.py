@@ -371,7 +371,7 @@ async def run_autonomous_trading_v2():
             try:
                 # Get market data (placeholder - would be real data in production)
                 market_data = {
-                    'epic': 'CS.D.USCSI.CFD.IP',
+                    'epic': 'CS.D.USCSI.TODAY.SPR',
                     'price': 6847.0,
                     'timestamp': datetime.now().isoformat()
                 }

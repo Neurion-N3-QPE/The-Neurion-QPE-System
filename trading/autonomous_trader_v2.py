@@ -132,9 +132,8 @@ class AutonomousTraderV2:
             logger.error("❌ IG Markets API not initialized.")
             return {}
             
-        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.IP')
+        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
         market_data = await self.ig_api.get_market_data(epic)
-        
         if market_data and market_data.get('snapshot'):
             snapshot = market_data['snapshot']
             return {
@@ -225,9 +224,7 @@ class AutonomousTraderV2:
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized.")
             return
-            
-        # Placeholder for epic - needs to be dynamic
-        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.IP') 
+        epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
         
         try:
             trade_response = await self.ig_api.open_position(
@@ -250,7 +247,6 @@ class AutonomousTraderV2:
                     'deal_id': position_id # Store dealReference as deal_id
                 }
                 self.performance['trades'] += 1
-                logger.info(f"✅ Position opened: {position_id}")
             else:
                 logger.error(f"❌ Failed to open position. Response: {trade_response}")
         except Exception as e:
