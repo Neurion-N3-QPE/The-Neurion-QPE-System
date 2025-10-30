@@ -941,3 +941,302 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 2025-10-30 10:39:51,416 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '2798ec00e257e53e7261ae48aacf438ac56048f30a4ea2de4bb273e9662881CC01116', 'X-SECURITY-TOKEN': '6326cca590f9011cd70c7f809dc16064c094b70622783f3af950a7370a1e86CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'LONG', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False}
 2025-10-30 10:39:51,483 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"invalid.request.direction"}
 2025-10-30 10:39:51,484 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:40:28,424 | asyncio | DEBUG | Using proactor: IocpProactor
+2025-10-30 10:40:28,425 | __main__ | INFO | ================================================================================
+2025-10-30 10:40:28,425 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 10:40:28,425 | __main__ | INFO | ================================================================================
+2025-10-30 10:40:28,426 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 10:40:28,426 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 10:40:28,426 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 10:40:28,426 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 10:40:28,427 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 10:40:28,427 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 10:40:28,427 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 10:40:28,427 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 10:40:28,428 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 10:40:28,428 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 10:40:28,681 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 10:40:28,681 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 10:40:28,682 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 10:40:28,682 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 10:40:28,682 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 10:40:28,682 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 10:40:28,682 | __main__ | INFO | 
+================================================================================
+2025-10-30 10:40:28,682 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 10:40:28,682 | __main__ | INFO | ================================================================================
+
+2025-10-30 10:40:28,682 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 10:40:28,682 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:40:28,797 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:40:28,797 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:40:28,797 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:40:28,797 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:40:28,797 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:40:28,797 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:40:28,797 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:40:28,798 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:40:28,880 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:40:28,881 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:40:28,881 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:40:28,881 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:40:28,964 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:40:28,964 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:41:28,974 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:41:29,256 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:41:29,256 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:41:29,256 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:41:29,256 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:41:29,256 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:41:29,256 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:41:29,257 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:41:29,257 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:41:29,324 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:41:29,324 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:41:29,325 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:41:29,325 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:41:29,404 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:41:29,405 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:42:14,878 | asyncio | DEBUG | Using proactor: IocpProactor
+2025-10-30 10:42:14,879 | __main__ | INFO | ================================================================================
+2025-10-30 10:42:14,879 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 10:42:14,879 | __main__ | INFO | ================================================================================
+2025-10-30 10:42:14,879 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 10:42:14,879 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 10:42:14,880 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 10:42:14,880 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 10:42:14,880 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 10:42:14,880 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 10:42:14,880 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 10:42:14,880 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 10:42:14,880 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 10:42:14,881 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 10:42:15,220 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 10:42:15,220 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 10:42:15,220 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 10:42:15,220 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 10:42:15,220 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 10:42:15,220 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 10:42:15,220 | __main__ | INFO | 
+================================================================================
+2025-10-30 10:42:15,221 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 10:42:15,221 | __main__ | INFO | ================================================================================
+
+2025-10-30 10:42:15,221 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 10:42:15,221 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:42:15,348 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:42:15,349 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:42:15,349 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:42:15,349 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:42:15,349 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:42:15,349 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:42:15,349 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:42:15,349 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:42:15,416 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:42:15,416 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:42:15,416 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:42:15,416 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true', 'expiry': '2025/10/30'}
+2025-10-30 10:42:15,492 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.currencyCode"}
+2025-10-30 10:42:15,492 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:42:29,410 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:42:29,628 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:42:29,629 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:42:29,629 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:42:29,629 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:42:29,629 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:42:29,629 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:42:29,629 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:42:29,629 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:42:29,696 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:42:29,696 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:42:29,696 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:42:29,696 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:42:29,776 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:42:29,776 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:43:15,494 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:43:15,661 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:43:15,661 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:43:15,661 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:43:15,661 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:43:15,662 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:43:15,662 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:43:15,662 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:43:15,662 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:43:15,729 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:43:15,729 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:43:15,730 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:43:15,730 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true', 'expiry': '2025/10/30'}
+2025-10-30 10:43:15,821 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.currencyCode"}
+2025-10-30 10:43:15,821 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:43:29,792 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:43:29,989 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:43:29,989 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:43:29,989 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:43:29,990 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:43:29,990 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:43:29,990 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:43:29,990 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:43:29,990 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:43:30,076 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:43:30,076 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:43:30,076 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:43:30,077 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:43:30,179 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:43:30,179 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:44:15,831 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:16,022 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:44:16,022 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:44:16,022 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:44:16,022 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:44:16,022 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:44:16,023 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:44:16,023 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:44:16,023 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:16,107 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:44:16,107 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:44:16,107 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:44:16,107 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true', 'expiry': '2025/10/30'}
+2025-10-30 10:44:16,188 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.currencyCode"}
+2025-10-30 10:44:16,188 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:44:22,678 | asyncio | DEBUG | Using proactor: IocpProactor
+2025-10-30 10:44:22,679 | __main__ | INFO | ================================================================================
+2025-10-30 10:44:22,679 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 10:44:22,679 | __main__ | INFO | ================================================================================
+2025-10-30 10:44:22,680 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 10:44:22,680 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 10:44:22,680 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 10:44:22,680 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 10:44:22,681 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 10:44:22,681 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 10:44:22,681 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 10:44:22,681 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 10:44:22,681 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 10:44:22,681 | integrations.ig_markets_api | INFO | 🔗 Connecting to IG Markets...
+2025-10-30 10:44:22,900 | integrations.ig_markets_api | INFO | ✅ Authentication successful
+2025-10-30 10:44:22,900 | integrations.ig_markets_api | INFO | ✅ IG Markets connected
+2025-10-30 10:44:22,900 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 10:44:22,900 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 10:44:22,900 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 10:44:22,900 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 10:44:22,900 | __main__ | INFO | 
+================================================================================
+2025-10-30 10:44:22,900 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 10:44:22,901 | __main__ | INFO | ================================================================================
+
+2025-10-30 10:44:22,901 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 10:44:22,901 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:23,052 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:44:23,052 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:44:23,052 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:44:23,053 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:44:23,053 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:44:23,053 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:44:23,053 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:44:23,053 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:23,135 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:44:23,136 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:44:23,136 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:44:23,136 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'GOOD_TILL_CANCELLED', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:44:23,217 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"invalid.request.timeInForce"}
+2025-10-30 10:44:23,217 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:44:30,190 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:30,393 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:44:30,393 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:44:30,394 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:44:30,394 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:44:30,394 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:44:30,394 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:44:30,394 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:44:30,394 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:44:30,459 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:44:30,460 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:44:30,460 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:44:30,460 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:44:30,593 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:44:30,593 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:45:16,195 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:16,398 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:45:16,398 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:45:16,398 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:45:16,398 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:45:16,398 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:45:16,398 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:45:16,398 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:45:16,398 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:16,459 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:45:16,459 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:45:16,459 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:45:16,459 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true', 'expiry': '2025/10/30'}
+2025-10-30 10:45:16,646 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.currencyCode"}
+2025-10-30 10:45:16,646 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:45:23,220 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:23,365 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:45:23,365 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:45:23,365 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:45:23,365 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:45:23,365 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:45:23,365 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:45:23,365 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:45:23,366 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:23,453 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:45:23,453 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:45:23,454 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:45:23,454 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'e15e9cb466937d24235d253298b28e16b4b0a0970e917db4eef9e54d344137CD01114', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'GOOD_TILL_CANCELLED', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:45:23,537 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"invalid.request.timeInForce"}
+2025-10-30 10:45:23,537 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:45:30,601 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:30,819 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:45:30,819 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:45:30,819 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:45:30,819 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:45:30,819 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:45:30,820 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:45:30,820 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:45:30,820 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:45:30,894 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:45:30,894 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:45:30,894 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:45:30,895 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': '37bf95b7e60696f8d6a207854da71342d7bf6af5331a7a97047820e8784343CC01111', 'X-SECURITY-TOKEN': 'a53e3222915f5e7f889e9f7ca879683e8625046b427e173d6ab2a2918066dcCD01113', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true'}
+2025-10-30 10:45:30,961 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.expiry"}
+2025-10-30 10:45:30,961 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
+2025-10-30 10:46:16,648 | integrations.ig_markets_api | DEBUG | DEBUG: GET Market Data - URL: https://api.ig.com/gateway/deal/markets/CS.D.GBPUSD.CFD.IP, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:46:16,832 | core.integrity.confidence_scorer | DEBUG | 📊 Confidence: 0.85 [agree=1.00, clarity=0.75, vol=0.80]
+2025-10-30 10:46:16,832 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 10:46:16,832 | core.integrity.integrity_bus | DEBUG |   • EchoQuant: 0.730 (conf: 0.88, w: 0.33)
+2025-10-30 10:46:16,832 | core.integrity.integrity_bus | DEBUG |   • Contramind: 0.700 (conf: 0.89, w: 0.33)
+2025-10-30 10:46:16,832 | core.integrity.integrity_bus | DEBUG |   • MythFleck: 0.752 (conf: 0.87, w: 0.34)
+2025-10-30 10:46:16,832 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 10:46:16,833 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 10:46:16,833 | integrations.ig_markets_api | DEBUG | DEBUG: GET Account Info - URL: https://api.ig.com/gateway/deal/accounts, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}
+2025-10-30 10:46:16,894 | integrations.ig_markets_api | ERROR | ❌ Account info error: 
+2025-10-30 10:46:16,894 | trading.autonomous_trader_v2 | WARNING | ⚠️  Could not fetch current account balance. Using dummy balance for position sizing.
+2025-10-30 10:46:16,894 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $4.92
+2025-10-30 10:46:16,895 | integrations.ig_markets_api | DEBUG | DEBUG: POST Open Position - URL: https://api.ig.com/gateway/deal/positions/otc, Headers: {'X-IG-API-KEY': 'b8e1f49a835449717ed9ce037e24507f855883e7', 'CST': 'd63038854b201f335493506090567dafdb1cbf97d0bf4b0dd65c3d0c8111ebCC01116', 'X-SECURITY-TOKEN': '96185ca2764ea143c5b0ea8024890e267a20887badef92e92412058a642d40CD01112', 'Content-Type': 'application/json', 'Accept': 'application/json', 'Version': '2'}, Payload: {'epic': 'CS.D.GBPUSD.CFD.IP', 'direction': 'BUY', 'size': 4.915492647106558, 'orderType': 'MARKET', 'timeInForce': 'EXECUTE_AND_ELIMINATE', 'guaranteedStop': False, 'forceOpen': 'true', 'expiry': '2025/10/30'}
+2025-10-30 10:46:16,959 | integrations.ig_markets_api | ERROR | ❌ Open position error: {"errorCode":"validation.null-not-allowed.request.currencyCode"}
+2025-10-30 10:46:16,959 | trading.autonomous_trader_v2 | ERROR | ❌ Failed to open position. Response: {}
