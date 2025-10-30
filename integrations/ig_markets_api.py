@@ -111,6 +111,7 @@ class IGMarketsAPI:
         """Get account information"""
         url = f"{self.base_url}/accounts"
         headers = self._get_headers()
+        headers['Version'] = '1'  # Use Version 1 for accounts endpoint
         
         try:
             async with self.session.get(url, headers=headers) as response:
@@ -120,7 +121,7 @@ class IGMarketsAPI:
                     return data
                 else:
                     error = await response.text()
-                    logger.error(f"❌ Account info error: {error}")
+                    logger.error(f"❌ Account info error (Status {response.status}): {error}")
                     return {}
                     
         except Exception as e:
@@ -131,6 +132,7 @@ class IGMarketsAPI:
         """Get market data for an instrument"""
         url = f"{self.base_url}/markets/{epic}"
         headers = self._get_headers()
+        headers['Version'] = '3'  # Use Version 3 for markets endpoint
         logger.debug(f"Getting market data for {epic}")
         
         try:
@@ -141,7 +143,7 @@ class IGMarketsAPI:
                     return data
                 else:
                     error = await response.text()
-                    logger.error(f"❌ Market data error: {error}")
+                    logger.error(f"❌ Market data error (Status {response.status}): {error}")
                     return {}
                     
         except Exception as e:
@@ -160,7 +162,7 @@ class IGMarketsAPI:
         Open a new SPREAD BETTING position (NO CFD)
         
         Args:
-            epic: Market epic code (e.g., 'CS.D.GBPUSD.TODAY.SPR')
+            epic: Market epic code (e.g., 'IX.D.SPTRD.DAILY.IP')
             direction: 'BUY' or 'SELL'
             size: Position size in GBP per point
             stop_loss: Optional stop loss level
@@ -171,7 +173,8 @@ class IGMarketsAPI:
         """
         url = f"{self.base_url}/positions/otc"
         
-        # Spread betting payload (NO CFD, NO EXPIRY)
+        # Spread betting payload - Include expiry field for DFB (Daily Funded Bets)
+        # DFB = Spread Betting without fixed expiry (rolls daily)
         payload = {
             'epic': epic,
             'direction': direction.upper(),  # BUY or SELL
@@ -180,7 +183,8 @@ class IGMarketsAPI:
             'guaranteedStop': False,
             'forceOpen': True,
             'currencyCode': 'GBP',
-            'timeInForce': 'FILL_OR_KILL'
+            'timeInForce': 'FILL_OR_KILL',
+            'expiry': 'DFB'  # Daily Funded Bet - NO FIXED EXPIRY (Spread Betting)
         }
         
         # Add stop loss if provided
