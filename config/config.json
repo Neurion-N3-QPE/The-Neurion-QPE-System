@@ -107,6 +107,16 @@
       "confidence_bonus_factor": 2.0,
       "fragments_per_density_trade": 2,
       "density_trade_delay": 2.0
+    },
+    "rolling_balance_scaling": {
+      "enabled": true,
+      "update_frequency": "after_each_trade",
+      "env_file_path": ".env",
+      "balance_var_name": "ACCOUNT_BALANCE",
+      "auto_recalculate_sizing": true,
+      "balance_sync_interval_minutes": 5,
+      "track_trade_history": true,
+      "max_history_records": 100
     }
   },
   

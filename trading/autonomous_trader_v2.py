@@ -16,6 +16,7 @@ from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import update_env_var
 from trading.risk_engine import RiskEngine
 from trading.scalp_engine import ScalpEngine
+from trading.account_manager import AccountManager
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,7 @@ class AutonomousTraderV2:
         self.quantum = QuantumEngine()
         self.risk_engine = RiskEngine(config)
         self.scalp_engine = ScalpEngine(config)
+        self.account_manager = None  # Will be initialized after IG API connection
         self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
 
         # Load multi-epic configuration
@@ -72,7 +74,11 @@ class AutonomousTraderV2:
             demo=ig_api_config.get('demo', False)
         )
         await self.ig_api.initialize()
-        
+
+        # Initialize Account Manager after IG API connection
+        self.account_manager = AccountManager(self.config, self.ig_api)
+        await self.account_manager.initialize()
+
         # Load configuration
         self.risk_per_trade = self.config.get('risk_per_trade', 0.02)  # 2%
         self.max_positions = self.config.get('max_positions', 5)
@@ -147,6 +153,10 @@ class AutonomousTraderV2:
                 # PHASE 7 - High-Frequency Micro-Scalping
                 # Execute rapid micro-trades on high-confidence signals
                 await self.micro_scalp_management()
+
+                # PHASE 8 - Rolling Balance Management
+                # Update balance and position sizing calculations
+                await self.rolling_balance_management()
 
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
@@ -233,23 +243,34 @@ class AutonomousTraderV2:
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized for balance check.")
             return 0.0
-            
-        account_info = await self.ig_api.get_account_info()
-        current_balance = 0.0
-        available_funds = 0.0
-        
-        if account_info and account_info.get('accounts'):
-            for acc in account_info['accounts']:
-                if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
-                    balance_info = acc.get('balance', {})
-                    current_balance = balance_info.get('balance', 0.0)
-                    available_funds = balance_info.get('available', 0.0)
-                    break
-        
+
+        # Use Account Manager for balance information if available
+        if self.account_manager:
+            sizing_info = await self.account_manager.get_position_sizing_info()
+            if sizing_info:
+                current_balance = sizing_info.get('balance', 0.0)
+                available_funds = sizing_info.get('available', 0.0)
+            else:
+                current_balance = await self.account_manager.get_current_balance()
+                available_funds = await self.account_manager.get_available_balance()
+        else:
+            # Fallback to direct IG API call
+            account_info = await self.ig_api.get_account_info()
+            current_balance = 0.0
+            available_funds = 0.0
+
+            if account_info and account_info.get('accounts'):
+                for acc in account_info['accounts']:
+                    if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
+                        balance_info = acc.get('balance', {})
+                        current_balance = balance_info.get('balance', 0.0)
+                        available_funds = balance_info.get('available', 0.0)
+                        break
+
         if current_balance == 0.0:
-            logger.warning("⚠️  Could not fetch current account balance. Using dummy balance for position sizing.")
-            current_balance = 264.63
-            available_funds = 264.63
+            logger.warning("⚠️  Could not fetch current account balance. Using fallback balance for position sizing.")
+            current_balance = 270.14
+            available_funds = 132.54
         
         # Calculate risk-based size
         risk_amount = self.risk_per_trade * current_balance
@@ -833,11 +854,17 @@ class AutonomousTraderV2:
                     if pnl > 0:  # Only profitable positions
                         total_unrealized_profit += pnl
 
-                        # Check if this position qualifies for compounding
-                        profit_threshold_percent = compound_config.get('profit_threshold_percent', 1.0)
-                        profit_threshold = (profit_threshold_percent / 100.0) * current_balance
+                        # Check if this position qualifies for compounding using Account Manager
+                        should_compound = False
+                        if self.account_manager:
+                            should_compound = await self.account_manager.should_compound_position(pnl)
+                        else:
+                            # Fallback to manual calculation
+                            profit_threshold_percent = compound_config.get('profit_threshold_percent', 1.0)
+                            profit_threshold = (profit_threshold_percent / 100.0) * current_balance
+                            should_compound = pnl > profit_threshold
 
-                        if pnl > profit_threshold:
+                        if should_compound:
                             # Check if we've already compounded this position recently
                             if not self._has_recent_compound(deal_id, compound_config):
                                 compound_size = self._calc_safe_size_from_profit(pnl, current_balance, compound_config)
@@ -1548,3 +1575,113 @@ class AutonomousTraderV2:
             'open_positions': len([p for p in self.positions.values() if p['status'] == 'OPEN']),
             'pie_stats': self.pie.get_system_stats()
         }
+
+    async def rolling_balance_management(self):
+        """
+        Rolling Balance Scaling: Update balance and position sizing after trades
+        Goal: Maintain accurate balance for compounding and position sizing
+        """
+        try:
+            if not self.account_manager:
+                logger.warning("⚠️ Account Manager not initialized")
+                return
+
+            logger.info("🏦 PHASE 8 - Rolling Balance Management")
+
+            # Get current account information
+            sizing_info = await self.account_manager.get_position_sizing_info()
+
+            if sizing_info:
+                balance = sizing_info.get('balance', 0.0)
+                available = sizing_info.get('available', 0.0)
+                margin_percent = sizing_info.get('margin_percent', 0.0)
+                profit_loss = sizing_info.get('profit_loss', 0.0)
+
+                logger.info(f"🏦 BALANCE UPDATE:")
+                logger.info(f"   Current Balance: £{balance:.2f}")
+                if balance > 0:
+                    logger.info(f"   Available: £{available:.2f} ({(available/balance*100):.1f}%)")
+                else:
+                    logger.info(f"   Available: £{available:.2f}")
+                logger.info(f"   Margin Used: {margin_percent:.1f}%")
+                logger.info(f"   P&L: £{profit_loss:.2f}")
+
+                # Check for closed positions that need balance updates
+                await self._check_for_closed_positions()
+
+                # Get trade statistics
+                stats = await self.account_manager.get_trade_statistics()
+                if stats.get('total_trades', 0) > 0:
+                    logger.info(f"📊 TRADE STATISTICS:")
+                    logger.info(f"   Total Trades: {stats['total_trades']}")
+                    logger.info(f"   Win Rate: {stats['win_rate']:.1f}%")
+                    logger.info(f"   Total P&L: £{stats['total_pnl']:.2f}")
+                    logger.info(f"   Average P&L: £{stats['average_pnl']:.2f}")
+
+            # Update position sizing for all strategies
+            await self._update_strategy_position_sizing()
+
+        except Exception as e:
+            logger.error(f"❌ Error in rolling_balance_management: {e}")
+
+    async def _check_for_closed_positions(self):
+        """Check for positions that have been closed and update balance accordingly"""
+        try:
+            # Get current positions from IG Markets
+            current_positions = await self.ig_api.get_positions()
+            current_deal_ids = {pos.get('dealId') for pos in current_positions} if current_positions else set()
+
+            # Check tracked positions for any that are now closed
+            closed_positions = []
+            for position_id, position_data in list(self.positions.items()):
+                deal_id = position_data.get('deal_id')
+                if deal_id and deal_id not in current_deal_ids:
+                    # Position has been closed
+                    closed_positions.append({
+                        'position_id': position_id,
+                        'deal_id': deal_id,
+                        'position_data': position_data
+                    })
+
+                    # Remove from tracked positions
+                    del self.positions[position_id]
+
+            # Update balance for each closed position
+            for closed_pos in closed_positions:
+                logger.info(f"🔄 Detected closed position: {closed_pos['deal_id']}")
+
+                trade_result = {
+                    'deal_id': closed_pos['deal_id'],
+                    'position_id': closed_pos['position_id'],
+                    'close_reason': 'detected_closed',
+                    'timestamp': datetime.now()
+                }
+
+                # Update balance after trade
+                await self.account_manager.update_balance_after_trade(trade_result)
+
+            if closed_positions:
+                logger.info(f"✅ Updated balance for {len(closed_positions)} closed positions")
+
+        except Exception as e:
+            logger.error(f"❌ Error checking for closed positions: {e}")
+
+    async def _update_strategy_position_sizing(self):
+        """Update position sizing for all strategies based on current balance"""
+        try:
+            if not self.account_manager:
+                return
+
+            # Get updated sizing information
+            sizing_info = await self.account_manager.get_position_sizing_info()
+
+            if sizing_info:
+                # Update internal sizing variables
+                self.current_balance = sizing_info.get('balance', 0.0)
+                self.available_balance = sizing_info.get('available', 0.0)
+                self.recommended_size = sizing_info.get('recommended_size', 0.1)
+
+                logger.debug(f"📊 Strategy sizing updated: Balance: £{self.current_balance:.2f} | Recommended: £{self.recommended_size:.2f}/pt")
+
+        except Exception as e:
+            logger.error(f"❌ Error updating strategy position sizing: {e}")
