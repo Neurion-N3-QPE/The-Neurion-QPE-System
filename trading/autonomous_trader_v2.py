@@ -11,6 +11,7 @@ import logging
 from core.integrity import IntegrityBus, IntegrityPrediction
 from core.quantum_engine import QuantumEngine
 from integrations.ig_markets_api import IGMarketsAPI
+from config.settings import update_env_var
 
 logger = logging.getLogger(__name__)
 
@@ -118,7 +119,14 @@ class AutonomousTraderV2:
                 
                 # Update positions
                 await self._update_positions()
-                
+
+                # PHASE 4 - Automation & Maintenance
+                # Sync positions with IG Markets to keep internal list identical
+                await self.sync_positions_with_ig()
+
+                # Update account balance in environment variables
+                await self.update_account_balance()
+
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
                 
@@ -342,7 +350,100 @@ class AutonomousTraderV2:
             # - Check take profit
             # - Check time-based exits
             pass
-    
+
+    async def sync_positions_with_ig(self):
+        """
+        Dedicated method to sync internal position list with IG Markets
+        Keeps internal position list identical to IG Markets every cycle
+        """
+        if not self.ig_api:
+            logger.warning("⚠️  IG Markets API not initialized for position sync")
+            return
+
+        try:
+            # Get current positions from IG Markets
+            actual_positions = await self.ig_api.get_positions()
+
+            # Build a set of actual deal IDs and position data
+            actual_deal_ids = set()
+            ig_positions = {}
+
+            # Handle both list and dict responses
+            positions_list = actual_positions if isinstance(actual_positions, list) else actual_positions.get('positions', [])
+
+            for pos_data in positions_list:
+                deal_id = pos_data['position']['dealId']
+                actual_deal_ids.add(deal_id)
+                ig_positions[deal_id] = {
+                    'deal_id': deal_id,
+                    'epic': pos_data['market']['epic'],
+                    'direction': pos_data['position']['direction'],
+                    'size': pos_data['position']['size'],
+                    'level': pos_data['position']['level'],
+                    'status': 'OPEN',
+                    'timestamp': datetime.now(),
+                    'source': 'IG_SYNC'
+                }
+
+            # Remove positions from tracking that are no longer open on IG
+            removed_positions = []
+            for pos_id in list(self.positions.keys()):
+                if pos_id not in actual_deal_ids:
+                    removed_positions.append(pos_id)
+                    del self.positions[pos_id]
+
+            # Add positions from IG that we're not tracking
+            added_positions = []
+            for deal_id in actual_deal_ids:
+                if deal_id not in self.positions:
+                    self.positions[deal_id] = ig_positions[deal_id]
+                    added_positions.append(deal_id)
+
+            # Log synchronization results
+            if removed_positions:
+                logger.info(f"🔄 Removed {len(removed_positions)} closed positions from tracking")
+            if added_positions:
+                logger.info(f"🔄 Added {len(added_positions)} untracked positions to internal list")
+
+            logger.debug(f"🔄 Position sync complete: {len(self.positions)} positions tracked")
+
+        except Exception as e:
+            logger.error(f"❌ Error in sync_positions_with_ig: {e}")
+
+    async def update_account_balance(self):
+        """
+        Update account balance in environment variables
+        Keeps .env file synchronized with current account balance
+        """
+        if not self.ig_api:
+            logger.warning("⚠️  IG Markets API not initialized for balance update")
+            return
+
+        try:
+            # Get current account information
+            account_info = await self.ig_api.get_account_info()
+
+            if account_info and account_info.get('accounts'):
+                for acc in account_info['accounts']:
+                    if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
+                        balance_info = acc.get('balance', {})
+                        current_balance = balance_info.get('balance', 0.0)
+                        available_funds = balance_info.get('available', 0.0)
+
+                        # Update environment variables
+                        update_env_var("ACCOUNT_BALANCE", str(current_balance))
+                        update_env_var("AVAILABLE_FUNDS", str(available_funds))
+
+                        logger.debug(f"💰 Balance updated: £{current_balance:.2f} (Available: £{available_funds:.2f})")
+                        return current_balance
+
+            logger.warning("⚠️  Could not retrieve account balance for environment update")
+            return None
+
+        except Exception as e:
+            logger.error(f"❌ Error updating account balance: {e}")
+            return None
+
     async def _close_position(self, position_id: str, reason: str = "Manual"):
         """Close a position"""
         if position_id not in self.positions:

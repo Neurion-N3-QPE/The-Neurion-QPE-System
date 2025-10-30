@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Dict
 import logging
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, set_key
 
 load_dotenv() # Load environment variables from .env file
 
@@ -110,6 +110,35 @@ def save_config(config: Dict, config_path: str = 'config/config.json'):
             json.dump(config, f, indent=2)
         
         logger.info(f"✅ Configuration saved to {config_path}")
-        
+
     except Exception as e:
         logger.error(f"❌ Error saving config: {e}")
+
+
+def update_env_var(key: str, value: str, env_file: str = '.env'):
+    """
+    Update environment variable in .env file
+
+    Args:
+        key: Environment variable name
+        value: Environment variable value
+        env_file: Path to .env file
+    """
+    try:
+        env_path = Path(env_file)
+        if not env_path.exists():
+            logger.warning(f"⚠️  .env file not found: {env_file}")
+            return False
+
+        # Update the .env file
+        set_key(str(env_path), key, value)
+
+        # Also update the current environment
+        os.environ[key] = value
+
+        logger.debug(f"✅ Updated {key} = {value}")
+        return True
+
+    except Exception as e:
+        logger.error(f"❌ Error updating environment variable {key}: {e}")
+        return False

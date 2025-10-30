@@ -35,7 +35,10 @@ async def check_account():
     
     # Get positions
     positions = await api.get_positions()
-    print(f"\n📊 Open Positions: {len(positions.get('positions', []))}")
+    if isinstance(positions, list):
+        print(f"\n📊 Open Positions: {len(positions)}")
+    else:
+        print(f"\n📊 Open Positions: {len(positions.get('positions', []))}")
     
     await api.close_session()
 
