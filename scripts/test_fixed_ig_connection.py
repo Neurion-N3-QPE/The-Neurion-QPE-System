@@ -17,11 +17,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import load_config
 import logging
+import pytest
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+@pytest.mark.asyncio
 async def test_ig_connection():
     """Test IG Markets API with fixes"""
     logger.info("="*80)
@@ -84,8 +86,6 @@ async def test_ig_connection():
         logger.info(f"   - Expiry: DFB (Daily Funded Bet - Spread Betting)")
         logger.info("   ⚠️  SKIPPING ACTUAL EXECUTION FOR SAFETY")
         
-        # Uncomment below to test REAL position opening (will use real money!)
-        # position_response = await ig_api.open_position(
         #     epic=epic,
         #     direction='BUY',
         #     size=1.0

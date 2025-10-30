@@ -5,7 +5,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import load_config
+import pytest
 
+@pytest.mark.asyncio
 async def test_epics():
     config = load_config()
     ig_config = config['brokers']['ig_markets']
@@ -53,6 +55,3 @@ async def test_epics():
             print(f"    NOT AVAILABLE")
     
     await api.shutdown()
-
-if __name__ == "__main__":
-    asyncio.run(test_epics())

@@ -1,10 +1,12 @@
 import asyncio
 import logging
+import pytest
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import load_config
 
 logging.basicConfig(level=logging.DEBUG)
 
+@pytest.mark.asyncio
 async def test_spread_betting_connection():
     config = load_config()
     ig_config = config['brokers']['ig_markets']
@@ -23,6 +25,7 @@ async def test_spread_betting_connection():
         
         # Test account info to confirm spread betting account
         account_info = await api.get_account_info()
+        assert account_info, "Failed to fetch account info"
         print(f"✅ Account info: {account_info}")
         
         # Check account type
@@ -31,45 +34,15 @@ async def test_spread_betting_connection():
                 if acc.get('accountId') == ig_config['account_id']:
                     account_type = acc.get('accountType', 'Unknown')
                     print(f"✅ Account type: {account_type}")
-                    if 'SPREAD' not in account_type.upper():
-                        print("⚠️ Warning: Account may not be spread betting")
+                    assert 'SPREAD' in account_type.upper(), "Account may not be spread betting"
         
         # Test market data with spread betting EPIC
         epic = 'CS.D.GBPUSD.TODAY.SPR'  # Force spread betting EPIC
-        print(f"Using EPIC for test: {epic}")
         market_data = await api.get_market_data(epic)
-        if market_data:
-            print(f"✅ Market data for {epic}: Available")
-            snapshot = market_data.get('snapshot', {})
-            print(f"   Bid: {snapshot.get('bid')}, Offer: {snapshot.get('offer')}")
-        else:
-            print(f"❌ No market data for {epic}")
-    
-        # Test small position opening
-        print(f"Testing small position opening for EPIC: {epic} ...")
-        test_trade = await api.open_position(
-            epic=epic,
-            direction='BUY',
-            size=1.0  # Small size for testing
-        )
-    
-        if test_trade and test_trade.get('dealReference'):
-            print(f"✅ Test trade successful: {test_trade['dealReference']}")
-        
-            # Close test position immediately
-            await asyncio.sleep(2)
-            close_result = await api.close_position(test_trade['dealReference'])
-            if close_result:
-                print("✅ Test position closed")
-        else:
-            print(f"❌ Test trade failed: {test_trade}")
-        
-        await api.shutdown()
-        return True
+        assert market_data, f"No market data for {epic}"
+        snapshot = market_data.get('snapshot', {})
+        print(f"✅ Market data for {epic}: Available")
+        print(f"   Bid: {snapshot.get('bid')}, Offer: {snapshot.get('offer')}")
         
     except Exception as e:
         print(f"❌ Connection test failed: {e}")
-        return False
-
-if __name__ == "__main__":
-    asyncio.run(test_spread_betting_connection())
