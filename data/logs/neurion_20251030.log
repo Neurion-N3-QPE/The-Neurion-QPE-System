@@ -19413,3 +19413,677 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
 2025-10-30 22:03:17,725 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
 2025-10-30 22:03:17,804 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 3 on IG | 0 tracked | 5 max
+2025-10-30 22:04:18,006 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:04:18,006 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:04:18,006 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:04:18,006 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:04:18,077 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 3 on IG | 0 tracked | 5 max
+2025-10-30 22:05:18,269 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:05:18,270 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:05:18,270 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:05:18,270 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:05:18,370 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 3 on IG | 0 tracked | 5 max
+2025-10-30 22:06:18,608 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:06:18,608 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:06:18,608 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:06:18,608 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:06:18,709 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 3 on IG | 0 tracked | 5 max
+2025-10-30 22:07:18,873 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:07:18,873 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:07:18,873 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:07:18,874 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:07:18,949 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:08:19,183 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:08:19,183 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:08:19,183 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:08:19,183 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:08:19,285 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:09:19,453 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:09:19,453 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:09:19,453 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:09:19,453 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:09:19,530 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:10:19,741 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:10:19,741 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:10:19,741 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:10:19,741 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:10:19,820 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:11:20,022 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:11:20,022 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:11:20,022 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:11:20,023 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:11:20,098 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:12:20,524 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:12:20,524 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:12:20,524 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:12:20,524 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:12:20,622 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:13:20,790 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:13:20,790 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:13:20,790 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:13:20,790 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:13:20,849 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:14:21,101 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:14:21,101 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:14:21,101 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:14:21,102 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:14:21,205 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:15:21,404 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:15:21,404 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:15:21,404 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:15:21,404 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:15:21,472 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:15:45,825 | __main__ | INFO | ================================================================================
+2025-10-30 22:15:45,825 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 22:15:45,825 | __main__ | INFO | ================================================================================
+2025-10-30 22:15:45,826 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 22:15:45,826 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 22:15:45,826 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 22:15:45,827 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 22:15:45,827 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 22:15:45,827 | core.integrity.integrity_bus | INFO | 🎯 IntegrityBus initialized with SSE: 10,000 simulations per prediction
+2025-10-30 22:15:45,828 | core.models.hybrid_model | INFO | 🎲 Monte Carlo Simulator initialized: 10,000 simulations per prediction
+2025-10-30 22:15:45,828 | core.sse.sse_risk_engine | INFO | 🎯 SSE Risk Engine initialized: 10,000 simulations per validation
+2025-10-30 22:15:45,828 | trading.risk_engine | INFO | 🛡️ Risk Engine initialized
+2025-10-30 22:15:45,828 | trading.scalp_engine | INFO | 🏃 Scalp Engine initialized
+2025-10-30 22:15:45,828 | trading.autonomous_trader_v2 | INFO | ✅ Multi-epic config loaded: 3 primary epics
+2025-10-30 22:15:45,828 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 22:15:45,828 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 22:15:45,829 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 22:15:45,829 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 22:15:45,829 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 22:15:45,829 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 22:15:45,829 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 22:15:45,829 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 22:15:46,158 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 22:15:46,158 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 22:15:46,378 | trading.session_manager | INFO | 📅 Session Manager initialized
+2025-10-30 22:15:46,379 | trading.ml_confidence_tuner | INFO | 📊 No trade history found, starting fresh
+2025-10-30 22:15:46,379 | trading.ml_confidence_tuner | INFO | 🤖 Created new ML confidence model
+2025-10-30 22:15:46,379 | trading.ml_confidence_tuner | INFO | 🤖 ML Confidence Tuner initialized
+2025-10-30 22:15:46,379 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 22:15:46,380 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 22:15:46,380 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 22:15:46,380 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 22:15:46,380 | __main__ | INFO | 
+================================================================================
+2025-10-30 22:15:46,380 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 22:15:46,380 | __main__ | INFO | ================================================================================
+
+2025-10-30 22:15:46,380 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 22:15:46,380 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.12):
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 22:15:46,381 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 22:15:46,382 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 22:15:46,382 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 22:15:46,416 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: Asian Session
+2025-10-30 22:15:46,417 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:15:46,511 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:46,532 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:46,532 | core.models.hybrid_model | INFO |    Mean: 0.4991 | Std: 0.0354
+2025-10-30 22:15:46,532 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:15:46,535 | core.models.hybrid_model | INFO |    VaR (95%): 0.4612 | VaR (99%): 0.3584
+2025-10-30 22:15:46,535 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:15:46,535 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3185 | Upside: 0.0404
+2025-10-30 22:15:46,537 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:46,554 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:46,554 | core.models.hybrid_model | INFO |    Mean: 0.4981 | Std: 0.0412
+2025-10-30 22:15:46,555 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:15:46,556 | core.models.hybrid_model | INFO |    VaR (95%): 0.4520 | VaR (99%): 0.3111
+2025-10-30 22:15:46,556 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:15:46,556 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3141 | Upside: 0.0506
+2025-10-30 22:15:46,558 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:46,577 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:46,577 | core.models.hybrid_model | INFO |    Mean: 0.4924 | Std: 0.0512
+2025-10-30 22:15:46,578 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:15:46,579 | core.models.hybrid_model | INFO |    VaR (95%): 0.4084 | VaR (99%): 0.2830
+2025-10-30 22:15:46,579 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:15:46,579 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4905 | Upside: 0.0616
+2025-10-30 22:15:46,582 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 22:15:46,582 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:15:46,583 | trading.autonomous_trader_v2 | ERROR | ❌ Error enhancing prediction with ML: IntegrityPrediction.__init__() missing 9 required positional arguments: 'timestamp', 'confidence_level', 'confidence_factors', 'agent_predictions', 'ensemble_weights', 'is_tradeable', 'position_size_multiplier', 'reasoning', and 'metadata'
+2025-10-30 22:15:46,583 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.50 (w=0.33) | Contramind: 0.50 (w=0.33) | MythFleck: 0.50 (w=0.34)
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO | 💰 INSTRUMENT-AWARE POSITION SIZING:
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.USDJPY.TODAY.IP
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO |    Balance: £257.12 | Available: £257.12
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £4.77 | Multiplier: 0.62
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO |    Calculated Size: £0.5/point
+2025-10-30 22:15:46,830 | trading.autonomous_trader_v2 | INFO |    Reason: Safe size for USD/JPY: margin=23.16, risk=0.10
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: SELL | Size: $0.50
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO |    Epic: CS.D.USDJPY.TODAY.IP
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO |    Direction: SELL
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 22:15:46,831 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 22:15:46,832 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.50/pt
+2025-10-30 22:15:46,832 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.3/pt (multiplier: 0.51)
+2025-10-30 22:15:46,832 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.3 £/pt → 2 × 0.2 £/pt
+2025-10-30 22:15:46,832 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.2 £/pt (Margin: 0.0%)
+2025-10-30 22:15:46,936 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:46,936 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:46,937 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:46,937 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:46,954 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:46,954 | core.models.hybrid_model | INFO |    Mean: 0.7974 | Std: 0.0345
+2025-10-30 22:15:46,955 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:46,955 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:46,956 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:46,956 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:46,956 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.7%
+2025-10-30 22:15:46,956 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.7% < 99.0%
+2025-10-30 22:15:46,956 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.7% < 99.0%
+2025-10-30 22:15:46,956 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:46,956 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:46,956 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:46,956 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 22:15:48,469 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.2 £/pt (Margin: 0.0%)
+2025-10-30 22:15:48,628 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:48,628 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:48,628 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:48,628 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:48,645 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:48,646 | core.models.hybrid_model | INFO |    Mean: 0.7974 | Std: 0.0354
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:48,647 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:48,647 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.3 £/pt)
+2025-10-30 22:15:48,648 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 22:15:48,649 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 22:15:50,649 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.4/pt (multiplier: 0.71)
+2025-10-30 22:15:50,649 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.4 £/pt → 2 × 0.2 £/pt
+2025-10-30 22:15:50,649 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.2 £/pt (Margin: 0.0%)
+2025-10-30 22:15:50,739 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:50,740 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:50,740 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:50,740 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:50,756 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:50,757 | core.models.hybrid_model | INFO |    Mean: 0.7977 | Std: 0.0348
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | INFO |    Win Probability: 99.9%
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.798
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:50,758 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:50,758 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:50,759 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 99.9%
+2025-10-30 22:15:50,759 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:50,759 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.798
+2025-10-30 22:15:50,759 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 22:15:52,265 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.2 £/pt (Margin: 0.0%)
+2025-10-30 22:15:52,363 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:52,363 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.2/pt
+2025-10-30 22:15:52,363 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:52,363 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:52,380 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:52,381 | core.models.hybrid_model | INFO |    Mean: 0.7970 | Std: 0.0353
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:52,382 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.4 £/pt)
+2025-10-30 22:15:52,383 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 22:15:52,384 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 22:15:52,384 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 22:15:52,384 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.5 £/pt → 5 × 0.1 £/pt
+2025-10-30 22:15:52,384 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:15:52,510 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:52,510 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:52,510 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:52,510 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:52,530 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:52,530 | core.models.hybrid_model | INFO |    Mean: 0.7976 | Std: 0.0350
+2025-10-30 22:15:52,531 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:52,531 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:52,531 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:52,531 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.798
+2025-10-30 22:15:52,532 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:52,532 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:52,532 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:52,532 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:52,532 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:52,532 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.798
+2025-10-30 22:15:52,532 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 22:15:54,042 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:15:54,158 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:54,158 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:54,158 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:54,158 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:54,175 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:54,175 | core.models.hybrid_model | INFO |    Mean: 0.7970 | Std: 0.0350
+2025-10-30 22:15:54,176 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:54,176 | core.sse.sse_risk_engine | INFO |    Win Probability: 99.9%
+2025-10-30 22:15:54,176 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:54,176 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:54,176 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:54,177 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:54,177 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:54,177 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 99.9%
+2025-10-30 22:15:54,177 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:54,177 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:54,177 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 22:15:55,689 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:15:55,902 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:55,902 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:55,902 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:55,902 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:55,920 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:55,920 | core.models.hybrid_model | INFO |    Mean: 0.7981 | Std: 0.0348
+2025-10-30 22:15:55,921 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:55,921 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:55,922 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:55,922 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.798
+2025-10-30 22:15:55,922 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.6%
+2025-10-30 22:15:55,922 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:55,922 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.6% < 99.0%
+2025-10-30 22:15:55,922 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:55,922 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:55,922 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.798
+2025-10-30 22:15:55,922 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 22:15:57,432 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:15:57,515 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:57,516 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:57,516 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:57,516 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:57,533 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:57,533 | core.models.hybrid_model | INFO |    Mean: 0.7971 | Std: 0.0344
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.7%
+2025-10-30 22:15:57,534 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.7% < 99.0%
+2025-10-30 22:15:57,535 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.7% < 99.0%
+2025-10-30 22:15:57,535 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:57,535 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:57,535 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:57,535 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 22:15:59,050 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:15:59,148 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:59,148 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: CS.D.USDJPY.TODAY.IP BUY £0.1/pt
+2025-10-30 22:15:59,148 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:15:59,148 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:15:59,166 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:15:59,167 | core.models.hybrid_model | INFO |    Mean: 0.7975 | Std: 0.0337
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.8%
+2025-10-30 22:15:59,168 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.8% < 99.0%
+2025-10-30 22:15:59,168 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.8% < 99.0%
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.5 £/pt)
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 22:15:59,169 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 22:15:59,170 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 6632.80
+2025-10-30 22:15:59,170 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'CS.D.USDJPY.TODAY.IP', 'direction': 'SELL', 'size': 0.5, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 22:15:59,170 | integrations.ig_markets_api | INFO | Opening SELL position for CS.D.USDJPY.TODAY.IP: £0.5 per point
+2025-10-30 22:15:59,291 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"NQXRR8BKEHYTYNK"}
+2025-10-30 22:15:59,291 | integrations.ig_markets_api | INFO | ✅ Position opened: NQXRR8BKEHYTYNK
+2025-10-30 22:15:59,388 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T22:15:58.991","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"CS.D.USDJPY.TODAY.IP","expiry":null,"dealReference":"NQXRR8BKEHYTYNK","dealId":"DIAAAAQC263WRAE","affectedDeals":[],"level":null,"size":null,"direction":"SELL","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 22:15:59,388 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 22:15:59,388 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 22:15:59,388 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 22:15:59,388 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 22:15:59,388 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: NQXRR8BKEHYTYNK
+2025-10-30 22:16:00,022 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T22:15:58.991","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"CS.D.USDJPY.TODAY.IP","expiry":null,"dealReference":"NQXRR8BKEHYTYNK","dealId":"DIAAAAQC263WRAE","affectedDeals":[],"level":null,"size":null,"direction":"SELL","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 22:16:00,022 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 22:16:00,022 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 22:16:00,022 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 22:16:00,022 | trading.autonomous_trader_v2 | ERROR | ❌ Trade was not accepted. Verification: {}
+2025-10-30 22:16:00,022 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.12):
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,023 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,024 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 22:16:00,024 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 22:16:00,024 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 22:16:00,024 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 22:16:00,024 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: Asian Session
+2025-10-30 22:16:00,024 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,179 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,196 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,197 | core.models.hybrid_model | INFO |    Mean: 0.4988 | Std: 0.0384
+2025-10-30 22:16:00,197 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,198 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3324
+2025-10-30 22:16:00,198 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,198 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3549 | Upside: 0.0413
+2025-10-30 22:16:00,199 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,215 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,216 | core.models.hybrid_model | INFO |    Mean: 0.4986 | Std: 0.0408
+2025-10-30 22:16:00,216 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,217 | core.models.hybrid_model | INFO |    VaR (95%): 0.4541 | VaR (99%): 0.3155
+2025-10-30 22:16:00,217 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,217 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3916 | Upside: 0.0484
+2025-10-30 22:16:00,219 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,236 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,237 | core.models.hybrid_model | INFO |    Mean: 0.4930 | Std: 0.0502
+2025-10-30 22:16:00,237 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,239 | core.models.hybrid_model | INFO |    VaR (95%): 0.4117 | VaR (99%): 0.2961
+2025-10-30 22:16:00,239 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,239 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4375 | Upside: 0.0611
+2025-10-30 22:16:00,242 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.12):
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 22:16:00,242 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 22:16:00,243 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 22:16:00,243 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: Asian Session
+2025-10-30 22:16:00,243 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,327 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,343 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,344 | core.models.hybrid_model | INFO |    Mean: 0.4986 | Std: 0.0368
+2025-10-30 22:16:00,344 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,345 | core.models.hybrid_model | INFO |    VaR (95%): 0.4601 | VaR (99%): 0.3499
+2025-10-30 22:16:00,346 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,346 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3530 | Upside: 0.0403
+2025-10-30 22:16:00,347 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,361 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,361 | core.models.hybrid_model | INFO |    Mean: 0.4979 | Std: 0.0413
+2025-10-30 22:16:00,362 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,363 | core.models.hybrid_model | INFO |    VaR (95%): 0.4528 | VaR (99%): 0.3080
+2025-10-30 22:16:00,363 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,363 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3456 | Upside: 0.0488
+2025-10-30 22:16:00,364 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,382 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,385 | core.models.hybrid_model | INFO |    Mean: 0.4933 | Std: 0.0508
+2025-10-30 22:16:00,385 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,386 | core.models.hybrid_model | INFO |    VaR (95%): 0.4097 | VaR (99%): 0.2898
+2025-10-30 22:16:00,387 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,387 | core.models.hybrid_model | INFO |    Max Drawdown: -0.4326 | Upside: 0.0605
+2025-10-30 22:16:00,390 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO | 💰 INSTRUMENT ANALYSIS (Balance: £257.12):
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |    ✅ Suitable Instruments (5):
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |       1. GBP/USD (CS.D.GBPUSD.TODAY.IP)
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |       2. EUR/USD (CS.D.EURUSD.TODAY.IP)
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,390 | trading.instrument_manager | INFO |       3. USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,391 | trading.instrument_manager | INFO |          Type: forex | Margin: £3/unit
+2025-10-30 22:16:00,391 | trading.instrument_manager | INFO |       4. FTSE 100 (IX.D.FTSE.DAILY.IP)
+2025-10-30 22:16:00,391 | trading.instrument_manager | INFO |          Type: index | Margin: £20/unit
+2025-10-30 22:16:00,391 | trading.instrument_manager | INFO |       5. Gold (CS.D.USCGC.TODAY.IP)
+2025-10-30 22:16:00,391 | trading.instrument_manager | INFO |          Type: commodity | Margin: £10/unit
+2025-10-30 22:16:00,391 | trading.autonomous_trader_v2 | INFO | 🌍 Current Session: Asian Session
+2025-10-30 22:16:00,391 | trading.autonomous_trader_v2 | INFO | ✅ Selected session-optimized epic: USD/JPY (CS.D.USDJPY.TODAY.IP)
+2025-10-30 22:16:00,476 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,496 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,496 | core.models.hybrid_model | INFO |    Mean: 0.4997 | Std: 0.0354
+2025-10-30 22:16:00,496 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,498 | core.models.hybrid_model | INFO |    VaR (95%): 0.4622 | VaR (99%): 0.3615
+2025-10-30 22:16:00,498 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,498 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3208 | Upside: 0.0406
+2025-10-30 22:16:00,499 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,516 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,516 | core.models.hybrid_model | INFO |    Mean: 0.4985 | Std: 0.0406
+2025-10-30 22:16:00,516 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,518 | core.models.hybrid_model | INFO |    VaR (95%): 0.4538 | VaR (99%): 0.3143
+2025-10-30 22:16:00,518 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,518 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3434 | Upside: 0.0492
+2025-10-30 22:16:00,519 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,540 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,540 | core.models.hybrid_model | INFO |    Mean: 0.4926 | Std: 0.0501
+2025-10-30 22:16:00,540 | core.models.hybrid_model | INFO | 📊 SSE Risk Analysis:
+2025-10-30 22:16:00,541 | core.models.hybrid_model | INFO |    VaR (95%): 0.4136 | VaR (99%): 0.2903
+2025-10-30 22:16:00,542 | core.models.hybrid_model | INFO |    Probability of Loss: 0.00%
+2025-10-30 22:16:00,542 | core.models.hybrid_model | INFO |    Max Drawdown: -0.3647 | Upside: 0.0601
+2025-10-30 22:16:00,545 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.498 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 22:16:00,545 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 3 epics with tradeable signals
+2025-10-30 22:16:00,545 | trading.autonomous_trader_v2 | INFO |    IX.D.NASDAQ.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 22:16:00,545 | trading.autonomous_trader_v2 | INFO |    IX.D.SPTRD.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 22:16:00,545 | trading.autonomous_trader_v2 | INFO |    IX.D.FTSE.DAILY.IP: 0.855 confidence (SELL)
+2025-10-30 22:16:00,545 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 22:16:00,780 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:00,780 | trading.autonomous_trader_v2 | INFO | 💰 INSTRUMENT-AWARE POSITION SIZING:
+2025-10-30 22:16:00,780 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NASDAQ.DAILY.IP
+2025-10-30 22:16:00,780 | trading.autonomous_trader_v2 | INFO |    Balance: £257.12 | Available: £257.12
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £2.55 | Multiplier: 0.33
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO |    Calculated Size: £0.0/point
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO |    Reason: Insufficient balance for NASDAQ 100. Need £500, have £257.12
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO | 🎯 Multi-epic trade: IX.D.NASDAQ.DAILY.IP | Signal: 0.855 | Size: 0.0 £/pt
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.0 £/pt → 5 × 0.1 £/pt
+2025-10-30 22:16:00,781 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:00,876 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:00,876 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:00,876 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:00,877 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:00,877 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:00,894 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:00,894 | core.models.hybrid_model | INFO |    Mean: 0.7964 | Std: 0.0370
+2025-10-30 22:16:00,895 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:00,895 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:16:00,895 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:00,895 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.796
+2025-10-30 22:16:00,895 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.4%
+2025-10-30 22:16:00,896 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.4% < 99.0%
+2025-10-30 22:16:00,896 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.4% < 99.0%
+2025-10-30 22:16:00,896 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:16:00,896 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:00,896 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.796
+2025-10-30 22:16:00,896 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 22:16:02,400 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:02,540 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:02,540 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:02,540 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:02,540 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:02,541 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:02,563 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:02,563 | core.models.hybrid_model | INFO |    Mean: 0.7968 | Std: 0.0372
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | INFO |    Win Probability: 99.9%
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.3%
+2025-10-30 22:16:02,565 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.3% < 99.0%
+2025-10-30 22:16:02,565 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.3% < 99.0%
+2025-10-30 22:16:02,566 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 99.9%
+2025-10-30 22:16:02,566 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:02,566 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:16:02,566 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 22:16:04,079 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:04,161 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:04,162 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:04,162 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:04,162 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:04,162 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:04,180 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:04,180 | core.models.hybrid_model | INFO |    Mean: 0.7969 | Std: 0.0376
+2025-10-30 22:16:04,181 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:04,181 | core.sse.sse_risk_engine | INFO |    Win Probability: 99.9%
+2025-10-30 22:16:04,181 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:04,181 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:16:04,182 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.3%
+2025-10-30 22:16:04,182 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.3% < 99.0%
+2025-10-30 22:16:04,182 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.3% < 99.0%
+2025-10-30 22:16:04,182 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 99.9%
+2025-10-30 22:16:04,182 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:04,182 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:16:04,182 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 22:16:05,686 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:05,772 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:05,772 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:05,773 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:05,773 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:05,773 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:05,790 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:05,790 | core.models.hybrid_model | INFO |    Mean: 0.7972 | Std: 0.0367
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.797
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.4%
+2025-10-30 22:16:05,791 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.4% < 99.0%
+2025-10-30 22:16:05,792 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.4% < 99.0%
+2025-10-30 22:16:05,792 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:16:05,792 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:05,792 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.797
+2025-10-30 22:16:05,792 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 22:16:07,306 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:07,649 | integrations.ig_markets_api | ERROR | ❌ Market data error (Status 404): {"errorCode":"error.service.marketdata.instrument.epic.unavailable"}
+2025-10-30 22:16:07,649 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:07,650 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.NASDAQ.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:07,650 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:07,650 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:07,667 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:07,667 | core.models.hybrid_model | INFO |    Mean: 0.7960 | Std: 0.0381
+2025-10-30 22:16:07,668 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:07,668 | core.sse.sse_risk_engine | INFO |    Win Probability: 100.0%
+2025-10-30 22:16:07,669 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:07,669 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.796
+2025-10-30 22:16:07,669 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.2%
+2025-10-30 22:16:07,669 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.2% < 99.0%
+2025-10-30 22:16:07,669 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.2% < 99.0%
+2025-10-30 22:16:07,669 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 100.0%
+2025-10-30 22:16:07,669 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:07,669 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.796
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.0 £/pt)
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 22:16:07,670 | trading.autonomous_trader_v2 | WARNING | ❌ Multi-epic trade failed: IX.D.NASDAQ.DAILY.IP
+2025-10-30 22:16:07,932 | trading.autonomous_trader_v2 | INFO | 💰 INSTRUMENT-AWARE POSITION SIZING:
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.SPTRD.DAILY.IP
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO |    Balance: £257.12 | Available: £257.12
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO |    Risk Amount: £2.55 | Multiplier: 0.33
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO |    Calculated Size: £0.0/point
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO |    Reason: Insufficient balance for S&P 500. Need £400, have £257.12
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO | 🎯 Multi-epic trade: IX.D.SPTRD.DAILY.IP | Signal: 0.855 | Size: 0.0 £/pt
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.0 £/pt → 5 × 0.1 £/pt
+2025-10-30 22:16:07,933 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 22:16:08,007 | trading.autonomous_trader_v2 | INFO | 🎯 SSE PRE-TRADE VALIDATION: IX.D.SPTRD.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:08,007 | core.sse.sse_risk_engine | INFO | 🎯 SSE VALIDATION STARTING: IX.D.SPTRD.DAILY.IP BUY £0.1/pt
+2025-10-30 22:16:08,007 | core.sse.sse_risk_engine | INFO |    Running 10,000 Monte Carlo simulations...
+2025-10-30 22:16:08,007 | core.models.hybrid_model | INFO | 🎲 SSE RUNNING: Simulating 10,000 market scenarios...
+2025-10-30 22:16:08,025 | core.models.hybrid_model | INFO | ✅ SSE COMPLETE: 10,000 scenarios analyzed
+2025-10-30 22:16:08,025 | core.models.hybrid_model | INFO |    Mean: 0.7962 | Std: 0.0391
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | INFO | 📊 SSE ANALYSIS COMPLETE:
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | INFO |    Win Probability: 99.9%
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | INFO |    Risk of Ruin: 0.0%
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | INFO |    Expected Value: 0.796
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | INFO |    Confidence Level: 95.1%
+2025-10-30 22:16:08,026 | core.sse.sse_risk_engine | WARNING | ❌ SSE BLOCKED: Confidence level 95.1% < 99.0%
+2025-10-30 22:16:08,026 | trading.autonomous_trader_v2 | WARNING | ❌ SSE BLOCKED TRADE: Confidence level 95.1% < 99.0%
+2025-10-30 22:16:08,027 | trading.autonomous_trader_v2 | WARNING |    Win Probability: 99.9%
+2025-10-30 22:16:08,027 | trading.autonomous_trader_v2 | WARNING |    Risk of Ruin: 0.0%
+2025-10-30 22:16:08,027 | trading.autonomous_trader_v2 | WARNING |    Expected Value: 0.796
+2025-10-30 22:16:08,027 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 22:16:21,726 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:16:21,727 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:16:21,727 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:16:21,727 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:16:21,802 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:17:22,025 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:17:22,025 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:17:22,025 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:17:22,025 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:17:22,097 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:18:22,282 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:18:22,282 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:18:22,282 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:18:22,282 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:18:22,350 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:19:22,530 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:19:22,530 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:19:22,530 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:19:22,530 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:19:22,599 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:20:22,776 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:20:22,777 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:20:22,777 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:20:22,777 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:20:22,844 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:21:23,025 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:21:23,025 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:21:23,025 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:21:23,025 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:21:23,088 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 22:22:23,302 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 22:22:23,302 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 22:22:23,302 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 22:22:23,302 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 22:22:23,377 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max

@@ -12,6 +12,7 @@ from datetime import datetime
 import logging
 
 from .multi_agent_ensemble import MultiAgentEnsemble, AgentPrediction
+from .multi_agent_ensemble_sse import MultiAgentEnsembleSSE
 from .bayesian_calibrator import BayesianCalibrator
 from .confidence_scorer import ConfidenceScorer, ConfidenceFactors
 
@@ -45,12 +46,21 @@ class IntegrityBus:
     4. Final prediction is generated
     """
     
-    def __init__(self):
-        self.ensemble = MultiAgentEnsemble()
+    def __init__(self, use_sse: bool = False, sse_config: Dict = None):
+        # Choose ensemble based on SSE configuration
+        if use_sse:
+            n_simulations = sse_config.get('n_simulations', 10000) if sse_config else 10000
+            self.ensemble = MultiAgentEnsembleSSE(use_sse=True, n_simulations=n_simulations)
+            logger.info(f"🎯 IntegrityBus initialized with SSE: {n_simulations:,} simulations per prediction")
+        else:
+            self.ensemble = MultiAgentEnsemble()
+            logger.info("🎯 IntegrityBus initialized with standard ensemble")
+
         self.calibrator = BayesianCalibrator()
         self.scorer = ConfidenceScorer()
         self.initialized = False
         self.prediction_history = []
+        self.use_sse = use_sse
         
     async def initialize(self):
         """Initialize all PIE components"""

@@ -11,6 +11,12 @@ from .multi_agent_ensemble import (
     ContramindAgent,
     MythFleckAgent
 )
+from .multi_agent_ensemble_sse import (
+    MultiAgentEnsembleSSE,
+    EchoQuantAgent as EchoQuantAgentSSE,
+    ContramindAgent as ContramindAgentSSE,
+    MythFleckAgent as MythFleckAgentSSE
+)
 from .bayesian_calibrator import BayesianCalibrator, CalibrationMetrics
 from .confidence_scorer import ConfidenceScorer, ConfidenceFactors
 
@@ -18,10 +24,14 @@ __all__ = [
     'IntegrityBus',
     'IntegrityPrediction',
     'MultiAgentEnsemble',
+    'MultiAgentEnsembleSSE',
     'AgentPrediction',
     'EchoQuantAgent',
     'ContramindAgent',
     'MythFleckAgent',
+    'EchoQuantAgentSSE',
+    'ContramindAgentSSE',
+    'MythFleckAgentSSE',
     'BayesianCalibrator',
     'CalibrationMetrics',
     'ConfidenceScorer',

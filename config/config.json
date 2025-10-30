@@ -179,6 +179,35 @@
         "log_predictions": true,
         "save_model_metrics": true
       }
+    },
+    "sse": {
+      "enabled": true,
+      "n_simulations": 10000,
+      "pre_trade_validation": true,
+      "monte_carlo_gates": {
+        "enabled": true,
+        "min_win_probability": 0.65,
+        "max_risk_of_ruin": 0.05,
+        "min_expected_value": 0.1,
+        "confidence_threshold": 0.99
+      },
+      "simulation_parameters": {
+        "volatility_clustering": true,
+        "regime_detection": true,
+        "shock_modeling": true,
+        "correlation_modeling": false
+      },
+      "performance_optimization": {
+        "parallel_processing": true,
+        "cache_scenarios": true,
+        "adaptive_simulation_count": false
+      },
+      "risk_firewall": {
+        "enabled": true,
+        "block_high_risk_trades": true,
+        "require_unanimous_agent_approval": false,
+        "emergency_stop_loss_multiplier": 2.0
+      }
     }
   },
   

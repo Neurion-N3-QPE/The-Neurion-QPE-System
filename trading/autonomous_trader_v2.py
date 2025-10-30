@@ -12,6 +12,7 @@ from pathlib import Path
 
 from core.integrity import IntegrityBus, IntegrityPrediction
 from core.quantum_engine import QuantumEngine
+from core.sse import SSERiskEngine, SSEValidationResult, TradeProposal
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import update_env_var
 from trading.risk_engine import RiskEngine
@@ -37,7 +38,17 @@ class AutonomousTraderV2:
     
     def __init__(self, config: Dict):
         self.config = config
-        self.pie = IntegrityBus()
+
+        # Initialize SSE configuration
+        sse_config = config.get('trading', {}).get('sse', {})
+        use_sse = sse_config.get('enabled', True)
+
+        # Initialize IntegrityBus with SSE support
+        self.pie = IntegrityBus(use_sse=use_sse, sse_config=sse_config)
+
+        # Initialize SSE Risk Engine for pre-trade validation
+        self.sse_risk_engine = SSERiskEngine(config)
+
         self.quantum = QuantumEngine()
         self.risk_engine = RiskEngine(config)
         self.scalp_engine = ScalpEngine(config)
@@ -1586,8 +1597,9 @@ class AutonomousTraderV2:
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
         """
-        Execute a single trade fragment
-        Extracted from existing trade execution logic for reuse
+        Execute a single trade fragment with SSE pre-trade validation
+
+        🎯 CRITICAL: Every trade fragment passes through SSE Monte Carlo validation
         """
         try:
             if not self.ig_api:
@@ -1606,6 +1618,40 @@ class AutonomousTraderV2:
                     current_price = 1.0  # Safe fallback for forex
             except:
                 current_price = 1.0  # Safe fallback
+
+            # 🎯 SSE PRE-TRADE VALIDATION - CRITICAL RISK FIREWALL
+            if self.sse_risk_engine.enabled and self.sse_risk_engine.pre_trade_validation:
+                logger.info(f"🎯 SSE PRE-TRADE VALIDATION: {epic} {direction} £{size}/pt")
+
+                # Create trade proposal
+                trade_proposal = TradeProposal(
+                    epic=epic,
+                    direction=direction,
+                    size=size,
+                    entry_price=current_price,
+                    confidence_score=0.8,  # Default confidence for fragments
+                    market_context={'volatility': 0.02}  # Basic market context
+                )
+
+                # Run SSE validation
+                sse_result = await self.sse_risk_engine.validate_trade(trade_proposal)
+
+                # Check if trade is approved by SSE
+                if not sse_result.approved:
+                    logger.warning(f"❌ SSE BLOCKED TRADE: {sse_result.rejection_reason}")
+                    logger.warning(f"   Win Probability: {sse_result.win_probability:.1%}")
+                    logger.warning(f"   Risk of Ruin: {sse_result.risk_of_ruin:.1%}")
+                    logger.warning(f"   Expected Value: {sse_result.expected_value:.3f}")
+                    return None  # Block trade execution
+
+                logger.info(f"✅ SSE APPROVED TRADE:")
+                logger.info(f"   Win Probability: {sse_result.win_probability:.1%}")
+                logger.info(f"   Risk of Ruin: {sse_result.risk_of_ruin:.1%}")
+                logger.info(f"   Expected Value: {sse_result.expected_value:.3f}")
+                logger.info(f"   Confidence Level: {sse_result.confidence_level:.1%}")
+                logger.info(f"   Scenarios Analyzed: {sse_result.scenarios_analyzed:,}")
+            else:
+                logger.warning("⚠️ SSE validation BYPASSED - executing without Monte Carlo analysis")
 
             # Calculate dynamic profit target for fragment
             estimated_atr = self._estimate_atr(epic, current_price)

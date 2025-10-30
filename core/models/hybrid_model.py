@@ -30,11 +30,43 @@ from scipy.special import logsumexp
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, Matern, WhiteKernel
 
-from ..config.settings import settings
-from ..feature_extraction.extractors import FeatureVector, VectorType
-from ..telemetry.logger import QPEMetrics, audit_logger, get_logger
+# Import config settings with fallback
+try:
+    from ..config.settings import settings
+except ImportError:
+    try:
+        from config.settings import load_config
+        settings = load_config()
+    except ImportError:
+        settings = {}
 
-logger = get_logger(__name__)
+# Import feature extraction with fallback
+try:
+    from ..feature_extraction.extractors import FeatureVector, VectorType
+except ImportError:
+    # Define minimal fallback classes
+    class FeatureVector:
+        def __init__(self, data):
+            self.data = data
+
+    class VectorType:
+        TECHNICAL = "technical"
+        FUNDAMENTAL = "fundamental"
+
+# Import telemetry with fallback
+try:
+    from ..telemetry.logger import QPEMetrics, audit_logger, get_logger
+    logger = get_logger(__name__)
+except ImportError:
+    import logging
+    logger = logging.getLogger(__name__)
+
+    class QPEMetrics:
+        @staticmethod
+        def log_prediction(*args, **kwargs):
+            pass
+
+    audit_logger = logger
 
 
 class ModelType(str, Enum):
@@ -332,7 +364,12 @@ class HybridPredictionModel:
 
         # Component models
         self.bayesian_gp = BayesianGaussianProcess()
-        self.monte_carlo = MonteCarloSimulator(n_simulations=settings.MONTE_CARLO_ITERATIONS)
+        # Get Monte Carlo iterations from settings with fallback
+        monte_carlo_iterations = getattr(settings, 'MONTE_CARLO_ITERATIONS', None)
+        if monte_carlo_iterations is None:
+            monte_carlo_iterations = settings.get('MONTE_CARLO_ITERATIONS', 10000) if isinstance(settings, dict) else 10000
+
+        self.monte_carlo = MonteCarloSimulator(n_simulations=monte_carlo_iterations)
 
         # Enhanced ensemble configuration for 5% ROI targeting
         self.ensemble_weights = ensemble_weights or {
@@ -703,5 +740,12 @@ class HybridPredictionModel:
         logger.info(f"Model loaded from {filepath}")
 
 
-# Global model instance
-prediction_model = HybridPredictionModel()
+# Global model instance - initialize only when needed
+prediction_model = None
+
+def get_prediction_model():
+    """Get or create the global prediction model instance"""
+    global prediction_model
+    if prediction_model is None:
+        prediction_model = HybridPredictionModel()
+    return prediction_model
