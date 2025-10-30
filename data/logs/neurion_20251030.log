@@ -7291,3 +7291,17 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
 2025-10-30 19:48:02,460 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
 2025-10-30 19:48:02,560 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 1 on IG | 0 tracked | 5 max
+2025-10-30 19:48:21,093 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 19:48:21,094 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 19:48:21,094 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 19:48:21,094 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 19:48:21,194 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 1 on IG | 1 tracked | 5 max
+2025-10-30 19:49:02,798 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 19:49:02,798 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 19:49:02,798 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 19:49:02,798 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 19:49:02,893 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 1 on IG | 0 tracked | 5 max
