@@ -65,6 +65,22 @@
       "profit_utilization_percent": 25.0,
       "compound_cooldown_minutes": 5,
       "max_compound_percent_of_balance": 2.0
+    },
+    "risk_management": {
+      "enabled": true,
+      "risk_per_trade_percent": 3.0,
+      "adaptive_stops": {
+        "enabled": true,
+        "tier1_profit_r": 0.5,
+        "breakeven_buffer_r": 0.1,
+        "tier2_profit_r": 1.0,
+        "tier2_protection_r": 0.5,
+        "tier3_profit_r": 2.0,
+        "tier3_protection_r": 1.0,
+        "tier4_profit_r": 3.0,
+        "trailing_percentage": 0.5,
+        "stop_update_cooldown_minutes": 2
+      }
     }
   },
   

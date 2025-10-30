@@ -14,6 +14,7 @@ from core.integrity import IntegrityBus, IntegrityPrediction
 from core.quantum_engine import QuantumEngine
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import update_env_var
+from trading.risk_engine import RiskEngine
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +34,7 @@ class AutonomousTraderV2:
         self.config = config
         self.pie = IntegrityBus()
         self.quantum = QuantumEngine()
+        self.risk_engine = RiskEngine(config)
         self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
 
         # Load multi-epic configuration
@@ -135,6 +137,10 @@ class AutonomousTraderV2:
                 # PHASE 5 - Intra-Trade Compounding
                 # Increase ROI on profitable trades using only unrealized gains
                 await self.intra_trade_compounding()
+
+                # PHASE 6 - Adaptive Stop-Loss Management
+                # Tighten stops as trades move into profit
+                await self.adaptive_stop_management()
 
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
@@ -967,6 +973,138 @@ class AutonomousTraderV2:
 
         except Exception as e:
             logger.error(f"❌ Error marking compound executed: {e}")
+
+    async def adaptive_stop_management(self):
+        """
+        Adaptive Stop-Loss Shrinking: Tighten stops as trades move into profit
+        Goal: Protect gains while allowing continued upside
+        """
+        try:
+            if not self.ig_api:
+                return []
+
+            # Check if adaptive stops are enabled
+            risk_config = self.config.get('trading', {}).get('risk_management', {})
+            adaptive_config = risk_config.get('adaptive_stops', {})
+
+            if not adaptive_config.get('enabled', True):
+                return []
+
+            # Get current positions
+            positions_data = await self.ig_api.get_positions()
+            if not positions_data:
+                return []
+
+            positions_list = positions_data if isinstance(positions_data, list) else positions_data.get('positions', [])
+
+            if not positions_list:
+                return []
+
+            # Process positions for adaptive stops
+            stop_updates = []
+            profitable_positions = 0
+
+            for pos_data in positions_list:
+                try:
+                    position = pos_data.get('position', {})
+                    market = pos_data.get('market', {})
+
+                    deal_id = position.get('dealId')
+                    epic = market.get('epic')
+                    direction = position.get('direction')
+                    size = position.get('size', 0.0)
+                    entry_price = position.get('level', 0.0)
+
+                    # Get current market price (simplified - using bid/offer)
+                    current_price = None
+                    if direction == 'BUY':
+                        current_price = market.get('bid', 0.0)
+                    else:  # SELL
+                        current_price = market.get('offer', 0.0)
+
+                    if not all([deal_id, epic, current_price, entry_price]):
+                        continue
+
+                    # Calculate P&L
+                    if direction == 'BUY':
+                        unrealized_pnl = (current_price - entry_price) * size
+                        profit_points = current_price - entry_price
+                    else:  # SELL
+                        unrealized_pnl = (entry_price - current_price) * size
+                        profit_points = entry_price - current_price
+
+                    # Only process profitable positions
+                    if unrealized_pnl <= 0:
+                        continue
+
+                    profitable_positions += 1
+
+                    # Create position dict for risk engine
+                    risk_position = {
+                        'deal_id': deal_id,
+                        'epic': epic,
+                        'direction': direction,
+                        'size': size,
+                        'level': entry_price,
+                        'stop_level': position.get('stopLevel'),
+                        'unrealized_pnl': unrealized_pnl
+                    }
+
+                    # Calculate new stop level
+                    new_stop = await self.risk_engine.dynamic_stop_management(risk_position, current_price)
+
+                    if new_stop:
+                        stop_updates.append({
+                            'deal_id': deal_id,
+                            'epic': epic,
+                            'current_stop': position.get('stopLevel'),
+                            'new_stop': new_stop,
+                            'current_price': current_price,
+                            'unrealized_pnl': unrealized_pnl,
+                            'direction': direction
+                        })
+
+                        logger.info(f"🎯 ADAPTIVE STOP CANDIDATE: {epic} | P&L: £{unrealized_pnl:.2f} | New Stop: {new_stop:.2f}")
+
+                except Exception as pos_error:
+                    logger.warning(f"⚠️ Error processing position for adaptive stops: {pos_error}")
+                    continue
+
+            # Execute stop updates
+            executed_updates = 0
+            for update in stop_updates:
+                try:
+                    # Note: IG Markets API doesn't support programmatic stop-loss updates
+                    # This would require manual intervention or a different broker API
+                    # For now, we log the recommendations
+
+                    logger.info(f"📋 STOP UPDATE RECOMMENDATION:")
+                    logger.info(f"   Deal ID: {update['deal_id']}")
+                    logger.info(f"   Epic: {update['epic']}")
+                    logger.info(f"   Direction: {update['direction']}")
+                    logger.info(f"   Current Stop: {update['current_stop']}")
+                    logger.info(f"   Recommended Stop: {update['new_stop']:.2f}")
+                    logger.info(f"   Current P&L: £{update['unrealized_pnl']:.2f}")
+
+                    executed_updates += 1
+
+                except Exception as update_error:
+                    logger.error(f"❌ Error executing stop update: {update_error}")
+                    continue
+
+            if stop_updates:
+                logger.info(f"🛡️ ADAPTIVE STOP MANAGEMENT COMPLETE:")
+                logger.info(f"   ✅ Profitable Positions: {profitable_positions}")
+                logger.info(f"   📊 Stop Updates Recommended: {len(stop_updates)}")
+                logger.info(f"   🎯 Updates Processed: {executed_updates}")
+            elif profitable_positions > 0:
+                logger.info(f"📊 Adaptive stops monitored: {profitable_positions} profitable positions, no updates needed")
+
+            return stop_updates
+
+        except Exception as e:
+            logger.error(f"❌ Error in adaptive_stop_management: {e}")
+            return []
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
         """
