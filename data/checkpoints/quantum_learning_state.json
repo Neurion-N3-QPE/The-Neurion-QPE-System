@@ -1,0 +1,32 @@
+{
+  "regime_performance": {
+    "BREAKOUT_MOMENTUM": {
+      "total_trades": 7,
+      "wins": 4,
+      "losses": 3,
+      "total_roi": 0.04619306115943704,
+      "avg_confidence": 0.0,
+      "accuracy": 0.5714285714285714
+    },
+    "TREND_CONTINUATION": {
+      "total_trades": 8,
+      "wins": 5,
+      "losses": 3,
+      "total_roi": 0.11385356708409275,
+      "avg_confidence": 0.0,
+      "accuracy": 0.625
+    },
+    "VOLATILITY_EXPANSION": {
+      "total_trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "total_roi": 0.09804680704847529,
+      "avg_confidence": 0.0,
+      "accuracy": 0.6
+    }
+  },
+  "confidence_adjustments": {},
+  "pattern_memory": {},
+  "generation": 1,
+  "last_updated": "2025-10-24T18:26:19.451802"
+}

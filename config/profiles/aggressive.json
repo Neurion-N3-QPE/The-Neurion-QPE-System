@@ -1,0 +1,49 @@
+{
+  "profile_name": "Aggressive - 99.8% Win Rate Target",
+  "description": "Ultra-high precision trading with 10% daily ROI target. Based on 10,000-episode SSE pre-training.",
+  "target_performance": {
+    "win_rate": 0.998,
+    "sharpe_ratio": 26.74,
+    "max_drawdown": 0.001,
+    "daily_roi": 0.10
+  },
+  "risk_parameters": {
+    "min_confidence": 0.92,
+    "stake_per_point_gbp": 0.50,
+    "max_positions": 5,
+    "max_risk_per_trade": 0.02,
+    "max_daily_loss": 0.05,
+    "max_correlation": 0.70,
+    "stop_loss_pct": 0.015,
+    "take_profit_pct": 0.10
+  },
+  "model_settings": {
+    "pie_enabled": true,
+    "sse_enabled": true,
+    "monte_carlo_iterations": 10000,
+    "bayesian_calibration": true,
+    "ensemble_agents": ["EchoQuant", "Contramind", "MythFleck"],
+    "confidence_floor": 0.85
+  },
+  "trading_hours": {
+    "enabled": true,
+    "timezone": "Europe/London",
+    "sessions": [
+      {"name": "London", "start": "08:00", "end": "16:30"},
+      {"name": "US_Overlap", "start": "13:30", "end": "16:30"}
+    ]
+  },
+  "filters": {
+    "economic_calendar": true,
+    "news_sentiment": true,
+    "volatility_regime": true,
+    "liquidity_check": true
+  },
+  "warnings": [
+    "This is the most aggressive profile",
+    "Requires 99.8% win rate to meet targets",
+    "MUST run 1000-trade simulation before live trading",
+    "Monitor first 10 trades very closely",
+    "Real money is at risk - use appropriate capital"
+  ]
+}
