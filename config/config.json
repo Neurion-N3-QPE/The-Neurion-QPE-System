@@ -51,7 +51,14 @@
     "end_time": "23:59",
     "timezone": "GMT",
     "compound_profits": true,
-    "recalculate_every_trade": true
+    "recalculate_every_trade": true,
+    "fragmentation": {
+      "enabled": true,
+      "num_fragments": 5,
+      "margin_safety_threshold": 35.0,
+      "stagger_delay": 1.5,
+      "min_fragment_size": 0.1
+    }
   },
   
   "logging": {

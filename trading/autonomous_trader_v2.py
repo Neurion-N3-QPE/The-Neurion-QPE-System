@@ -266,13 +266,29 @@ class AutonomousTraderV2:
         epic = self.config['brokers']['ig_markets'].get('default_epic', 'CS.D.GBPUSD.TODAY.SPR')
         
         try:
-            trade_response = await self.ig_api.open_position(
+            # STRATEGY: Max ROI Without Margin Expansion
+            # Use fragmented entry instead of single large position
+            logger.info(f"🔀 Implementing fragmented entry strategy for {size} £/pt")
+
+            # Execute fragmented entry (uses config settings)
+            successful_fragments = await self.fragmented_entry(
                 epic=epic,
-                direction=direction,
-                size=size,
-                # stop_loss=... # TODO: Implement stop loss calculation
-                # take_profit=... # TODO: Implement take profit calculation
+                base_size=size
             )
+
+            if successful_fragments:
+                logger.info(f"✅ Fragmented entry successful: {len(successful_fragments)} fragments executed")
+                return  # Exit early as fragmented_entry handles all tracking
+            else:
+                logger.warning("❌ Fragmented entry failed, falling back to single position")
+                # Fallback to original single position logic
+                trade_response = await self.ig_api.open_position(
+                    epic=epic,
+                    direction=direction,
+                    size=size,
+                    # stop_loss=... # TODO: Implement stop loss calculation
+                    # take_profit=... # TODO: Implement take profit calculation
+                )
             
             if trade_response and trade_response.get('dealReference'):
                 deal_ref = trade_response['dealReference']
@@ -442,6 +458,166 @@ class AutonomousTraderV2:
 
         except Exception as e:
             logger.error(f"❌ Error updating account balance: {e}")
+            return None
+
+    async def get_margin_percent(self):
+        """
+        Calculate current margin utilization percentage
+        Returns percentage of available funds used as margin
+        """
+        try:
+            if not self.ig_api:
+                return 0.0
+
+            account_info = await self.ig_api.get_account_info()
+            if account_info and account_info.get('accounts'):
+                for acc in account_info['accounts']:
+                    if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
+                        balance_info = acc.get('balance', {})
+                        total_balance = balance_info.get('balance', 0.0)
+                        available_funds = balance_info.get('available', 0.0)
+
+                        if total_balance > 0:
+                            used_margin = total_balance - available_funds
+                            margin_percent = (used_margin / total_balance) * 100
+                            return margin_percent
+
+            return 0.0
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating margin percentage: {e}")
+            return 0.0
+
+    async def fragmented_entry(self, epic: str, base_size: float, num_fragments: int = None):
+        """
+        Execute multiple micro-positions instead of one large trade
+        Core Principle: Increase win density and signal yield, not exposure
+
+        Args:
+            epic: Market epic to trade
+            base_size: Total position size to fragment
+            num_fragments: Number of micro-positions to create (uses config if None)
+
+        Returns:
+            List of deal references for successful fragments
+        """
+        try:
+            # Get fragmentation settings from config
+            frag_config = self.config.get('trading', {}).get('fragmentation', {})
+
+            if not frag_config.get('enabled', True):
+                logger.info("🔀 Fragmentation disabled in config, using single position")
+                return []
+
+            # Use config values or defaults
+            if num_fragments is None:
+                num_fragments = frag_config.get('num_fragments', 5)
+
+            margin_threshold = frag_config.get('margin_safety_threshold', 35.0)
+            stagger_delay = frag_config.get('stagger_delay', 1.5)
+            min_fragment_size = frag_config.get('min_fragment_size', 0.1)
+
+            # Calculate fragment size with configured minimum
+            fragment_size = max(min_fragment_size, base_size / num_fragments)
+            fragment_size = round(fragment_size, 1)
+
+            logger.info(f"🔀 FRAGMENTED ENTRY: {base_size} £/pt → {num_fragments} × {fragment_size} £/pt")
+
+            successful_fragments = []
+            failed_fragments = 0
+
+            for i in range(num_fragments):
+                try:
+                    # Check margin safety before each fragment
+                    current_margin = await self.get_margin_percent()
+
+                    if current_margin > margin_threshold:  # Configurable safety buffer
+                        logger.warning(f"⚠️  Margin threshold reached ({current_margin:.1f}%) - stopping fragmentation at {i+1}/{num_fragments}")
+                        break
+
+                    # Execute micro-position
+                    logger.info(f"🔸 Fragment {i+1}/{num_fragments}: {fragment_size} £/pt (Margin: {current_margin:.1f}%)")
+
+                    # Use existing position opening logic
+                    deal_reference = await self._execute_trade_fragment(epic, fragment_size, "BUY")
+
+                    if deal_reference:
+                        successful_fragments.append(deal_reference)
+                        logger.info(f"✅ Fragment {i+1} executed: {deal_reference}")
+                    else:
+                        failed_fragments += 1
+                        logger.warning(f"❌ Fragment {i+1} failed")
+
+                    # Stagger entries to avoid API rate limits
+                    if i < num_fragments - 1:  # Don't sleep after last fragment
+                        await asyncio.sleep(stagger_delay)
+
+                except Exception as fragment_error:
+                    failed_fragments += 1
+                    logger.error(f"❌ Fragment {i+1} error: {fragment_error}")
+                    continue
+
+            # Summary
+            total_executed = len(successful_fragments)
+            total_size_executed = total_executed * fragment_size
+
+            logger.info(f"🎯 FRAGMENTATION COMPLETE:")
+            logger.info(f"   ✅ Successful: {total_executed}/{num_fragments} fragments")
+            logger.info(f"   📊 Total Size: {total_size_executed} £/pt (Target: {base_size} £/pt)")
+            logger.info(f"   ❌ Failed: {failed_fragments} fragments")
+
+            return successful_fragments
+
+        except Exception as e:
+            logger.error(f"❌ Error in fragmented_entry: {e}")
+            return []
+
+    async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
+        """
+        Execute a single trade fragment
+        Extracted from existing trade execution logic for reuse
+        """
+        try:
+            if not self.ig_api:
+                logger.error("❌ IG Markets API not initialized")
+                return None
+
+            # Open position using existing IG API
+            result = await self.ig_api.open_position(
+                epic=epic,
+                direction=direction,
+                size=size
+            )
+
+            if result and result.get('deal_reference'):
+                deal_reference = result['deal_reference']
+
+                # Verify the trade
+                trade_status = await self.ig_api.verify_trade_status(deal_reference)
+
+                if trade_status and trade_status.get('dealStatus') == 'ACCEPTED':
+                    deal_id = trade_status.get('dealId')
+                    if deal_id:
+                        # Track the position
+                        self.positions[deal_id] = {
+                            'deal_id': deal_id,
+                            'epic': epic,
+                            'direction': direction,
+                            'size': size,
+                            'level': trade_status.get('level'),
+                            'status': 'OPEN',
+                            'timestamp': datetime.now(),
+                            'deal_reference': deal_reference,
+                            'source': 'FRAGMENTED'
+                        }
+
+                        logger.info(f"✅ Fragment tracked: {deal_id}")
+                        return deal_reference
+
+            return None
+
+        except Exception as e:
+            logger.error(f"❌ Error executing trade fragment: {e}")
             return None
 
     async def _close_position(self, position_id: str, reason: str = "Manual"):
