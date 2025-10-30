@@ -58,6 +58,13 @@
       "margin_safety_threshold": 35.0,
       "stagger_delay": 1.5,
       "min_fragment_size": 0.1
+    },
+    "intra_trade_compounding": {
+      "enabled": true,
+      "profit_threshold_percent": 1.0,
+      "profit_utilization_percent": 25.0,
+      "compound_cooldown_minutes": 5,
+      "max_compound_percent_of_balance": 2.0
     }
   },
   

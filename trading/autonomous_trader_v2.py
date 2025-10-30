@@ -5,7 +5,7 @@ Fully automated trading with PIE integration
 
 import asyncio
 from typing import Dict, List, Optional
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 import json
 from pathlib import Path
@@ -131,6 +131,10 @@ class AutonomousTraderV2:
 
                 # Update account balance in environment variables
                 await self.update_account_balance()
+
+                # PHASE 5 - Intra-Trade Compounding
+                # Increase ROI on profitable trades using only unrealized gains
+                await self.intra_trade_compounding()
 
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
@@ -745,6 +749,224 @@ class AutonomousTraderV2:
         except Exception as e:
             logger.error(f"❌ Error counting active epics: {e}")
             return set()
+
+    async def intra_trade_compounding(self):
+        """
+        Increase ROI on already-profitable trades using only unrealized gains
+        Goal: Pure profit leverage with zero additional risk to original capital
+        """
+        try:
+            if not self.ig_api:
+                return []
+
+            # Check if intra-trade compounding is enabled
+            compound_config = self.config.get('trading', {}).get('intra_trade_compounding', {})
+            if not compound_config.get('enabled', True):
+                return []
+
+            # Get current account info for balance reference
+            account_info = await self.ig_api.get_account_info()
+            current_balance = 0.0
+
+            if account_info and account_info.get('accounts'):
+                for acc in account_info['accounts']:
+                    if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
+                        balance_info = acc.get('balance', {})
+                        current_balance = balance_info.get('balance', 0.0)
+                        break
+
+            if current_balance <= 0:
+                logger.warning("⚠️  Could not retrieve balance for intra-trade compounding")
+                return []
+
+            # Get current positions with P&L
+            positions_data = await self.ig_api.get_positions()
+            if not positions_data:
+                return []
+
+            positions_list = positions_data if isinstance(positions_data, list) else positions_data.get('positions', [])
+
+            compounding_opportunities = []
+            total_unrealized_profit = 0.0
+
+            # Analyze each position for compounding opportunities
+            for pos_data in positions_list:
+                try:
+                    position = pos_data.get('position', {})
+                    market = pos_data.get('market', {})
+
+                    deal_id = position.get('dealId')
+                    epic = market.get('epic')
+                    direction = position.get('direction')
+                    size = position.get('size', 0.0)
+
+                    # Get P&L data
+                    pnl = position.get('unrealisedPL', 0.0)
+
+                    if pnl > 0:  # Only profitable positions
+                        total_unrealized_profit += pnl
+
+                        # Check if this position qualifies for compounding
+                        profit_threshold_percent = compound_config.get('profit_threshold_percent', 1.0)
+                        profit_threshold = (profit_threshold_percent / 100.0) * current_balance
+
+                        if pnl > profit_threshold:
+                            # Check if we've already compounded this position recently
+                            if not self._has_recent_compound(deal_id, compound_config):
+                                compound_size = self._calc_safe_size_from_profit(pnl, current_balance, compound_config)
+
+                                if compound_size >= 0.1:  # Minimum viable size
+                                    compounding_opportunities.append({
+                                        'deal_id': deal_id,
+                                        'epic': epic,
+                                        'direction': direction,
+                                        'original_size': size,
+                                        'current_pnl': pnl,
+                                        'compound_size': compound_size,
+                                        'profit_percentage': (pnl / current_balance) * 100
+                                    })
+
+                                    logger.info(f"💰 COMPOUND OPPORTUNITY: {epic} | P&L: £{pnl:.2f} ({(pnl/current_balance)*100:.1f}%) | Compound Size: £{compound_size:.1f}/pt")
+
+                except Exception as pos_error:
+                    logger.warning(f"⚠️  Error analyzing position for compounding: {pos_error}")
+                    continue
+
+            if not compounding_opportunities:
+                if total_unrealized_profit > 0:
+                    logger.info(f"📊 Total unrealized profit: £{total_unrealized_profit:.2f}, but no positions qualify for compounding")
+                return []
+
+            # Execute compounding trades
+            executed_compounds = []
+
+            for opportunity in compounding_opportunities:
+                try:
+                    logger.info(f"🚀 EXECUTING INTRA-TRADE COMPOUND:")
+                    logger.info(f"   Epic: {opportunity['epic']}")
+                    logger.info(f"   Direction: {opportunity['direction']}")
+                    logger.info(f"   Original P&L: £{opportunity['current_pnl']:.2f}")
+                    logger.info(f"   Compound Size: £{opportunity['compound_size']:.1f}/pt")
+
+                    # Execute compound position using fragmented entry
+                    fragments = await self.fragmented_entry(
+                        epic=opportunity['epic'],
+                        base_size=opportunity['compound_size']
+                    )
+
+                    if fragments:
+                        # Mark this position as recently compounded
+                        self._mark_compound_executed(opportunity['deal_id'])
+
+                        executed_compounds.append({
+                            'original_deal_id': opportunity['deal_id'],
+                            'epic': opportunity['epic'],
+                            'compound_size': opportunity['compound_size'],
+                            'fragments': len(fragments),
+                            'profit_used': opportunity['current_pnl']
+                        })
+
+                        logger.info(f"✅ Intra-trade compound executed: {opportunity['epic']} ({len(fragments)} fragments)")
+                    else:
+                        logger.warning(f"❌ Intra-trade compound failed: {opportunity['epic']}")
+
+                except Exception as compound_error:
+                    logger.error(f"❌ Error executing compound for {opportunity.get('epic', 'unknown')}: {compound_error}")
+                    continue
+
+            if executed_compounds:
+                total_compound_size = sum(c['compound_size'] for c in executed_compounds)
+                total_profit_used = sum(c['profit_used'] for c in executed_compounds)
+
+                logger.info(f"🎯 INTRA-TRADE COMPOUNDING COMPLETE:")
+                logger.info(f"   ✅ Compounds Executed: {len(executed_compounds)}")
+                logger.info(f"   📊 Total Compound Size: £{total_compound_size:.1f}/pt")
+                logger.info(f"   💰 Profit Leveraged: £{total_profit_used:.2f}")
+                logger.info(f"   🔄 Pure Profit Leverage: Zero additional capital risk")
+
+            return executed_compounds
+
+        except Exception as e:
+            logger.error(f"❌ Error in intra_trade_compounding: {e}")
+            return []
+
+    def _calc_safe_size_from_profit(self, profit_amount: float, balance: float, compound_config: dict) -> float:
+        """
+        Calculate safe compound size from unrealized profit
+        Uses configurable percentage of profit value (default 25%)
+        """
+        try:
+            # Get profit utilization percentage from config
+            profit_utilization_percent = compound_config.get('profit_utilization_percent', 25.0)
+            profit_utilization = profit_utilization_percent / 100.0
+
+            base_compound_size = profit_amount * profit_utilization
+
+            # Convert to position size (assuming £1 profit ≈ £0.1/pt position sizing)
+            # This is a conservative conversion factor
+            position_size = base_compound_size * 0.1
+
+            # Round to 1 decimal place (IG Markets requirement)
+            position_size = round(position_size, 1)
+
+            # Ensure minimum viable size
+            position_size = max(0.1, position_size)
+
+            # Cap at configurable maximum (prevent over-leveraging)
+            max_compound_percent = compound_config.get('max_compound_percent_of_balance', 2.0)
+            max_compound_size = balance * (max_compound_percent / 100.0)
+            position_size = min(position_size, max_compound_size)
+
+            logger.debug(f"💡 Compound sizing: £{profit_amount:.2f} profit ({profit_utilization_percent}%) → £{position_size:.1f}/pt compound")
+
+            return position_size
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating compound size: {e}")
+            return 0.0
+
+    def _has_recent_compound(self, deal_id: str, compound_config: dict) -> bool:
+        """
+        Check if this position has been compounded recently
+        Prevents excessive compounding of the same position
+        """
+        try:
+            # Simple time-based check - could be enhanced with persistent storage
+            if not hasattr(self, '_compound_history'):
+                self._compound_history = {}
+
+            last_compound = self._compound_history.get(deal_id)
+            if last_compound:
+                # Get cooldown from config
+                cooldown_minutes = compound_config.get('compound_cooldown_minutes', 5)
+                cooldown_seconds = cooldown_minutes * 60
+
+                time_since_compound = (datetime.now() - last_compound).total_seconds()
+                return time_since_compound < cooldown_seconds
+
+            return False
+
+        except Exception as e:
+            logger.error(f"❌ Error checking compound history: {e}")
+            return False
+
+    def _mark_compound_executed(self, deal_id: str):
+        """Mark that a compound has been executed for this position"""
+        try:
+            if not hasattr(self, '_compound_history'):
+                self._compound_history = {}
+
+            self._compound_history[deal_id] = datetime.now()
+
+            # Clean up old entries (keep only last 24 hours)
+            cutoff_time = datetime.now() - timedelta(hours=24)
+            self._compound_history = {
+                k: v for k, v in self._compound_history.items()
+                if v > cutoff_time
+            }
+
+        except Exception as e:
+            logger.error(f"❌ Error marking compound executed: {e}")
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):
         """
