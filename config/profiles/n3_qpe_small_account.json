@@ -1,0 +1,70 @@
+{
+  "name": "N3-QPE Small Account",
+  "description": "Ultra-conservative profile for £264.63 account - Capital preservation focus",
+  "account_size": 264.63,
+  "currency": "GBP",
+  
+  "risk_management": {
+    "risk_per_trade": 0.01,
+    "risk_per_trade_gbp": 2.65,
+    "max_positions": 2,
+    "max_daily_loss": 10.00,
+    "max_daily_loss_percent": 0.038,
+    "max_daily_trades": 5,
+    "max_weekly_loss": 25.00,
+    "confidence_threshold": 0.85,
+    "min_confidence_for_trade": 0.85
+  },
+  
+  "position_sizing": {
+    "min_multiplier": 0.5,
+    "max_multiplier": 0.8,
+    "base_size": 0.01,
+    "scale_with_confidence": true
+  },
+  
+  "stop_loss": {
+    "default_percent": 0.015,
+    "default_pips": 15,
+    "max_loss_per_trade": 5.00,
+    "trailing_stop": true
+  },
+  
+  "take_profit": {
+    "default_percent": 0.03,
+    "default_pips": 30,
+    "risk_reward_ratio": 2.0,
+    "partial_profit_taking": true,
+    "partial_levels": [0.015, 0.025]
+  },
+  
+  "trading_hours": {
+    "start": "08:00",
+    "end": "20:00",
+    "timezone": "Europe/London",
+    "avoid_news": true,
+    "news_buffer_minutes": 30
+  },
+  
+  "instruments": {
+    "allowed": [
+      "CS.D.GBPUSD.TODAY.IP",
+      "CS.D.EURUSD.TODAY.IP",
+      "CS.D.USDJPY.TODAY.IP"
+    ],
+    "max_spread": 2.0,
+    "min_volume": 1000
+  },
+  
+  "update_interval": 300,
+  
+  "notes": [
+    "Ultra-conservative settings for capital preservation",
+    "Only 1% risk per trade = £2.65 maximum loss",
+    "85% confidence threshold - only best trades",
+    "Maximum 2 positions at once",
+    "Daily loss limit: £10 (3.8% of account)",
+    "Weekly loss limit: £25 (9.4% of account)",
+    "Focus on slow, steady growth"
+  ]
+}

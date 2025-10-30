@@ -1,0 +1,121 @@
+{
+  "name": "N3-QPE Aggressive Growth - 10% Daily Target",
+  "description": "High-growth profile targeting 10% daily ROI with 99.8% win rate model",
+  "account_size": 264.63,
+  "currency": "GBP",
+  "target_daily_roi": 0.10,
+  "target_daily_profit": 26.46,
+  
+  "risk_management": {
+    "risk_per_trade": 0.03,
+    "risk_per_trade_gbp": 7.94,
+    "max_positions": 5,
+    "max_daily_loss": 50.00,
+    "max_daily_loss_percent": 0.19,
+    "max_daily_trades": 10,
+    "max_weekly_loss": 100.00,
+    "confidence_threshold": 0.75,
+    "min_confidence_for_trade": 0.75,
+    
+    "notes": [
+      "3% risk per trade = £7.94",
+      "Need 2-3 winning trades for 10% daily",
+      "With 99.8% win rate, highly achievable",
+      "Lower confidence threshold (75%) for more opportunities"
+    ]
+  },
+  
+  "position_sizing": {
+    "min_multiplier": 0.8,
+    "max_multiplier": 1.5,
+    "base_size": 0.03,
+    "scale_with_confidence": true,
+    "aggressive_scaling": true,
+    
+    "confidence_scaling": {
+      "75%": "0.8x (£6.35 risk)",
+      "80%": "1.0x (£7.94 risk)",
+      "85%": "1.2x (£9.53 risk)",
+      "90%": "1.4x (£11.11 risk)",
+      "95%+": "1.5x (£11.91 risk)"
+    }
+  },
+  
+  "stop_loss": {
+    "default_percent": 0.02,
+    "default_pips": 20,
+    "max_loss_per_trade": 12.00,
+    "trailing_stop": true,
+    "break_even_at": 0.01
+  },
+  
+  "take_profit": {
+    "default_percent": 0.04,
+    "default_pips": 40,
+    "risk_reward_ratio": 2.0,
+    "partial_profit_taking": true,
+    "partial_levels": [0.02, 0.03],
+    "partial_percentages": [0.5, 0.3],
+    
+    "notes": [
+      "Take 50% profit at 2% (£7.94)",
+      "Take 30% profit at 3% (£11.91)",
+      "Let 20% run to 4% (£15.88)"
+    ]
+  },
+  
+  "trading_hours": {
+    "start": "07:00",
+    "end": "21:00",
+    "timezone": "Europe/London",
+    "avoid_news": false,
+    "news_buffer_minutes": 15,
+    "trade_during_volatility": true
+  },
+  
+  "instruments": {
+    "allowed": [
+      "CS.D.GBPUSD.TODAY.IP",
+      "CS.D.EURUSD.TODAY.IP",
+      "CS.D.USDJPY.TODAY.IP",
+      "CS.D.AUDUSD.TODAY.IP",
+      "CS.D.USDCAD.TODAY.IP",
+      "CS.D.NZDUSD.TODAY.IP"
+    ],
+    "max_spread": 3.0,
+    "min_volume": 500,
+    "prefer_trending": true
+  },
+  
+  "update_interval": 60,
+  
+  "daily_targets": {
+    "minimum_profit": 13.23,
+    "target_profit": 26.46,
+    "stretch_profit": 39.69,
+    "stop_at_target": false,
+    "reduce_risk_after_target": true
+  },
+  
+  "performance_tracking": {
+    "target_win_rate": 0.998,
+    "min_acceptable_win_rate": 0.95,
+    "review_trigger": 0.90,
+    "pause_trading_below": 0.85
+  },
+  
+  "notes": [
+    "AGGRESSIVE PROFILE for 10% daily ROI target",
+    "3% risk per trade = £7.94 maximum loss",
+    "Target 2-3 winning trades per day",
+    "Each win = £15.88 profit (2:1 RR)",
+    "2 wins = £31.76 = 12% daily (exceeds target)",
+    "75% confidence threshold for more opportunities",
+    "With 99.8% win rate, very achievable",
+    "Extended hours (07:00-21:00) for more setups",
+    "6 currency pairs for more opportunities",
+    "Partial profit taking to lock in gains",
+    "Daily loss limit: £50 (19% of account)",
+    "Review strategy if win rate drops below 90%"
+  ]
+}
