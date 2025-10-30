@@ -152,6 +152,33 @@
         "overlap_boost": 1.5,
         "off_hours_reduction": 0.8
       }
+    },
+    "ml_confidence_tuner": {
+      "enabled": true,
+      "min_training_samples": 100,
+      "retrain_frequency_days": 7,
+      "ml_weight": 0.3,
+      "base_weight": 0.7,
+      "max_confidence": 0.95,
+      "min_confidence": 0.1,
+      "feature_engineering": {
+        "use_technical_indicators": true,
+        "use_session_data": true,
+        "use_market_context": true,
+        "use_time_features": true
+      },
+      "model_parameters": {
+        "n_estimators": 100,
+        "max_depth": 10,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,
+        "random_state": 42
+      },
+      "performance_tracking": {
+        "track_feature_importance": true,
+        "log_predictions": true,
+        "save_model_metrics": true
+      }
     }
   },
   

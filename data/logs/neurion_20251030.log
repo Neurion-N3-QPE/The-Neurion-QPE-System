@@ -10246,3 +10246,859 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 2025-10-30 21:05:45,402 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/2 positions
 2025-10-30 21:05:45,402 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 0.8x
 2025-10-30 21:05:45,402 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: Asian Session
+2025-10-30 21:06:27,778 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 21:06:27,778 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:06:27,779 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:06:27,779 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 21:06:27,846 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:06:45,575 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:06:45,575 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:06:45,575 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:06:45,707 | trading.autonomous_trader_v2 | INFO | 💰 Position Sizing:
+2025-10-30 21:06:45,707 | trading.autonomous_trader_v2 | INFO |    Balance: £260.14 | Available: £260.14
+2025-10-30 21:06:45,707 | trading.autonomous_trader_v2 | INFO |    Risk-based: £0.05/point | Margin-safe: £0.26/point
+2025-10-30 21:06:45,707 | trading.autonomous_trader_v2 | INFO |    Final Size: £0.1/point
+2025-10-30 21:06:45,707 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $0.10
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO |    Direction: BUY
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 21:06:45,708 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 21:06:45,709 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 21:06:45,709 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 21:06:45,709 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:06:45,843 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:45,843 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:45,843 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:45,914 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"GYR3YXKZ4MYTYNK"}
+2025-10-30 21:06:45,915 | integrations.ig_markets_api | INFO | ✅ Position opened: GYR3YXKZ4MYTYNK
+2025-10-30 21:06:45,990 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:45.702","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"GYR3YXKZ4MYTYNK","dealId":"DIAAAAQC23NC7AY","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:45,991 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:45,991 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:45,991 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:45,991 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:45,991 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:06:47,647 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:47,647 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:47,647 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:47,723 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"L9B9B23GBAGTYNK"}
+2025-10-30 21:06:47,723 | integrations.ig_markets_api | INFO | ✅ Position opened: L9B9B23GBAGTYNK
+2025-10-30 21:06:47,816 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:47.502","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"L9B9B23GBAGTYNK","dealId":"DIAAAAQC24D32AV","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:47,816 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:47,816 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:47,816 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:47,816 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:47,816 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:06:47,816 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:06:47,817 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:06:47,817 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:06:47,817 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:06:47,817 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 21:06:49,818 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 21:06:49,818 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:06:49,947 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:49,947 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:49,947 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:50,039 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"3P6XK9X9U38TYNK"}
+2025-10-30 21:06:50,039 | integrations.ig_markets_api | INFO | ✅ Position opened: 3P6XK9X9U38TYNK
+2025-10-30 21:06:50,119 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:49.823","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"3P6XK9X9U38TYNK","dealId":"DIAAAAQC24GNYA7","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:50,119 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:50,119 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:50,119 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:50,119 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:50,119 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:06:51,767 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:51,767 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:51,768 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:51,830 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"FPC8R72Z3KGTYNK"}
+2025-10-30 21:06:51,831 | integrations.ig_markets_api | INFO | ✅ Position opened: FPC8R72Z3KGTYNK
+2025-10-30 21:06:51,907 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:51.619","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"FPC8R72Z3KGTYNK","dealId":"DIAAAAQC23HRCAQ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:51,907 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:51,907 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:51,907 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:51,907 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 21:06:51,908 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 21:06:52,047 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:52,047 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:52,047 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:52,114 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"GFTK2WC3F8TYNK"}
+2025-10-30 21:06:52,114 | integrations.ig_markets_api | INFO | ✅ Position opened: GFTK2WC3F8TYNK
+2025-10-30 21:06:52,182 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:51.897","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"GFTK2WC3F8TYNK","dealId":"DIAAAAQC23NDEAY","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:52,183 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:52,183 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:52,183 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:52,183 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:52,183 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:06:53,835 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:53,835 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:53,835 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:53,895 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"2CWPQQ5862UTYNK"}
+2025-10-30 21:06:53,895 | integrations.ig_markets_api | INFO | ✅ Position opened: 2CWPQQ5862UTYNK
+2025-10-30 21:06:53,962 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:53.681","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"2CWPQQ5862UTYNK","dealId":"DIAAAAQC235UYAS","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:53,963 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:53,963 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:53,963 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:53,963 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:53,963 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:06:55,603 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:55,603 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:55,603 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:55,691 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"E3LCD6MV3HGTYNK"}
+2025-10-30 21:06:55,691 | integrations.ig_markets_api | INFO | ✅ Position opened: E3LCD6MV3HGTYNK
+2025-10-30 21:06:55,759 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:55.453","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"E3LCD6MV3HGTYNK","dealId":"DIAAAAQC234CKAC","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:55,759 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:55,759 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:55,759 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:55,759 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:55,759 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 21:06:57,423 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:57,423 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:57,423 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:57,483 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"LQDRKRHYHGLTYNK"}
+2025-10-30 21:06:57,483 | integrations.ig_markets_api | INFO | ✅ Position opened: LQDRKRHYHGLTYNK
+2025-10-30 21:06:57,551 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:57.269","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"LQDRKRHYHGLTYNK","dealId":"DIAAAAQC23HRHAQ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:57,551 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:57,551 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:57,551 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:57,551 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:57,551 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 21:06:59,214 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:06:59,214 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:59,215 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:59,290 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"YJVT68HV9V4TYNK"}
+2025-10-30 21:06:59,290 | integrations.ig_markets_api | INFO | ✅ Position opened: YJVT68HV9V4TYNK
+2025-10-30 21:06:59,374 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:59.069","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"YJVT68HV9V4TYNK","dealId":"DIAAAAQC23JWVAH","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:59,374 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:59,375 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:59,375 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:59,375 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 21:06:59,375 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 21:06:59,376 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 7087.20
+2025-10-30 21:06:59,376 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:06:59,376 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:06:59,456 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"24QCZMB8NNGTYNK"}
+2025-10-30 21:06:59,457 | integrations.ig_markets_api | INFO | ✅ Position opened: 24QCZMB8NNGTYNK
+2025-10-30 21:06:59,535 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:59.231","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"24QCZMB8NNGTYNK","dealId":"DIAAAAQC24EXMA2","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:06:59,535 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:06:59,535 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:06:59,535 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:06:59,535 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:06:59,536 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: 24QCZMB8NNGTYNK
+2025-10-30 21:07:00,114 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:06:59.231","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"24QCZMB8NNGTYNK","dealId":"DIAAAAQC24EXMA2","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:07:00,114 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:07:00,114 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:07:00,114 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:07:00,115 | trading.autonomous_trader_v2 | ERROR | ❌ Trade was not accepted. Verification: {}
+2025-10-30 21:07:00,188 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:07:00,271 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:07:00,271 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 2 epics with tradeable signals
+2025-10-30 21:07:00,272 | trading.autonomous_trader_v2 | INFO |    IX.D.NIKKEI.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:07:00,272 | trading.autonomous_trader_v2 | INFO |    IX.D.HANGSENG.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:07:00,272 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 2 slots available
+2025-10-30 21:07:00,415 | trading.autonomous_trader_v2 | ERROR | ❌ Error in multi_epic_strategy: AutonomousTraderV2._calculate_position_size() missing 1 required positional argument: 'multiplier'
+2025-10-30 21:07:00,479 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:07:01,207 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:07:01,282 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:07:01,283 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.NIKKEI.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:07:01,359 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:07:01,359 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.HANGSENG.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:07:01,359 | trading.autonomous_trader_v2 | ERROR | ❌ Error in micro_scalp_management: cannot access local variable 'scalp_updates' where it is not associated with a value
+2025-10-30 21:07:01,359 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 21:07:01,519 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 21:07:01,519 | trading.autonomous_trader_v2 | INFO |    Current Balance: £260.14
+2025-10-30 21:07:01,520 | trading.autonomous_trader_v2 | INFO |    Available: £260.14 (100.0%)
+2025-10-30 21:07:01,520 | trading.autonomous_trader_v2 | INFO |    Margin Used: 0.0%
+2025-10-30 21:07:01,520 | trading.autonomous_trader_v2 | INFO |    P&L: £0.00
+2025-10-30 21:07:01,627 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 21:07:01,627 | trading.autonomous_trader_v2 | INFO |    Total Trades: 2
+2025-10-30 21:07:01,627 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 21:07:01,627 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 21:07:01,627 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 21:07:01,763 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 21:07:01,831 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 21:07:01,831 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 21:07:01,831 | trading.session_manager | INFO |    Current Session: Asian Session
+2025-10-30 21:07:01,831 | trading.session_manager | INFO |    Active Epics: 2 (IX.D.NIKKEI.DAILY.IP, IX.D.HANGSENG.DAILY.IP)
+2025-10-30 21:07:01,831 | trading.session_manager | INFO |    Primary Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:07:01,832 | trading.session_manager | INFO |    Volatility Multiplier: 0.8x
+2025-10-30 21:07:01,832 | trading.session_manager | INFO |    Max Positions: 2
+2025-10-30 21:07:01,832 | trading.session_manager | INFO |    Session Time: 00:00 - 08:00 (Asia/Tokyo)
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 2 epics
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.HANGSENG.DAILY.IP
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/2 positions
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 0.8x
+2025-10-30 21:07:01,832 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: Asian Session
+2025-10-30 21:07:28,043 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 21:07:28,043 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:07:28,043 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:07:28,043 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 21:07:28,118 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:08:02,052 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:02,052 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:08:02,052 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO | 💰 Position Sizing:
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO |    Balance: £260.14 | Available: £260.14
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO |    Risk-based: £0.05/point | Margin-safe: £0.26/point
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO |    Final Size: £0.1/point
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $0.10
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 21:08:02,221 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO |    Direction: BUY
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 21:08:02,222 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:08:02,371 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:02,371 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:02,372 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:02,487 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"ESU3TKPU7KLTYNK"}
+2025-10-30 21:08:02,487 | integrations.ig_markets_api | INFO | ✅ Position opened: ESU3TKPU7KLTYNK
+2025-10-30 21:08:02,567 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:02.259","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"ESU3TKPU7KLTYNK","dealId":"DIAAAAQC234DXAC","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:02,567 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:02,567 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:02,567 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:02,568 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:02,568 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:08:04,236 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:04,237 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:04,237 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:04,432 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"F6BPHXXADUGTYNK"}
+2025-10-30 21:08:04,432 | integrations.ig_markets_api | INFO | ✅ Position opened: F6BPHXXADUGTYNK
+2025-10-30 21:08:04,551 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:04.105","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"F6BPHXXADUGTYNK","dealId":"DIAAAAQC23HSYAQ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:04,552 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:04,552 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:04,552 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:04,552 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:04,552 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:08:04,552 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:08:04,552 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:08:04,552 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:08:04,553 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:08:04,553 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 21:08:06,560 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 21:08:06,561 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:08:06,747 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:06,748 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:06,748 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:06,823 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"VXMWWY84TZ8TYNK"}
+2025-10-30 21:08:06,823 | integrations.ig_markets_api | INFO | ✅ Position opened: VXMWWY84TZ8TYNK
+2025-10-30 21:08:06,923 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:06.603","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"VXMWWY84TZ8TYNK","dealId":"DIAAAAQC24AAFAG","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:06,924 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:06,924 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:06,924 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:06,924 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:06,924 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:08:08,555 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:08,555 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:08,556 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:08,659 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"DPQVC75Q4T4TYNK"}
+2025-10-30 21:08:08,659 | integrations.ig_markets_api | INFO | ✅ Position opened: DPQVC75Q4T4TYNK
+2025-10-30 21:08:08,823 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:08.43","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"DPQVC75Q4T4TYNK","dealId":"DIAAAAQC23NEHAY","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:08,823 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:08,824 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:08,824 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:08,824 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:08,824 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:08:08,824 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:08:08,824 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:08:08,824 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:08:08,824 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:08:08,825 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 21:08:08,825 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 21:08:08,825 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 21:08:09,015 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:09,015 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:09,015 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:09,172 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"N63V65CCKPQTYNK"}
+2025-10-30 21:08:09,172 | integrations.ig_markets_api | INFO | ✅ Position opened: N63V65CCKPQTYNK
+2025-10-30 21:08:09,308 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:08.907","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"N63V65CCKPQTYNK","dealId":"DIAAAAQC24KHLAJ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:09,308 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:09,308 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:09,308 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:09,308 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:09,308 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:08:11,011 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:11,011 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:11,011 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:11,095 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"24F7NP368XQTYNK"}
+2025-10-30 21:08:11,095 | integrations.ig_markets_api | INFO | ✅ Position opened: 24F7NP368XQTYNK
+2025-10-30 21:08:11,171 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:10.876","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"24F7NP368XQTYNK","dealId":"DIAAAAQC24PHTBD","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:11,171 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:11,171 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:11,171 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:11,171 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:11,172 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:08:12,828 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:12,828 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:12,828 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:12,912 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"MZW8XPVXHXGTYNK"}
+2025-10-30 21:08:12,912 | integrations.ig_markets_api | INFO | ✅ Position opened: MZW8XPVXHXGTYNK
+2025-10-30 21:08:12,984 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:12.689","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"MZW8XPVXHXGTYNK","dealId":"DIAAAAQC23VJBAT","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:12,984 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:12,984 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:12,984 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:12,984 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:12,984 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 21:08:14,679 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:14,680 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:14,680 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:14,856 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"HLRC5TZ4CECTYNK"}
+2025-10-30 21:08:14,856 | integrations.ig_markets_api | INFO | ✅ Position opened: HLRC5TZ4CECTYNK
+2025-10-30 21:08:15,032 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:14.57","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"HLRC5TZ4CECTYNK","dealId":"DIAAAAQC24JG3A9","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:15,032 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:15,032 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:15,032 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:15,032 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:15,032 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 21:08:16,704 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:08:16,704 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:16,704 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:16,856 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"PJV7VGVR478TYNK"}
+2025-10-30 21:08:16,856 | integrations.ig_markets_api | INFO | ✅ Position opened: PJV7VGVR478TYNK
+2025-10-30 21:08:17,060 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:16.554","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"PJV7VGVR478TYNK","dealId":"DIAAAAQC24VS5AN","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:17,060 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:17,060 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:17,061 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:17,061 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 21:08:17,061 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 21:08:17,062 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 7087.20
+2025-10-30 21:08:17,062 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:08:17,062 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:08:17,196 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"BNKEJZC6FH4TYNK"}
+2025-10-30 21:08:17,196 | integrations.ig_markets_api | INFO | ✅ Position opened: BNKEJZC6FH4TYNK
+2025-10-30 21:08:17,340 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:16.928","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"BNKEJZC6FH4TYNK","dealId":"DIAAAAQC24HBMA6","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:17,340 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:17,340 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:17,340 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:17,341 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:08:17,341 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: BNKEJZC6FH4TYNK
+2025-10-30 21:08:18,003 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:08:16.928","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"BNKEJZC6FH4TYNK","dealId":"DIAAAAQC24HBMA6","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:08:18,003 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:08:18,003 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:08:18,003 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:08:18,003 | trading.autonomous_trader_v2 | ERROR | ❌ Trade was not accepted. Verification: {}
+2025-10-30 21:08:18,163 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:18,408 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:18,409 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 2 epics with tradeable signals
+2025-10-30 21:08:18,409 | trading.autonomous_trader_v2 | INFO |    IX.D.NIKKEI.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:08:18,409 | trading.autonomous_trader_v2 | INFO |    IX.D.HANGSENG.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:08:18,409 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 2 slots available
+2025-10-30 21:08:18,631 | trading.autonomous_trader_v2 | ERROR | ❌ Error in multi_epic_strategy: AutonomousTraderV2._calculate_position_size() missing 1 required positional argument: 'multiplier'
+2025-10-30 21:08:18,691 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:08:19,736 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:19,924 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:19,924 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.NIKKEI.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:08:20,176 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:08:20,176 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.HANGSENG.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:08:20,176 | trading.autonomous_trader_v2 | ERROR | ❌ Error in micro_scalp_management: cannot access local variable 'scalp_updates' where it is not associated with a value
+2025-10-30 21:08:20,176 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 21:08:20,320 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 21:08:20,320 | trading.autonomous_trader_v2 | INFO |    Current Balance: £260.14
+2025-10-30 21:08:20,321 | trading.autonomous_trader_v2 | INFO |    Available: £260.14 (100.0%)
+2025-10-30 21:08:20,321 | trading.autonomous_trader_v2 | INFO |    Margin Used: 0.0%
+2025-10-30 21:08:20,321 | trading.autonomous_trader_v2 | INFO |    P&L: £0.00
+2025-10-30 21:08:20,403 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 21:08:20,403 | trading.autonomous_trader_v2 | INFO |    Total Trades: 2
+2025-10-30 21:08:20,403 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 21:08:20,403 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 21:08:20,403 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 21:08:20,572 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 21:08:20,647 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 21:08:20,647 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 21:08:20,647 | trading.session_manager | INFO |    Current Session: Asian Session
+2025-10-30 21:08:20,647 | trading.session_manager | INFO |    Active Epics: 2 (IX.D.NIKKEI.DAILY.IP, IX.D.HANGSENG.DAILY.IP)
+2025-10-30 21:08:20,647 | trading.session_manager | INFO |    Primary Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:08:20,647 | trading.session_manager | INFO |    Volatility Multiplier: 0.8x
+2025-10-30 21:08:20,648 | trading.session_manager | INFO |    Max Positions: 2
+2025-10-30 21:08:20,648 | trading.session_manager | INFO |    Session Time: 00:00 - 08:00 (Asia/Tokyo)
+2025-10-30 21:08:20,648 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 2 epics
+2025-10-30 21:08:20,648 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:08:20,648 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.HANGSENG.DAILY.IP
+2025-10-30 21:08:20,648 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/2 positions
+2025-10-30 21:08:20,648 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 0.8x
+2025-10-30 21:08:20,649 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: Asian Session
+2025-10-30 21:08:28,312 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 21:08:28,312 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:08:28,312 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:08:28,312 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 21:08:28,375 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:09:20,940 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:20,940 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:09:20,941 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO | 💰 Position Sizing:
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO |    Balance: £260.14 | Available: £260.14
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO |    Risk-based: £0.05/point | Margin-safe: £0.26/point
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO |    Final Size: £0.1/point
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $0.10
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 21:09:21,095 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO |    Direction: BUY
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 21:09:21,096 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:09:21,249 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:21,249 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:21,250 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:21,345 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"LKKTCPWFRFUTYNK"}
+2025-10-30 21:09:21,345 | integrations.ig_markets_api | INFO | ✅ Position opened: LKKTCPWFRFUTYNK
+2025-10-30 21:09:21,425 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:21.125","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"LKKTCPWFRFUTYNK","dealId":"DIAAAAQC24VXJAN","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:21,425 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:21,425 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:21,426 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:21,426 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:21,426 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:09:23,110 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:23,111 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:23,111 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:23,217 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"YV9HGRGQYQGTYNK"}
+2025-10-30 21:09:23,217 | integrations.ig_markets_api | INFO | ✅ Position opened: YV9HGRGQYQGTYNK
+2025-10-30 21:09:23,297 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:22.995","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"YV9HGRGQYQGTYNK","dealId":"DIAAAAQC24KPYAJ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:23,297 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:23,297 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:23,297 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:23,297 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:23,297 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:09:23,298 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:09:23,298 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:09:23,298 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:09:23,298 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:09:23,298 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 21:09:25,299 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 21:09:25,300 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:09:25,457 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:25,457 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:25,457 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:25,537 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"Z55FKFSL9TYTYNK"}
+2025-10-30 21:09:25,537 | integrations.ig_markets_api | INFO | ✅ Position opened: Z55FKFSL9TYTYNK
+2025-10-30 21:09:25,629 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:25.32","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"Z55FKFSL9TYTYNK","dealId":"DIAAAAQC24ABRAG","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:25,629 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:25,629 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:25,629 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:25,629 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:25,630 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:09:27,326 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:27,326 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:27,326 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:27,442 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"RES3DYQ3BTLTYNK"}
+2025-10-30 21:09:27,442 | integrations.ig_markets_api | INFO | ✅ Position opened: RES3DYQ3BTLTYNK
+2025-10-30 21:09:27,515 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:27.225","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"RES3DYQ3BTLTYNK","dealId":"DIAAAAQC24B7LAU","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:27,515 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:27,515 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:27,516 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:27,516 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:09:27,516 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 21:09:27,517 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 21:09:27,517 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 21:09:27,674 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:27,674 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:27,674 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:27,802 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"E7NTS9BTKSGTYNK"}
+2025-10-30 21:09:27,802 | integrations.ig_markets_api | INFO | ✅ Position opened: E7NTS9BTKSGTYNK
+2025-10-30 21:09:27,886 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:27.532","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"E7NTS9BTKSGTYNK","dealId":"DIAAAAQC24LFNAP","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:27,886 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:27,886 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:27,887 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:27,887 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:27,887 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:09:28,519 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 21:09:28,519 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:09:28,519 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:09:28,519 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 21:09:28,586 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:09:29,603 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:29,603 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:29,603 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:29,723 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"P666Q8Q5SZ4TYNK"}
+2025-10-30 21:09:29,723 | integrations.ig_markets_api | INFO | ✅ Position opened: P666Q8Q5SZ4TYNK
+2025-10-30 21:09:29,794 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:29.464","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"P666Q8Q5SZ4TYNK","dealId":"DIAAAAQC2343PAF","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:29,794 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:29,794 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:29,795 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:29,795 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:29,795 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:09:31,447 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:31,447 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:31,447 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:31,578 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"KUH8CRPU8AYTYNK"}
+2025-10-30 21:09:31,578 | integrations.ig_markets_api | INFO | ✅ Position opened: KUH8CRPU8AYTYNK
+2025-10-30 21:09:31,650 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:31.303","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"KUH8CRPU8AYTYNK","dealId":"DIAAAAQC24HDXA6","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:31,650 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:31,651 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:31,651 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:31,651 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:31,651 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 21:09:33,319 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:33,319 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:33,319 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:33,402 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"WWHZVHXY6KUTYNK"}
+2025-10-30 21:09:33,403 | integrations.ig_markets_api | INFO | ✅ Position opened: WWHZVHXY6KUTYNK
+2025-10-30 21:09:33,502 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:33.177","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"WWHZVHXY6KUTYNK","dealId":"DIAAAAQC23JZ3AH","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:33,502 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:33,502 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:33,502 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:33,502 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:33,503 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 21:09:35,234 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:09:35,234 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:35,235 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:35,474 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"2TLFGWAVWU8TYNK"}
+2025-10-30 21:09:35,474 | integrations.ig_markets_api | INFO | ✅ Position opened: 2TLFGWAVWU8TYNK
+2025-10-30 21:09:35,554 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:35.22","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"2TLFGWAVWU8TYNK","dealId":"DIAAAAQC24PMJBD","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:35,554 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:35,554 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:35,554 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:35,554 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 21:09:35,555 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 7087.20
+2025-10-30 21:09:35,555 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:09:35,556 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:09:35,662 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"83LTEUQ8AV8TYNK"}
+2025-10-30 21:09:35,662 | integrations.ig_markets_api | INFO | ✅ Position opened: 83LTEUQ8AV8TYNK
+2025-10-30 21:09:35,734 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:35.44","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"83LTEUQ8AV8TYNK","dealId":"DIAAAAQC23849A4","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:35,734 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:35,734 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:35,734 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:35,735 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:09:35,735 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: 83LTEUQ8AV8TYNK
+2025-10-30 21:09:36,326 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:09:35.44","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"83LTEUQ8AV8TYNK","dealId":"DIAAAAQC23849A4","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:09:36,327 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:09:36,327 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:09:36,327 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:09:36,327 | trading.autonomous_trader_v2 | ERROR | ❌ Trade was not accepted. Verification: {}
+2025-10-30 21:09:36,431 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:36,507 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:36,507 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 2 epics with tradeable signals
+2025-10-30 21:09:36,508 | trading.autonomous_trader_v2 | INFO |    IX.D.NIKKEI.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:09:36,508 | trading.autonomous_trader_v2 | INFO |    IX.D.HANGSENG.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:09:36,508 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 2 slots available
+2025-10-30 21:09:36,650 | trading.autonomous_trader_v2 | ERROR | ❌ Error in multi_epic_strategy: AutonomousTraderV2._calculate_position_size() missing 1 required positional argument: 'multiplier'
+2025-10-30 21:09:36,731 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:09:37,364 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:37,452 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:37,452 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.NIKKEI.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:09:37,531 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:09:37,531 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.HANGSENG.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:09:37,531 | trading.autonomous_trader_v2 | ERROR | ❌ Error in micro_scalp_management: cannot access local variable 'scalp_updates' where it is not associated with a value
+2025-10-30 21:09:37,531 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 21:09:37,739 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 21:09:37,739 | trading.autonomous_trader_v2 | INFO |    Current Balance: £260.14
+2025-10-30 21:09:37,739 | trading.autonomous_trader_v2 | INFO |    Available: £260.14 (100.0%)
+2025-10-30 21:09:37,739 | trading.autonomous_trader_v2 | INFO |    Margin Used: 0.0%
+2025-10-30 21:09:37,739 | trading.autonomous_trader_v2 | INFO |    P&L: £0.00
+2025-10-30 21:09:37,842 | trading.autonomous_trader_v2 | INFO | 📊 TRADE STATISTICS:
+2025-10-30 21:09:37,842 | trading.autonomous_trader_v2 | INFO |    Total Trades: 2
+2025-10-30 21:09:37,843 | trading.autonomous_trader_v2 | INFO |    Win Rate: 0.0%
+2025-10-30 21:09:37,843 | trading.autonomous_trader_v2 | INFO |    Total P&L: £0.00
+2025-10-30 21:09:37,843 | trading.autonomous_trader_v2 | INFO |    Average P&L: £0.00
+2025-10-30 21:09:38,015 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 21:09:38,122 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 21:09:38,122 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 21:09:38,122 | trading.session_manager | INFO |    Current Session: Asian Session
+2025-10-30 21:09:38,123 | trading.session_manager | INFO |    Active Epics: 2 (IX.D.NIKKEI.DAILY.IP, IX.D.HANGSENG.DAILY.IP)
+2025-10-30 21:09:38,123 | trading.session_manager | INFO |    Primary Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:09:38,123 | trading.session_manager | INFO |    Volatility Multiplier: 0.8x
+2025-10-30 21:09:38,123 | trading.session_manager | INFO |    Max Positions: 2
+2025-10-30 21:09:38,123 | trading.session_manager | INFO |    Session Time: 00:00 - 08:00 (Asia/Tokyo)
+2025-10-30 21:09:38,123 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 2 epics
+2025-10-30 21:09:38,123 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:09:38,123 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.HANGSENG.DAILY.IP
+2025-10-30 21:09:38,124 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/2 positions
+2025-10-30 21:09:38,124 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 0.8x
+2025-10-30 21:09:38,124 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: Asian Session
+2025-10-30 21:10:28,788 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 21:10:28,788 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:10:28,788 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:10:28,788 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 21:10:28,884 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:10:31,478 | __main__ | INFO | ================================================================================
+2025-10-30 21:10:31,478 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 21:10:31,478 | __main__ | INFO | ================================================================================
+2025-10-30 21:10:31,479 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 21:10:31,479 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 21:10:31,479 | trading.risk_engine | INFO | 🛡️ Risk Engine initialized
+2025-10-30 21:10:31,479 | trading.scalp_engine | INFO | 🏃 Scalp Engine initialized
+2025-10-30 21:10:31,479 | trading.autonomous_trader_v2 | INFO | ✅ Multi-epic config loaded: 3 primary epics
+2025-10-30 21:10:31,479 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 21:10:31,479 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 21:10:31,480 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 21:10:31,480 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 21:10:31,480 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 21:10:31,480 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 21:10:31,481 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 21:10:31,481 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 21:10:31,765 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 21:10:31,766 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 21:10:31,929 | trading.session_manager | INFO | 📅 Session Manager initialized
+2025-10-30 21:10:31,929 | trading.ml_confidence_tuner | INFO | 📊 No trade history found, starting fresh
+2025-10-30 21:10:31,929 | trading.ml_confidence_tuner | INFO | 🤖 Created new ML confidence model
+2025-10-30 21:10:31,930 | trading.ml_confidence_tuner | INFO | 🤖 ML Confidence Tuner initialized
+2025-10-30 21:10:31,930 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 21:10:31,930 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 21:10:31,930 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 21:10:31,930 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 21:10:31,930 | __main__ | INFO | 
+================================================================================
+2025-10-30 21:10:31,930 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 21:10:31,930 | __main__ | INFO | ================================================================================
+
+2025-10-30 21:10:31,931 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 21:10:32,038 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:32,038 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 21:10:32,065 | trading.autonomous_trader_v2 | ERROR | ❌ Error enhancing prediction with ML: IntegrityPrediction.__init__() missing 9 required positional arguments: 'timestamp', 'confidence_level', 'confidence_factors', 'agent_predictions', 'ensemble_weights', 'is_tradeable', 'position_size_multiplier', 'reasoning', and 'metadata'
+2025-10-30 21:10:32,065 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO | 💰 Position Sizing:
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO |    Balance: £260.14 | Available: £260.14
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO |    Risk-based: £0.05/point | Margin-safe: £0.26/point
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO |    Final Size: £0.1/point
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $0.10
+2025-10-30 21:10:32,222 | trading.autonomous_trader_v2 | INFO | 🎯 Implementing confidence-weighted execution strategy
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO | 🎯 HIGH CONFIDENCE: 0.855 → 2 trades
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO | 🎯 CONFIDENCE-WEIGHTED EXECUTION:
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO |    Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO |    Direction: BUY
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO |    Confidence: 0.855
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO |    Trade Density: 2
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO |    Base Size: £0.10/pt
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 1/2: Size = £0.1/pt (multiplier: 0.51)
+2025-10-30 21:10:32,223 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:10:32,373 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:32,373 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:32,373 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:32,457 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"NHWXWLAPGWGTYNK"}
+2025-10-30 21:10:32,457 | integrations.ig_markets_api | INFO | ✅ Position opened: NHWXWLAPGWGTYNK
+2025-10-30 21:10:32,533 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:32.238","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"NHWXWLAPGWGTYNK","dealId":"DIAAAAQC25AQNAN","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:32,533 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:32,533 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:32,533 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:32,533 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:32,534 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:10:34,173 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:34,173 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:34,173 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:34,245 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"4JZC47E98N8TYNK"}
+2025-10-30 21:10:34,245 | integrations.ig_markets_api | INFO | ✅ Position opened: 4JZC47E98N8TYNK
+2025-10-30 21:10:34,312 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:34.026","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"4JZC47E98N8TYNK","dealId":"DIAAAAQC24EA6AV","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:34,312 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:34,312 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:34,312 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:34,312 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:10:34,313 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 1 failed
+2025-10-30 21:10:36,321 | trading.autonomous_trader_v2 | INFO | 🔢 Trade 2/2: Size = £0.1/pt (multiplier: 0.71)
+2025-10-30 21:10:36,322 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 2 × 0.1 £/pt
+2025-10-30 21:10:36,460 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:36,460 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:36,461 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:36,544 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"K8QSNWC4SLGTYNK"}
+2025-10-30 21:10:36,544 | integrations.ig_markets_api | INFO | ✅ Position opened: K8QSNWC4SLGTYNK
+2025-10-30 21:10:36,612 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:36.314","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"K8QSNWC4SLGTYNK","dealId":"DIAAAAQC24AEBAG","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:36,612 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:36,612 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:36,612 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:36,612 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:36,613 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:10:38,241 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/2: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:38,241 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:38,242 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:38,329 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"JB9WH6F2J38TYNK"}
+2025-10-30 21:10:38,329 | integrations.ig_markets_api | INFO | ✅ Position opened: JB9WH6F2J38TYNK
+2025-10-30 21:10:38,393 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:38.109","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"JB9WH6F2J38TYNK","dealId":"DIAAAAQC24CZTBC","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:38,393 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:38,393 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:38,394 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:38,394 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/2 fragments
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 2 fragments
+2025-10-30 21:10:38,394 | trading.autonomous_trader_v2 | WARNING | ❌ Density trade 2 failed
+2025-10-30 21:10:38,395 | trading.autonomous_trader_v2 | WARNING | ❌ Confidence-weighted execution failed, falling back to standard fragmented entry
+2025-10-30 21:10:38,395 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 21:10:38,521 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:38,521 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:38,521 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:38,596 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"N58QJMWALPUTYNK"}
+2025-10-30 21:10:38,596 | integrations.ig_markets_api | INFO | ✅ Position opened: N58QJMWALPUTYNK
+2025-10-30 21:10:38,665 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:38.363","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"N58QJMWALPUTYNK","dealId":"DIAAAAQC24KRWAJ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:38,665 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:38,665 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:38,665 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:38,665 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:38,666 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 21:10:40,304 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:40,305 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:40,305 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:40,380 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"BGJ6EA87L9UTYNK"}
+2025-10-30 21:10:40,381 | integrations.ig_markets_api | INFO | ✅ Position opened: BGJ6EA87L9UTYNK
+2025-10-30 21:10:40,444 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:40.154","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"BGJ6EA87L9UTYNK","dealId":"DIAAAAQC24PNZBD","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:40,444 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:40,444 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:40,444 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:40,445 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:40,445 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 21:10:42,077 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:42,077 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:42,078 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:42,145 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"PHGTBKRQ6PUTYNK"}
+2025-10-30 21:10:42,145 | integrations.ig_markets_api | INFO | ✅ Position opened: PHGTBKRQ6PUTYNK
+2025-10-30 21:10:42,465 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:41.923","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"PHGTBKRQ6PUTYNK","dealId":"DIAAAAQC24LHAAP","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:42,465 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:42,465 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:42,465 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:42,466 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:42,466 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 21:10:44,140 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 4/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:44,140 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:44,140 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:44,220 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"S8PN7RWE8K8TYNK"}
+2025-10-30 21:10:44,220 | integrations.ig_markets_api | INFO | ✅ Position opened: S8PN7RWE8K8TYNK
+2025-10-30 21:10:44,300 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:43.997","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"S8PN7RWE8K8TYNK","dealId":"DIAAAAQC24FH9AZ","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:44,301 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:44,301 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:44,301 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:44,301 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:44,301 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 4 failed
+2025-10-30 21:10:45,953 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 5/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 21:10:45,953 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:45,953 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:46,038 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"JG4SJFAPHWGTYNK"}
+2025-10-30 21:10:46,038 | integrations.ig_markets_api | INFO | ✅ Position opened: JG4SJFAPHWGTYNK
+2025-10-30 21:10:46,118 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:45.814","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"JG4SJFAPHWGTYNK","dealId":"DIAAAAQC24AEDAG","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:46,118 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:46,118 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,119 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,119 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 5 failed
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 5 fragments
+2025-10-30 21:10:46,119 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 21:10:46,120 | trading.autonomous_trader_v2 | INFO | 🎯 DYNAMIC PROFIT TARGET: 227.2 points → Level: 7087.20
+2025-10-30 21:10:46,120 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.NIKKEI.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 21:10:46,120 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.NIKKEI.DAILY.IP: £0.1 per point
+2025-10-30 21:10:46,236 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"UHHABVTA9QLTYNK"}
+2025-10-30 21:10:46,236 | integrations.ig_markets_api | INFO | ✅ Position opened: UHHABVTA9QLTYNK
+2025-10-30 21:10:46,326 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:46.017","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"UHHABVTA9QLTYNK","dealId":"DIAAAAQC24HE5A6","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:46,326 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:46,326 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,326 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,327 | integrations.ig_markets_api | ERROR | ❌ Trade confirmation failed
+2025-10-30 21:10:46,327 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: UHHABVTA9QLTYNK
+2025-10-30 21:10:46,923 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T21:10:46.017","status":null,"reason":"INSUFFICIENT_FUNDS","dealStatus":"REJECTED","epic":"IX.D.NIKKEI.DAILY.IP","expiry":null,"dealReference":"UHHABVTA9QLTYNK","dealId":"DIAAAAQC24HE5A6","affectedDeals":[],"level":null,"size":null,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 21:10:46,924 | integrations.ig_markets_api | INFO | Deal Status: REJECTED
+2025-10-30 21:10:46,924 | integrations.ig_markets_api | INFO | Reason: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,924 | integrations.ig_markets_api | ERROR | ❌ Trade REJECTED: INSUFFICIENT_FUNDS
+2025-10-30 21:10:46,924 | trading.autonomous_trader_v2 | ERROR | ❌ Trade was not accepted. Verification: {}
+2025-10-30 21:10:47,021 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:47,105 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:47,186 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:47,186 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 3 epics with tradeable signals
+2025-10-30 21:10:47,186 | trading.autonomous_trader_v2 | INFO |    IX.D.SPTRD.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:10:47,186 | trading.autonomous_trader_v2 | INFO |    IX.D.NASDAQ.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:10:47,186 | trading.autonomous_trader_v2 | INFO |    IX.D.FTSE.DAILY.IP: 0.855 confidence (BUY)
+2025-10-30 21:10:47,186 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 21:10:47,318 | trading.autonomous_trader_v2 | ERROR | ❌ Error in multi_epic_strategy: AutonomousTraderV2._calculate_position_size() missing 1 required positional argument: 'multiplier'
+2025-10-30 21:10:47,430 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 21:10:48,119 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:48,204 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:48,204 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.SPTRD.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:10:48,289 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 21:10:48,290 | trading.autonomous_trader_v2 | INFO | 🏃 MULTI-EPIC SCALP: IX.D.NASDAQ.DAILY.IP BUY | Conf: 0.855 | Vol: 0.91
+2025-10-30 21:10:48,290 | trading.autonomous_trader_v2 | ERROR | ❌ Error in micro_scalp_management: cannot access local variable 'scalp_updates' where it is not associated with a value
+2025-10-30 21:10:48,290 | trading.autonomous_trader_v2 | INFO | 🏦 PHASE 8 - Rolling Balance Management
+2025-10-30 21:10:48,428 | trading.autonomous_trader_v2 | INFO | 🏦 BALANCE UPDATE:
+2025-10-30 21:10:48,428 | trading.autonomous_trader_v2 | INFO |    Current Balance: £260.14
+2025-10-30 21:10:48,428 | trading.autonomous_trader_v2 | INFO |    Available: £260.14 (100.0%)
+2025-10-30 21:10:48,428 | trading.autonomous_trader_v2 | INFO |    Margin Used: 0.0%
+2025-10-30 21:10:48,428 | trading.autonomous_trader_v2 | INFO |    P&L: £0.00
+2025-10-30 21:10:48,651 | trading.autonomous_trader_v2 | INFO | 🎯 PHASE 9 - Volatility-Adaptive Profit Management
+2025-10-30 21:10:48,726 | trading.autonomous_trader_v2 | INFO | 📅 PHASE 10 - Session-Bound Exposure Management
+2025-10-30 21:10:48,726 | trading.session_manager | INFO | 📅 SESSION STATUS:
+2025-10-30 21:10:48,726 | trading.session_manager | INFO |    Current Session: Asian Session
+2025-10-30 21:10:48,727 | trading.session_manager | INFO |    Active Epics: 2 (IX.D.NIKKEI.DAILY.IP, IX.D.HANGSENG.DAILY.IP)
+2025-10-30 21:10:48,727 | trading.session_manager | INFO |    Primary Epic: IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:10:48,727 | trading.session_manager | INFO |    Volatility Multiplier: 0.8x
+2025-10-30 21:10:48,727 | trading.session_manager | INFO |    Max Positions: 2
+2025-10-30 21:10:48,727 | trading.session_manager | INFO |    Session Time: 00:00 - 08:00 (Asia/Tokyo)
+2025-10-30 21:10:48,727 | trading.autonomous_trader_v2 | INFO | 📊 UPDATED ACTIVE EPICS: 2 epics
+2025-10-30 21:10:48,727 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.NIKKEI.DAILY.IP
+2025-10-30 21:10:48,727 | trading.autonomous_trader_v2 | INFO |    ✓ IX.D.HANGSENG.DAILY.IP
+2025-10-30 21:10:48,727 | trading.autonomous_trader_v2 | INFO | 📊 SESSION POSITION LIMITS: 0/2 positions
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO | 📊 SESSION VOLATILITY MULTIPLIER: 0.8x
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO | 🔄 SESSION TRANSITION: Unknown → Asian Session
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO | 🎯 NEW SESSION ACTIVE: Asian Session
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO | ✅ Session-aware multi-epic config: 2 active epics
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO | 📊 NEW SESSION CONFIGURATION:
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO |    Active Epics: 2
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO |    Max Positions: 2
+2025-10-30 21:10:48,728 | trading.autonomous_trader_v2 | INFO |    Volatility Multiplier: 0.8x
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO | 📅 SESSION MANAGEMENT COMPLETE: Asian Session
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO | 🤖 PHASE 11 - ML Confidence Enhancement
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO | 🤖 ML MODEL STATUS:
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO |    Total Trades: 0
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO |    Model Trained: False
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO |    Recent Win Rate: 0.0%
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO |    Days Since Retrain: None
+2025-10-30 21:10:48,729 | trading.autonomous_trader_v2 | INFO |    Should Retrain: False
+2025-10-30 21:10:48,730 | trading.autonomous_trader_v2 | INFO | 🤖 ML CONFIDENCE ENHANCEMENT COMPLETE

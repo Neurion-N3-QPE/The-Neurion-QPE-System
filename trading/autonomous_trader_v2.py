@@ -18,6 +18,7 @@ from trading.risk_engine import RiskEngine
 from trading.scalp_engine import ScalpEngine
 from trading.account_manager import AccountManager
 from trading.session_manager import SessionManager
+from trading.ml_confidence_tuner import MLConfidenceTuner
 
 logger = logging.getLogger(__name__)
 
@@ -82,6 +83,9 @@ class AutonomousTraderV2:
 
         # Initialize Session Manager
         self.session_manager = SessionManager(self.config)
+
+        # Initialize ML Confidence Tuner
+        self.ml_confidence_tuner = MLConfidenceTuner(self.config)
 
         # Load configuration
         self.risk_per_trade = self.config.get('risk_per_trade', 0.02)  # 2%
@@ -170,6 +174,10 @@ class AutonomousTraderV2:
                 # Optimize trading based on active market sessions
                 await self.session_bound_exposure_management()
 
+                # PHASE 11 - ML Confidence Enhancement
+                # Enhance signal confidence using machine learning
+                await self.ml_confidence_enhancement()
+
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
                 
@@ -209,11 +217,19 @@ class AutonomousTraderV2:
         prediction: IntegrityPrediction,
         market_state: Dict
     ):
-        """Process prediction and take action"""
+        """Process prediction with ML enhancement and take action"""
         logger.info(f"\n{'='*60}")
-        logger.info(prediction.reasoning)
 
-        if not prediction.is_tradeable:
+        # Enhance prediction with ML before processing
+        enhanced_prediction = self._enhance_prediction_with_ml(prediction, market_state)
+
+        logger.info(enhanced_prediction.reasoning if hasattr(enhanced_prediction, 'reasoning') else prediction.reasoning)
+
+        # Log ML enhancement details
+        if hasattr(enhanced_prediction, 'ml_boost'):
+            logger.info(f"🤖 ML ENHANCEMENT: {prediction.confidence:.3f} → {enhanced_prediction.confidence:.3f} (boost: {enhanced_prediction.ml_boost:+.3f})")
+
+        if not enhanced_prediction.is_tradeable:
             logger.info("⏸️  HOLD - Confidence below threshold")
 
             # Even if main signal is not tradeable, check multi-epic opportunities
@@ -225,22 +241,22 @@ class AutonomousTraderV2:
             logger.info("⏸️  HOLD - Maximum positions reached")
             return
         
-        # Calculate position size
+        # Calculate position size using enhanced prediction
         position_size = await self._calculate_position_size(
-            prediction.position_size_multiplier
+            enhanced_prediction.position_size_multiplier if hasattr(enhanced_prediction, 'position_size_multiplier') else prediction.position_size_multiplier
         )
         if position_size <= 0:
             logger.warning("⚠️  Calculated position size is zero or negative. Holding.")
             return
-        
-        # Determine direction
-        direction = 'BUY' if prediction.prediction_value > 0.5 else 'SELL' # Changed to 'BUY'/'SELL' for IG API
-        
-        # Execute trade
+
+        # Determine direction using enhanced prediction
+        direction = 'BUY' if enhanced_prediction.prediction_value > 0.5 else 'SELL' # Changed to 'BUY'/'SELL' for IG API
+
+        # Execute trade with enhanced prediction
         await self._execute_trade(
             direction=direction,
             size=position_size,
-            prediction=prediction,
+            prediction=enhanced_prediction,
             market_state=market_state
         )
 
@@ -2081,3 +2097,96 @@ class AutonomousTraderV2:
         except Exception as e:
             logger.error(f"❌ Error getting session-aware epic: {e}")
             return 'IX.D.SPTRD.DAILY.IP'  # Safe fallback
+
+    async def ml_confidence_enhancement(self):
+        """
+        ML Confidence Enhancement: Use machine learning to improve signal confidence
+        Goal: Continuously learn from trade outcomes to enhance prediction accuracy
+        """
+        try:
+            logger.info("🤖 PHASE 11 - ML Confidence Enhancement")
+
+            if not self.ml_confidence_tuner:
+                logger.warning("⚠️ ML Confidence Tuner not initialized")
+                return
+
+            # Check if model should be retrained
+            if self.ml_confidence_tuner.should_retrain():
+                logger.info("🔄 Initiating ML model retraining...")
+                retrain_success = self.ml_confidence_tuner.retrain_weekly()
+
+                if retrain_success:
+                    logger.info("✅ ML model retrained successfully")
+                else:
+                    logger.warning("⚠️ ML model retraining failed or skipped")
+
+            # Get model statistics
+            model_stats = self.ml_confidence_tuner.get_model_stats()
+
+            logger.info(f"🤖 ML MODEL STATUS:")
+            logger.info(f"   Total Trades: {model_stats.get('total_trades', 0)}")
+            logger.info(f"   Model Trained: {model_stats.get('model_trained', False)}")
+            logger.info(f"   Recent Win Rate: {model_stats.get('recent_win_rate', 0.0):.1%}")
+            logger.info(f"   Days Since Retrain: {model_stats.get('days_since_retrain', 'N/A')}")
+            logger.info(f"   Should Retrain: {model_stats.get('should_retrain', False)}")
+
+            logger.info("🤖 ML CONFIDENCE ENHANCEMENT COMPLETE")
+
+        except Exception as e:
+            logger.error(f"❌ Error in ML confidence enhancement: {e}")
+
+    def _enhance_prediction_with_ml(self, prediction: 'IntegrityPrediction', market_state: Dict) -> 'IntegrityPrediction':
+        """Enhance prediction confidence using ML model"""
+        try:
+            if not self.ml_confidence_tuner:
+                return prediction
+
+            # Prepare signal data for ML enhancement
+            signal_data = {
+                'confidence': prediction.confidence,
+                'prediction_value': prediction.prediction_value,
+                'volatility': market_state.get('volatility', 0.1),
+                'volume': market_state.get('volume', 1000),
+                'price_momentum': market_state.get('price_momentum', 0.0),
+                'rsi': market_state.get('rsi', 50.0),
+                'macd': market_state.get('macd', 0.0),
+                'bollinger_position': market_state.get('bollinger_position', 0.5),
+                'session_volatility_multiplier': getattr(self.session_manager, 'get_session_volatility_multiplier', lambda: 1.0)(),
+                'time_of_day': datetime.now().hour,
+                'day_of_week': datetime.now().weekday(),
+                'market_trend': market_state.get('trend', 0.0),
+                'epic': market_state.get('epic', 'UNKNOWN')
+            }
+
+            # Get ML-enhanced confidence
+            enhanced_confidence = self.ml_confidence_tuner.get_enhanced_confidence(signal_data)
+
+            # Create enhanced prediction
+            enhanced_prediction = type(prediction)(
+                prediction_value=prediction.prediction_value,
+                confidence=enhanced_confidence
+            )
+
+            # Store original confidence for comparison
+            enhanced_prediction.original_confidence = prediction.confidence
+            enhanced_prediction.ml_boost = enhanced_confidence - prediction.confidence
+
+            logger.debug(f"🤖 ML Enhancement: {prediction.confidence:.3f} → {enhanced_confidence:.3f} (boost: {enhanced_prediction.ml_boost:+.3f})")
+
+            return enhanced_prediction
+
+        except Exception as e:
+            logger.error(f"❌ Error enhancing prediction with ML: {e}")
+            return prediction
+
+    def _record_trade_outcome(self, signal_data: Dict, trade_result: Dict):
+        """Record trade outcome for ML learning"""
+        try:
+            if not self.ml_confidence_tuner:
+                return
+
+            self.ml_confidence_tuner.add_trade_result(signal_data, trade_result)
+            logger.debug(f"📊 Recorded trade outcome for ML learning: PnL={trade_result.get('pnl', 0.0):.2f}")
+
+        except Exception as e:
+            logger.error(f"❌ Error recording trade outcome: {e}")
