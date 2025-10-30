@@ -65,4 +65,5 @@ class LegacyMigrator:
         logger.info("📊 Migrating SSE training data...")
         
         source_files = [
-            "sse_checkpoint_*.json",
+            "sse_checkpoint_*.json", # Placeholder - add actual SSE data files here
+        ]

@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Credentials
 API_KEY = "b8e1f49a835449717ed9ce037e24507f855883e7"
-EMAIL = "contact@NeuralNetWorth.co.uk"
+EMAIL = "CHNeural"
 PASSWORD = "HfS56DD4p59dYtB5"
 ACCOUNT_ID = "HTRFU"
 
@@ -106,11 +106,6 @@ async def main():
     # Test patterns
     patterns = [
         ("LIVE - Full Email", LIVE_URL, EMAIL),
-        ("LIVE - Username Only", LIVE_URL, EMAIL.split('@')[0]),  # contact
-        ("LIVE - Account ID", LIVE_URL, ACCOUNT_ID),  # HTRFU
-        ("DEMO - Full Email", DEMO_URL, EMAIL),
-        ("DEMO - Username Only", DEMO_URL, EMAIL.split('@')[0]),
-        ("DEMO - Account ID", DEMO_URL, ACCOUNT_ID),
     ]
     
     print("\n" + "="*70)

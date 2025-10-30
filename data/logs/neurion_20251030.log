@@ -1,0 +1,86 @@
+2025-10-30 09:41:21,531 | __main__ | INFO | ================================================================================
+2025-10-30 09:41:21,547 | __main__ | INFO | ================================================================================
+2025-10-30 09:41:21,565 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:41:21,567 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:41:21,571 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:42:21,592 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:44:08,077 | __main__ | INFO | ================================================================================
+2025-10-30 09:44:08,077 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:44:08,078 | __main__ | INFO | ================================================================================
+2025-10-30 09:44:08,078 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 09:44:08,078 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:44:08,078 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:44:08,078 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:44:08,079 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:44:08,079 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:44:08,079 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:44:08,079 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:44:08,079 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:44:08,079 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 2.0%
+2025-10-30 09:44:08,079 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 09:44:08,079 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.70
+2025-10-30 09:44:08,080 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 09:44:08,080 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:44:08,080 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 09:44:08,080 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:44:08,080 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 09:44:08,081 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 09:44:08,081 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:44:08,081 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:44:08,081 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $123.83
+2025-10-30 09:44:08,081 | trading.autonomous_trader_v2 | INFO | ✅ Position opened: POS_20251030_094408
+2025-10-30 09:44:40,753 | __main__ | INFO | ================================================================================
+2025-10-30 09:44:40,753 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 09:44:40,753 | __main__ | INFO | ================================================================================
+2025-10-30 09:44:40,753 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 09:44:40,753 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 09:44:40,753 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 09:44:40,753 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 09:44:40,754 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 09:44:40,754 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 09:44:40,754 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 09:44:40,754 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 09:44:40,754 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 09:44:40,754 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 2.0%
+2025-10-30 09:44:40,754 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 09:44:40,754 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.70
+2025-10-30 09:44:40,755 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 09:44:40,755 | __main__ | INFO | 
+================================================================================
+2025-10-30 09:44:40,755 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 09:44:40,755 | __main__ | INFO | ================================================================================
+
+2025-10-30 09:44:40,755 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 09:44:40,755 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 09:44:40,755 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:44:40,756 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:44:40,756 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: LONG | Size: $123.83
+2025-10-30 09:44:40,756 | trading.autonomous_trader_v2 | INFO | ✅ Position opened: POS_20251030_094440
+2025-10-30 09:45:08,083 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 09:45:08,084 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:45:08,084 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:45:08,084 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 09:45:40,768 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 09:45:40,768 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:45:40,768 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:45:40,769 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 09:46:08,090 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 09:46:08,090 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 09:46:08,090 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 09:46:08,090 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
