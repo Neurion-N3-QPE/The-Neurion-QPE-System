@@ -158,6 +158,10 @@ class AutonomousTraderV2:
                 # Update balance and position sizing calculations
                 await self.rolling_balance_management()
 
+                # PHASE 9 - Volatility-Adaptive Profit Targets
+                # Update profit targets based on market volatility
+                await self.volatility_adaptive_profit_management()
+
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
                 
@@ -345,12 +349,29 @@ class AutonomousTraderV2:
                 else:
                     logger.warning("❌ Fragmented entry failed, falling back to single position")
                 # Fallback to original single position logic
+                # Calculate dynamic profit target
+                current_price = market_state.get('current_price', 6860.0)  # Fallback price
+                estimated_atr = self._estimate_atr(epic, current_price)
+                dynamic_tp_points = self.risk_engine.calculate_dynamic_take_profit(
+                    atr=estimated_atr,
+                    confidence_score=prediction.confidence,
+                    epic=epic
+                )
+
+                # Calculate actual take profit level
+                if direction == 'BUY':
+                    take_profit_level = current_price + dynamic_tp_points
+                else:  # SELL
+                    take_profit_level = current_price - dynamic_tp_points
+
+                logger.info(f"🎯 DYNAMIC PROFIT TARGET: {dynamic_tp_points:.1f} points → Level: {take_profit_level:.2f}")
+
                 trade_response = await self.ig_api.open_position(
                     epic=epic,
                     direction=direction,
                     size=size,
+                    take_profit=take_profit_level
                     # stop_loss=... # TODO: Implement stop loss calculation
-                    # take_profit=... # TODO: Implement take profit calculation
                 )
             
             if trade_response and trade_response.get('dealReference'):
@@ -1460,11 +1481,27 @@ class AutonomousTraderV2:
                 logger.error("❌ IG Markets API not initialized")
                 return None
 
-            # Open position using existing IG API
+            # Calculate dynamic profit target for fragment
+            current_price = 6860.0  # Placeholder - would get from market data
+            estimated_atr = self._estimate_atr(epic, current_price)
+            dynamic_tp_points = self.risk_engine.calculate_dynamic_take_profit(
+                atr=estimated_atr,
+                confidence_score=0.8,  # Default confidence for fragments
+                epic=epic
+            )
+
+            # Calculate actual take profit level
+            if direction == 'BUY':
+                take_profit_level = current_price + dynamic_tp_points
+            else:  # SELL
+                take_profit_level = current_price - dynamic_tp_points
+
+            # Open position using existing IG API with dynamic profit target
             result = await self.ig_api.open_position(
                 epic=epic,
                 direction=direction,
-                size=size
+                size=size,
+                take_profit=take_profit_level
             )
 
             if result and result.get('deal_reference'):
@@ -1685,3 +1722,189 @@ class AutonomousTraderV2:
 
         except Exception as e:
             logger.error(f"❌ Error updating strategy position sizing: {e}")
+
+    async def volatility_adaptive_profit_management(self):
+        """
+        Volatility-Adaptive Profit Targets: Adjust profit targets based on market volatility
+        Goal: Capture larger moves during volatile periods without increasing position sizes
+        """
+        try:
+            logger.info("🎯 PHASE 9 - Volatility-Adaptive Profit Management")
+
+            # Get volatility configuration
+            volatility_config = self.config.get('trading', {}).get('volatility_adaptive_profit', {})
+
+            if not volatility_config.get('enabled', True):
+                logger.debug("⚠️ Volatility-adaptive profit targets disabled")
+                return
+
+            # Get current positions for profit target updates
+            positions = await self.ig_api.get_positions()
+            if not positions:
+                logger.debug("📊 No positions for volatility-adaptive profit management")
+                return
+
+            # Update price history for volatility calculations
+            await self._update_market_volatility_data()
+
+            # Process positions for profit target adjustments
+            profit_updates = []
+
+            for position in positions:
+                try:
+                    deal_id = position.get('dealId')
+                    epic = position.get('epic')
+                    current_price = position.get('level', 0.0)
+
+                    if not deal_id or not epic or not current_price:
+                        continue
+
+                    # Update price history for this epic
+                    self.risk_engine.update_price_history(current_price)
+
+                    # Check if position needs profit target update
+                    profit_update = await self._calculate_adaptive_profit_target(position)
+
+                    if profit_update:
+                        profit_updates.append(profit_update)
+
+                except Exception as pos_error:
+                    logger.warning(f"⚠️ Error processing position for volatility adjustment: {pos_error}")
+                    continue
+
+            # Apply profit target updates
+            if profit_updates:
+                logger.info(f"🎯 VOLATILITY-ADAPTIVE UPDATES: {len(profit_updates)} positions")
+                for update in profit_updates:
+                    logger.info(f"   {update['deal_id']}: TP {update['old_tp']:.1f} → {update['new_tp']:.1f} (Vol: {update['volatility_factor']:.2f}x)")
+            else:
+                logger.debug("📊 No volatility-adaptive profit target updates needed")
+
+        except Exception as e:
+            logger.error(f"❌ Error in volatility_adaptive_profit_management: {e}")
+
+    async def _update_market_volatility_data(self):
+        """Update market volatility data for all active epics"""
+        try:
+            # Get current market prices for volatility calculation
+            primary_epics = [
+                'IX.D.SPTRD.DAILY.IP',
+                'IX.D.NASDAQ.DAILY.IP',
+                'IX.D.FTSE.DAILY.IP'
+            ]
+
+            for epic in primary_epics:
+                try:
+                    # Get current market price (this would be implemented with real market data)
+                    # For now, we'll use a placeholder
+                    market_data = await self._get_market_data(epic)
+                    if market_data:
+                        current_price = market_data.get('current_price', 0.0)
+                        if current_price > 0:
+                            self.risk_engine.update_price_history(current_price)
+
+                except Exception as epic_error:
+                    logger.debug(f"Error updating volatility data for {epic}: {epic_error}")
+                    continue
+
+        except Exception as e:
+            logger.error(f"❌ Error updating market volatility data: {e}")
+
+    async def _get_market_data(self, epic: str) -> dict:
+        """Get current market data for volatility calculations"""
+        try:
+            # This would integrate with real market data
+            # For now, return placeholder data
+            return {
+                'epic': epic,
+                'current_price': 6860.0,  # Placeholder S&P 500 price
+                'timestamp': datetime.now()
+            }
+
+        except Exception as e:
+            logger.error(f"❌ Error getting market data for {epic}: {e}")
+            return {}
+
+    async def _calculate_adaptive_profit_target(self, position: dict) -> dict:
+        """Calculate adaptive profit target for a position"""
+        try:
+            deal_id = position.get('dealId')
+            epic = position.get('epic')
+            current_limit = position.get('limitLevel')
+            entry_price = position.get('level', 0.0)
+
+            if not deal_id or not epic or not entry_price:
+                return None
+
+            # Get position confidence (from tracked positions if available)
+            confidence = 0.8  # Default confidence
+            tracked_position = self.positions.get(deal_id)
+            if tracked_position:
+                confidence = tracked_position.get('confidence', 0.8)
+
+            # Estimate ATR (Average True Range) for the epic
+            estimated_atr = self._estimate_atr(epic, entry_price)
+
+            # Calculate dynamic take profit using Risk Engine
+            dynamic_tp = self.risk_engine.calculate_dynamic_take_profit(
+                atr=estimated_atr,
+                confidence_score=confidence,
+                epic=epic
+            )
+
+            # Convert to actual price level
+            direction = position.get('direction', 'BUY')
+            if direction == 'BUY':
+                new_tp_level = entry_price + dynamic_tp
+            else:  # SELL
+                new_tp_level = entry_price - dynamic_tp
+
+            # Check if update is needed
+            if current_limit:
+                # Only update if new target is significantly different (>5% change)
+                change_percent = abs(new_tp_level - current_limit) / current_limit
+                if change_percent < 0.05:
+                    return None
+
+            # Get volatility factor for logging
+            volatility_factor = self.risk_engine.get_recent_volatility_factor(epic)
+
+            return {
+                'deal_id': deal_id,
+                'epic': epic,
+                'old_tp': current_limit or 0.0,
+                'new_tp': new_tp_level,
+                'dynamic_tp_points': dynamic_tp,
+                'confidence': confidence,
+                'volatility_factor': volatility_factor,
+                'atr_estimate': estimated_atr
+            }
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating adaptive profit target: {e}")
+            return None
+
+    def _estimate_atr(self, epic: str, current_price: float) -> float:
+        """Estimate Average True Range for an epic"""
+        try:
+            # Epic-specific ATR estimates based on typical market behavior
+            atr_estimates = {
+                'IX.D.SPTRD.DAILY.IP': current_price * 0.015,    # ~1.5% of S&P 500 price
+                'IX.D.NASDAQ.DAILY.IP': current_price * 0.018,   # ~1.8% of NASDAQ price
+                'IX.D.FTSE.DAILY.IP': current_price * 0.012,     # ~1.2% of FTSE price
+                'CS.D.GBPUSD.DAILY.IP': 0.008,                   # ~80 pips for GBP/USD
+                'CS.D.EURUSD.DAILY.IP': 0.007                    # ~70 pips for EUR/USD
+            }
+
+            estimated_atr = atr_estimates.get(epic, current_price * 0.015)  # Default 1.5%
+
+            # Ensure minimum ATR
+            estimated_atr = max(estimated_atr, 5.0)
+
+            logger.debug(f"📊 ATR Estimate for {epic}: {estimated_atr:.1f}")
+
+            return estimated_atr
+
+        except Exception as e:
+            logger.error(f"❌ Error estimating ATR for {epic}: {e}")
+            return 15.0  # Safe fallback

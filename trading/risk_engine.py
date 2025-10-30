@@ -276,3 +276,150 @@ class RiskEngine:
         except Exception as e:
             logger.error(f"❌ Error getting current price for {epic}: {e}")
             return None
+
+    def calculate_dynamic_take_profit(self, atr: float, confidence_score: float, epic: str = None) -> float:
+        """
+        Volatility-Adaptive Profit Target: Expand TP during high volatility without increasing size
+        Goal: Capture larger moves during volatile periods while maintaining same risk exposure
+        """
+        try:
+            # Base take profit: 1.5x ATR (standard approach)
+            base_tp = atr * 1.5
+
+            # Confidence multiplier: Higher confidence = larger profit targets
+            # Range: 0.75 (50% confidence) to 1.25 (100% confidence)
+            confidence_multiplier = 1.0 + (confidence_score - 0.5) * 0.5
+            confidence_multiplier = max(0.75, min(confidence_multiplier, 1.25))
+
+            # Volatility adjustment based on recent market conditions
+            volatility_factor = self.get_recent_volatility_factor(epic)
+
+            # Cap volatility factor to prevent excessive targets (max 2.0x)
+            volatility_factor = min(volatility_factor, 2.0)
+
+            # Calculate dynamic take profit
+            dynamic_tp = base_tp * confidence_multiplier * volatility_factor
+
+            # Round to nearest 0.1 for IG Markets compatibility
+            dynamic_tp = round(dynamic_tp, 1)
+
+            # Ensure minimum viable take profit (at least 5 points)
+            dynamic_tp = max(dynamic_tp, 5.0)
+
+            logger.debug(f"🎯 Dynamic TP: Base: {base_tp:.1f} | Conf: {confidence_multiplier:.2f} | Vol: {volatility_factor:.2f} | Final: {dynamic_tp:.1f}")
+
+            return dynamic_tp
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating dynamic take profit: {e}")
+            return 15.0  # Safe fallback
+
+    def get_recent_volatility_factor(self, epic: str = None) -> float:
+        """
+        Calculate recent volatility factor compared to average
+        Returns multiplier for profit target adjustment
+        """
+        try:
+            # Get recent price movements (last 10 data points)
+            recent_volatility = self.calculate_recent_volatility()
+
+            # Get average volatility for comparison
+            average_volatility = self.get_average_volatility()
+
+            if average_volatility > 0:
+                volatility_factor = recent_volatility / average_volatility
+            else:
+                volatility_factor = 1.0  # Neutral if no historical data
+
+            # Smooth the factor to prevent extreme adjustments
+            volatility_factor = max(0.5, min(volatility_factor, 2.5))
+
+            logger.debug(f"📊 Volatility Factor: Recent: {recent_volatility:.2f} | Avg: {average_volatility:.2f} | Factor: {volatility_factor:.2f}")
+
+            return volatility_factor
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating volatility factor: {e}")
+            return 1.0  # Neutral fallback
+
+    def calculate_recent_volatility(self) -> float:
+        """Calculate recent market volatility using price movements"""
+        try:
+            # Use stored price history if available
+            if hasattr(self, 'price_history') and len(self.price_history) >= 10:
+                prices = list(self.price_history)[-10:]  # Last 10 prices
+
+                # Calculate price changes
+                price_changes = []
+                for i in range(1, len(prices)):
+                    change = abs(prices[i] - prices[i-1])
+                    price_changes.append(change)
+
+                if price_changes:
+                    # Return average absolute price change as volatility measure
+                    recent_volatility = sum(price_changes) / len(price_changes)
+                    return recent_volatility
+
+            # Fallback: estimate based on typical market conditions
+            return 15.0  # Typical S&P 500 point movement
+
+        except Exception as e:
+            logger.error(f"❌ Error calculating recent volatility: {e}")
+            return 15.0
+
+    def get_average_volatility(self) -> float:
+        """Get average historical volatility for comparison"""
+        try:
+            # Use stored historical data if available
+            if hasattr(self, 'historical_volatility') and self.historical_volatility:
+                return self.historical_volatility
+
+            # Fallback: typical market volatility
+            return 12.0  # Typical S&P 500 average volatility
+
+        except Exception as e:
+            logger.error(f"❌ Error getting average volatility: {e}")
+            return 12.0
+
+    def update_price_history(self, current_price: float):
+        """Update price history for volatility calculations"""
+        try:
+            if not hasattr(self, 'price_history'):
+                self.price_history = []
+
+            self.price_history.append(current_price)
+
+            # Keep only last 50 prices for efficiency
+            if len(self.price_history) > 50:
+                self.price_history = self.price_history[-50:]
+
+            # Update historical volatility periodically
+            if len(self.price_history) >= 20:
+                self.update_historical_volatility()
+
+        except Exception as e:
+            logger.error(f"❌ Error updating price history: {e}")
+
+    def update_historical_volatility(self):
+        """Update long-term average volatility"""
+        try:
+            if len(self.price_history) >= 20:
+                # Calculate volatility over longer period
+                prices = self.price_history[-20:]  # Last 20 prices
+
+                price_changes = []
+                for i in range(1, len(prices)):
+                    change = abs(prices[i] - prices[i-1])
+                    price_changes.append(change)
+
+                if price_changes:
+                    new_volatility = sum(price_changes) / len(price_changes)
+
+                    # Smooth update with existing historical volatility
+                    if hasattr(self, 'historical_volatility') and self.historical_volatility:
+                        self.historical_volatility = (self.historical_volatility * 0.8) + (new_volatility * 0.2)
+                    else:
+                        self.historical_volatility = new_volatility
+
+        except Exception as e:
+            logger.error(f"❌ Error updating historical volatility: {e}")

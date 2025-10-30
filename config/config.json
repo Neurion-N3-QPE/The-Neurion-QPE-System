@@ -117,6 +117,22 @@
       "balance_sync_interval_minutes": 5,
       "track_trade_history": true,
       "max_history_records": 100
+    },
+    "volatility_adaptive_profit": {
+      "enabled": true,
+      "base_atr_multiplier": 1.5,
+      "confidence_multiplier_range": {
+        "min": 0.75,
+        "max": 1.25
+      },
+      "volatility_factor_cap": 2.0,
+      "minimum_take_profit_points": 5.0,
+      "price_history_length": 50,
+      "volatility_calculation_period": 10,
+      "historical_volatility_period": 20,
+      "volatility_smoothing_factor": 0.2,
+      "default_atr_estimate": 15.0,
+      "default_avg_volatility": 12.0
     }
   },
   
