@@ -189,7 +189,7 @@
         "min_win_probability": 0.65,
         "max_risk_of_ruin": 0.05,
         "min_expected_value": 0.1,
-        "confidence_threshold": 0.99
+        "confidence_threshold": 0.95
       },
       "simulation_parameters": {
         "volatility_clustering": true,

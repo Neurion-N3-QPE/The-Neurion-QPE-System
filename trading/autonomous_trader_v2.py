@@ -21,6 +21,8 @@ from trading.account_manager import AccountManager
 from trading.session_manager import SessionManager
 from trading.ml_confidence_tuner import MLConfidenceTuner
 from trading.instrument_manager import InstrumentManager
+from core.risk_management.margin_safety import MarginSafetyEngine, validate_margin_before_trade
+from core.risk_management.position_reconciler import PositionReconciler, BrokerPosition
 
 logger = logging.getLogger(__name__)
 
@@ -54,6 +56,10 @@ class AutonomousTraderV2:
         self.scalp_engine = ScalpEngine(config)
         self.account_manager = None  # Will be initialized after IG API connection
         self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
+
+        # Initialize risk management components
+        self.margin_safety_engine = MarginSafetyEngine(default_safety_factor=1.2)
+        self.position_reconciler = PositionReconciler()
 
         # Load multi-epic configuration
         self.multi_epic_config = self._load_multi_epic_config()
@@ -329,17 +335,36 @@ class AutonomousTraderV2:
         # Calculate risk amount
         risk_amount = self.risk_per_trade * current_balance * multiplier
 
-        # Use Instrument Manager for intelligent sizing
-        position_size, reason = await self.instrument_manager.calculate_safe_position_size(
-            epic, available_funds, risk_amount
+        # Get instrument configuration for margin requirements
+        instrument_info = await self.instrument_manager.get_instrument_info(epic)
+        margin_per_unit = instrument_info.get('typical_margin_per_unit', 50.0)
+        min_size = instrument_info.get('min_size', 0.1)
+
+        # Use enhanced margin safety engine for position sizing
+        margin_calc = self.margin_safety_engine.calculate_optimal_position_size(
+            risk_amount=risk_amount,
+            stop_distance_points=50.0,  # Assume 50 point stop for sizing
+            available_margin=available_funds,
+            margin_per_unit=margin_per_unit,
+            point_value=1.0,
+            min_units=min_size
         )
 
-        logger.info(f"💰 INSTRUMENT-AWARE POSITION SIZING:")
+        if margin_calc.is_blocked:
+            logger.warning(f"🚫 TRADE BLOCKED: {margin_calc.block_reason}")
+            logger.warning(f"   Required margin: £{margin_calc.required_margin:.2f}")
+            logger.warning(f"   Available margin: £{margin_calc.available_margin:.2f}")
+            return 0.0
+
+        position_size = margin_calc.safe_units
+
+        logger.info(f"💰 ENHANCED MARGIN-SAFE POSITION SIZING:")
         logger.info(f"   Epic: {epic}")
         logger.info(f"   Balance: £{current_balance:.2f} | Available: £{available_funds:.2f}")
         logger.info(f"   Risk Amount: £{risk_amount:.2f} | Multiplier: {multiplier:.2f}")
-        logger.info(f"   Calculated Size: £{position_size:.1f}/point")
-        logger.info(f"   Reason: {reason}")
+        logger.info(f"   Margin per unit: £{margin_per_unit:.2f}")
+        logger.info(f"   Safe Size: £{position_size:.1f}/point")
+        logger.info(f"   Margin utilization: {margin_calc.calculation_details.get('margin_utilization', 0):.1f}%")
 
         return position_size
 
@@ -482,25 +507,40 @@ class AutonomousTraderV2:
                 # Verify the trade was actually accepted
                 verification = await self.ig_api.verify_trade_status(deal_ref)
                 
+                # Add pending position to reconciler
+                temp_id = self.position_reconciler.add_pending_position(
+                    deal_ref, epic, direction, size
+                )
+
                 if verification and verification.get('dealStatus') == 'ACCEPTED':
                     # Get the actual deal ID from the affected deals
                     affected_deals = verification.get('affectedDeals', [])
                     if affected_deals and len(affected_deals) > 0:
                         actual_deal_id = affected_deals[0].get('dealId')
-                        
-                        self.positions[actual_deal_id] = {
-                            'direction': direction,
-                            'size': size,
-                            'entry_price': affected_deals[0].get('level', market_state['price']),
-                            'entry_time': datetime.now(),
-                            'prediction': prediction,
-                            'status': 'OPEN',
-                            'deal_id': actual_deal_id,
-                            'deal_reference': deal_ref,
-                            'epic': epic
-                        }
-                        self.performance['trades'] += 1
-                        logger.info(f"✅ Position tracked: {actual_deal_id}")
+                        entry_price = affected_deals[0].get('level', market_state.get('price', 0.0))
+
+                        # Confirm position in reconciler
+                        success = self.position_reconciler.confirm_position_opened(
+                            deal_ref, actual_deal_id, entry_price, datetime.now()
+                        )
+
+                        if success:
+                            # Update legacy positions dict for backward compatibility
+                            self.positions[actual_deal_id] = {
+                                'direction': direction,
+                                'size': size,
+                                'entry_price': entry_price,
+                                'entry_time': datetime.now(),
+                                'prediction': prediction,
+                                'status': 'OPEN',
+                                'deal_id': actual_deal_id,
+                                'deal_reference': deal_ref,
+                                'epic': epic
+                            }
+                            self.performance['trades'] += 1
+                            logger.info(f"✅ Position confirmed and tracked: {actual_deal_id}")
+                        else:
+                            logger.error(f"❌ Failed to confirm position in reconciler")
                     else:
                         logger.error(f"❌ No affected deals in response")
                 else:
@@ -551,8 +591,8 @@ class AutonomousTraderV2:
 
     async def sync_positions_with_ig(self):
         """
-        Dedicated method to sync internal position list with IG Markets
-        Keeps internal position list identical to IG Markets every cycle
+        Enhanced position synchronization using the new PositionReconciler.
+        Provides strict dealId-based reconciliation with state machine tracking.
         """
         if not self.ig_api:
             logger.warning("⚠️  IG Markets API not initialized for position sync")
@@ -562,51 +602,52 @@ class AutonomousTraderV2:
             # Get current positions from IG Markets
             actual_positions = await self.ig_api.get_positions()
 
-            # Build a set of actual deal IDs and position data
-            actual_deal_ids = set()
-            ig_positions = {}
-
-            # Handle both list and dict responses
+            # Convert IG positions to BrokerPosition objects
+            broker_positions = []
             positions_list = actual_positions if isinstance(actual_positions, list) else actual_positions.get('positions', [])
 
             for pos_data in positions_list:
-                deal_id = pos_data['position']['dealId']
-                actual_deal_ids.add(deal_id)
-                ig_positions[deal_id] = {
+                broker_pos = BrokerPosition(
+                    deal_id=pos_data['position']['dealId'],
+                    epic=pos_data['market']['epic'],
+                    direction=pos_data['position']['direction'],
+                    size=pos_data['position']['size'],
+                    level=pos_data['position']['level'],
+                    current_price=pos_data.get('market', {}).get('bid'),  # Current market price
+                    pnl=pos_data['position'].get('unrealisedPL', 0.0)
+                )
+                broker_positions.append(broker_pos)
+
+            # Perform reconciliation
+            reconciliation_result = self.position_reconciler.reconcile_positions(broker_positions)
+
+            # Update legacy positions dict for backward compatibility
+            self.positions = {}
+            for deal_id, position_record in self.position_reconciler.get_open_positions().items():
+                self.positions[deal_id] = {
                     'deal_id': deal_id,
-                    'epic': pos_data['market']['epic'],
-                    'direction': pos_data['position']['direction'],
-                    'size': pos_data['position']['size'],
-                    'level': pos_data['position']['level'],
+                    'epic': position_record.epic,
+                    'direction': position_record.direction,
+                    'size': position_record.size,
+                    'entry_price': position_record.entry_price,
                     'status': 'OPEN',
-                    'timestamp': datetime.now(),
-                    'source': 'IG_SYNC'
+                    'timestamp': position_record.entry_time or datetime.now(),
+                    'source': 'RECONCILER'
                 }
 
-            # Remove positions from tracking that are no longer open on IG
-            removed_positions = []
-            for pos_id in list(self.positions.keys()):
-                if pos_id not in actual_deal_ids:
-                    removed_positions.append(pos_id)
-                    del self.positions[pos_id]
-
-            # Add positions from IG that we're not tracking
-            added_positions = []
-            for deal_id in actual_deal_ids:
-                if deal_id not in self.positions:
-                    self.positions[deal_id] = ig_positions[deal_id]
-                    added_positions.append(deal_id)
-
-            # Log synchronization results
-            if removed_positions:
-                logger.info(f"🔄 Removed {len(removed_positions)} closed positions from tracking")
-            if added_positions:
-                logger.info(f"🔄 Added {len(added_positions)} untracked positions to internal list")
+            # Log reconciliation results
+            if not reconciliation_result.is_synchronized:
+                logger.warning(f"⚠️  Position reconciliation issues:")
+                logger.warning(f"   Actions taken: {len(reconciliation_result.actions_taken)}")
+                for action in reconciliation_result.actions_taken:
+                    logger.warning(f"   - {action}")
+            else:
+                logger.info(f"✅ Positions synchronized: {reconciliation_result.matched_positions} matched")
 
             logger.debug(f"🔄 Position sync complete: {len(self.positions)} positions tracked")
 
         except Exception as e:
-            logger.error(f"❌ Error in sync_positions_with_ig: {e}")
+            logger.error(f"❌ Error in enhanced position sync: {e}")
 
     async def update_account_balance(self):
         """

@@ -155,11 +155,21 @@ class ScalpEngine:
             logger.info(f"🏃 Executing micro-scalp {scalp_num}: {epic} {direction} £{self.scalp_size}/pt")
             
             # Execute the trade
-            deal_reference = await ig_api.open_position(**trade_params)
-            
-            if not deal_reference:
+            open_resp = await ig_api.open_position(**trade_params)
+
+            # open_position may return a dict containing 'dealReference' or a direct deal reference string
+            if not open_resp:
                 return None
-            
+
+            if isinstance(open_resp, dict):
+                deal_reference = open_resp.get('dealReference') or open_resp.get('deal_reference')
+            else:
+                deal_reference = open_resp
+
+            if not deal_reference:
+                logger.warning(f"⚠️ No deal reference returned from open_position: {open_resp}")
+                return None
+
             # Verify trade execution
             trade_status = await ig_api.verify_trade_status(deal_reference)
             
@@ -243,11 +253,15 @@ class ScalpEngine:
                     
                     if should_close:
                         logger.info(f"🎯 SCALP EXIT SIGNAL: {epic} | {close_reason}")
-                        
-                        # Note: IG Markets API doesn't support programmatic position closure
-                        # This would require manual intervention or different broker
-                        # For now, we log the recommendation
-                        
+
+                        # Attempt programmatic closure via IG API; fall back to recommendation if it fails
+                        action_taken = 'RECOMMEND_CLOSE'
+                        try:
+                            await ig_api.close_position(deal_id)
+                            action_taken = 'CLOSED'
+                        except Exception as _:
+                            logger.debug(f"Could not auto-close deal {deal_id}, recommend manual close")
+
                         scalp_updates.append({
                             'deal_id': deal_id,
                             'epic': epic,
@@ -256,10 +270,11 @@ class ScalpEngine:
                             'current_price': current_price,
                             'points_profit': points_profit,
                             'action': 'CLOSE',
+                            'action_taken': action_taken,
                             'reason': close_reason,
                             'scalp_record': scalp_record
                         })
-                        
+
                         # Mark scalp as completed
                         scalp_record['status'] = 'COMPLETED'
                         scalp_record['exit_reason'] = close_reason

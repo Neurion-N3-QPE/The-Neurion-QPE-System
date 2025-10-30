@@ -90,6 +90,12 @@ async def main():
         logger.info("\n" + "="*80)
         logger.info("🏁 NEURION QPE SYSTEM STOPPED")
         logger.info("="*80)
+        # Ensure API sessions are closed cleanly
+        try:
+            if 'ig_api' in locals() and ig_api is not None:
+                await ig_api.shutdown()
+        except Exception:
+            logger.debug("Error shutting down IG API session", exc_info=True)
 
 
 if __name__ == "__main__":

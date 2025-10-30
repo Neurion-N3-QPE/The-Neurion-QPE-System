@@ -308,8 +308,9 @@ class MonteCarloSimulator:
     def calculate_risk_metrics(self, scenarios: np.ndarray) -> Dict[str, float]:
         """
         Calculate risk metrics from Monte Carlo scenarios.
-        
+
         Provides comprehensive risk assessment from SSE simulations.
+        FIXED: Never returns 100% or 0% probabilities (mathematically impossible with VaR)
 
         Args:
             scenarios: Array of simulated outcomes
@@ -318,8 +319,19 @@ class MonteCarloSimulator:
             Dictionary of risk metrics
         """
         scenarios = np.asarray(scenarios)
-        
+
         logger.info("📊 SSE Risk Analysis:")
+
+        # Calculate realistic probabilities with caps to prevent 100%/0% impossibilities
+        raw_probability_of_loss = np.sum(scenarios < 0) / len(scenarios)
+
+        # Apply probability caps: Never allow exactly 0% or 100%
+        # Minimum 0.1% (1 in 1000), Maximum 99.9% (999 in 1000)
+        probability_of_loss = max(0.001, min(0.999, raw_probability_of_loss))
+
+        # If we had to cap the probability, log a warning
+        if raw_probability_of_loss != probability_of_loss:
+            logger.warning(f"⚠️  Probability capped: Raw={raw_probability_of_loss*100:.3f}% → Capped={probability_of_loss*100:.3f}%")
 
         metrics = {
             "var_95": np.percentile(scenarios, 5),  # 95% Value at Risk
@@ -329,16 +341,51 @@ class MonteCarloSimulator:
             ),  # Conditional VaR
             "max_drawdown": np.min(scenarios) - np.mean(scenarios),
             "upside_potential": np.percentile(scenarios, 95) - np.mean(scenarios),
-            "probability_of_loss": np.sum(scenarios < 0) / len(scenarios),
+            "probability_of_loss": probability_of_loss,
+            "probability_of_profit": 1.0 - probability_of_loss,  # Explicit calculation
             "skewness": stats.skew(scenarios),
             "kurtosis": stats.kurtosis(scenarios),
+            "mean": np.mean(scenarios),
+            "std": np.std(scenarios),
         }
-        
+
+        # Validate VaR-Probability consistency
+        self._validate_risk_metrics_consistency(metrics)
+
         logger.info(f"   VaR (95%): {metrics['var_95']:.4f} | VaR (99%): {metrics['var_99']:.4f}")
         logger.info(f"   Probability of Loss: {metrics['probability_of_loss']*100:.2f}%")
+        logger.info(f"   Probability of Profit: {metrics['probability_of_profit']*100:.2f}%")
         logger.info(f"   Max Drawdown: {metrics['max_drawdown']:.4f} | Upside: {metrics['upside_potential']:.4f}")
-        
+
         return metrics
+
+    def _validate_risk_metrics_consistency(self, metrics: Dict[str, float]) -> None:
+        """
+        Validate that risk metrics are mathematically consistent.
+
+        Ensures VaR and probability metrics make sense together.
+        Flags impossible combinations like 100% profit probability with negative VaR.
+        """
+        mean = metrics.get('mean', 0.0)
+        std = metrics.get('std', 0.0)
+        p_loss = metrics.get('probability_of_loss', 0.0)
+        var95 = metrics.get('var_95', 0.0)
+
+        # Check for edge detection: "NO EDGE" when |mean-0.5| < 0.5×std
+        if abs(mean - 0.5) < 0.5 * std:
+            logger.warning("🚨 NO EDGE DETECTED: Mean too close to neutral given volatility")
+            logger.warning(f"   |{mean:.3f} - 0.5| = {abs(mean - 0.5):.3f} < 0.5×{std:.3f} = {0.5*std:.3f}")
+
+        # Check VaR-Probability consistency
+        # If VaR95 < 0 but probability of loss is very low, flag inconsistency
+        if var95 < 0 and p_loss < 0.05:  # VaR negative but <5% loss probability
+            logger.warning("🚨 VaR-PROBABILITY INCONSISTENCY: Negative VaR with low loss probability")
+            logger.warning(f"   VaR95: {var95:.4f} | P(Loss): {p_loss*100:.2f}%")
+
+        # Check for extreme scenarios that might indicate model issues
+        if p_loss < 0.001 and std > 0.01:  # Very low loss prob but high volatility
+            logger.warning("🚨 SUSPICIOUS METRICS: Very low loss probability with high volatility")
+            logger.warning(f"   P(Loss): {p_loss*100:.3f}% | Std: {std:.4f}")
 
 
 class HybridPredictionModel:

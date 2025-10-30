@@ -218,25 +218,40 @@ class SSERiskEngine:
         """Analyze Monte Carlo simulation results"""
         try:
             # Calculate key metrics
-            win_scenarios = scenarios > 0.5  # Scenarios where trade would be profitable
-            win_probability = np.mean(win_scenarios)
-            
+            # Interpret scenarios as profit/loss outcomes (positive => profitable)
+            win_scenarios = scenarios > 0.0  # Scenarios where trade would be profitable
+            win_probability = float(np.mean(win_scenarios))
+
+            # Probability of loss (any scenario that yields loss)
+            loss_scenarios = scenarios < 0.0
+            probability_of_loss = float(np.mean(loss_scenarios))
+
             # Risk of ruin (probability of significant loss)
-            ruin_threshold = 0.2  # 20% loss threshold
-            ruin_scenarios = scenarios < ruin_threshold
-            risk_of_ruin = np.mean(ruin_scenarios)
+            ruin_threshold = 0.2  # 20% loss threshold (adjustable)
+            ruin_scenarios = scenarios < -ruin_threshold
+            risk_of_ruin = float(np.mean(ruin_scenarios))
             
             # Expected value
             expected_value = np.mean(scenarios)
             
             # Confidence level (statistical significance)
-            confidence_level = 1.0 - (np.std(scenarios) / np.mean(scenarios)) if np.mean(scenarios) > 0 else 0.0
+            # Confidence level: normalized measure of dispersion relative to mean
+            mean_val = float(np.mean(scenarios))
+            std_val = float(np.std(scenarios))
+            if abs(mean_val) < 1e-6:
+                confidence_level = 0.0
+            else:
+                confidence_level = 1.0 - (std_val / (abs(mean_val) + 1e-6))
+                # Clamp to [0,1]
+                confidence_level = max(0.0, min(1.0, confidence_level))
             
             # Additional metrics
             percentiles = np.percentile(scenarios, [5, 25, 50, 75, 95])
             
+            # Include probability_of_loss for consistency checks
             analysis = {
                 'win_probability': float(win_probability),
+                'probability_of_loss': float(probability_of_loss),
                 'risk_of_ruin': float(risk_of_ruin),
                 'expected_value': float(expected_value),
                 'confidence_level': float(confidence_level),
@@ -248,13 +263,14 @@ class SSERiskEngine:
                     'p75': float(percentiles[3]),
                     'p95': float(percentiles[4])
                 },
-                'volatility': float(np.std(scenarios)),
+                'volatility': float(std_val),
                 'skewness': float(self._calculate_skewness(scenarios)),
                 'kurtosis': float(self._calculate_kurtosis(scenarios))
             }
             
             logger.info(f"📊 SSE ANALYSIS COMPLETE:")
             logger.info(f"   Win Probability: {win_probability:.1%}")
+            logger.info(f"   Probability of Loss: {probability_of_loss:.1%}")
             logger.info(f"   Risk of Ruin: {risk_of_ruin:.1%}")
             logger.info(f"   Expected Value: {expected_value:.3f}")
             logger.info(f"   Confidence Level: {confidence_level:.1%}")
@@ -297,10 +313,16 @@ class SSERiskEngine:
         """Apply Monte Carlo gates to determine trade approval"""
         
         # Extract metrics
-        win_probability = analysis['win_probability']
-        risk_of_ruin = analysis['risk_of_ruin']
-        expected_value = analysis['expected_value']
-        confidence_level = analysis['confidence_level']
+        win_probability = float(analysis.get('win_probability', 0.0))
+        probability_of_loss = float(analysis.get('probability_of_loss', 0.0))
+        risk_of_ruin = float(analysis.get('risk_of_ruin', 1.0))
+        expected_value = float(analysis.get('expected_value', -1.0))
+        confidence_level = float(analysis.get('confidence_level', 0.0))
+
+        # Sanity check: win_probability should be consistent with probability_of_loss
+        if probability_of_loss > 0 and win_probability >= 0.999:
+            logger.warning("⚠️ Inconsistent Monte Carlo metrics: perfect win_probability with non-zero loss probability. Adjusting win_probability.")
+            win_probability = max(0.0, 1.0 - probability_of_loss)
         
         # Check each gate
         gates_passed = []

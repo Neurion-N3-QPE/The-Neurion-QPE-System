@@ -190,13 +190,19 @@ class InstrumentManager:
             
             # Ensure minimum size
             if calculated_size < min_size:
-                if available_balance >= margin_per_unit * min_size / margin_safety_factor:
+                # Check if we can afford at least the minimum size given safety factor
+                required_margin_for_min = (margin_per_unit * min_size) / margin_safety_factor
+                if available_balance >= required_margin_for_min:
                     calculated_size = min_size
                 else:
                     return 0.0, f"Cannot meet minimum size {min_size} for {instrument_info.get('name', epic)}"
             
-            # Round to appropriate precision
-            calculated_size = round(calculated_size, 1)
+            # Round to appropriate precision depending on min_size granularity
+            precision = 2 if min_size < 0.1 else 1
+            calculated_size = round(calculated_size, precision)
+            # Ensure rounding did not drop below min_size
+            if calculated_size < min_size:
+                calculated_size = min_size
             
             reason = f"Safe size for {instrument_info.get('name', epic)}: margin={max_size_by_margin:.2f}, risk={max_size_by_risk:.2f}"
             
