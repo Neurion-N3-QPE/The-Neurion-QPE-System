@@ -15,6 +15,7 @@ from core.quantum_engine import QuantumEngine
 from integrations.ig_markets_api import IGMarketsAPI
 from config.settings import update_env_var
 from trading.risk_engine import RiskEngine
+from trading.scalp_engine import ScalpEngine
 
 logger = logging.getLogger(__name__)
 
@@ -35,6 +36,7 @@ class AutonomousTraderV2:
         self.pie = IntegrityBus()
         self.quantum = QuantumEngine()
         self.risk_engine = RiskEngine(config)
+        self.scalp_engine = ScalpEngine(config)
         self.ig_api: Optional[IGMarketsAPI] = None # Initialize IG Markets API
 
         # Load multi-epic configuration
@@ -141,6 +143,10 @@ class AutonomousTraderV2:
                 # PHASE 6 - Adaptive Stop-Loss Management
                 # Tighten stops as trades move into profit
                 await self.adaptive_stop_management()
+
+                # PHASE 7 - High-Frequency Micro-Scalping
+                # Execute rapid micro-trades on high-confidence signals
+                await self.micro_scalp_management()
 
                 # Wait before next iteration
                 await asyncio.sleep(self.config.get('update_interval', 60))
@@ -1104,6 +1110,172 @@ class AutonomousTraderV2:
 
         except Exception as e:
             logger.error(f"❌ Error in adaptive_stop_management: {e}")
+            return []
+
+    async def micro_scalp_management(self):
+        """
+        High-Frequency Micro-Scalp Mode: Execute rapid micro-trades on high-confidence signals
+        Goal: Extract quick profits from high-probability setups with tight targets
+        """
+        try:
+            if not self.ig_api:
+                return []
+
+            # Check if micro-scalping is enabled
+            scalp_config = self.config.get('trading', {}).get('micro_scalping', {})
+            if not scalp_config.get('enabled', True):
+                return []
+
+            # Get current positions for scalp monitoring
+            positions_data = await self.ig_api.get_positions()
+            if positions_data:
+                positions_list = positions_data if isinstance(positions_data, list) else positions_data.get('positions', [])
+
+                # Monitor existing scalp positions
+                scalp_updates = await self.scalp_engine.monitor_scalp_positions(positions_list, self.ig_api)
+
+                if scalp_updates:
+                    logger.info(f"🏃 SCALP POSITION UPDATES:")
+                    for update in scalp_updates:
+                        logger.info(f"   📋 {update['epic']} | {update['action']} | {update['reason']}")
+
+            # Check for new scalping opportunities
+            # Generate high-frequency signals for scalping
+            scalp_signals = await self._generate_scalp_signals()
+
+            executed_scalps = []
+
+            for signal in scalp_signals:
+                try:
+                    # Execute scalp sequence for this signal
+                    scalps = await self.scalp_engine.scalp_signal_handler(
+                        signal=signal,
+                        ig_api=self.ig_api,
+                        get_margin_percent_func=self.get_margin_percent
+                    )
+
+                    if scalps:
+                        executed_scalps.extend(scalps)
+                        logger.info(f"🏃 SCALP SEQUENCE: {len(scalps)} micro-trades executed for {signal['epic']}")
+
+                except Exception as signal_error:
+                    logger.warning(f"⚠️ Error processing scalp signal: {signal_error}")
+                    continue
+
+            # Log scalping session results
+            if executed_scalps or scalp_updates:
+                scalp_stats = self.scalp_engine.get_scalp_statistics()
+
+                logger.info(f"🏃 MICRO-SCALP SESSION COMPLETE:")
+                logger.info(f"   ✅ New Scalps: {len(executed_scalps)}")
+                logger.info(f"   📊 Position Updates: {len(scalp_updates) if 'scalp_updates' in locals() else 0}")
+                logger.info(f"   🎯 Active Scalps: {scalp_stats.get('active_scalps', 0)}")
+                logger.info(f"   📈 Total Scalps: {scalp_stats.get('total_scalps', 0)}")
+
+                if scalp_stats.get('total_scalps', 0) > 0:
+                    logger.info(f"   💰 Win Rate: {scalp_stats.get('win_rate', 0):.1f}%")
+                    logger.info(f"   📊 Avg Profit: {scalp_stats.get('avg_profit_points', 0):.2f} points")
+
+            return executed_scalps
+
+        except Exception as e:
+            logger.error(f"❌ Error in micro_scalp_management: {e}")
+            return []
+
+    async def _generate_scalp_signals(self) -> List[Dict]:
+        """Generate high-frequency signals specifically for scalping"""
+        try:
+            scalp_signals = []
+
+            # Get current PIE prediction for primary epic
+            prediction = await self.pie.predict(self.config['brokers']['ig_markets']['default_epic'])
+
+            if not prediction:
+                return []
+
+            # Check if prediction meets scalping criteria
+            confidence = prediction.confidence
+
+            # Estimate volatility (simplified - in real implementation would use market data)
+            # For now, use confidence variance as volatility proxy
+            volatility = abs(prediction.prediction - 0.5) * 4  # Scale to approximate volatility
+
+            # Create scalp signal if criteria met
+            if confidence >= 0.85 and volatility >= 1.0:  # Slightly lower volatility threshold for more opportunities
+                direction = 'BUY' if prediction.prediction > 0.5 else 'SELL'
+
+                scalp_signal = {
+                    'epic': self.config['brokers']['ig_markets']['default_epic'],
+                    'direction': direction,
+                    'confidence': confidence,
+                    'volatility': volatility,
+                    'prediction': prediction.prediction,
+                    'timestamp': datetime.now(),
+                    'signal_type': 'SCALP'
+                }
+
+                scalp_signals.append(scalp_signal)
+
+                logger.info(f"🏃 SCALP SIGNAL GENERATED: {scalp_signal['epic']} {direction} | Conf: {confidence:.3f} | Vol: {volatility:.2f}")
+
+            # Check multi-epic signals for additional scalping opportunities
+            if len(scalp_signals) == 0:  # Only if no primary signal
+                multi_epic_signals = await self._get_multi_epic_scalp_signals()
+                scalp_signals.extend(multi_epic_signals)
+
+            return scalp_signals
+
+        except Exception as e:
+            logger.error(f"❌ Error generating scalp signals: {e}")
+            return []
+
+    async def _get_multi_epic_scalp_signals(self) -> List[Dict]:
+        """Get scalping signals from multi-epic configuration"""
+        try:
+            if not hasattr(self, 'multi_epic_config') or not self.multi_epic_config:
+                return []
+
+            primary_epics = self.multi_epic_config.get('primary_epics', [])
+            scalp_signals = []
+
+            # Check each epic for scalping opportunities
+            for epic in primary_epics[:2]:  # Limit to first 2 epics for scalping
+                try:
+                    # Get prediction for this epic
+                    prediction = await self.pie.predict(epic)
+
+                    if not prediction:
+                        continue
+
+                    confidence = prediction.confidence
+                    volatility = abs(prediction.prediction - 0.5) * 4
+
+                    # Lower thresholds for multi-epic scalping
+                    if confidence >= 0.82 and volatility >= 0.8:
+                        direction = 'BUY' if prediction.prediction > 0.5 else 'SELL'
+
+                        scalp_signal = {
+                            'epic': epic,
+                            'direction': direction,
+                            'confidence': confidence,
+                            'volatility': volatility,
+                            'prediction': prediction.prediction,
+                            'timestamp': datetime.now(),
+                            'signal_type': 'MULTI_EPIC_SCALP'
+                        }
+
+                        scalp_signals.append(scalp_signal)
+
+                        logger.info(f"🏃 MULTI-EPIC SCALP: {epic} {direction} | Conf: {confidence:.3f} | Vol: {volatility:.2f}")
+
+                except Exception as epic_error:
+                    logger.debug(f"Error getting scalp signal for {epic}: {epic_error}")
+                    continue
+
+            return scalp_signals
+
+        except Exception as e:
+            logger.error(f"❌ Error getting multi-epic scalp signals: {e}")
             return []
 
     async def _execute_trade_fragment(self, epic: str, size: float, direction: str):

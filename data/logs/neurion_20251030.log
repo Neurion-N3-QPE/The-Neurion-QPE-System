@@ -8223,3 +8223,215 @@ Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (
 2025-10-30 20:27:47,850 | trading.autonomous_trader_v2 | INFO | 🔄 Position DIAAAAQC2VFP5AK no longer open, removing from tracking
 2025-10-30 20:27:47,850 | trading.autonomous_trader_v2 | INFO | 🔄 Position DIAAAAQC2VWG3AB no longer open, removing from tracking
 2025-10-30 20:27:47,850 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:28:16,393 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:28:16,393 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:28:16,393 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:28:16,393 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:28:16,513 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:28:48,534 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:28:48,534 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:28:48,534 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:28:48,534 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:28:48,618 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:28:48,694 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:28:48,770 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:28:48,770 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:28:48,770 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 20:28:48,978 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:29:16,729 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:29:16,729 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:29:16,729 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:29:16,729 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:29:16,797 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:29:49,767 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:29:49,767 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:29:49,767 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:29:49,767 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:29:49,856 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:29:50,032 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:29:50,133 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:29:50,134 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:29:50,134 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 20:29:50,384 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:30:17,035 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:30:17,035 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:30:17,035 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:30:17,035 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:30:17,110 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:30:51,527 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:30:51,527 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:30:51,527 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:30:51,528 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:30:51,764 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:30:51,891 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:30:52,035 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:30:52,035 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:30:52,035 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 0 active, 3 slots available
+2025-10-30 20:30:52,467 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 0 on IG | 0 tracked | 5 max
+2025-10-30 20:31:05,487 | __main__ | INFO | ================================================================================
+2025-10-30 20:31:05,487 | __main__ | INFO | 🚀 NEURION QPE SYSTEM V3.0
+2025-10-30 20:31:05,487 | __main__ | INFO | ================================================================================
+2025-10-30 20:31:05,487 | config.settings | INFO | ✅ Configuration loaded from config/config.json
+2025-10-30 20:31:05,487 | __main__ | INFO | ✅ Configuration loaded: balanced
+2025-10-30 20:31:05,487 | trading.risk_engine | INFO | 🛡️ Risk Engine initialized
+2025-10-30 20:31:05,488 | trading.scalp_engine | INFO | 🏃 Scalp Engine initialized
+2025-10-30 20:31:05,488 | trading.autonomous_trader_v2 | INFO | ✅ Multi-epic config loaded: 3 primary epics
+2025-10-30 20:31:05,488 | trading.autonomous_trader_v2 | INFO | 🚀 Initializing Autonomous Trader V2...
+2025-10-30 20:31:05,488 | core.integrity.integrity_bus | INFO | 🚀 Initializing Integrity Bus...
+2025-10-30 20:31:05,489 | core.integrity.integrity_bus | INFO |   ✓ Bayesian Calibrator ready
+2025-10-30 20:31:05,489 | core.integrity.integrity_bus | INFO |   ✓ Confidence Scorer ready
+2025-10-30 20:31:05,489 | core.integrity.integrity_bus | INFO | ✅ Integrity Bus initialized
+2025-10-30 20:31:05,489 | core.quantum_engine | INFO | 🔮 Initializing Quantum Engine...
+2025-10-30 20:31:05,489 | core.quantum_engine | INFO | ✅ Quantum Engine ready
+2025-10-30 20:31:05,490 | integrations.ig_markets_api | INFO | 🔌 Connecting to IG Markets API...
+2025-10-30 20:31:05,767 | integrations.ig_markets_api | INFO | ✅ Authenticated as CHNeural
+2025-10-30 20:31:05,767 | integrations.ig_markets_api | INFO | ✅ Connected to IG Markets (LIVE)
+2025-10-30 20:31:05,768 | trading.autonomous_trader_v2 | INFO |   ✓ Risk per trade: 3.0%
+2025-10-30 20:31:05,768 | trading.autonomous_trader_v2 | INFO |   ✓ Max positions: 5
+2025-10-30 20:31:05,768 | trading.autonomous_trader_v2 | INFO |   ✓ Confidence threshold: 0.75
+2025-10-30 20:31:05,768 | trading.autonomous_trader_v2 | INFO | ✅ Autonomous Trader ready
+2025-10-30 20:31:05,768 | __main__ | INFO | 
+================================================================================
+2025-10-30 20:31:05,768 | __main__ | INFO | 🎯 STARTING AUTONOMOUS TRADING
+2025-10-30 20:31:05,768 | __main__ | INFO | ================================================================================
+
+2025-10-30 20:31:05,768 | trading.autonomous_trader_v2 | INFO | 🟢 Starting autonomous trading
+2025-10-30 20:31:05,853 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+2025-10-30 20:31:05,853 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:31:05,853 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.85 (HIGH) | ✅ TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO | 💰 Position Sizing:
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO |    Balance: £265.14 | Available: £265.14
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO |    Risk-based: £0.05/point | Margin-safe: £0.27/point
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO |    Final Size: £0.1/point
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO | 🎯 EXECUTING: BUY | Size: $0.10
+2025-10-30 20:31:06,019 | trading.autonomous_trader_v2 | INFO | 🔀 Implementing fragmented entry strategy for 0.1 £/pt
+2025-10-30 20:31:06,020 | trading.autonomous_trader_v2 | INFO | 🔀 FRAGMENTED ENTRY: 0.1 £/pt → 5 × 0.1 £/pt
+2025-10-30 20:31:06,191 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 1/5: 0.1 £/pt (Margin: 0.0%)
+2025-10-30 20:31:06,191 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.SPTRD.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 20:31:06,191 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.SPTRD.DAILY.IP: £0.1 per point
+2025-10-30 20:31:06,275 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"DFPUJ3GDEEYTYNK"}
+2025-10-30 20:31:06,275 | integrations.ig_markets_api | INFO | ✅ Position opened: DFPUJ3GDEEYTYNK
+2025-10-30 20:31:06,382 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T20:31:06.06","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"IX.D.SPTRD.DAILY.IP","expiry":"DFB","dealReference":"DFPUJ3GDEEYTYNK","dealId":"DIAAAAQC2WFT6AQ","affectedDeals":[{"dealId":"DIAAAAQC2WFT6AQ","status":"OPENED"}],"level":6834.35,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 20:31:06,382 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 20:31:06,382 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 20:31:06,382 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T20:31:06.06', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'DFPUJ3GDEEYTYNK', 'dealId': 'DIAAAAQC2WFT6AQ', 'affectedDeals': [{'dealId': 'DIAAAAQC2WFT6AQ', 'status': 'OPENED'}], 'level': 6834.35, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:06,383 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T20:31:06.06', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'DFPUJ3GDEEYTYNK', 'dealId': 'DIAAAAQC2WFT6AQ', 'affectedDeals': [{'dealId': 'DIAAAAQC2WFT6AQ', 'status': 'OPENED'}], 'level': 6834.35, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:06,383 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 1 failed
+2025-10-30 20:31:08,039 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 2/5: 0.1 £/pt (Margin: 12.9%)
+2025-10-30 20:31:08,039 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.SPTRD.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 20:31:08,039 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.SPTRD.DAILY.IP: £0.1 per point
+2025-10-30 20:31:08,131 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"CX8FXCV6JYCTYNK"}
+2025-10-30 20:31:08,131 | integrations.ig_markets_api | INFO | ✅ Position opened: CX8FXCV6JYCTYNK
+2025-10-30 20:31:08,231 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T20:31:07.906","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"IX.D.SPTRD.DAILY.IP","expiry":"DFB","dealReference":"CX8FXCV6JYCTYNK","dealId":"DIAAAAQC2WJRPBC","affectedDeals":[{"dealId":"DIAAAAQC2WJRPBC","status":"OPENED"}],"level":6833.99,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 20:31:08,231 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 20:31:08,231 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 20:31:08,231 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T20:31:07.906', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'CX8FXCV6JYCTYNK', 'dealId': 'DIAAAAQC2WJRPBC', 'affectedDeals': [{'dealId': 'DIAAAAQC2WJRPBC', 'status': 'OPENED'}], 'level': 6833.99, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:08,232 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T20:31:07.906', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'CX8FXCV6JYCTYNK', 'dealId': 'DIAAAAQC2WJRPBC', 'affectedDeals': [{'dealId': 'DIAAAAQC2WJRPBC', 'status': 'OPENED'}], 'level': 6833.99, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:08,232 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 2 failed
+2025-10-30 20:31:09,939 | trading.autonomous_trader_v2 | INFO | 🔸 Fragment 3/5: 0.1 £/pt (Margin: 25.9%)
+2025-10-30 20:31:09,939 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.SPTRD.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 20:31:09,939 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.SPTRD.DAILY.IP: £0.1 per point
+2025-10-30 20:31:10,063 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"YFZEHL2QJMCTYNK"}
+2025-10-30 20:31:10,453 | integrations.ig_markets_api | INFO | ✅ Position opened: YFZEHL2QJMCTYNK
+2025-10-30 20:31:10,531 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T20:31:09.826","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"IX.D.SPTRD.DAILY.IP","expiry":"DFB","dealReference":"YFZEHL2QJMCTYNK","dealId":"DIAAAAQC2WKJJAS","affectedDeals":[{"dealId":"DIAAAAQC2WKJJAS","status":"OPENED"}],"level":6833.27,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 20:31:10,531 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 20:31:10,531 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 20:31:10,531 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T20:31:09.826', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'YFZEHL2QJMCTYNK', 'dealId': 'DIAAAAQC2WKJJAS', 'affectedDeals': [{'dealId': 'DIAAAAQC2WKJJAS', 'status': 'OPENED'}], 'level': 6833.27, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:10,531 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T20:31:09.826', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'YFZEHL2QJMCTYNK', 'dealId': 'DIAAAAQC2WKJJAS', 'affectedDeals': [{'dealId': 'DIAAAAQC2WKJJAS', 'status': 'OPENED'}], 'level': 6833.27, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:10,532 | trading.autonomous_trader_v2 | WARNING | ❌ Fragment 3 failed
+2025-10-30 20:31:12,260 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin threshold reached (38.8%) - stopping fragmentation at 4/5
+2025-10-30 20:31:12,799 | trading.autonomous_trader_v2 | INFO | 🎯 FRAGMENTATION COMPLETE:
+2025-10-30 20:31:12,800 | trading.autonomous_trader_v2 | INFO |    ✅ Successful: 0/5 fragments
+2025-10-30 20:31:12,800 | trading.autonomous_trader_v2 | INFO |    📊 Total Size: 0.0 £/pt (Target: 0.1 £/pt)
+2025-10-30 20:31:12,800 | trading.autonomous_trader_v2 | INFO |    ❌ Failed: 3 fragments
+2025-10-30 20:31:12,800 | trading.autonomous_trader_v2 | WARNING | ❌ Fragmented entry failed, falling back to single position
+2025-10-30 20:31:12,800 | integrations.ig_markets_api | INFO | Payload for opening position: {'epic': 'IX.D.SPTRD.DAILY.IP', 'direction': 'BUY', 'size': 0.1, 'orderType': 'MARKET', 'guaranteedStop': False, 'forceOpen': True, 'currencyCode': 'GBP', 'timeInForce': 'FILL_OR_KILL', 'expiry': 'DFB'}
+2025-10-30 20:31:12,800 | integrations.ig_markets_api | INFO | Opening BUY position for IX.D.SPTRD.DAILY.IP: £0.1 per point
+2025-10-30 20:31:12,928 | integrations.ig_markets_api | INFO | API Response: {"dealReference":"HCXZ8G6U8GGTYNK"}
+2025-10-30 20:31:12,928 | integrations.ig_markets_api | INFO | ✅ Position opened: HCXZ8G6U8GGTYNK
+2025-10-30 20:31:13,048 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T20:31:12.672","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"IX.D.SPTRD.DAILY.IP","expiry":"DFB","dealReference":"HCXZ8G6U8GGTYNK","dealId":"DIAAAAQC2WT9TA5","affectedDeals":[{"dealId":"DIAAAAQC2WT9TA5","status":"OPENED"}],"level":6835.4,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 20:31:13,048 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 20:31:13,049 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 20:31:13,049 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T20:31:12.672', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'HCXZ8G6U8GGTYNK', 'dealId': 'DIAAAAQC2WT9TA5', 'affectedDeals': [{'dealId': 'DIAAAAQC2WT9TA5', 'status': 'OPENED'}], 'level': 6835.4, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:13,049 | integrations.ig_markets_api | INFO | ✅ Trade confirmed: {'date': '2025-10-30T20:31:12.672', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'HCXZ8G6U8GGTYNK', 'dealId': 'DIAAAAQC2WT9TA5', 'affectedDeals': [{'dealId': 'DIAAAAQC2WT9TA5', 'status': 'OPENED'}], 'level': 6835.4, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:13,049 | trading.autonomous_trader_v2 | INFO | 📝 Got deal reference: HCXZ8G6U8GGTYNK
+2025-10-30 20:31:13,656 | integrations.ig_markets_api | INFO | Trade status response: {"date":"2025-10-30T20:31:12.672","status":"OPEN","reason":"SUCCESS","dealStatus":"ACCEPTED","epic":"IX.D.SPTRD.DAILY.IP","expiry":"DFB","dealReference":"HCXZ8G6U8GGTYNK","dealId":"DIAAAAQC2WT9TA5","affectedDeals":[{"dealId":"DIAAAAQC2WT9TA5","status":"OPENED"}],"level":6835.4,"size":0.1,"direction":"BUY","stopLevel":null,"limitLevel":null,"stopDistance":null,"limitDistance":null,"guaranteedStop":false,"trailingStop":false,"profit":null,"profitCurrency":null}
+2025-10-30 20:31:13,656 | integrations.ig_markets_api | INFO | Deal Status: ACCEPTED
+2025-10-30 20:31:13,657 | integrations.ig_markets_api | INFO | Reason: SUCCESS
+2025-10-30 20:31:13,657 | integrations.ig_markets_api | INFO | ✅ Trade ACCEPTED: {'date': '2025-10-30T20:31:12.672', 'status': 'OPEN', 'reason': 'SUCCESS', 'dealStatus': 'ACCEPTED', 'epic': 'IX.D.SPTRD.DAILY.IP', 'expiry': 'DFB', 'dealReference': 'HCXZ8G6U8GGTYNK', 'dealId': 'DIAAAAQC2WT9TA5', 'affectedDeals': [{'dealId': 'DIAAAAQC2WT9TA5', 'status': 'OPENED'}], 'level': 6835.4, 'size': 0.1, 'direction': 'BUY', 'stopLevel': None, 'limitLevel': None, 'stopDistance': None, 'limitDistance': None, 'guaranteedStop': False, 'trailingStop': False, 'profit': None, 'profitCurrency': None}
+2025-10-30 20:31:13,657 | trading.autonomous_trader_v2 | INFO | ✅ Position tracked: DIAAAAQC2WT9TA5
+2025-10-30 20:31:13,733 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:31:13,812 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:31:13,997 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:31:13,997 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:31:13,997 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 1 active, 2 slots available
+2025-10-30 20:31:14,148 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin too high (51.5%) for multi-epic strategy
+2025-10-30 20:31:14,636 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 1 tracked | 5 max
+2025-10-30 20:31:14,764 | trading.autonomous_trader_v2 | INFO | 🔄 Added 3 untracked positions to internal list
+2025-10-30 20:31:15,744 | trading.autonomous_trader_v2 | INFO | 📊 Adaptive stops monitored: 1 profitable positions, no updates needed
+2025-10-30 20:31:16,064 | trading.autonomous_trader_v2 | ERROR | ❌ Error generating scalp signals: 'IntegrityBus' object has no attribute 'get_prediction'
+2025-10-30 20:31:17,617 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:31:17,617 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:31:17,617 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:31:17,617 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:31:17,720 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 0 tracked | 5 max
+2025-10-30 20:32:16,325 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:32:16,325 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:32:16,325 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:32:16,325 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:32:16,401 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:32:16,472 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:32:16,576 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:32:16,576 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:32:16,576 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 1 active, 2 slots available
+2025-10-30 20:32:16,708 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin too high (50.2%) for multi-epic strategy
+2025-10-30 20:32:16,832 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 4 tracked | 5 max
+2025-10-30 20:32:17,387 | trading.autonomous_trader_v2 | INFO | 📊 Adaptive stops monitored: 4 profitable positions, no updates needed
+2025-10-30 20:32:17,471 | trading.autonomous_trader_v2 | ERROR | ❌ Error generating scalp signals: 'IntegrityBus' object has no attribute 'get_prediction'
+2025-10-30 20:32:17,875 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:32:17,875 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:32:17,875 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:32:17,875 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:32:17,967 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 0 tracked | 5 max
+2025-10-30 20:33:17,624 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:33:17,625 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:33:17,625 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:33:17,625 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:33:17,709 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:33:17,789 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:33:17,869 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:33:17,869 | trading.autonomous_trader_v2 | INFO | 📊 Multi-epic signals: 0 epics with tradeable signals
+2025-10-30 20:33:17,869 | trading.autonomous_trader_v2 | INFO | 🔀 MULTI-EPIC STRATEGY: 1 active, 2 slots available
+2025-10-30 20:33:18,014 | trading.autonomous_trader_v2 | WARNING | ⚠️  Margin too high (49.8%) for multi-epic strategy
+2025-10-30 20:33:18,109 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 4 tracked | 5 max
+2025-10-30 20:33:18,109 | core.integrity.integrity_bus | INFO | 🎯 PREDICTION: 0.728 | Confidence: 0.65 (LOW) | ❌ HOLD
+2025-10-30 20:33:18,109 | trading.autonomous_trader_v2 | INFO | 
+============================================================
+2025-10-30 20:33:18,109 | trading.autonomous_trader_v2 | INFO | Ensemble: 0.728 | Confidence: 0.65 (LOW) | ❌ NOT TRADEABLE
+Agents: EchoQuant: 0.73 (w=0.33) | Contramind: 0.70 (w=0.33) | MythFleck: 0.75 (w=0.34)
+2025-10-30 20:33:18,110 | trading.autonomous_trader_v2 | INFO | ⏸️  HOLD - Confidence below threshold
+2025-10-30 20:33:18,190 | trading.autonomous_trader_v2 | INFO | 📊 Active positions: 4 on IG | 0 tracked | 5 max
+2025-10-30 20:33:18,728 | trading.autonomous_trader_v2 | ERROR | ❌ Error generating scalp signals: 'IntegrityBus' object has no attribute 'get_prediction'
+2025-10-30 20:33:18,728 | trading.autonomous_trader_v2 | ERROR | ❌ Error in micro_scalp_management: cannot access local variable 'scalp_updates' where it is not associated with a value

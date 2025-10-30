@@ -81,6 +81,18 @@
         "trailing_percentage": 0.5,
         "stop_update_cooldown_minutes": 2
       }
+    },
+    "micro_scalping": {
+      "enabled": true,
+      "scalp_size": 0.05,
+      "take_profit_points": 3,
+      "stop_loss_points": 2,
+      "max_scalps_per_signal": 3,
+      "scalp_interval_seconds": 0.5,
+      "min_confidence": 0.85,
+      "min_volatility": 1.2,
+      "max_margin_threshold": 50.0,
+      "epic_cooldown_minutes": 2
     }
   },
   
