@@ -678,6 +678,17 @@ class AutonomousTraderV2:
             if not self.ig_api:
                 return 0.0
 
+            # Use account manager for cached balance info to reduce API calls
+            if hasattr(self, 'account_manager') and self.account_manager:
+                current_balance = await self.account_manager.get_current_balance()
+                available_balance = await self.account_manager.get_available_balance()
+
+                if current_balance > 0:
+                    used_margin = current_balance - available_balance
+                    margin_percent = (used_margin / current_balance) * 100
+                    return max(0.0, margin_percent)  # Ensure non-negative
+
+            # Fallback to direct API call
             account_info = await self.ig_api.get_account_info()
             if account_info and account_info.get('accounts'):
                 for acc in account_info['accounts']:
@@ -689,7 +700,7 @@ class AutonomousTraderV2:
                         if total_balance > 0:
                             used_margin = total_balance - available_funds
                             margin_percent = (used_margin / total_balance) * 100
-                            return margin_percent
+                            return max(0.0, margin_percent)  # Ensure non-negative
 
             return 0.0
 
@@ -822,8 +833,8 @@ class AutonomousTraderV2:
 
                 if signal_strength > min_signal_strength:
                     # Calculate position size for this epic
-                    base_size = await self._calculate_position_size()
-                    epic_size = base_size * margin_per_epic
+                    base_size = await self._calculate_position_size(multiplier=margin_per_epic, epic=epic)
+                    epic_size = base_size
                     epic_size = round(epic_size, 1)
 
                     logger.info(f"🎯 Multi-epic trade: {epic} | Signal: {signal_strength:.3f} | Size: {epic_size} £/pt")
@@ -1583,8 +1594,20 @@ class AutonomousTraderV2:
                 logger.error("❌ IG Markets API not initialized")
                 return None
 
+            # Get current market price for the epic
+            try:
+                market_data = await self.ig_api.get_market_data(epic)
+                if market_data and market_data.get('snapshot'):
+                    if direction == 'BUY':
+                        current_price = market_data['snapshot'].get('offer', 0.0)
+                    else:
+                        current_price = market_data['snapshot'].get('bid', 0.0)
+                else:
+                    current_price = 1.0  # Safe fallback for forex
+            except:
+                current_price = 1.0  # Safe fallback
+
             # Calculate dynamic profit target for fragment
-            current_price = 6860.0  # Placeholder - would get from market data
             estimated_atr = self._estimate_atr(epic, current_price)
             dynamic_tp_points = self.risk_engine.calculate_dynamic_take_profit(
                 atr=estimated_atr,
@@ -1606,8 +1629,8 @@ class AutonomousTraderV2:
                 take_profit=take_profit_level
             )
 
-            if result and result.get('deal_reference'):
-                deal_reference = result['deal_reference']
+            if result and (result.get('deal_reference') or result.get('dealReference')):
+                deal_reference = result.get('deal_reference') or result.get('dealReference')
 
                 # Verify the trade
                 trade_status = await self.ig_api.verify_trade_status(deal_reference)
@@ -1630,8 +1653,15 @@ class AutonomousTraderV2:
 
                         logger.info(f"✅ Fragment tracked: {deal_id}")
                         return deal_reference
-
-            return None
+                    else:
+                        logger.warning(f"⚠️ Trade accepted but no deal_id: {deal_reference}")
+                        return deal_reference  # Still return deal_reference even without deal_id
+                else:
+                    logger.warning(f"⚠️ Trade not accepted: {trade_status.get('dealStatus')} - {trade_status.get('reason')}")
+                    return None
+            else:
+                logger.warning(f"⚠️ No deal_reference or dealReference in result: {result}")
+                return None
 
         except Exception as e:
             logger.error(f"❌ Error executing trade fragment: {e}")
