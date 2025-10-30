@@ -1,0 +1,15 @@
+{
+    "trades": [
+        {
+            "dealId": "DIAAAQB7MMFWBA",
+            "epic": "US500",
+            "direction": "SELL",
+            "size": 0.3,
+            "openLevel": 6897.13,
+            "closeLevel": 6847.00,
+            "profit": 15.04,
+            "agent": "EchoQuant",
+            "timestamp": "2025-10-28T17:48:37Z"
+        }
+    ]
+}

@@ -67,3 +67,43 @@ class LegacyMigrator:
         source_files = [
             "sse_checkpoint_*.json", # Placeholder - add actual SSE data files here
         ]
+    
+    def _migrate_configs(self):
+        """
+        Migrate broker configurations from legacy system.
+        """
+        logger.info("📦 Migrating broker configurations...")
+
+        legacy_config_path = LEGACY_PATH / "config" / "broker_configs.json"
+        new_config_path = NEW_PATH / "config" / "broker_configs.json"
+
+        try:
+            if legacy_config_path.exists():
+                shutil.copy(legacy_config_path, new_config_path)
+                self.migrated_files.append(str(new_config_path))
+                logger.info(f"✅ Broker configurations migrated to {new_config_path}")
+            else:
+                logger.warning(f"⚠️ Legacy broker configurations not found at {legacy_config_path}")
+        except Exception as e:
+            self.failed_files.append(str(legacy_config_path))
+            logger.error(f"❌ Failed to migrate broker configurations: {e}")
+
+    def _migrate_credentials(self):
+        """
+        Migrate credentials from legacy system.
+        """
+        logger.info("🔑 Migrating credentials...")
+
+        legacy_credentials_path = LEGACY_PATH / "config" / "credentials.json"
+        new_credentials_path = NEW_PATH / "config" / "credentials.json"
+
+        try:
+            if legacy_credentials_path.exists():
+                shutil.copy(legacy_credentials_path, new_credentials_path)
+                self.migrated_files.append(str(new_credentials_path))
+                logger.info(f"✅ Credentials migrated to {new_credentials_path}")
+            else:
+                logger.warning(f"⚠️ Legacy credentials not found at {legacy_credentials_path}")
+        except Exception as e:
+            self.failed_files.append(str(legacy_credentials_path))
+            logger.error(f"❌ Failed to migrate credentials: {e}")

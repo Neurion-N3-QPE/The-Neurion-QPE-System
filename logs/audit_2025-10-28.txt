@@ -1,0 +1,12 @@
+📈 TRADE VERIFIED
+---------------------
+Deal ID: DIAAAQB7MMFWBA
+Asset: US500
+Direction: SELL
+Size: 0.3
+Open Level: 6897.13
+Close Level: 6847.00
+Profit: £15.04
+Executed By: EchoQuant
+Timestamp: 2025-10-28T17:48:37Z
+---------------------

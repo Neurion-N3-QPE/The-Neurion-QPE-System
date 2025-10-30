@@ -12,6 +12,8 @@ from datetime import datetime
 from core.integrity import IntegrityBus
 from trading.autonomous_trader_v2 import AutonomousTraderV2
 from config.settings import load_config
+from core.execution.order_executor import OrderExecutor
+from integrations.ig_markets_api import IGMarketsAPI
 
 
 # Setup logging
@@ -53,6 +55,28 @@ async def main():
         logger.info("="*80 + "\n")
         
         await trader.start()
+        
+        ig_api = IGMarketsAPI(
+            api_key="your_api_key",
+            username="your_username",
+            password="your_password",
+            account_id="your_account_id",
+            demo=False
+        )
+
+        await ig_api.initialize()
+
+        executor = OrderExecutor(ig_api)
+
+        # Example trade execution
+        trade_response = await executor.execute_trade(
+            epic="IX.D.SPTRD.DAILY.IP",
+            direction="SELL",
+            size=0.3,
+            agent="EchoQuant"
+        )
+
+        print(trade_response)
         
     except KeyboardInterrupt:
         logger.info("\n⚠️  Shutdown signal received")

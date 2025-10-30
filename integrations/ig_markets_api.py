@@ -48,18 +48,32 @@ class IGMarketsAPI:
         self.session: Optional[aiohttp.ClientSession] = None
         self.authenticated = False
 
+    async def close_session(self):
+        """
+        Close the aiohttp client session.
+        """
+        if self.session:
+            await self.session.close()
+            logger.info("✅ Client session closed")
+
     async def initialize(self):
-        """Initialize API connection and authenticate"""
+        """
+        Initialize API connection and authenticate.
+        """
         logger.info("🔌 Connecting to IG Markets API...")
-        
+
         # Create session
         self.session = aiohttp.ClientSession()
-        
-        # Authenticate
-        await self._authenticate()
-        
-        logger.info(f"✅ Connected to IG Markets ({'DEMO' if self.demo else 'LIVE'})")
-    
+
+        try:
+            # Authenticate
+            await self._authenticate()
+            logger.info(f"✅ Connected to IG Markets ({'DEMO' if self.demo else 'LIVE'})")
+        except Exception as e:
+            logger.error(f"❌ Initialization error: {e}")
+            await self.close_session()
+            raise
+
     async def _authenticate(self):
         """Authenticate with IG Markets API"""
         url = f"{self.base_url}/session"
@@ -150,6 +164,49 @@ class IGMarketsAPI:
             logger.error(f"❌ Get market data error: {e}")
             return {}
 
+    async def verify_trade_status(self, deal_reference: str) -> Dict:
+        """
+        Verify the status of a trade using the deal reference.
+
+        Args:
+            deal_reference: The deal reference returned when opening a position.
+
+        Returns:
+            Trade status details.
+        """
+        url = f"{self.base_url}/confirms/{deal_reference}"
+        headers = self._get_headers()
+
+        try:
+            async with self.session.get(url, headers=headers) as response:
+                response_text = await response.text()
+                logger.info(f"Trade status response: {response_text}")
+
+                # Parse the response regardless of status code
+                try:
+                    data = await response.json()
+
+                    # Check if errorCode is null (indicates success) even with status 500
+                    if data.get('errorCode') is None:
+                        logger.info(f"✅ Trade status verified: {data}")
+                        return data
+                    else:
+                        logger.error(f"❌ Trade has error: {data.get('errorCode')}")
+                        return {}
+
+                except:
+                    # If we can't parse JSON, fall back to status code check
+                    if response.status == 200:
+                        logger.info(f"✅ Trade status verified (status 200)")
+                        return {"status": "confirmed"}
+                    else:
+                        logger.error(f"❌ Trade status verification failed (Status {response.status}): {response_text}")
+                        return {}
+
+        except Exception as e:
+            logger.error(f"❌ Trade status verification exception: {e}")
+            return {}
+
     async def open_position(
         self,
         epic: str,
@@ -175,10 +232,15 @@ class IGMarketsAPI:
         
         # Spread betting payload - Include expiry field for DFB (Daily Funded Bets)
         # DFB = Spread Betting without fixed expiry (rolls daily)
+        # Ensure size is rounded to 1 decimal place (IG Markets requirement for spread betting)
+        rounded_size = round(float(size), 1)  # Round to 1 decimal place
+        if rounded_size < 0.5:
+            rounded_size = 0.5  # Minimum position size
+        
         payload = {
             'epic': epic,
             'direction': direction.upper(),  # BUY or SELL
-            'size': float(size),
+            'size': rounded_size,
             'orderType': 'MARKET',
             'guaranteedStop': False,
             'forceOpen': True,
@@ -187,6 +249,8 @@ class IGMarketsAPI:
             'expiry': 'DFB'  # Daily Funded Bet - NO FIXED EXPIRY (Spread Betting)
         }
         
+        logger.info(f"Payload for opening position: {payload}")
+
         # Add stop loss if provided
         if stop_loss:
             payload['stopLevel'] = float(stop_loss)
@@ -196,22 +260,30 @@ class IGMarketsAPI:
             payload['limitLevel'] = float(take_profit)
         
         headers = self._get_headers()
-        logger.info(f"Opening {direction} position for {epic}: £{size} per point")
+        logger.info(f"Opening {direction} position for {epic}: £{rounded_size} per point")
         logger.debug(f"Payload: {payload}")
         
         try:
             async with self.session.post(url, json=payload, headers=headers) as response:
                 response_text = await response.text()
-                
+                logger.info(f"API Response: {response_text}")
+
                 if response.status == 200:
                     data = await response.json()
                     deal_ref = data.get('dealReference')
                     logger.info(f"✅ Position opened: {deal_ref}")
+
+                    # Verify trade status
+                    trade_status = await self.verify_trade_status(deal_ref)
+                    if trade_status:
+                        logger.info(f"✅ Trade confirmed: {trade_status}")
+                    else:
+                        logger.error("❌ Trade confirmation failed")
+
                     return data
                 else:
                     logger.error(f"❌ Open position failed (Status {response.status}): {response_text}")
                     return {}
-                    
         except Exception as e:
             logger.error(f"❌ Open position exception: {e}")
             return {}
@@ -292,10 +364,39 @@ class IGMarketsAPI:
         
         logger.warning(f"Position {deal_id} not found")
         return None
-    
+
+    async def get_trade_history(self, days: int = 7) -> Dict:
+        """
+        Retrieve trade history for the account.
+
+        Args:
+            days: Number of days to look back for trade history.
+
+        Returns:
+            Trade history details.
+        """
+        url = f"{self.base_url}/history/transactions?from={datetime.now().isoformat()}&to={datetime.now().isoformat()}&type=ALL"
+        headers = self._get_headers()
+
+        try:
+            async with self.session.get(url, headers=headers) as response:
+                response_text = await response.text()
+                logger.info(f"Trade history response: {response_text}")
+
+                if response.status == 200:
+                    data = await response.json()
+                    logger.info(f"✅ Trade history retrieved: {data}")
+                    return data
+                else:
+                    logger.error(f"❌ Trade history retrieval failed (Status {response.status}): {response_text}")
+                    return {}
+        except Exception as e:
+            logger.error(f"❌ Trade history retrieval exception: {e}")
+            return {}
+
     async def shutdown(self):
-        """Shutdown API connection"""
-        if self.session:
-            await self.session.close()
-            self.authenticated = False
-        logger.info("✅ IG Markets API disconnected")
+        """
+        Shutdown the API connection.
+        """
+        await self.close_session()
+        logger.info("✅ IG Markets API shutdown complete")

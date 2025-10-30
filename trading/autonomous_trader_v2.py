@@ -191,25 +191,56 @@ class AutonomousTraderV2:
         )
     
     async def _calculate_position_size(self, multiplier: float) -> float:
-        """Calculate position size based on risk and current account balance"""
+        """
+        Calculate position size based on risk and current account balance.
+        Accounts for margin requirements to prevent insufficient funds rejections.
+        """
         if not self.ig_api:
             logger.error("❌ IG Markets API not initialized for balance check.")
             return 0.0
             
         account_info = await self.ig_api.get_account_info()
         current_balance = 0.0
+        available_funds = 0.0
+        
         if account_info and account_info.get('accounts'):
             for acc in account_info['accounts']:
-                if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']: # Corrected access path
-                    current_balance = acc.get('balance', {}).get('balance', 0.0)
+                if acc.get('accountId') == self.config['brokers']['ig_markets']['account_id']:
+                    balance_info = acc.get('balance', {})
+                    current_balance = balance_info.get('balance', 0.0)
+                    available_funds = balance_info.get('available', 0.0)
                     break
         
         if current_balance == 0.0:
             logger.warning("⚠️  Could not fetch current account balance. Using dummy balance for position sizing.")
-            current_balance = 264.63 # Fallback to initial known balance
-            
-        base_size = self.risk_per_trade * current_balance
-        return base_size * multiplier
+            current_balance = 264.63
+            available_funds = 264.63
+        
+        # Calculate risk-based size
+        risk_amount = self.risk_per_trade * current_balance
+        risk_based_size = (risk_amount * multiplier) / 100  # Divide by 100 for proper sizing
+        
+        # Calculate margin-safe size (use 20% of available funds as max exposure)
+        # For spread betting, margin requirement is typically 5-20% of notional value
+        # Conservative approach: use only 20% of available funds for margin
+        margin_safe_size = (available_funds * 0.20) / 100  # Conservative sizing
+        
+        # Use the smaller of the two to ensure we don't exceed either limit
+        final_size = min(risk_based_size, margin_safe_size)
+        
+        # Ensure minimum viable size
+        if final_size < 0.5:
+            final_size = 0.5
+        
+        # Round to 1 decimal place
+        final_size = round(final_size, 1)
+        
+        logger.info(f"💰 Position Sizing:")
+        logger.info(f"   Balance: £{current_balance:.2f} | Available: £{available_funds:.2f}")
+        logger.info(f"   Risk-based: £{risk_based_size:.2f}/point | Margin-safe: £{margin_safe_size:.2f}/point")
+        logger.info(f"   Final Size: £{final_size:.1f}/point")
+        
+        return final_size
     
     async def _execute_trade(
         self,
